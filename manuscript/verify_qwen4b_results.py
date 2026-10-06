@@ -8,6 +8,7 @@ import re
 import math
 import statistics
 from decimal import Decimal, ROUND_HALF_UP
+import optional_inputs
 
 PAPER = Path(__file__).resolve().parent
 
@@ -20,6 +21,7 @@ def rows(name):
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument('--code', type=Path, required=True)
+    optional_inputs.add_argument(ap)
     args = ap.parse_args()
     d = json.loads((PAPER/'figures/qwen4b_multiround/validated_results.json').read_text())
     s = d['summary']
@@ -72,7 +74,8 @@ def main():
             v=q['S-R']['4']
             check(r[col+1], '$'+f"{v['mean']:.4f}"+r'\pm'+f"{v['half_width']:.4f}"+'$')
     for rel, expected in d['source_files'].items():
-        assert hashlib.sha256((args.code/rel).read_bytes()).hexdigest() == expected, rel
+        source = optional_inputs.resolve(args.code, rel, args.inputs)
+        assert hashlib.sha256(source.read_bytes()).hexdigest() == expected, rel
     # Inspect the discrete checkpoint scale for unintentional clipping.
     for split in s:
         for policy in s[split]:

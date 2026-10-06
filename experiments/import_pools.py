@@ -3,7 +3,8 @@
 
   python experiments/import_pools.py EXPERIMENT SOURCE_DIR
 
-For an experiment whose settings.sh sets POOLS_IMPORTED=yes: its round-1 pools were drawn under an
+For an experiment whose settings.sh permits importing (POOLS_IMPORT_ALLOWED=yes or POOLS_IMPORTED=yes):
+its round-1 pools were drawn under an
 earlier sampling configuration and a multi-round run on them already exists; the one-step comparison
 (experiments/one_step.sh) runs on the same pools.  SOURCE_DIR holds the data (TASK/, with
 manifest.json), pools/bNN.jsonl with .jsonl.meta.json for each seed in SEEDS, shared_adapter/, and
@@ -55,9 +56,15 @@ def same_tree(a, b):
 def plan(name, source, root):
     """The copies to make, or SystemExit naming what is wrong.  Writes nothing."""
     s = settings(name)
-    if s.get("POOLS_IMPORTED") != "yes":
-        raise SystemExit("%s/settings.sh does not set POOLS_IMPORTED=yes; its pools are drawn by "
-                         "experiments/run.sh" % name)
+    if s.get("POOLS_IMPORTED") != "yes" and s.get("POOLS_IMPORT_ALLOWED") != "yes":
+        raise SystemExit("%s/settings.sh does not set POOLS_IMPORTED=yes or POOLS_IMPORT_ALLOWED=yes; "
+                         "its pools are drawn by experiments/run.sh" % name)
+    work = Path(root) / "experiments" / name
+    if not (work / "pools" / "IMPORTED.json").exists() and any(
+            (work / child).exists() for child in
+            ("pools", "shared_adapter", "reference", "out", "out_one_step", "one_step_config.json")):
+        raise SystemExit("This experiment already has generated inputs or run artifacts. "
+                         "Use a fresh RSI_ROOT for original-input replay. Nothing was written.")
     config_path = REPO / "experiments" / name / "config.json"
     config = load_config(config_path)
     source = Path(source).resolve()

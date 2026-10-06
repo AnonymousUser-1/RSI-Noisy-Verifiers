@@ -14,6 +14,7 @@ from pathlib import Path
 import statistics as st
 import sys
 from table_typography import numeric_math
+import optional_inputs
 
 PAPER=Path(__file__).resolve().parent
 BLOCKS=[f'b{i:02d}' for i in range(5)]
@@ -32,13 +33,14 @@ def rows(name):
 
 def main():
     ap=argparse.ArgumentParser(description=__doc__);ap.add_argument('--code',type=Path,required=True)
+    optional_inputs.add_argument(ap)
     ap.add_argument('--check',action='store_true');args=ap.parse_args();code=args.code.resolve()
     sys.path.insert(0,str(code))
     from rsi.tasks import judge
     from rsi.common import digest
     sources={}
     def read(p,jsonl=False):
-        raw=p.read_bytes();sources[str(p.relative_to(code))]=hashlib.sha256(raw).hexdigest()
+        raw=p.read_bytes();sources[optional_inputs.source_key(code,p,args.inputs)]=hashlib.sha256(raw).hexdigest()
         return [json.loads(x) for x in raw.decode().splitlines() if x.strip()] if jsonl else json.loads(raw)
     roots={'none':code/'experiments/outputs/2026-10-05-qwen3-4b-multiround-unaudited/graph_unaudited_qwen3-4b',
            'audit':code/'experiments/outputs/2026-10-05-qwen3-4b-graph-audit-b16'}
@@ -83,12 +85,12 @@ def main():
                         assert completion['examples']==64 and completion['training']['steps']==16
                         comp=dict(K=64,C=48,E=16,positive_weight_examples=64,positive_weight_correct=48,effective_sample_size=64)
                     training[po][b+'_'+a][str(t)]=dict(completion=completion,pre=pre,composition=comp)
-    tasks={q['id']:q for q in read(code/'RSI-Qwen3-4B-Graph-paired-inputs-20261004/graph/train_001.jsonl',True)}
+    tasks={q['id']:q for q in read(optional_inputs.resolve(code,'RSI-Qwen3-4B-Graph-paired-inputs-20261004/graph/train_001.jsonl',args.inputs),True)}
     feasible=[]
     for b in BLOCKS:
-        pool=code/f'RSI-Qwen3-4B-Graph-paired-inputs-20261004/pools/{b}.jsonl'
+        pool=optional_inputs.resolve(code,f'RSI-Qwen3-4B-Graph-paired-inputs-20261004/pools/{b}.jsonl',args.inputs)
         pool_rows=read(pool,True)
-        assert sources[str(pool.relative_to(code))]==manifests['audit']['identity']['pools'][b]
+        assert sources[optional_inputs.source_key(code,pool,args.inputs)]==manifests['audit']['identity']['pools'][b]
         assert len(pool_rows)==len({x['id'] for x in pool_rows})==16384
         labels=[];eligible_correct=0;cut=0
         for x in pool_rows:

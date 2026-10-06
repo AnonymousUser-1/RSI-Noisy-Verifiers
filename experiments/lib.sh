@@ -14,7 +14,7 @@ load_experiment() {
     echo "No experiment at $EXP_DIR (it needs settings.sh, config.json and evaluation.json)." >&2; exit 1
   fi
   EXP="$(basename "$EXP_DIR")"
-  TASK="" STUDY="" PIN_FILE="" SEEDS="" SHARE_POOLS_WITH="" LABEL="" DATA_NAME="" POOLS_IMPORTED="" INPUTS_RELEASE=""
+  TASK="" STUDY="" PIN_FILE="" SEEDS="" SHARE_POOLS_WITH="" LABEL="" DATA_NAME="" POOLS_IMPORTED="" POOLS_IMPORT_ALLOWED="" INPUTS_RELEASE=""
   # shellcheck disable=SC1090
   source "$EXP_DIR/settings.sh"
   case "$TASK" in
@@ -37,6 +37,11 @@ load_experiment() {
   # exact bytes of the data they were drawn from (experiments/import_pools.py).
   DATA="$RSI_ROOT/data/${DATA_NAME:-$TASK}"
   WORK="$RSI_ROOT/experiments/$EXP"
+  # Importing is an explicit alternative to generating a fresh run. Keep the original-input
+  # replay restriction only when an import receipt exists, not for a model's fresh runs.
+  if [ "$POOLS_IMPORT_ALLOWED" = yes ] && [ -f "$WORK/pools/IMPORTED.json" ]; then
+    POOLS_IMPORTED=yes
+  fi
   LOGS="$WORK/logs"
   mkdir -p "$LOGS"
   export CUDA_VISIBLE_DEVICES="${CUDA_VISIBLE_DEVICES:-0}"

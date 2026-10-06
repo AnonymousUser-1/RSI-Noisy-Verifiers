@@ -3,8 +3,8 @@
 The configs are checked as committed: every field every stage reads is stated, 2,048 prompts x 8
 answers in every round, auditing on only in the audited ones, and within a task the two configs
 differ only in auditing, so by default the audited run reuses the unaudited run's round-1 pools.
-graph_unaudited_qwen3-4b has no audited sibling: its round-1 pools are imported for the one-step
-comparison.
+graph_unaudited_qwen3-4b has no audited sibling. It generates its own inputs by default and also
+permits explicit import of the original inputs for one-step replay.
 """
 import json
 import re
@@ -27,7 +27,7 @@ EXPERIMENTS = ("graph_unaudited", "graph_audited", "arithmetic_unaudited", "arit
                "arithmetic_unaudited_llama3.2-3b", "arithmetic_audited_llama3.2-3b",
                "arithmetic_unaudited_llama3.2-1b", "arithmetic_audited_llama3.2-1b")
 STAGES = ("pool", "pilot", "adapter", "reference", "iterative")
-UNPAIRED = ("graph_unaudited_qwen3-4b",)    # imported pools, one-step only
+UNPAIRED = ("graph_unaudited_qwen3-4b",)    # no audited sibling in this release
 
 
 def settings(name):
@@ -103,7 +103,8 @@ class ExperimentConfigTests(unittest.TestCase):
             config = load_config(REPO / "experiments" / name / "config.json")
             evaluation = json.loads((REPO / "experiments" / name / "evaluation.json").read_text())
             if "qwen3-4b" in name:
-                self.assertEqual((s["POOLS_IMPORTED"], s["DATA_NAME"]), ("yes", "graph-qwen3-4b-import"), name)
+                self.assertNotIn("POOLS_IMPORTED", s, name)
+                self.assertEqual((s["POOLS_IMPORT_ALLOWED"], s["DATA_NAME"]), ("yes", "graph-qwen3-4b-import"), name)
                 self.assertIsNone(config["generation"]["repetition_stop"], name)
                 self.assertEqual(evaluation["repetition_stop"], {"span": 128, "max_period": 32}, name)
             else:

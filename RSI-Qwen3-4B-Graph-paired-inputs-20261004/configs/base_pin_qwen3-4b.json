@@ -1,6 +1,0 @@
-{
-  "model": "Qwen/Qwen3-4B",
-  "revision": "1cfa9a7208912126459214e8b04321603b3df60c",
-  "source": "Hugging Face Hub model_info(\"Qwen/Qwen3-4B\").sha, resolved 2026-10-02 for the multi-round replication on Qwen3-4B; selected with RSI_BASE_PIN",
-  "prepared": "committed before any run reads it; no run writes, updates or backfills this file"
-}

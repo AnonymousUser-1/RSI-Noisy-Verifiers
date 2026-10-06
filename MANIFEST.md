@@ -5,7 +5,7 @@ Every file of the release, grouped by role, with its size in bytes and SHA-256 d
 | Group | Files | MB |
 |---|---:|---:|
 | Git settings (no line-ending conversion) (`.git`) | 2 | 0.0 |
-| Entry points: data generation, sampling, matching, training, evaluation, reference gradient (`root`) | 30 | 0.3 |
+| Entry points: data generation, sampling, matching, training, evaluation, reference gradient (`root`) | 31 | 0.3 |
 | Matched-line configurations (`configs/`) | 21 | 0.0 |
 | Experiment folders (config.json, evaluation.json, settings.sh) and drivers (`experiments/`) | 44 | 0.1 |
 | Run records: Llama-3.2-3B and Qwen3-1.7B four-round graph; partial arithmetic (`experiments/outputs/2026-10-03-h100/`) | 2115 | 15.7 |
@@ -13,7 +13,7 @@ Every file of the release, grouped by role, with its size in bytes and SHA-256 d
 | Run records: Qwen3-4B four-round graph, audited B=16 (`experiments/outputs/2026-10-05-qwen3-4b-graph-audit-b16/`) | 484 | 51.0 |
 | Run records: Qwen3-4B four-round graph, unaudited (`experiments/outputs/2026-10-05-qwen3-4b-multiround-unaudited/`) | 248 | 1.3 |
 | MIT License of the code (`LICENSE`) | 1 | 0.0 |
-| Paper source (LaTeX) and helper scripts (`manuscript/`) | 74 | 0.3 |
+| Paper source (LaTeX) and helper scripts (`manuscript/`) | 75 | 0.3 |
 | Figure files and their validated summaries and provenance digests (`manuscript/figures/`) | 117 | 19.9 |
 | Audit-threshold scan and figures (Figure 2) with reproduction script (`manuscript/RSI-audit-figures-20261003/`) | 35 | 12.2 |
 | Scripts that build the tables and figures from the run records (`manuscript/summarize_`) | 5 | 0.1 |
@@ -21,10 +21,9 @@ Every file of the release, grouped by role, with its size in bytes and SHA-256 d
 | Protocol notes and the model pins (`matched-dynamics/`) | 13 | 0.1 |
 | Overview, installation, checks and the paper-to-record map (`README.md`) | 1 | 0.0 |
 | Library: tasks and judges, matching, selection, auditing, LoRA backend, theory model (`rsi/`) | 24 | 0.2 |
-| Qwen3-4B shared round-1 inputs: data, pools, shared adapter, matching, reference gradients (`RSI-Qwen3-4B-Graph-paired-inputs-20261004/`) | 50 | 83.9 |
 | Stage scripts of the multi-round pipeline (`scripts/`) | 14 | 0.0 |
 | Recomputes h^T Delta theta from adapters (CPU) (`scripts/reproject.py`) | 1 | 0.0 |
-| Unit tests (`tests/`) | 35 | 0.5 |
+| Unit tests (`tests/`) | 36 | 0.5 |
 | Licenses of the models, libraries and datasets used (`THIRD_PARTY_NOTICES.md`) | 1 | 0.0 |
 
 ## Git settings (no line-ending conversion)
@@ -54,7 +53,8 @@ Every file of the release, grouped by role, with its size in bytes and SHA-256 d
 | `match_candidates.py` | 8131 | `c35253e281079f9727b1a61ab43ec3b2632ddd63454832f1b19c78ba36c719ee` |
 | `MULTIROUND_EXPERIMENT_INSTRUCTION.md` | 29129 | `fbaee4050015ed4b8e9e322bf4da09b284a75f8241c0cbb69af501240653b484` |
 | `one_step.py` | 15525 | `1da431f04ced7d807259ec360c0e9c6cb3db38cc73360fce82ecb90e707ac62f` |
-| `ONE_STEP_EXPERIMENT_INSTRUCTION.md` | 21788 | `412ec8210c1a92af5a617361ae203458eb84580d6d8d29987b0fdc0a5b8f06e4` |
+| `ONE_STEP_EXPERIMENT_INSTRUCTION.md` | 20934 | `bdd73fc1ac4c3dd2c5a0e10493aa15a94ad9df0c58b1f50559faa947d5738f12` |
+| `OPTIONAL_INPUTS.md` | 2883 | `6ba782e5e92fc70e22347b64f352172277ecfaa218c2f3de315258f4fc277676` |
 | `plot_multiround.py` | 10003 | `5c5841fa6c21249349eb924593a96338643f19f738f8ef2c2d0d17aabf674a5f` |
 | `plot_simulation.py` | 1830 | `40e30dc8acc50008a83b6169a2f210fd37af68eb0bc319d4bb6fed4c95ef1849` |
 | `prepare_suite.py` | 7075 | `f3045222a676a06dbccbfe3256703961ead649d5f12782a9e69eb2a64ff25ab1` |
@@ -132,16 +132,16 @@ Every file of the release, grouped by role, with its size in bytes and SHA-256 d
 | `experiments/graph_unaudited_llama3.2-3b/settings.sh` | 1357 | `ccf8c879e469360decf46b4b90467f5e38efb1e5c8c90d548cbf87050054ea48` |
 | `experiments/graph_unaudited_qwen3-4b/config.json` | 801 | `0e62703bb2922b1cb280e4e1e7d1fa07383ba1fe47cb01caf4a9866c7669b7de` |
 | `experiments/graph_unaudited_qwen3-4b/evaluation.json` | 106 | `fa3b1d59afb14333cf509c49540ee69ab5c7b2aba9f88b30c1be194d8700c86f` |
-| `experiments/graph_unaudited_qwen3-4b/settings.sh` | 2000 | `bb079340c3d25938bba9195d8fedfa5088f95f44848238b90ce90faf7a7e3db9` |
-| `experiments/import_pools.py` | 6224 | `e0c6eaf20f97cc93280e3bacac589d15ba99eab567e4131c3c897bee99226539` |
-| `experiments/lib.sh` | 9355 | `cda330deaa72b3607d3f517eae2f7c248de02aaba7e6e68d14e0d9459b7075e5` |
+| `experiments/graph_unaudited_qwen3-4b/settings.sh` | 1753 | `623c753a2235ce356cd673eef724d1d425f5c57d925918bc1a802ad900f5ac07` |
+| `experiments/import_pools.py` | 6786 | `90ab17306bff4a8139debc48c28e06590a0a199fff5b072de581b662df9ad947` |
+| `experiments/lib.sh` | 9671 | `37e66a6e6fd6a2dba88b067b988683840628a47fedafb31f4d92826c8d830663` |
 | `experiments/one_step.sh` | 10718 | `6d5e124738a16bbeac2d634f6d8952b0f6a77e84905a6ff64b23c2bc0975f2fc` |
 | `experiments/one_step_check.py` | 11144 | `7b7ffc98015be87b53223a67bf221f79daa6a7ecb3a9e470ec191057f8b431db` |
 | `experiments/one_step_cost.py` | 5571 | `da71e77383baa5d90a1eeaf6c5c7cf14efeeade1feb63c0632a59b0852c4437a` |
 | `experiments/one_step_figures.py` | 7737 | `07c58bd9e0219508e4a525d1522b2c4438831feeddc150b6271304b17c44712b` |
 | `experiments/pilot.sh` | 1481 | `f48df977f7db0aafc3567ef20e30854a0b232a513479899f56b61e6737667963` |
 | `experiments/pool_check.py` | 3203 | `6f61f2917f69d247f3413aee3c3912ca201bc50067667839f47164128b0d54d6` |
-| `experiments/README.md` | 18340 | `309a0baf53118cbd5679bb45c7ce21e3dfe1a875ce0fe11ce74441be9246dce7` |
+| `experiments/README.md` | 18245 | `ab50fa30fc9d2bdd1023df4ee38b11601c34bcfae73a0081a21badee3f26ac8b` |
 | `experiments/run.sh` | 919 | `163cf526461f24ff19d6ff9746f683821a5535f68b63957868f921f0465a8648` |
 
 ## Run records: Llama-3.2-3B and Qwen3-1.7B four-round graph; partial arithmetic
@@ -3646,6 +3646,7 @@ Every file of the release, grouped by role, with its size in bytes and SHA-256 d
 | `manuscript/one_step_graph_unaudited_qwen3-4b_blocks_table.tex` | 920 | `33efd13e36db034d5fdff8eb1121d814c092053d0d830106dbe1b3019e0427df` |
 | `manuscript/one_step_heldout_table.tex` | 1335 | `6f96f2f60c95a18fef50c55c626cc168c12159d9b2d6def6a38337401aff061e` |
 | `manuscript/one_step_selected_raw_figures.tex` | 3560 | `30f2a95d2a92460e76b0cac97503666f03379dd90a1da769cc61bb82726fd0ac` |
+| `manuscript/optional_inputs.py` | 1508 | `923e22440d52a009900d3d077d09929a555fbbe4a3039829e7a869629f77f3ca` |
 | `manuscript/plot_combined_graph_accuracy.py` | 5428 | `f9d0182e37e72d003cade0ab2291d37b139bd7a477b92fe9ffb316e4f6f1354e` |
 | `manuscript/polish_figure_titles.py` | 6085 | `3416d35725767f3ec3f9c78a879edef6b3d33f2b0b4116d0d760a4c9701b475c` |
 | `manuscript/prepare_qwen4b_raw_figures.py` | 4253 | `98e592fb0f0891314590cb26b6c755954632067b4a0797f94af4e8708b837c33` |
@@ -3848,8 +3849,8 @@ Every file of the release, grouped by role, with its size in bytes and SHA-256 d
 | `manuscript/summarize_graph_extensions.py` | 38723 | `458d8afbca03fd9eefbd62ca6cffc39e46e9e0740afe3164694d6ede09c315f3` |
 | `manuscript/summarize_h100_results.py` | 20139 | `045c8f3d199569b20a1e8c6666ee0382c279a7f144c8c4f9f4642b623e86d669` |
 | `manuscript/summarize_h100_tpr.py` | 14331 | `9b555733f6cc338a06e98a19f34519730281f508335c4f346b15a3fb59942e7b` |
-| `manuscript/summarize_qwen4b_results.py` | 14486 | `d5425202facf4ed6d432a93079381edb120fcf17f237e3b50f0c714afd7003c0` |
-| `manuscript/summarize_qwen4b_tables.py` | 16157 | `1fb1333a3e6a93b2e42eeea48517871d73bf28b9b65c2ba4a44a9fe9911af469` |
+| `manuscript/summarize_qwen4b_results.py` | 14823 | `444095770191ee56b7173f317396d755edc31771800e913e1eaf92f0ad4cf775` |
+| `manuscript/summarize_qwen4b_tables.py` | 16335 | `31bec67d5ba18b544633e3cb7420daaba5df9b1f01bf1a1b8cae26112fcbdc2a` |
 
 ## Checks of the displayed tables against the run records
 
@@ -3859,7 +3860,7 @@ Every file of the release, grouped by role, with its size in bytes and SHA-256 d
 | `manuscript/verify_graph_extensions.py` | 5023 | `6f7c7ae975a42d77c6de7b1da1e272e695914f6989ef715b43e7fd909306e2e2` |
 | `manuscript/verify_h100_tables.py` | 10121 | `fbbadea82f85cddb5c518c8e7ebee6f1771db1587216ea4b7a0e4f67c4e489fd` |
 | `manuscript/verify_qwen4b_raw_figures.py` | 4751 | `6d2bebd078e2c7c5846c351f715d33b29a061e8605685c6329471ef120343481` |
-| `manuscript/verify_qwen4b_results.py` | 4838 | `9fc9c5ea4cc0efabc72e84624bc9848217d6b1f1cb0a3b4334b9124a74017804` |
+| `manuscript/verify_qwen4b_results.py` | 4959 | `f4aab9944443c0ebe840f5d27129160b14e619807102d210cad51a76e8b38988` |
 | `manuscript/verify_qwen_raw_figures.py` | 4534 | `a93a814af892e7039aece246ee28320604d81c1ecaae46d27a39517f56bcc163` |
 
 ## Protocol notes and the model pins
@@ -3884,7 +3885,7 @@ Every file of the release, grouped by role, with its size in bytes and SHA-256 d
 
 | File | Bytes | SHA-256 |
 |---|---:|---|
-| `README.md` | 11958 | `6e3eda533e8f2bc0e5b75506e641663d6e5da05fe2e4e4c46107bb0042cb8b16` |
+| `README.md` | 12759 | `d9b231836b29ce07b02e0e947cb638a8ea4d319ddaac80ef66bef23eca195e46` |
 
 ## Library: tasks and judges, matching, selection, auditing, LoRA backend, theory model
 
@@ -3914,61 +3915,6 @@ Every file of the release, grouped by role, with its size in bytes and SHA-256 d
 | `rsi/split_selection.py` | 6887 | `316d566436e49bb2d51b319d8380aebac2a017ace1896049828fe51f1c8732cf` |
 | `rsi/tasks.py` | 17136 | `76a96cf69aa8728296372979712dde3241cbcd080512067e348ea8ee825be858` |
 | `rsi/verifiers.py` | 2827 | `14deaf94d4fc5d9aac6164963eddc7d8142ffde34d262f604b0f22d60c23fe95` |
-
-## Qwen3-4B shared round-1 inputs: data, pools, shared adapter, matching, reference gradients
-
-| File | Bytes | SHA-256 |
-|---|---:|---|
-| `RSI-Qwen3-4B-Graph-paired-inputs-20261004/configs/audit_2048x8.json` | 943 | `ed3374dc7c5795ea0f86a9d0c74d74a7e29d34906eda5b97e87c4201dde29f10` |
-| `RSI-Qwen3-4B-Graph-paired-inputs-20261004/configs/base_pin_qwen3-4b.json` | 352 | `96c2e889357b717e770adb827e0b9ff9bcc6669c6a6a9a6a88310f7d7bed320d` |
-| `RSI-Qwen3-4B-Graph-paired-inputs-20261004/configs/evaluation.json` | 55 | `50c959933d79d9ee12e5b6d84a66ca64bfe25b19e93c3d784908b1febbb3d27b` |
-| `RSI-Qwen3-4B-Graph-paired-inputs-20261004/configs/iterative_2048x8.json` | 938 | `d7df59176aa68053f3c58a6b8714a298d432c101d24daa53514a99a9ea200fcb` |
-| `RSI-Qwen3-4B-Graph-paired-inputs-20261004/configs/legacy_audit_2048x8.json` | 895 | `e94fdd952dead5e5a9f2e8ed61a26c8cc153450028a531d6cc3237dbe97e82c0` |
-| `RSI-Qwen3-4B-Graph-paired-inputs-20261004/configs/legacy_iterative_2048x8.json` | 890 | `b28947ba00b6039067b76449b28efb83cc049544341c01674d03074a7bb1e134` |
-| `RSI-Qwen3-4B-Graph-paired-inputs-20261004/graph/calibration.jsonl` | 597284 | `9e256da2ab88ef53740ac061d98a0541e0fb30b551af58d1fdbb881fc5be687d` |
-| `RSI-Qwen3-4B-Graph-paired-inputs-20261004/graph/dev.jsonl` | 607438 | `70e090ede6920a4d05e7a644c9c2e3245b0165a70ddddfe7743b8d50a15c0301` |
-| `RSI-Qwen3-4B-Graph-paired-inputs-20261004/graph/eval_id.jsonl` | 2366128 | `519b5c441119d09545796bacf3787ac5100ce09e7b18ba08defcdb007bee8ba5` |
-| `RSI-Qwen3-4B-Graph-paired-inputs-20261004/graph/eval_ood.jsonl` | 1677082 | `65df08eaeb91e7d7a96d2a7b1cd41588049ef696eabfb5d3292502f46f8bb15e` |
-| `RSI-Qwen3-4B-Graph-paired-inputs-20261004/graph/gradient_reference.jsonl` | 74914 | `f105858d06287d5a995e06ea95cb7eec34d994f2ef1803c995840c2d1c957fe4` |
-| `RSI-Qwen3-4B-Graph-paired-inputs-20261004/graph/manifest.json` | 1652 | `344e63413361cca2bfcf5d4f570ff02fc8496a44ed52d9248360af37769afc2b` |
-| `RSI-Qwen3-4B-Graph-paired-inputs-20261004/graph/train_001.jsonl` | 2425292 | `6ccd794c5cd42db604b2b027370eebff658838599162de9f99e094a6b4bc5780` |
-| `RSI-Qwen3-4B-Graph-paired-inputs-20261004/graph/train_002.jsonl` | 2438400 | `2af3b02c023008877832decf0467dc2b545874c89ce3c3d23299445d8104e65f` |
-| `RSI-Qwen3-4B-Graph-paired-inputs-20261004/graph/train_003.jsonl` | 2424942 | `14445ae18effdc5dfdc19a9738d85640f49540798a1937fc224dc15781839a79` |
-| `RSI-Qwen3-4B-Graph-paired-inputs-20261004/graph/train_004.jsonl` | 2420132 | `aeecae7678b986174ae821b7f430c9ad9fb2f3d45fec251d8984bf370d74dcef` |
-| `RSI-Qwen3-4B-Graph-paired-inputs-20261004/graph/train_005.jsonl` | 2412666 | `50b1a1ae9cfcd8c19d887cd8caa3a881c2c01c65a4b3fcbb4a5cf280b992938e` |
-| `RSI-Qwen3-4B-Graph-paired-inputs-20261004/graph/train_006.jsonl` | 2418888 | `d8a975fa7c8c8a3e8ffe5b85d398075a82619e0fdaccbe838162754e3b25ccdd` |
-| `RSI-Qwen3-4B-Graph-paired-inputs-20261004/graph/train_007.jsonl` | 2425724 | `d9458ca62429a6f72455eba48a7757fd44e869ff4b6863707f7dc54aad4a7e0e` |
-| `RSI-Qwen3-4B-Graph-paired-inputs-20261004/graph/train_008.jsonl` | 2415334 | `46c4b90e8529f52f1033b656717c020bd4be620436580a29f82cd1ecb19cef8c` |
-| `RSI-Qwen3-4B-Graph-paired-inputs-20261004/matching/ladder.json` | 2925 | `a6e48885f7c8d56acc70fbb14520cd46002b9b35e2b472b41619222e21c6ca26` |
-| `RSI-Qwen3-4B-Graph-paired-inputs-20261004/matching/matched_subsets.json` | 67780 | `030c90d376e45cf507b8eb9860c38218da3f51ce4f5535262d7dacbf74eee576` |
-| `RSI-Qwen3-4B-Graph-paired-inputs-20261004/PACKAGE_MANIFEST.json` | 12705 | `a2077162f935ac49c55571c02bb8e5000c5831ed40ae5924f101696faa99eefc` |
-| `RSI-Qwen3-4B-Graph-paired-inputs-20261004/pools/b00.jsonl` | 4675170 | `8900e2aad141189d80724ee8ad2e5fa9aff8f082cb7e1b50cd95a47e9fa5e4e6` |
-| `RSI-Qwen3-4B-Graph-paired-inputs-20261004/pools/b00.jsonl.meta.json` | 11163 | `602afbb582f08e46845f83854494efc24b4dfb06f870294f2e65d5bf8447e751` |
-| `RSI-Qwen3-4B-Graph-paired-inputs-20261004/pools/b01.jsonl` | 4674999 | `880976085897239e626065713baeb9923861e99e9959c4075feaf161db439999` |
-| `RSI-Qwen3-4B-Graph-paired-inputs-20261004/pools/b01.jsonl.meta.json` | 11163 | `9d382d8966344d0a88158f4059ad623d0ba68d553842cd7173c32dda09298bb1` |
-| `RSI-Qwen3-4B-Graph-paired-inputs-20261004/pools/b02.jsonl` | 4678446 | `8814f46736cb747752bf46fe39dcf3b7a239d699544745ab300ef26e1c55b64c` |
-| `RSI-Qwen3-4B-Graph-paired-inputs-20261004/pools/b02.jsonl.meta.json` | 11163 | `312fd6e245be384a030f2971945241e3d348ef0fb57c8222769fe1f46d0e5910` |
-| `RSI-Qwen3-4B-Graph-paired-inputs-20261004/pools/b03.jsonl` | 4660248 | `38c5a587440048043f15ef5967f47be9747a0ef1dc40c45332bf5a4a2f3923b3` |
-| `RSI-Qwen3-4B-Graph-paired-inputs-20261004/pools/b03.jsonl.meta.json` | 11163 | `34b33c051d64fa1a4be2538d0dc5b75170440b106981c8b71f42fb837a090e61` |
-| `RSI-Qwen3-4B-Graph-paired-inputs-20261004/pools/b04.jsonl` | 4671845 | `c2d40b998f746d29e4ade21c6521fc4b6eb054b61213ade6fb6369e9ea66728c` |
-| `RSI-Qwen3-4B-Graph-paired-inputs-20261004/pools/b04.jsonl.meta.json` | 11163 | `0672f4b4b5676d9de25728861c825a8d095304afc501840358ced5aedb5c52d3` |
-| `RSI-Qwen3-4B-Graph-paired-inputs-20261004/PROTOCOL.json` | 2127 | `f9d1aeb05191e2ac2faac025736c220a8743650b193e46986f7f3c160645b962` |
-| `RSI-Qwen3-4B-Graph-paired-inputs-20261004/provenance/migration.json` | 75382 | `1cd475eb4ca556f65b2ef5650ebab5b86d53a802d87c03792a024adf99380079` |
-| `RSI-Qwen3-4B-Graph-paired-inputs-20261004/provenance/pools-verified.json` | 960 | `abd4b395954207e3d2e8bbe3b1dc6092314216ff508d1f57d72845eb65e8780e` |
-| `RSI-Qwen3-4B-Graph-paired-inputs-20261004/provenance/reference-equivalence.json` | 538 | `104110c3b131069aeabcd5c6b82fc2efa98122ea862182ba6896baee34ba6564` |
-| `RSI-Qwen3-4B-Graph-paired-inputs-20261004/README.md` | 1667 | `24a66f601adec0a03948d8061c13bd97662cb759263889ad8be16134ead48274` |
-| `RSI-Qwen3-4B-Graph-paired-inputs-20261004/reference_out_audit_legacy/h.json` | 32793 | `46c3bf82eca838953210b14a862deea1af6c9dd727fc3163d91b5b9df468e729` |
-| `RSI-Qwen3-4B-Graph-paired-inputs-20261004/reference_out_audit_legacy/h.pt` | 11836891 | `34fadb0578670ef7bdf2ff111d55127282b86e1622da9be6b93c3dbef22a0ca4` |
-| `RSI-Qwen3-4B-Graph-paired-inputs-20261004/reference_out_audit_legacy/per_sample.jsonl` | 12614 | `686ba77637604e881d1191243d55b820d6aecaccafc533d7d58a7058e94a0296` |
-| `RSI-Qwen3-4B-Graph-paired-inputs-20261004/reference_out_audit_new/h.json` | 32786 | `6f5357b683ffaa541d55bdbf8a10dbe0d187fecef105395984fd38341b374c34` |
-| `RSI-Qwen3-4B-Graph-paired-inputs-20261004/reference_out_audit_new/h.pt` | 11836891 | `34fadb0578670ef7bdf2ff111d55127282b86e1622da9be6b93c3dbef22a0ca4` |
-| `RSI-Qwen3-4B-Graph-paired-inputs-20261004/reference_out_audit_new/per_sample.jsonl` | 12614 | `686ba77637604e881d1191243d55b820d6aecaccafc533d7d58a7058e94a0296` |
-| `RSI-Qwen3-4B-Graph-paired-inputs-20261004/SHA256SUMS.txt` | 4449 | `52a4d45694ec887f572380ead46f6e121aa8ba6d72adccc883aa4610300e1f21` |
-| `RSI-Qwen3-4B-Graph-paired-inputs-20261004/shared_adapter/adapter_config.json` | 882 | `8e8a7c3293f5ffa32306b95ca9adb803951e362046429aae8ad60aedca76217f` |
-| `RSI-Qwen3-4B-Graph-paired-inputs-20261004/shared_adapter/adapter_model.safetensors` | 11815504 | `e779e816c6c3f5767df328bcf46b315903e9ba9ecd1249a969988efd29c3e2c1` |
-| `RSI-Qwen3-4B-Graph-paired-inputs-20261004/shared_adapter/README.md` | 5180 | `0254959eadbfa4f9a3252884e96ecaadffd8af5db85736bc739eb9468ed00699` |
-| `RSI-Qwen3-4B-Graph-paired-inputs-20261004/shared_adapter/shared_adapter.json` | 12015 | `88febb5e405345d47859c51d94c9347b5e7ac8024e542f3a02c1cc4f2d0c6dbc` |
-| `RSI-Qwen3-4B-Graph-paired-inputs-20261004/verify_inputs.py` | 4578 | `1d7f5528f77271b8a4bee0e14284e4748d6a12eee6efbd6c24df6f29b258f7fc` |
 
 ## Stage scripts of the multi-round pipeline
 
@@ -4007,7 +3953,7 @@ Every file of the release, grouped by role, with its size in bytes and SHA-256 d
 | `tests/test_core.py` | 13039 | `182ddd42cd3d9024dffff9292da87170197785458572002c085e5cd34b740914` |
 | `tests/test_determinism.py` | 2376 | `2dfd91839fc56955ebadcc6214dfef49add79f9962feb3a1397dfd2038131fc5` |
 | `tests/test_evaluate_multiround.py` | 20138 | `e993b8283167b02c66b321a4e0614946a6432f88f27a3e1f485d219950e753cd` |
-| `tests/test_experiments_folder.py` | 13351 | `d2d3f0db779beb6d24257e84b19293dff36058972541107e7bac717c088cd841` |
+| `tests/test_experiments_folder.py` | 13478 | `51df591e89fd46e4e0631a3278c262eef40386b11242e9f2f52fbcbb128a89d3` |
 | `tests/test_external_tasks.py` | 38117 | `d19cc7b28334c58342640031d4f040e386f646612d3b9ed48727fac4edaa1718` |
 | `tests/test_gradient_recorder_fixes.py` | 13154 | `7336e833a569aa46d53d4427873453c53ae53d39c099b2542989e6d55d009529` |
 | `tests/test_gradient_reference_split.py` | 11639 | `a1b8a9b8926fb0a9e74d343b3fd9eb08b51723c0847ceef4354aa142d29efdc9` |
@@ -4025,6 +3971,7 @@ Every file of the release, grouped by role, with its size in bytes and SHA-256 d
 | `tests/test_one_step_experiments.py` | 30231 | `d7197aa2d2d26f2de2d5b1b9a5057112e0c62aed52461b14edc23b1f8ef32300` |
 | `tests/test_paired_evaluation.py` | 6673 | `c07287a6e3abf706e210495246b7e6adcaac7d14bfde02b8958047fd5b70862a` |
 | `tests/test_provenance.py` | 5667 | `dfa7230dd57f2cc656f80bfe64713688eb98f7ee35bae5144384b101fbfc2ec3` |
+| `tests/test_qwen4b_entry.py` | 5801 | `7ad78be0438bb458360ddbf2b4bf23e021b3580ad7b7cdd60b35628a4a3af792` |
 | `tests/test_reference_encode.py` | 33283 | `e6cf9abf3f7b53fb00fc40bf36a43825d851a9768138b0a1cac0f1df16c3fa39` |
 | `tests/test_repetition_stop.py` | 7285 | `9e1dcb6c9627d05cf6951015abebfc2e305713685b0caa2361128b28a6022893` |
 | `tests/test_run_iterative_experiment.py` | 41395 | `efcf993a8033f0066c2df79a951a007b5fab97dfffe656bb363fec44b758b4eb` |

@@ -62,12 +62,12 @@ python verify_h100_tables.py                      # Llama-3.2-3B four-round tabl
 python verify_graph_extensions.py --code ..       # Qwen3-1.7B four-round and all one-step tables
 python verify_qwen_raw_figures.py --code ..
 python verify_added_raw_figures.py --code ..
-python verify_qwen4b_results.py --code ..         # Qwen3-4B four-round tables (rejudges 123,000 audited answers)
 python verify_qwen4b_raw_figures.py --code ..
-python summarize_qwen4b_tables.py --code .. --check   # rejudges the 81,920 Qwen3-4B round-1 candidates
 ```
 
-Each prints `"status": "passed"` with the number of cells, digests and answers it checked.
+Each reports its verification scope. Checks that also use the original Qwen3-4B task files or
+candidate answers take an optional archive path; see [original-input checks](OPTIONAL_INPUTS.md).
+The ordinary experiment pipeline does not require that archive.
 
 The summaries behind the tables can be regenerated from the records into a new directory:
 
@@ -93,7 +93,7 @@ data byte-for-byte and redraws the figures.
 | Qwen3-4B four-round graph, audited (B = 16) | `experiments/outputs/2026-10-05-qwen3-4b-graph-audit-b16/` | same |
 | One-step R/S/null, three models | `experiments/outputs/2026-10-04-one-step/` | `summarize_graph_extensions.py`, `verify_added_raw_figures.py` |
 | Arithmetic (partial; training diagnostics only) | `experiments/outputs/2026-10-03-h100/arithmetic_*` | `summarize_h100_results.py` |
-| Qwen3-4B shared round-1 inputs | `RSI-Qwen3-4B-Graph-paired-inputs-20261004/` | `verify_inputs.py` in that folder |
+| Optional Qwen3-4B original inputs | Separate archive, described in [OPTIONAL_INPUTS.md](OPTIONAL_INPUTS.md) | `verify_inputs.py` in the extracted archive |
 
 Notes:
 
@@ -138,8 +138,17 @@ bash experiments/one_step.sh graph_unaudited            # the one-step R/S/null 
 
 `experiments/README.md` lists the experiments, their settings and run times;
 `MULTIROUND_EXPERIMENT_INSTRUCTION.md` and `ONE_STEP_EXPERIMENT_INSTRUCTION.md` give the full protocols.
-The Qwen3-4B experiment imports its round-1 inputs from the bundled folder:
-`python experiments/import_pools.py graph_unaudited_qwen3-4b RSI-Qwen3-4B-Graph-paired-inputs-20261004`.
+Qwen3-4B uses the same stage driver. In a fresh `RSI_ROOT`, generate its inputs and run the
+configured multi-round experiment, then the paired one-step experiment:
+
+```bash
+bash experiments/run.sh graph_unaudited_qwen3-4b
+bash experiments/one_step.sh graph_unaudited_qwen3-4b
+```
+
+No original-input archive is required. The one-step run uses the pools, initialization and
+first-round matching produced by this new multi-round run. Original-input replay is a
+separate, optional operation in [OPTIONAL_INPUTS.md](OPTIONAL_INPUTS.md).
 
 Notes on reproducing specific runs:
 
@@ -148,7 +157,10 @@ Notes on reproducing specific runs:
 - The Qwen3-4B four-round runs used a run-specific controller that switched the repetition stop on
   part-way (block b01 round 4 onward) and trained R and S in parallel. Every unit's setting is recorded
   (`protocol_profile.json`, `protocol-receipt.json`). `experiments/run.sh` applies one setting to every
-  round.
+  round. The fresh Qwen3-4B configuration retains `repetition_stop: null` throughout sampling;
+  it does not recreate the historical per-round switch. Reproducing that mixed schedule is
+  outside this entry-point revision. The archived result records remain the evidence for the
+  reported four-round results. This release has no audited Qwen3-4B configuration folder.
 - Greedy evaluation is not bit-identical across GPU types; the paper reports each run's own baseline.
 - Some modules (`rsi/experiment.py`, `rsi/paired_evaluation.py`, `rsi/reference_gradient.py`,
   `evaluate_one_step.py`, `run_experiment.py`, and the queue in `launch.py`/`prepare_suite.py`) belong to
@@ -169,15 +181,18 @@ What each diagnostic can therefore be checked against:
 | Diagnostic | Check available in this release |
 |---|---|
 | Matching certificates (N+, N-, TPR, FPR, yield, target hits), selection counts | Recomputed from the saved selections and counts (`verify_*.py`) |
-| Round-1 judging of the Qwen3-4B candidates | Rejudged from the raw pools (81,920 answers, `summarize_qwen4b_tables.py --check`) |
-| Audit labels, retained counts, query totals of the Qwen3-4B audited run | Rejudged from the saved audited answers (123,000 answers, `verify_qwen4b_results.py`) |
+| Round-1 judging of the Qwen3-4B candidates | With the optional archive: 81,920 answers, `summarize_qwen4b_tables.py --check --inputs INPUTS` |
+| Audit labels, retained counts, query totals of the Qwen3-4B audited run | With the optional task files: 123,000 answers, `summarize_qwen4b_results.py --inputs INPUTS`; the verifier checks saved results and hashes |
 | Greedy Pass@1, target-error rates, paired contrasts and intervals | Recomputed from the saved per-checkpoint counts; the per-question answers are omitted, so they are not rejudged |
-| `h^T Delta theta`, `||Delta theta||` | Checked as recorded summary values only. The adapters are omitted. `scripts/reproject.py` recomputes both from adapters on a CPU; on the authors' copies of the Qwen3-4B adapters it reproduces the records (for example b00/R round 1: -0.019447912664691 recorded and recomputed). The Qwen3-4B reference gradient is included (`RSI-Qwen3-4B-Graph-paired-inputs-20261004/reference_out_audit_*/h.pt`, the `h_sha256` of both Qwen3-4B four-round runs) |
+| `h^T Delta theta`, `||Delta theta||` | Checked as recorded summary values only. The adapters are omitted. `scripts/reproject.py` recomputes both from adapters on a CPU; on the authors' copies of the Qwen3-4B adapters it reproduces the records (for example b00/R round 1: -0.019447912664691 recorded and recomputed). The Qwen3-4B reference gradient is in the optional archive (`reference_out_audit_*/h.pt`, the `h_sha256` of both Qwen3-4B four-round runs) |
 | Reference losses and per-sample reference terms | Recorded summary values only |
 
+For the optional projection check, set `INPUTS` to the extracted archive and supply the
+trained adapters separately (they are not included):
+
 ```bash
-python scripts/reproject.py --h RSI-Qwen3-4B-Graph-paired-inputs-20261004/reference_out_audit_new/h.pt \
-  --start RSI-Qwen3-4B-Graph-paired-inputs-20261004/shared_adapter \
+python scripts/reproject.py --h "$INPUTS/reference_out_audit_new/h.pt" \
+  --start "$INPUTS/shared_adapter" \
   ADAPTERS/b00/R/round_001/adapter ADAPTERS/b00/R/round_002/adapter \
   --records experiments/outputs/2026-10-05-qwen3-4b-graph-audit-b16/out/b00/R/round_001 \
             experiments/outputs/2026-10-05-qwen3-4b-graph-audit-b16/out/b00/R/round_002
@@ -200,6 +215,6 @@ scripts/multiround/       stage scripts used by experiments/run.sh; scripts/repr
 configs/                  matched-line configurations (configs/README.md lists every field)
 matched-dynamics/         protocol notes and the model pins
 manuscript/               paper source, table scripts and verification scripts
-RSI-Qwen3-4B-Graph-paired-inputs-20261004/   Qwen3-4B round-1 data, pools, shared adapter and matching
+OPTIONAL_INPUTS.md        optional original-input archive and stronger data-level checks
 tests/                    unit tests
 ```

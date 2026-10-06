@@ -4,7 +4,8 @@ Multi-round R/S experiments, each in its own folder with its own editable settin
 them on your GPU with one command. Each runs from its own config, so changing one experiment's
 hyperparameters never affects another. Each comes as a pair, unaudited and audited (adaptive, 16
 correctness checks per arm per round); the two differ only in auditing and share their round-1
-pools. The exception is `graph_unaudited_qwen3-4b`, which serves the one-step comparison only.
+pools. `graph_unaudited_qwen3-4b` has no audited sibling in this release, but uses the same
+generation, multi-round training, evaluation and one-step drivers.
 
 | Experiments (unaudited / audited) | Model | Task | Status |
 |---|---|---|---|
@@ -12,7 +13,7 @@ pools. The exception is `graph_unaudited_qwen3-4b`, which serves the one-step co
 | [`graph_unaudited_llama3.2-3b/`](graph_unaudited_llama3.2-3b/), [`graph_audited_llama3.2-3b/`](graph_audited_llama3.2-3b/) | Llama-3.2-3B-Instruct (T 0.6, top-p 0.9) | graph | runnable; starts at 24.5% correct, below the pilot's 30%, which the team accepts (`matched-dynamics/DECISION.md`) |
 | [`arithmetic_unaudited_llama3.2-3b/`](arithmetic_unaudited_llama3.2-3b/), [`arithmetic_audited_llama3.2-3b/`](arithmetic_audited_llama3.2-3b/) | Llama-3.2-3B-Instruct | arithmetic expressions, worked out step by step and ending with `Answer: N`; S's target error is `ignore_parentheses` | runnable; round 1 most likely at K = 16 at 3:1 (a rough pilot estimate) |
 | [`arithmetic_unaudited_llama3.2-1b/`](arithmetic_unaudited_llama3.2-1b/), [`arithmetic_audited_llama3.2-1b/`](arithmetic_audited_llama3.2-1b/) | Llama-3.2-1B-Instruct | arithmetic | runnable; K = 16 or 32 at 3:1 (rough); 9.5% format errors |
-| [`graph_unaudited_qwen3-4b/`](graph_unaudited_qwen3-4b/) (no audited sibling) | Qwen3-4B (T 1.3) | graph | **one-step comparison only** (scale replication): its round-1 pools, shared adapter and round-1 matching are copied from `RSI-Qwen3-4B-Graph-paired-inputs-20261004/` and imported (`experiments/import_pools.py`), so `run.sh` does not draw pools or train here ([`ONE_STEP_EXPERIMENT_INSTRUCTION.md`](../ONE_STEP_EXPERIMENT_INSTRUCTION.md), section 9) |
+| [`graph_unaudited_qwen3-4b/`](graph_unaudited_qwen3-4b/) (no audited sibling) | Qwen3-4B (T 1.3) | graph | Generates inputs and runs four rounds from its config; then `one_step.sh` uses this run's inputs. Optional original-input replay is described in [OPTIONAL_INPUTS.md](../OPTIONAL_INPUTS.md). |
 | [`arithmetic_unaudited/`](arithmetic_unaudited/), [`arithmetic_audited/`](arithmetic_audited/) | Qwen3-1.7B | arithmetic | **not runnable yet**: working the expression out, Qwen almost never makes S's target error (1 of 4,096 pilot answers), so round-1 matching is infeasible at every K and `run.sh` stops before training (exit 2) after drawing the pools. Kept for a later S target |
 
 **One-step comparison.** The paper's primary readout, R/S/null with one update each, runs on an unaudited

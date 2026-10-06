@@ -18,6 +18,7 @@ from collections import Counter
 
 import summarize_graph_extensions as ext
 import summarize_h100_results as theme
+import optional_inputs
 from pypdf import PdfReader, PdfWriter
 
 PAPER = Path(__file__).resolve().parent
@@ -29,6 +30,7 @@ TCRIT = 2.7764451051977987
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument('--code', type=Path, required=True)
+    optional_inputs.add_argument(ap)
     args = ap.parse_args()
     code = args.code.resolve()
     ext.CODE = code
@@ -194,8 +196,11 @@ def main():
         source_hashes[str(source.relative_to(code))] = hashlib.sha256(source.read_bytes()).hexdigest()
     rejudged = 0
     for split,n in [('eval_id',2000),('eval_ood',1000)]:
-        task_path = code/f'RSI-Qwen3-4B-Graph-paired-inputs-20261004/graph/{split}.jsonl'
-        tasks = {q['id']:q for q in ext.jsonl(task_path)}
+        task_rel = f'RSI-Qwen3-4B-Graph-paired-inputs-20261004/graph/{split}.jsonl'
+        task_path = optional_inputs.resolve(code, task_rel, args.inputs)
+        raw = task_path.read_bytes()
+        source_hashes[optional_inputs.source_key(code, task_path, args.inputs)] = hashlib.sha256(raw).hexdigest()
+        tasks = {q['id']:q for q in (json.loads(line) for line in raw.decode('utf-8').splitlines() if line.strip())}
         assert len(tasks) == n and value_digest(sorted(tasks)) == audit_protocols[split]['question_ids']
         for key,metrics in audited[split].items():
             filename = 'round_000' if key == 'base' else key.rsplit('_',1)[0]+'_round_'+f'{int(key.rsplit("_",1)[1]):03d}'

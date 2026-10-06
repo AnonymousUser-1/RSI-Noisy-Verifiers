@@ -16,21 +16,16 @@ PIN_FILE=matched-dynamics/base_pin_qwen3-4b.json
 # Seed blocks: one round-1 pool and one independent R/S replicate per seed (b00, b01, ...).
 SEEDS="0 1 2 3 4"
 
-# Pools are not shared: this experiment's round-1 pools are imported (below), and it has no audited
-# sibling in experiments/.
+# This experiment draws its own pools. There is no audited sibling in experiments/.
 SHARE_POOLS_WITH=
 
-# The round-1 pools, shared adapter, data and round-1 matching are in the folder
-# RSI-Qwen3-4B-Graph-paired-inputs-20261004 at the repository root
-# and imported (experiments/import_pools.py),
-# not drawn: they are the Qwen3-4B pools drawn before generation.repetition_stop was introduced, and
-# this experiment serves the one-step comparison on them (experiments/one_step.sh).  config.json states
-# the sampling those pools were drawn with (repetition_stop null); evaluation.json states the current
-# loop stop for the greedy answers.
-POOLS_IMPORTED=yes
-# The folder that holds those inputs (named in the error when they are missing).
-INPUTS_RELEASE=RSI-Qwen3-4B-Graph-paired-inputs-20261004
-# The data those pools were drawn from, byte for byte (the same questions as data/graph).
+# Default: run.sh generates data, pools and the shared adapter, then trains and evaluates.
+# config.json explicitly keeps repetition_stop off for sampling; evaluation.json states its
+# evaluation stop. Neither file is changed when the optional original inputs are imported.
+# An explicit import into a fresh RSI_ROOT selects original-input one-step replay instead.
+# That replay keeps its original matching and cannot start a new multi-round run in that folder.
+POOLS_IMPORT_ALLOWED=yes
+# Keep task data isolated so optional imports cannot replace another model's generated data.
 DATA_NAME=graph-qwen3-4b-import
 
 # The name on this experiment's figures.
