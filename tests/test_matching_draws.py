@@ -1,4 +1,4 @@
-"""Round-1 matching draws its prompts per block (matched-dynamics/DECISION.md, 2026-10-02).
+"""Round-1 matching draws its prompts per block .
 
 Equally constrained prompts used to be taken in task-id order.  Every prompt of an 8-answer
 pool has 8 candidates, so that order decided which prompts filled the quotas: every seed block

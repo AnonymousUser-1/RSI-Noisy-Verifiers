@@ -1,26 +1,23 @@
 # R/S experiment runs on an H100 cluster, started 2026-10-03
 
-Snapshot of **2026-10-04 23:35 UTC**.  The runs are still going: this folder is regenerated from them,
-so the numbers below change until every run is complete.
+Snapshot of **2026-10-06 16:30 UTC**.
 
-- **What runs:** the eight runnable experiments of [`experiments/`](../..), unchanged.  Rounds 1-4 of every run ran on commit `a742f6f` (#28), the same tree as `main` at `f1fd1f8`.  The graph runs were then extended to 8 rounds by commit `0874c76` (`run_iterative_experiment.py --extend-rounds`, branch `extend-rounds`, not yet merged), which keeps rounds 1-4 and continues from each arm's round-4 adapter; each run's `out/experiment.json` records the commit of every extension under `extensions`.  No other edit to any experiment's `config.json`, `evaluation.json` or `settings.sh`.  Qwen3-1.7B arithmetic is not run (S's target error almost never occurs, so round 1 is infeasible).
+- **What runs:** six of the runnable experiments of [`experiments/`](../..), unchanged (graph for Qwen3-1.7B and Llama-3.2-3B, arithmetic for Llama-3.2-3B, each unaudited and audited).  Rounds 1-4 of every run ran on commit `a742f6f` (#28), the same tree as `main` at `f1fd1f8`.  The graph runs were then extended to 8 rounds by commit `0874c76` (`run_iterative_experiment.py --extend-rounds`), which keeps rounds 1-4 and continues from each arm's round-4 adapter; each run's `out/experiment.json` records the commit of every extension under `extensions`.  No other edit to any experiment's `config.json`, `evaluation.json` or `settings.sh`.  Qwen3-1.7B arithmetic is not run (S's target error almost never occurs, so round 1 is infeasible).
 - **Machine:** one NVIDIA H100 80GB HBM3 per run; torch 2.14.1+cu130, transformers 4.57.1, peft 0.17.1, Python 3.11.
-- **How:** one batch per run pair, staged: the unaudited experiment draws the 5 round-1 pools, then it and its audited sibling (reusing those pools) train, evaluate and draw their figures side by side; a job that ends abnormally is resumed once.  The scheduler's job scripts are not part of this release.
+- **How:** one batch per run pair, staged: the unaudited experiment draws the 5 round-1 pools, then it and its audited sibling (reusing those pools) train, evaluate and draw their figures side by side.
 
 ## Progress
 
-| experiment | model | round-1 K | rounds | arm-rounds trained | Pass@1 checkpoints evaluated (eval_id / eval_ood) | state | job (start → end) |
-|---|---|---|---|---|---|---|---|
-| [graph_unaudited](graph_unaudited/) | Qwen3-1.7B | 64 | 8 | 80 / 80 | 81 / 81 | complete | 10-03 02:40 → 10-04 17:13 |
-| [graph_audited](graph_audited/) | Qwen3-1.7B | 64 | 8 | 80 / 80 | 81 / 81 | complete | 10-03 03:11 → 10-04 14:57 |
-| [graph_unaudited_llama3.2-3b](graph_unaudited_llama3.2-3b/) | Llama-3.2-3B-Instruct | 64 | 8 | 80 / 80 | 81 / 81 | complete | 10-03 03:38 → 10-03 23:34 |
-| [graph_audited_llama3.2-3b](graph_audited_llama3.2-3b/) | Llama-3.2-3B-Instruct | 64 | 8 | 80 / 80 | 81 / 81 | complete | 10-03 04:30 → 10-03 22:53 |
-| [arithmetic_unaudited_llama3.2-3b](arithmetic_unaudited_llama3.2-3b/) | Llama-3.2-3B-Instruct | 64 | 4 | 26 / 40 | 0 / 0 | training, now b03/R/round_002 (sampled 8928/16384) | 10-03 08:54 → - |
-| [arithmetic_audited_llama3.2-3b](arithmetic_audited_llama3.2-3b/) | Llama-3.2-3B-Instruct | 64 | 4 | 26 / 40 | 0 / 0 | training, now b03/R/round_002 (sampled 15808/16384) | 10-03 09:10 → - |
-| [arithmetic_unaudited_llama3.2-1b](arithmetic_unaudited_llama3.2-1b/) | Llama-3.2-1B-Instruct | 64 | 4 | 27 / 40 | 0 / 0 | training, now b03/S/round_002 (sampled 1824/16384) | 10-03 10:43 → - |
-| [arithmetic_audited_llama3.2-1b](arithmetic_audited_llama3.2-1b/) | Llama-3.2-1B-Instruct | 64 | 4 | 28 / 40 | 0 / 0 | training, now b03/R/round_003 (sampled 10400/16384) | 10-03 10:51 → - |
+| experiment | model | round-1 K | rounds | arm-rounds trained | Pass@1 checkpoints evaluated (eval_id / eval_ood) |
+|---|---|---|---|---|---|
+| [graph_unaudited](graph_unaudited/) | Qwen3-1.7B | 64 | 8 | 80 / 80 | 81 / 81 |
+| [graph_audited](graph_audited/) | Qwen3-1.7B | 64 | 8 | 80 / 80 | 81 / 81 |
+| [graph_unaudited_llama3.2-3b](graph_unaudited_llama3.2-3b/) | Llama-3.2-3B-Instruct | 64 | 8 | 80 / 80 | 81 / 81 |
+| [graph_audited_llama3.2-3b](graph_audited_llama3.2-3b/) | Llama-3.2-3B-Instruct | 64 | 8 | 80 / 80 | 81 / 81 |
+| [arithmetic_unaudited_llama3.2-3b](arithmetic_unaudited_llama3.2-3b/) | Llama-3.2-3B-Instruct | 64 | 4 | 40 / 40 | 41 / 41 |
+| [arithmetic_audited_llama3.2-3b](arithmetic_audited_llama3.2-3b/) | Llama-3.2-3B-Instruct | 64 | 4 | 40 / 40 | 41 / 41 |
 
-An arm-round is one arm (R or S) in one round of one seed block: 5 blocks x 2 arms x `rounds` (40 at 4 rounds, 80 at 8).  Every round after the first samples 2,048 prompts x 8 answers from the arm's own model, then trains on K of them.  Evaluation covers the base and every checkpoint (1 + 10 x `rounds`) on `eval_id` (2,000 questions) and `eval_ood` (1,000), greedy.  "job" is the run's first and last job, its extension included.
+An arm-round is one arm (R or S) in one round of one seed block: 5 blocks x 2 arms x `rounds` (40 at 4 rounds, 80 at 8).  Every round after the first samples 2,048 prompts x 8 answers from the arm's own model, then trains on K of them.  Evaluation covers the base and every checkpoint (1 + 10 x `rounds`) on `eval_id` (2,000 questions) and `eval_ood` (1,000), greedy.
 
 ## Round 1: the shared pools (all 2,048 `train_001` prompts x 8 answers per seed block)
 
@@ -31,7 +28,6 @@ Matched R/S selection needs, per block, enough prompts with both a correct answe
 | graph, Qwen3-1.7B | 50.5% | 27, 29, 33, 30, 29 | 2357, 2351, 2322, 2354, 2346 | 27, 38, 32, 31, 28 | 64 | C:E 0.25, tol null: K=64; C:E 0.125, tol null: K=64; C:E 0.125, tol 0: K=64 |
 | graph, Llama-3.2-3B-Instruct | 23.4% | 147, 138, 121, 153, 132 | 2095, 2112, 2095, 2140, 2124 | 184, 180, 178, 188, 192 | 64 | C:E 0.25, tol null: K=64; C:E 0.125, tol null: K=64; C:E 0.125, tol 0: K=64 |
 | arithmetic, Llama-3.2-3B-Instruct | 74.7% | 0, 0, 2, 0, 2 | 74, 81, 71, 74, 87 | 30, 32, 17, 28, 33 | 64 | C:E 0.25, tol 0: infeasible; C:E 0.125, tol null: K=64; C:E 0.125, tol 0: infeasible |
-| arithmetic, Llama-3.2-1B-Instruct | 42.1% | 100, 111, 84, 90, 87 | 69, 69, 63, 75, 70 | 54, 45, 43, 55, 48 | 64 | C:E 0.25, tol 0: infeasible; C:E 0.125, tol null: K=64; C:E 0.125, tol 0: infeasible |
 
 C:E 0.25 = 3:1 (48 correct + 16 wrong at K = 64); tol = `matching.token_tolerance` (graph 0, arithmetic null = no limit).
 
@@ -189,6 +185,82 @@ C:E 0.25 = 3:1 (48 correct + 16 wrong at K = 64); tol = `matching.token_toleranc
 
 ![graph_unaudited_llama3.2-3b_vs_graph_audited_llama3.2-3b_eval_ood_pass1](figures/graph_unaudited_llama3.2-3b_vs_graph_audited_llama3.2-3b_eval_ood_pass1.png)
 
+### arithmetic_unaudited_llama3.2-3b: arithmetic, Llama-3.2-3B-Instruct (T 0.6, top-p 0.9)
+
+**eval_id**, greedy Pass@1 and the S-target error rate by round, mean over the 5 seed blocks ± 95% half width (t=0 is the base):
+
+| pass1 | t=0 | t=1 | t=2 | t=3 | t=4 |
+|---|---|---|---|---|---|
+| R | 0.740 ± 0.000 | 0.742 ± 0.008 | 0.746 ± 0.017 | 0.755 ± 0.008 | 0.753 ± 0.020 |
+| S | 0.740 ± 0.000 | 0.745 ± 0.007 | 0.742 ± 0.006 | 0.742 ± 0.010 | 0.739 ± 0.015 |
+| S-R | 0.000 ± 0.000 | 0.003 ± 0.006 (p=0.21) | -0.003 ± 0.021 (p=0.67) | -0.013 ± 0.012 (p=0.04) | -0.014 ± 0.019 (p=0.11) |
+
+| target_error_rate | t=0 | t=1 | t=2 | t=3 | t=4 |
+|---|---|---|---|---|---|
+| R | 0.004 ± 0.000 | 0.005 ± 0.002 | 0.006 ± 0.002 | 0.007 ± 0.001 | 0.007 ± 0.002 |
+| S | 0.004 ± 0.000 | 0.005 ± 0.002 | 0.006 ± 0.002 | 0.008 ± 0.003 | 0.010 ± 0.002 |
+| S-R | 0.000 ± 0.000 | -0.000 ± 0.002 (p=0.79) | 0.000 ± 0.003 (p=0.84) | 0.002 ± 0.003 (p=0.12) | 0.003 ± 0.003 (p=0.05) |
+
+![arithmetic_unaudited_llama3.2-3b eval_id](arithmetic_unaudited_llama3.2-3b/figures/arithmetic_unaudited_llama3.2-3b_eval_id_pass1.png)
+
+**eval_ood**, greedy Pass@1 and the S-target error rate by round, mean over the 5 seed blocks ± 95% half width (t=0 is the base):
+
+| pass1 | t=0 | t=1 | t=2 | t=3 | t=4 |
+|---|---|---|---|---|---|
+| R | 0.243 ± 0.000 | 0.264 ± 0.014 | 0.261 ± 0.014 | 0.269 ± 0.023 | 0.262 ± 0.012 |
+| S | 0.243 ± 0.000 | 0.267 ± 0.015 | 0.255 ± 0.013 | 0.249 ± 0.017 | 0.249 ± 0.033 |
+| S-R | 0.000 ± 0.000 | 0.004 ± 0.015 (p=0.54) | -0.006 ± 0.025 (p=0.55) | -0.020 ± 0.024 (p=0.09) | -0.013 ± 0.038 (p=0.41) |
+
+| target_error_rate | t=0 | t=1 | t=2 | t=3 | t=4 |
+|---|---|---|---|---|---|
+| R | 0.004 ± 0.000 | 0.004 ± 0.001 | 0.003 ± 0.001 | 0.003 ± 0.002 | 0.003 ± 0.001 |
+| S | 0.004 ± 0.000 | 0.002 ± 0.001 | 0.004 ± 0.001 | 0.003 ± 0.001 | 0.003 ± 0.002 |
+| S-R | 0.000 ± 0.000 | -0.001 ± 0.002 (p=0.11) | 0.001 ± 0.002 (p=0.18) | -0.000 ± 0.002 (p=0.59) | -0.001 ± 0.002 (p=0.29) |
+
+![arithmetic_unaudited_llama3.2-3b eval_ood](arithmetic_unaudited_llama3.2-3b/figures/arithmetic_unaudited_llama3.2-3b_eval_ood_pass1.png)
+
+### arithmetic_audited_llama3.2-3b: arithmetic, Llama-3.2-3B-Instruct (T 0.6, top-p 0.9)
+
+**eval_id**, greedy Pass@1 and the S-target error rate by round, mean over the 5 seed blocks ± 95% half width (t=0 is the base):
+
+| pass1 | t=0 | t=1 | t=2 | t=3 | t=4 |
+|---|---|---|---|---|---|
+| R | 0.740 ± 0.000 | 0.744 ± 0.012 | 0.751 ± 0.014 | 0.756 ± 0.014 | 0.754 ± 0.020 |
+| S | 0.740 ± 0.000 | 0.751 ± 0.008 | 0.750 ± 0.010 | 0.753 ± 0.013 | 0.759 ± 0.015 |
+| S-R | 0.000 ± 0.000 | 0.007 ± 0.006 (p=0.03) | -0.001 ± 0.022 (p=0.86) | -0.003 ± 0.016 (p=0.58) | 0.006 ± 0.019 (p=0.43) |
+
+| target_error_rate | t=0 | t=1 | t=2 | t=3 | t=4 |
+|---|---|---|---|---|---|
+| R | 0.004 ± 0.000 | 0.005 ± 0.003 | 0.005 ± 0.001 | 0.006 ± 0.002 | 0.005 ± 0.002 |
+| S | 0.004 ± 0.000 | 0.006 ± 0.001 | 0.006 ± 0.001 | 0.007 ± 0.002 | 0.008 ± 0.003 |
+| S-R | 0.000 ± 0.000 | 0.000 ± 0.003 (p=0.92) | 0.001 ± 0.001 (p=0.00) | 0.001 ± 0.003 (p=0.52) | 0.003 ± 0.003 (p=0.04) |
+
+![arithmetic_audited_llama3.2-3b eval_id](arithmetic_audited_llama3.2-3b/figures/arithmetic_audited_llama3.2-3b_eval_id_pass1.png)
+
+**eval_ood**, greedy Pass@1 and the S-target error rate by round, mean over the 5 seed blocks ± 95% half width (t=0 is the base):
+
+| pass1 | t=0 | t=1 | t=2 | t=3 | t=4 |
+|---|---|---|---|---|---|
+| R | 0.243 ± 0.000 | 0.258 ± 0.020 | 0.261 ± 0.017 | 0.256 ± 0.028 | 0.263 ± 0.032 |
+| S | 0.243 ± 0.000 | 0.266 ± 0.013 | 0.274 ± 0.013 | 0.280 ± 0.031 | 0.291 ± 0.052 |
+| S-R | 0.000 ± 0.000 | 0.008 ± 0.010 (p=0.08) | 0.013 ± 0.021 (p=0.17) | 0.024 ± 0.051 (p=0.26) | 0.028 ± 0.072 (p=0.34) |
+
+| target_error_rate | t=0 | t=1 | t=2 | t=3 | t=4 |
+|---|---|---|---|---|---|
+| R | 0.004 ± 0.000 | 0.004 ± 0.001 | 0.003 ± 0.001 | 0.002 ± 0.002 | 0.002 ± 0.001 |
+| S | 0.004 ± 0.000 | 0.003 ± 0.001 | 0.003 ± 0.003 | 0.002 ± 0.002 | 0.002 ± 0.002 |
+| S-R | 0.000 ± 0.000 | -0.001 ± 0.001 (p=0.30) | 0.000 ± 0.002 (p=0.83) | 0.000 ± 0.001 (p=0.37) | 0.000 ± 0.003 (p=1.00) |
+
+![arithmetic_audited_llama3.2-3b eval_ood](arithmetic_audited_llama3.2-3b/figures/arithmetic_audited_llama3.2-3b_eval_ood_pass1.png)
+
+**arithmetic_unaudited_llama3.2-3b vs arithmetic_audited_llama3.2-3b, eval_id** (both arms of both runs; [`figures/`](figures/)):
+
+![arithmetic_unaudited_llama3.2-3b_vs_arithmetic_audited_llama3.2-3b_eval_id_pass1](figures/arithmetic_unaudited_llama3.2-3b_vs_arithmetic_audited_llama3.2-3b_eval_id_pass1.png)
+
+**arithmetic_unaudited_llama3.2-3b vs arithmetic_audited_llama3.2-3b, eval_ood** (both arms of both runs; [`figures/`](figures/)):
+
+![arithmetic_unaudited_llama3.2-3b_vs_arithmetic_audited_llama3.2-3b_eval_ood_pass1](figures/arithmetic_unaudited_llama3.2-3b_vs_arithmetic_audited_llama3.2-3b_eval_ood_pass1.png)
+
 ## Rounds 0-4 of the graph runs (the 4-round view)
 
 The graph runs ran 8 rounds. Their rounds 1-4 are those of the 4-round runs, unchanged: the extension keeps them.
@@ -289,40 +361,22 @@ Per round, the mean over the seed blocks finished so far of each arm's projectio
 
 | round | R: h^T Δθ | S: h^T Δθ | R: \|Δθ\| | S: \|Δθ\| | R: loss | S: loss | blocks (R/S) |
 |---|---|---|---|---|---|---|---|
-| 1 | 0.8842 | 0.8809 | 1.2714 | 1.2668 | 0.0922 | 0.0924 | 4/4 |
-| 2 | 0.2151 | 0.1615 | 1.1720 | 1.2202 | 0.0519 | 0.0515 | 3/3 |
-| 3 | 0.0734 | 0.0338 | 1.1882 | 1.1677 | 0.0404 | 0.0435 | 3/3 |
-| 4 | 0.0422 | -0.0154 | 1.1657 | 1.2028 | 0.0348 | 0.0349 | 3/3 |
+| 1 | 0.9028 | 0.9093 | 1.2743 | 1.2772 | 0.0924 | 0.0926 | 5/5 |
+| 2 | 0.2652 | 0.1598 | 1.1757 | 1.2015 | 0.0544 | 0.0541 | 5/5 |
+| 3 | 0.0528 | 0.0741 | 1.1658 | 1.1541 | 0.0430 | 0.0458 | 5/5 |
+| 4 | 0.0155 | -0.0519 | 1.1598 | 1.1912 | 0.0382 | 0.0383 | 5/5 |
 
 **arithmetic_audited_llama3.2-3b**
 
 | round | R: h^T Δθ | S: h^T Δθ | R: \|Δθ\| | S: \|Δθ\| | R: loss | S: loss | blocks (R/S) |
 |---|---|---|---|---|---|---|---|
-| 1 | 0.7998 | 0.8305 | 1.1757 | 1.1855 | 0.0948 | 0.0929 | 4/4 |
-| 2 | 0.1776 | 0.1037 | 1.0686 | 0.9737 | 0.0554 | 0.0565 | 3/3 |
-| 3 | -0.0006 | 0.0164 | 1.0410 | 1.0516 | 0.0390 | 0.0445 | 3/3 |
-| 4 | 0.0276 | 0.0342 | 1.1571 | 1.1975 | 0.0307 | 0.0394 | 3/3 |
-
-**arithmetic_unaudited_llama3.2-1b**
-
-| round | R: h^T Δθ | S: h^T Δθ | R: \|Δθ\| | S: \|Δθ\| | R: loss | S: loss | blocks (R/S) |
-|---|---|---|---|---|---|---|---|
-| 1 | 1.5249 | 1.5640 | 0.9380 | 0.9435 | 0.1475 | 0.1431 | 4/4 |
-| 2 | 0.1534 | 0.1866 | 0.7316 | 0.7061 | 0.0799 | 0.0763 | 4/3 |
-| 3 | 0.0813 | 0.0271 | 0.7099 | 0.7058 | 0.0567 | 0.0567 | 3/3 |
-| 4 | -0.0394 | 0.0272 | 0.6927 | 0.7445 | 0.0507 | 0.0496 | 3/3 |
-
-**arithmetic_audited_llama3.2-1b**
-
-| round | R: h^T Δθ | S: h^T Δθ | R: \|Δθ\| | S: \|Δθ\| | R: loss | S: loss | blocks (R/S) |
-|---|---|---|---|---|---|---|---|
-| 1 | 1.4864 | 1.5180 | 0.9160 | 0.9137 | 0.1451 | 0.1431 | 4/4 |
-| 2 | 0.1394 | 0.2143 | 0.6614 | 0.7016 | 0.0699 | 0.0676 | 4/4 |
-| 3 | 0.0218 | 0.0127 | 0.6522 | 0.5976 | 0.0584 | 0.0482 | 3/3 |
-| 4 | 0.0221 | -0.0683 | 0.5761 | 0.6432 | 0.0409 | 0.0420 | 3/3 |
+| 1 | 0.8150 | 0.8474 | 1.1789 | 1.1874 | 0.0948 | 0.0936 | 5/5 |
+| 2 | 0.1821 | 0.1735 | 1.0780 | 1.0502 | 0.0539 | 0.0558 | 5/5 |
+| 3 | -0.0665 | 0.0148 | 0.9969 | 1.0969 | 0.0388 | 0.0478 | 5/5 |
+| 4 | 0.0504 | 0.0444 | 1.0980 | 1.1745 | 0.0332 | 0.0399 | 5/5 |
 
 ## What this snapshot leaves out
 
 Per experiment, everything in `$RSI_ROOT/experiments/NAME/` is here except the raw answers and the weights:
-the round-1 pools (`pools/bNN.jsonl`; their `.meta.json` are here), the later-round pools (`pool.jsonl`), the training sets (`training.jsonl`, `pre_audit.jsonl`), every evaluated answer (`out/evaluation_greedy_*/*.jsonl`; the per-checkpoint `.json` summaries are here), the audit ledgers (`audit_ledger/`: the audited examples with their answers; each round's `audit.json` summary is here), the LoRA adapters and `reference/h.pt`.  Logs are here without their progress lines (`generated N/16384`, checkpoint loading bars).  The full folders (about 0.2-0.5 GB per experiment without adapters) stay on the cluster under `/cluster/rsi-runs/work/experiments/`; ask for them.
+the round-1 pools (`pools/bNN.jsonl`; their `.meta.json` are here), the later-round pools (`pool.jsonl`), the training sets (`training.jsonl`, `pre_audit.jsonl`), every evaluated answer (`out/evaluation_greedy_*/*.jsonl`; the per-checkpoint `.json` summaries are here), the audit ledgers (`audit_ledger/`: the audited examples with their answers; each round's `audit.json` summary is here), the LoRA adapters and `reference/h.pt`.  Logs are here without their progress lines (`generated N/16384`, checkpoint loading bars).
 

@@ -12,7 +12,7 @@ The rule
   * Only `dev` and `train_NNN` may be sampled, on every backend.  calibration,
     eval_id, eval_ood and gradient_reference never enter a pool: calibration
     fits the verifier, the eval splits are the held-out test, and the 64
-    gradient_reference rows are diagnostic only (HANDOFF 22-24, PLAN 120-123).
+    gradient_reference rows are diagnostic only.
     It is an allow-list, so a split added later is refused until it is named
     here.
   * On hf, `--split`, `--study-id` and `--phase` are required, and the phase

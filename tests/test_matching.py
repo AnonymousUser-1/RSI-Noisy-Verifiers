@@ -8,7 +8,7 @@ branches came out at ``c_quota + 2 * e_quota`` rather than ``c_quota + e_quota``
     request K=16 (C=12, E=4)  ->  K_R = K_S = 20, C_R = 16, E_R = 4
 
 The certificate still reported ``K=16`` and the result was still returned as
-``feasible: True``.  b78c994 fixed the loop (T003 fix A) and added a post-hoc
+``feasible: True``.  b78c994 fixed the loop  and added a post-hoc
 audit that returns ``feasible: False``; `_materialise` now also checks its own
 output against the request and raises, so a size bug stops the run instead of
 reading as an infeasible pool and stepping the K ladder down.  These tests pin

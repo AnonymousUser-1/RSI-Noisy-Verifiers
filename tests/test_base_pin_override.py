@@ -1,6 +1,6 @@
 """RSI_BASE_PIN: running the matched study on another base model.
 
-The study pins one base (matched-dynamics/base_pin.json, Qwen3-1.7B).  A
+The study pins one base (configs/pins/base_pin.json, Qwen3-1.7B).  A
 teammate running the same protocol on another model (e.g. Qwen3-4B) names that
 model's pin file with RSI_BASE_PIN instead of editing the frozen one.  The pin
 file and its sha256 are already in every binding check_base_pin returns, so a
@@ -15,7 +15,7 @@ from rsi.base_pin import BASE_PIN, check_base_pin, read_base_pin
 from rsi.common import file_hash
 
 REPO = Path(__file__).resolve().parents[1]
-QWEN3_4B = REPO / "matched-dynamics" / "base_pin_qwen3-4b.json"
+QWEN3_4B = REPO / "configs" / "pins" / "base_pin_qwen3-4b.json"
 
 
 class BasePinOverrideTests(unittest.TestCase):

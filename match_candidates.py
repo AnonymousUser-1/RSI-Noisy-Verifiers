@@ -3,8 +3,7 @@
 
 Wraps `rsi.matching.select_k_for_blocks` so the joint construction and the
 ladder/infeasibility report are reachable as a command rather than only as a
-library call (`KNOWN_GAPS.md` B: "the joint matching CLI path, and the
-ladder/infeasibility reporting are not wired into any command").
+library call.
 
 Input is a directory of per-block candidate pools: one JSONL per block, named
 `<block>.jsonl`, each row carrying the candidate fields a pool row already has.
@@ -14,7 +13,7 @@ construction.
 
 Infeasibility is a *result*, not a crash: when no ladder size (64 -> 32 -> 16)
 works, this writes the per-block certificates and exits non-zero with a clear
-message.  `HANDOFF.md` step 3 says stop there; it does not say relax anything.
+message.  Nothing is relaxed.
 """
 import argparse
 import json

@@ -2,7 +2,7 @@
 """Generate immutable, disjoint task splits with content hashes.
 
 `gradient_reference` (64 prompts by default) is the held-out set the reference
-gradient h is computed on (HANDOFF A.1).  It is for diagnostics only: nothing
+gradient h is computed on.  It is for diagnostics only: nothing
 that builds candidate pools, matches or tunes reads it.  It is drawn like the
 training prompts -- same task, same generator, difficulty i % 3 -- and it is
 generated last.  `seen` is shared across splits, so a split generated earlier

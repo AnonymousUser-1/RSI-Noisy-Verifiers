@@ -1,6 +1,6 @@
 """Regression tests for gradient_recorder.py fixes (Issue B defect 3).
 
-Tests the vector composition validation from review task T003:
+Tests the vector composition validation from review:
 D. Exact cancellation: g_C=(1,0), g_E=(-1,0), batch=(0,0)
 E. Orthogonal: g_C=(1,0), g_E=(0,1), batch=(1,1)
 F. Same norm wrong direction: g1=g2=(1,0), fake_batch=(0,2)

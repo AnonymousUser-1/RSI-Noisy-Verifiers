@@ -1,4 +1,4 @@
-"""Regression tests for the matched-dynamics candidate modules.
+"""Regression tests for the matched-experiment candidate modules.
 
 Deliberately a separate file from `test_core.py`, whose text and semantics are
 frozen and cover the legacy eight-round protocol.  Nothing here trains and

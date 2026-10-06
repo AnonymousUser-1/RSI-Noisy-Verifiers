@@ -24,8 +24,7 @@ REPO = Path(__file__).resolve().parents[1]
 EXPERIMENTS = ("graph_unaudited", "graph_audited", "arithmetic_unaudited", "arithmetic_audited",
                "graph_unaudited_qwen3-4b",
                "graph_unaudited_llama3.2-3b", "graph_audited_llama3.2-3b",
-               "arithmetic_unaudited_llama3.2-3b", "arithmetic_audited_llama3.2-3b",
-               "arithmetic_unaudited_llama3.2-1b", "arithmetic_audited_llama3.2-1b")
+               "arithmetic_unaudited_llama3.2-3b", "arithmetic_audited_llama3.2-3b")
 STAGES = ("pool", "pilot", "adapter", "reference", "iterative")
 UNPAIRED = ("graph_unaudited_qwen3-4b",)    # no audited sibling in this release
 

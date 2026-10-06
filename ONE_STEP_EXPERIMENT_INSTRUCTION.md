@@ -1,6 +1,6 @@
 # One-step R/S experiment: instructions
 
-How to run the one-step comparison on any GPU, for each of the five model–task combinations in
+How to run the one-step comparison on any GPU, for each of the four model–task combinations in
 this study. It runs from the same `experiments/` folders as the multi-round experiments and reads
 the experiment's round-1 pools, shared adapter and round-1 matching, so the one-step comparison
 trains on exactly the examples the multi-round run trains on in its first round. Setup, data,
@@ -44,7 +44,7 @@ blocks and equal to the multi-round round 1's K.
 coordinate moves by about the learning rate in the direction opposite to the sign of its gradient.
 A different learning rate therefore rescales Δθ, and with it hᵀΔθ, without changing its sign or
 the ratio between R and S. The one-step study keeps 5e-5 because its readout is this direction;
-2e-4 is the multi-round rate (`matched-dynamics/DECISION.md`, multi-round extension). The Pass@1
+2e-4 is the multi-round rate. The Pass@1
 readout is reported at 5e-5.
 
 **Why the one-step run uses the multi-round run's pools.** Given the pools and the seed, the
@@ -55,30 +55,16 @@ one-step run therefore reads the experiment's existing pools and shared adapter,
 round-1 matching on them, and is accepted only if the result equals the multi-round run's round-1
 matching (section 4, check 4).
 
-## 2. The eight model–task combinations
+## 2. The four model–task combinations
 
-The study covers Qwen3-1.7B (main model), Qwen3-4B (scale) and Llama-3.2-3B/1B-Instruct (a second
-model family) on the graph and arithmetic tasks: eight combinations. Five can be matched and are
-run; three cannot be matched and are reported as infeasible.
+The study runs Qwen3-1.7B, Qwen3-4B and Llama-3.2-3B-Instruct on the graph and arithmetic tasks:
 
 | Model | Task | One-step | Experiment folder | Round-1 pools |
 |---|---|---|---|---|
 | Qwen3-1.7B | graph | **run** | `graph_unaudited` | drawn by the experiment |
-| Qwen3-4B | graph | **run** | `graph_unaudited_qwen3-4b` | drawn by the experiment; original inputs can optionally be imported (section 9) |
+| Qwen3-4B | graph | **run** | `graph_unaudited_qwen3-4b` | drawn by the experiment |
 | Llama-3.2-3B | graph | **run** | `graph_unaudited_llama3.2-3b` | drawn by the experiment |
 | Llama-3.2-3B | arithmetic | **run** | `arithmetic_unaudited_llama3.2-3b` | drawn by the experiment |
-| Llama-3.2-1B | arithmetic | **run** | `arithmetic_unaudited_llama3.2-1b` | drawn by the experiment |
-| Qwen3-1.7B | arithmetic | infeasible | `arithmetic_unaudited` (kept for a later S target) | — |
-| Qwen3-4B | arithmetic | infeasible | — | — |
-| Llama-3.2-1B | graph | infeasible | — | — |
-
-**Why three are infeasible.** Each seed block must supply C correct examples and E error examples
-at a common K; an error example needs an answer with S's target error, and the smallest K of the
-ladder (16 at 3:1) needs four per block. Qwen3-1.7B and Qwen3-4B almost never make the arithmetic
-target error (`ignore_parentheses` in 1 and 0 of 4,096 pilot answers), so S's quota cannot be
-filled at any K, ratio or token tolerance. Llama-3.2-1B gives almost no correct graph answers (at
-most 0.1% in every sampling setting tried), so the correct quota cannot be filled. The pilot data
-are in [`matched-dynamics/DECISION.md`](matched-dynamics/DECISION.md).
 
 ## 3. Inputs
 
@@ -167,10 +153,10 @@ bash experiments/one_step.sh graph_unaudited reference train
 bash experiments/one_step.sh graph_unaudited evaluate figures
 ```
 
-The five combinations, one after another on one GPU:
+The four combinations, one after another on one GPU:
 
 ```bash
-for exp in graph_unaudited graph_unaudited_qwen3-4b graph_unaudited_llama3.2-3b arithmetic_unaudited_llama3.2-3b arithmetic_unaudited_llama3.2-1b; do bash experiments/one_step.sh "$exp"; done
+for exp in graph_unaudited graph_unaudited_qwen3-4b graph_unaudited_llama3.2-3b arithmetic_unaudited_llama3.2-3b; do bash experiments/one_step.sh "$exp"; done
 ```
 
 | Stage | What it does |
@@ -266,7 +252,7 @@ improvement.
 
 **Blocks.** All five blocks are run and reported. The paper reports the one-step comparison on the
 same five blocks b00–b04 as the multi-round runs, so that each one-step block is paired with the
-multi-round block that uses the same round-1 pool (`matched-dynamics/DECISION.md`).
+multi-round block that uses the same round-1 pool.
 
 **Cost.** `compute_reference_gradient.py`, every arm of `run_matched_experiment.py` and every
 checkpoint and split of `evaluate_multiround.py` write one cost record per attempt (`rsi/cost.py`):

@@ -2,7 +2,7 @@ from __future__ import annotations
 
 """Gradient recording and diagnostic computation for matched-subset experiments.
 
-Records all diagnostics required by matched-dynamics/PLAN.md Section 4:
+Records the diagnostics of the matched experiment:
 - per-sample supervised response-token loss
 - streaming per-sample gradient vectors (G_C, G_E accumulation)
 - gradient before/after clipping

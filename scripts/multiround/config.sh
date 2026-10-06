@@ -18,10 +18,10 @@ esac
 MODEL_TAG="${MODEL_TAG:-qwen3-1.7b}"
 
 case "$MODEL_TAG" in
-  qwen3-1.7b)  SUFFIX="";             PIN_FILE="matched-dynamics/base_pin.json" ;;
-  qwen3-4b)    SUFFIX="_qwen3-4b";    PIN_FILE="matched-dynamics/base_pin_qwen3-4b.json" ;;
-  llama3.2-3b) SUFFIX="_llama3.2-3b"; PIN_FILE="matched-dynamics/base_pin_llama3.2-3b.json" ;;
-  llama3.2-1b) SUFFIX="_llama3.2-1b"; PIN_FILE="matched-dynamics/base_pin_llama3.2-1b.json" ;;
+  qwen3-1.7b)  SUFFIX="";             PIN_FILE="configs/pins/base_pin.json" ;;
+  qwen3-4b)    SUFFIX="_qwen3-4b";    PIN_FILE="configs/pins/base_pin_qwen3-4b.json" ;;
+  llama3.2-3b) SUFFIX="_llama3.2-3b"; PIN_FILE="configs/pins/base_pin_llama3.2-3b.json" ;;
+  llama3.2-1b) SUFFIX="_llama3.2-1b"; PIN_FILE="configs/pins/base_pin_llama3.2-1b.json" ;;
   *) echo "config.sh: unknown MODEL_TAG '$MODEL_TAG' (qwen3-1.7b | qwen3-4b | llama3.2-3b | llama3.2-1b)" >&2; exit 1 ;;
 esac
 
@@ -30,7 +30,7 @@ esac
 POOL_CONFIG="configs/matched_pool${SUFFIX}.json"
 ITER_CONFIG="configs/matched_iterative${SUFFIX}.json"
 # The audited multi-round run (09): ITER_CONFIG plus budgeted auditing, adaptive, 16 correctness
-# checks per arm per round from round 1 (matched-dynamics/AUDITING.md).
+# checks per arm per round from round 1.
 AUDIT_CONFIG="configs/matched_iterative_audit${SUFFIX}.json"
 # Every entry checks the base against this pin; it is recorded in every run.
 # (pwd -W gives a Windows path under Git Bash, which Windows Python can open; Linux has no -W.)

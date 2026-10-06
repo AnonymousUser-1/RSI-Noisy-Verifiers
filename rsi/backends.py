@@ -21,7 +21,7 @@ def resolve_revision(model, revision):
 def lora_config_from_training(training):
     """Build the PEFT LoRA config from the config's training values.
 
-    Single source of truth for the matched-dynamics adapter: rank, alpha, dropout and
+    Single source of truth for the adapter: rank, alpha, dropout and
     target modules come from the config (configs/README.md), with plain alpha/r scaling
     (`use_rslora=False`).  Every value is read from the resolved config; nothing about the adapter is
     hardcoded here, so a config that retunes LoRA is visible in the run manifest.

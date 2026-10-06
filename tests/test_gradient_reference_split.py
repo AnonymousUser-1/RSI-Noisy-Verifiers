@@ -1,4 +1,4 @@
-"""Tests for the gradient_reference split (HANDOFF A.1, PLAN section 5).
+"""Tests for the gradient_reference split .
 
 The split holds the prompts the reference gradient h is computed on: 64 by
 default, drawn like the training prompts (same task, same generator,

@@ -72,7 +72,7 @@ def analyze(root, out, include_demo=False, plots=False, compare=None):
             attempt = run / done["attempt"]
             # Denominators are counted once, from the common original pool that every
             # stage was drawn from. Stage TPR/FPR taken over the stage's own rows is the
-            # statistic the design explicitly rejects (KNOWN_GAPS.md B; PLAN.md 3.7),
+            # statistic the design explicitly rejects,
             # because selection, provisional reduction and the training cap each shrink
             # and reweight the pool, so a rate computed inside a stage is not comparable
             # across stages or branches. The within-stage rates are still emitted, under
@@ -104,7 +104,7 @@ def analyze(root, out, include_demo=False, plots=False, compare=None):
                                     "tpr": tp/n_pos if n_pos else None,
                                     "fpr": fp/n_neg if n_neg else None,
                                     "yield": kept/(n_pos+n_neg) if (n_pos+n_neg) else None,
-                                    # PLAN.md's `precision = C / K` is this same ratio; the
+                                    # `precision = C / K` is this same ratio; the
                                     # existing column name is kept so old CSVs still line up.
                                     "purity": tp/kept if kept else None,
                                     "quota_target_tpr": cfg["verifier"]["tpr"],

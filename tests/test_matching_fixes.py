@@ -1,6 +1,6 @@
 """Regression tests for matching.py fixes (Issue B defects 1-2).
 
-Tests the three fix scenarios from review task T003:
+Tests the three fix scenarios from review:
 A. K=16 correct-only pool should produce 16 correct + 0 error (not 20+4)
 B. Error-only tasks are eligible for error role
 C. Multiple correct-candidate lengths with error bucket at different length

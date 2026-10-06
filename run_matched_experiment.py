@@ -7,7 +7,7 @@
         --shared-adapter ADAPTER --reference-gradient H_DIR       (hf)
     python run_matched_experiment.py ... --backend mock           (plumbing only)
 
-The single entry for the matched-dynamics main path (PLAN.md 3 and 6).  The
+The single entry for the matched experiment's main path.  The
 legacy multi-round loop (rsi.experiment.run, run_job.py) is not used here.
 
 Input
@@ -15,7 +15,7 @@ Input
                  sample_candidates.py with its <block>.jsonl.meta.json.  The
                  block id is the file name without .jsonl.  Each pool is read
                  once and checked against the sha256 its meta records before
-                 anything is matched or trained (PLAN.md 3, step 1).
+                 anything is matched or trained.
   --study-id, --phase
                  RUN_COST_SPEC 1 identity, never guessed.  On mock either may
                  be left out: run.json then records it as null with the
@@ -86,7 +86,7 @@ Block ids
 
 Backends
   Without --backend the config's backend applies, which is hf.  hf checks the
-  base against matched-dynamics/base_pin.json (or the pin file RSI_BASE_PIN
+  base against configs/pins/base_pin.json (or the pin file RSI_BASE_PIN
   names, rsi/base_pin.py) and runs every arm on the GPU
   with deterministic kernels (rsi/determinism.py), recording
   diagnostics.json per arm; an arm that writes none fails the run.  The mock
@@ -120,7 +120,7 @@ from rsi.shared_adapter import lora_mismatch, read_shared_record
 from rsi.tasks import judge
 
 SCHEMA_VERSION = "rsi-run-cost/1"
-# RUN_COST_SPEC 1: the seed blocks.  PLAN.md 6 runs three seed blocks; the one-step experiments
+# RUN_COST_SPEC 1: the seed blocks.  This entry runs three seed blocks by default; the one-step experiments
 # use five (one per seed, matching the multi-round run they share pools with).
 BLOCKS = ("b00", "b01", "b02")
 HF_BLOCK_SETS = (BLOCKS, ("b00", "b01", "b02", "b03", "b04"))
@@ -312,7 +312,7 @@ def check_branch_rows(block, r_rows, s_rows, k, error_fraction=DEFAULT_ERROR_FRA
 
     rsi.matching audits its own output; this checks what reaches one_step after
     the per-block lookups, so a lookup that mixed blocks or reordered prompts
-    is caught before any arm runs (PLAN.md 3, step 4).
+    is caught before any arm runs.
     """
     def correct(rows):
         return {r["id"] for r in rows if r["correct"]}

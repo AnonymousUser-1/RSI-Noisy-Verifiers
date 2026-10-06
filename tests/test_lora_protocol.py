@@ -1,7 +1,6 @@
 """LoRA settings come from the config, are stated in every shipped config, and are validated.
 
-Issue T003-P1: the LoRA values in `matched-dynamics/HANDOFF.md` and the Methods
-4.3 write-up disagreed with code defaults in `rsi/common.py` and with a
+The LoRA values in an earlier write-up disagreed with code defaults in `rsi/common.py` and with a
 seven-module list hardcoded in `rsi/backends.py`.  The guard is that every
 shipped config states its LoRA fields and that `rsi/backends.py` takes them from
 the config; the values themselves are each config's own and are not pinned here

@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 """Compute the reference gradient `h = grad R_reference` for the matched experiment.
 
-`h` is the vector the main diagnostic projects onto: `h^T Delta theta` (PLAN.md
-section 4, HANDOFF.md deliverable B.3).  It is computed **once per common
+`h` is the vector the main diagnostic projects onto: `h^T Delta theta`.  It is computed **once per common
 initialisation point** -- the `shared_adapter/` the arms start from -- and shared
 by that point's R, S and null arms.  It is not shared across different
 initialisations: an h taken at one shared adapter is a gradient at that point only.
@@ -47,7 +46,7 @@ sampling-independent and shareable, and would define a different reference risk.
 A re-ruling flips `--label-source`.  The canonical answer's NLL is also not the
 task risk over *all* legal answers: a graph task with several shortest paths has
 one canonical path here.  This is a response-token NLL diagnostic on 64 held-out
-prompts, used for diagnostics only -- never for selection or tuning (PLAN.md 5).
+prompts, used for diagnostics only -- never for selection or tuning.
 
 Projectable by check, not by assumption
 ---------------------------------------
@@ -97,7 +96,7 @@ def reference_rows(data):
     """The `gradient_reference` split: prompt-only rows, diagnostics only."""
     path = Path(data) / "gradient_reference.jsonl"
     if not path.exists():
-        raise SystemExit("%s does not exist; generate_data.py writes it (PLAN.md section 5)" % path)
+        raise SystemExit("%s does not exist; generate_data.py writes it" % path)
     rows = read_jsonl(path)
     if not rows:
         raise SystemExit("%s is empty" % path)
@@ -237,8 +236,8 @@ def main(args):
     config = load_config(args.config, args.seed, args.backend)
     if config["backend"] != "hf":
         raise SystemExit("The reference gradient needs a real model; the mock backend has no "
-                         "trainable parameters that could carry one (KNOWN_GAPS.md forbids "
-                         "substituting mock numbers for real ones)")
+                         "trainable parameters that could carry one (mock numbers are "
+                         "never substituted for real ones)")
     # h always uses its independent reference split, never selected/audited data.
     # Allow an audit-enabled run config so its full config hash binds to the arms;
     # no online audit is performed while calculating this diagnostic reference.

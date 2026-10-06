@@ -1,0 +1,31 @@
+{
+  "answers_per_question": 1,
+  "base": {
+    "backend": "hf",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "model": "meta-llama/Llama-3.2-3B-Instruct",
+    "revision": "0cb88a4f764b7a12671c53f0838cd831a0843b95"
+  },
+  "data_path": "/cluster/rsi-runs/work/data/arithmetic",
+  "dataset_hash": "5b5be55fb005b31d3fe4d3764a9537e40382eb30783782c41c977d0e7e593d1d",
+  "decoding": {
+    "max_new_tokens": 2048,
+    "max_sequence_length": 4096,
+    "repetition_stop": {
+      "max_period": 32,
+      "span": 128
+    },
+    "temperature": 0.0,
+    "top_k": null,
+    "top_p": 1.0
+  },
+  "question_ids": "199cbca557bab4be6a6a47aa0be845f85b0c6b90d1642f73a243b08dca19bc2b",
+  "questions": 2000,
+  "round_0": "base model, no adapter (shared adapter has LoRA B = 0)",
+  "split": "eval_id",
+  "target_signatures": [
+    "ignore_parentheses"
+  ],
+  "task": "arithmetic"
+}

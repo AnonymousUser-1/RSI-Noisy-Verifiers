@@ -11,7 +11,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("output", type=Path, help="Fresh directory for smoke-test artifacts")
     parser.add_argument("--model", help="Hugging Face model ID; default: the study's base pin "
-                                        "(matched-dynamics/base_pin.json, or the file RSI_BASE_PIN names)")
+                                        "(configs/pins/base_pin.json, or the file RSI_BASE_PIN names)")
     parser.add_argument("--revision", help="Immutable commit id of --model; required with --model")
     args = parser.parse_args()
     from rsi.base_pin import read_base_pin

@@ -196,7 +196,7 @@ class MatchedLinePinTests(unittest.TestCase):
         from rsi.base_pin import read_base_pin
         readme = (REPO / "README.md").read_text(encoding="utf-8")
         for size, (model, revision) in LLAMA_PINS.items():
-            pin = read_base_pin(REPO / "matched-dynamics" / ("base_pin_llama3.2-%s.json" % size))
+            pin = read_base_pin(REPO / "configs" / "pins" / ("base_pin_llama3.2-%s.json" % size))
             self.assertEqual((pin["model"], pin["revision"]), (model, revision))
             self.assertIn("| `%s` | `%s` |" % (model, revision), readme)
             for kind in ("pool", "iterative"):
@@ -227,7 +227,7 @@ class MatchedLinePinTests(unittest.TestCase):
             self.data = Path(d) / "data"
             with redirect_stdout(io.StringIO()):
                 generate(self.data, "graph", 7, 4, 8, 4, 4, 4, 4)
-            pin = str(REPO / "matched-dynamics" / "base_pin_llama3.2-1b.json")
+            pin = str(REPO / "configs" / "pins" / "base_pin_llama3.2-1b.json")
             for entry, config, extra in ((run_matched_experiment, "matched_pool_llama3.2-1b.json", {}),
                                          (run_iterative_experiment, "matched_iterative_llama3.2-1b.json",
                                           {"later_prompts": 4, "later_samples": 2, "resume": False})):

@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """One-step entry: the R, S and null comparison for one already-matched pool.
 
-`HANDOFF.md` deliverable B.4: "all `K` examples accumulated, exactly one
-`optimizer.step()`, dropout 0, uniform weights, auditing off, identical optimizer
-state, learning rate, prompt order, and clip threshold across branches."
+All `K` examples accumulated, exactly one `optimizer.step()`, dropout 0, uniform
+weights, auditing off, identical optimizer state, learning rate, prompt order, and
+clip threshold across branches.
 
-Three arms, not two (`HANDOFF.md` order of work, step 4): **R, S, and the
+Three arms, not two: **R, S, and the
 un-updated null**.  The null arm is the zero-step reference the two trained
 branches are read against; without it a branch contrast has no floor, and the
 review set's scripts that loop `for branch in ("R", "S")` silently drop it.
@@ -36,8 +36,7 @@ steps and saves an unchanged adapter. The frozen null still uses unaudited R.
 
 The `mock` backend does not train (see `MockBackend.train`), so with it the
 gradient diagnostics are recorded as `skipped` with a reason rather than
-invented.  That is deliberate: `KNOWN_GAPS.md` forbids substituting mock numbers
-for real ones, and a fabricated gradient norm would be exactly that.
+invented.  That is deliberate: mock numbers are never substituted for real ones, and a fabricated gradient norm would be exactly that.
 """
 import argparse
 import json

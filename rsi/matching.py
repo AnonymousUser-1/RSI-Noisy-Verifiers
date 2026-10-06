@@ -29,8 +29,7 @@ independently and overlap only by chance:
 
   * *which* tasks take the C correct and the E error roles.  Among equally
     constrained tasks the solver follows a random order.  (In task-id order
-    every block took nearly the same lowest-id correct prompts;
-    matched-dynamics/DECISION.md, 2026-10-02.)
+    every block took nearly the same lowest-id correct prompts.)
   * *which* responses fill those tasks.  A correct task's answer, shared by R
     and S, is drawn uniformly inside its length bucket.  S takes a target error
     (`nonshortest` by default) that has a non-target error within
@@ -75,8 +74,7 @@ def targets_for(task):
     return TARGETS_BY_TASK[task]
 
 # Declared, uniform downsizing ladder.  The C:E ratio and the length tolerance are
-# config fields (matching.error_fraction, matching.token_tolerance), 3:1 and 0 by default
-# as FROZEN_CONTRACT 7 set them (matched-dynamics/DECISION.md, 2026-10-02).  Within a
+# config fields (matching.error_fraction, matching.token_tolerance), 3:1 and 0 by default.  Within a
 # run nothing is relaxed: no seed change, no size outside the ladder, no tolerance beyond
 # the configured one.
 K_LADDER = (64, 32, 16)
@@ -245,7 +243,7 @@ def _solve(views: Dict[str, _TaskView], c_quota: int, e_quota: int, seed, *, dra
     rather than the lowest task ids.  Every task of an 8-answer pool has 8
     candidates, so this tie-break decides which prompts are used; in task-id
     order every seed block filled its correct quota with nearly the same
-    prompts (matched-dynamics/DECISION.md, 2026-10-02).
+    prompts.
     """
     target_tasks = sorted(views)
     correct_only = [t for t in target_tasks if views[t].has_correct and not views[t].eligible]

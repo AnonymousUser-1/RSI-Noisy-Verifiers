@@ -3,8 +3,8 @@
 # the dev prompts x generation.candidates answers with POOL_CONFIG's settings, then pilot_report.py.
 # Go ahead when: no truncated answers, format errors <= 5%, accuracy 30-70%, and the J_E estimate
 # for a round-1 pool >= the wrong answers K = 64 needs (64 x matching.error_fraction: 16 at 3:1; 1.25 x that for
-# margin).  If not, stop and tell the team: the prompt or temperature may need a pilot
-# change for this model (as for Qwen3-1.7B, matched-dynamics/DECISION.md) before the main run.
+# margin).  If not, stop: the prompt or temperature may need a pilot
+# change for this model before the main run.
 set -euo pipefail
 cd "$(dirname "$0")/../.."
 source scripts/multiround/config.sh

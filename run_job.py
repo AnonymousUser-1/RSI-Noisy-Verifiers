@@ -16,7 +16,7 @@ if __name__ == "__main__":
     # The matched-error comparison only exists if both branches are drawn from one
     # identical candidate pool.  run_experiment.py already accepts --initial-pool;
     # without this flag run_job.py would silently regenerate a fresh pool per
-    # branch, which is the defect KNOWN_GAPS.md B records.
+    # branch.
     p.add_argument("--initial-pool", help="Shared round-1 candidate JSONL generated with sample_candidates.py")
     a = p.parse_args()
     c = load_config(a.config, a.seed)

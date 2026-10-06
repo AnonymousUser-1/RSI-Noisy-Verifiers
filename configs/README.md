@@ -5,7 +5,7 @@ refuses a config that leaves a field it reads to the code defaults (`rsi.common.
 `require_explicit`), and the scripts in `scripts/multiround/` pass no setting of their own. Every
 pool meta and run record holds the resolved config (pools and runs also the config file's path and
 sha256; h its hash; the shared adapter its LoRA settings). Nothing pins a value: to
-change one, edit the config, record why in `matched-dynamics/DECISION.md`, and start a new study
+change one, edit the config and start a new study
 (the config hash is part of every run's identity, and a pool drawn with other settings is refused:
 04 stops on a round-1 pool whose recorded generation settings are not `POOL_CONFIG`'s, and 06/09 on
 round-1 pools whose sampling -- temperature, top-p, top-k,
@@ -20,11 +20,11 @@ evaluation config serves every model:
 |---|---|---|
 | `matched_pool[_TAG].json` (`POOL_CONFIG`) | `03_pilot_check.sh`, `04_round1_pools.sh` | the pilot and round-1 pools; also a standalone one-step config for `run_matched_experiment.py` (the study's one-step comparison runs from `experiments/one_step.sh`) |
 | `matched_iterative[_TAG].json` (`ITER_CONFIG`) | `05_adapter_and_h.sh` (the shared adapter and its h), `06_multiround.sh` | the multi-round run: its later-round sampling and its training |
-| `matched_iterative_audit[_TAG].json` (`AUDIT_CONFIG`) | `09_audit.sh` (its own h, then the audited run) | the multi-round run with budgeted auditing (`matched-dynamics/AUDITING.md`): `ITER_CONFIG` with `audit` adaptive / 16 |
+| `matched_iterative_audit[_TAG].json` (`AUDIT_CONFIG`) | `09_audit.sh` (its own h, then the audited run) | the multi-round run with budgeted auditing: `ITER_CONFIG` with `audit` adaptive / 16 |
 | `matched_evaluation.json` (`EVAL_CONFIG`) | `08_evaluate.sh`, `10_evaluate_audit.sh` (`evaluate_multiround.py`) | Pass@1 evaluation: its held-out splits and batch size |
 
 `matched_pool_audit.json` is the Qwen3-1.7B pool config with budgeted auditing on, for the one-step
-run (`matched-dynamics/AUDITING.md`).
+run.
 
 ## Fields
 
@@ -38,8 +38,8 @@ run (`matched-dynamics/AUDITING.md`).
 | `generation.prompts_per_pool` | how many prompts of the split a pool samples, the first N; `null` = all (pool config: all of `train_001` or `dev`; iterative config: 512 of `train_00t`). It applies to every pool the config draws, the 512-prompt `dev` pilot included, and a value above a split's size is refused | `pool`, `pilot`, `iterative` |
 | `generation.batch_size` | rows per generate call (16); part of what reproduces a pool. One answer that loops holds its whole batch to `max_new_tokens`; on a small GPU a smaller batch bounds memory | `pool`, `iterative` |
 | `generation.temperature`, `top_p`, `top_k` | sampling; `top_k` `null` is off | `pool`, `pilot`, `iterative` |
-| `generation.max_new_tokens` | the generation cap, 2,048, far above any finished answer (graph: Qwen3-1.7B p99 54 tokens; Llama-3.2-3B at most 121 at its sampling, `DECISION.md`); what reaches it is a loop that would not stop at any cap. An answer that reaches it without a stop token is marked `truncated`: it is judged and kept in its pool, but never matched, selected or trained on, and evaluation counts it (`truncated_answers`) | `pool`, `iterative`; evaluation |
-| `generation.repetition_stop` | `{"span": 128, "max_period": 32}`: a row stops once its last 128 generated tokens repeat with a period of at most 32 tokens -- a loop, which would otherwise run to `max_new_tokens` and hold its whole batch there (greedy evaluation and sampling alike). It is cut there and marked `truncated`, like a row cut at the cap (`completion_tokens` tells them apart). A finished answer never ends in such a tail, so none is changed; `null` turns it off (`matched-dynamics/DECISION.md`) | `pool`, `pilot`, `iterative`; evaluation |
+| `generation.max_new_tokens` | the generation cap, 2,048, far above any finished answer (graph: Qwen3-1.7B p99 54 tokens; Llama-3.2-3B at most 121 at its sampling); what reaches it is a loop that would not stop at any cap. An answer that reaches it without a stop token is marked `truncated`: it is judged and kept in its pool, but never matched, selected or trained on, and evaluation counts it (`truncated_answers`) | `pool`, `iterative`; evaluation |
+| `generation.repetition_stop` | `{"span": 128, "max_period": 32}`: a row stops once its last 128 generated tokens repeat with a period of at most 32 tokens -- a loop, which would otherwise run to `max_new_tokens` and hold its whole batch there (greedy evaluation and sampling alike). It is cut there and marked `truncated`, like a row cut at the cap (`completion_tokens` tells them apart). A finished answer never ends in such a tail, so none is changed; `null` turns it off | `pool`, `pilot`, `iterative`; evaluation |
 | `generation.max_sequence_length` | prompt + `max_new_tokens` must fit (4,096); a longer training sequence is refused, never cut | `pool`, `iterative` |
 | `training.lora_rank`, `lora_alpha`, `lora_dropout`, `target_modules` | the LoRA adapter, built from these by `make_shared_adapter.py` (from `ITER_CONFIG`). Every later stage loads that saved adapter and refuses a config whose values differ from its record (`rsi.shared_adapter.lora_mismatch`), so keep them equal in a model's configs | `adapter`, `reference`, `one_step`, `iterative` |
 | `training.learning_rate` | one-step: the size of the single AdamW step (5e-5, pool config); multi-round: the per-round rate (2e-4, iterative config) | `one_step`, `iterative` |

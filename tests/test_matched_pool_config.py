@@ -40,7 +40,7 @@ def matched_configs():
 
 def pin_for(path):
     tag = model_tag(path)
-    return BASE_PIN if not tag else REPO / "matched-dynamics" / ("base_pin%s.json" % tag)
+    return BASE_PIN if not tag else REPO / "configs" / "pins" / ("base_pin%s.json" % tag)
 
 
 class MatchedConfigTests(unittest.TestCase):

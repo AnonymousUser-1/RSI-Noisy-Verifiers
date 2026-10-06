@@ -2,15 +2,15 @@ from __future__ import annotations
 
 """The frozen base model pin, checked against the resolved configuration.
 
-`HANDOFF.md:13` pins the study to `Qwen/Qwen3-1.7B` at one commit.  Until now that
-pin lived only in prose: every entry reached the hub through `pin_config`, which
+The study is pinned to `Qwen/Qwen3-1.7B` at one commit.  Without this module that
+pin would live only in prose: every entry reached the hub through `pin_config`, which
 turns whatever the config says into a resolved revision, and nothing compared the
 result with the frozen value.  A config could therefore carry a legal 40-hex id
 for a *different* commit, resolve to it without complaint, and every record would
 still look pinned -- the revision is a commit id, `verify_shared_adapter` accepts
 it, and the parameter hash says nothing about which base the adapter sits on.
 
-`matched-dynamics/base_pin.json` is that frozen value as data, written once and
+`configs/pins/base_pin.json` is that frozen value as data, written once and
 committed with this module.  It is prepared **before** any preflight and is never
 written, updated or backfilled by a run: the value a run checks against is
 therefore not one the run could have produced.  A pin that a run can rewrite is
@@ -19,9 +19,7 @@ not a pin.
 Why the check is here and not inside `pin_config`
 -------------------------------------------------
 `rsi/experiment.py::pin_config` is called by entries that never load a model
-(the CPU end-to-end path), and `rsi/backends.py` was frozen by T003/T006a (its one
-later change, PR #14's Llama chat-template keywords and decode setting, left revision
-resolution alone).  This module is the narrow carrier: it reads the frozen file and
+(the CPU end-to-end path), and `rsi/backends.py` leaves revision resolution alone.  This module is the narrow carrier: it reads the frozen file and
 compares, and each entry decides whether it is on the real-model path.  It
 imports `require_commit_id` from `rsi.shared_adapter`, which is torch-free at
 module level, so the pin can be checked without a GPU box.
@@ -48,8 +46,8 @@ from pathlib import Path
 from .common import file_hash
 from .shared_adapter import require_commit_id
 
-# `matched-dynamics/` sits beside `rsi/`, at the repository root.
-BASE_PIN = Path(__file__).resolve().parents[1] / "matched-dynamics" / "base_pin.json"
+# `configs/` sits beside `rsi/`, at the repository root.
+BASE_PIN = Path(__file__).resolve().parents[1] / "configs" / "pins" / "base_pin.json"
 
 REQUIRED_KEYS = ("model", "revision")
 
@@ -57,8 +55,7 @@ REQUIRED_KEYS = ("model", "revision")
 def default_pin_path():
     """The study's pin, or the pin file RSI_BASE_PIN names.
 
-    The same protocol run on another base model (e.g. Qwen3-4B, team request
-    2026-10-02) is checked against that model's own committed pin file, named
+    The same protocol run on another base model (e.g. Qwen3-4B) is checked against that model's own committed pin file, named
     explicitly, instead of an edit to the frozen one.  check_base_pin records
     the path and sha256 of whichever pin it used.
     """
@@ -77,7 +74,7 @@ def read_base_pin(path=None):
     path = Path(default_pin_path() if path is None else path)
     if not path.exists():
         raise ValueError("base pin %s does not exist; it is a frozen input of this study, not "
-                         "something a run produces (matched-dynamics/HANDOFF.md:13)" % path)
+                         "something a run produces" % path)
     try:
         pin = json.loads(path.read_text())
     except json.JSONDecodeError as exc:

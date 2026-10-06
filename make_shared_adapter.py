@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Create the one shared LoRA initialisation every branch must start from.
 
-`HANDOFF.md` deliverable B.1.  Writes `shared_adapter/` plus a record with the
+Writes `shared_adapter/` plus a record with the
 parameter hash, seed, and base revision, so two branches can be shown to start
 from identical parameters rather than merely to have been seeded alike.  See
 `rsi/shared_adapter.py` for why a saved artefact is required and a seed is not

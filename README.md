@@ -63,7 +63,7 @@ The records behind each result and the input metadata they carry:
 | Qwen3-4B four-round graph, unaudited | `experiments/outputs/2026-10-05-qwen3-4b-multiround-unaudited/` |
 | Qwen3-4B four-round graph, audited (B = 16) | `experiments/outputs/2026-10-05-qwen3-4b-graph-audit-b16/` |
 | One-step R/S/null, three models | `experiments/outputs/2026-10-04-one-step/` |
-| Arithmetic (partial; training diagnostics only) | `experiments/outputs/2026-10-03-h100/arithmetic_*` |
+| Llama-3.2-3B four-round arithmetic, audited and unaudited | `experiments/outputs/2026-10-03-h100/arithmetic_{un,}audited_llama3.2-3b/` |
 
 Notes:
 
@@ -79,7 +79,7 @@ Notes:
 ## 4. Running the GPU pipeline
 
 The full pipeline needs a Linux machine with an NVIDIA GPU (H100/A100 class for the four-round runs)
-and the pinned Hugging Face models (`matched-dynamics/base_pin*.json`):
+and the pinned Hugging Face models (`configs/pins/base_pin*.json`):
 
 | Model | Commit |
 | --- | --- |
@@ -165,7 +165,6 @@ rsi/                      library: tasks and judges, matching, selection, auditi
 experiments/              one folder per experiment (config.json, evaluation.json, settings.sh) and drivers
 experiments/outputs/      run records used by the paper
 scripts/multiround/       stage scripts used by experiments/run.sh; scripts/reproject.py recomputes h^T Delta theta
-configs/                  matched-line configurations (configs/README.md lists every field)
-matched-dynamics/         protocol notes and the model pins
+configs/                  matched-line configurations (configs/README.md lists every field) and model pins
 tests/                    unit tests
 ```

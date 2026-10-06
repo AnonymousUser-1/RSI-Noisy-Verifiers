@@ -7,14 +7,13 @@ correctness checks per arm per round); the two differ only in auditing and share
 pools. `graph_unaudited_qwen3-4b` has no audited sibling in this release, but uses the same
 generation, multi-round training, evaluation and one-step drivers.
 
-| Experiments (unaudited / audited) | Model | Task | Status |
-|---|---|---|---|
-| [`graph_unaudited/`](graph_unaudited/), [`graph_audited/`](graph_audited/) | Qwen3-1.7B (T 1.3) | graph shortest paths; S's target error is `nonshortest` | runnable |
-| [`graph_unaudited_llama3.2-3b/`](graph_unaudited_llama3.2-3b/), [`graph_audited_llama3.2-3b/`](graph_audited_llama3.2-3b/) | Llama-3.2-3B-Instruct (T 0.6, top-p 0.9) | graph | runnable; starts at 24.5% correct, below the pilot's 30%, which the team accepts (`matched-dynamics/DECISION.md`) |
-| [`arithmetic_unaudited_llama3.2-3b/`](arithmetic_unaudited_llama3.2-3b/), [`arithmetic_audited_llama3.2-3b/`](arithmetic_audited_llama3.2-3b/) | Llama-3.2-3B-Instruct | arithmetic expressions, worked out step by step and ending with `Answer: N`; S's target error is `ignore_parentheses` | runnable; round 1 most likely at K = 16 at 3:1 (a rough pilot estimate) |
-| [`arithmetic_unaudited_llama3.2-1b/`](arithmetic_unaudited_llama3.2-1b/), [`arithmetic_audited_llama3.2-1b/`](arithmetic_audited_llama3.2-1b/) | Llama-3.2-1B-Instruct | arithmetic | runnable; K = 16 or 32 at 3:1 (rough); 9.5% format errors |
-| [`graph_unaudited_qwen3-4b/`](graph_unaudited_qwen3-4b/) (no audited sibling) | Qwen3-4B (T 1.3) | graph | Generates inputs and runs four rounds from its config; then `one_step.sh` uses this run's inputs. |
-| [`arithmetic_unaudited/`](arithmetic_unaudited/), [`arithmetic_audited/`](arithmetic_audited/) | Qwen3-1.7B | arithmetic | **not runnable yet**: working the expression out, Qwen almost never makes S's target error (1 of 4,096 pilot answers), so round-1 matching is infeasible at every K and `run.sh` stops before training (exit 2) after drawing the pools. Kept for a later S target |
+| Experiments (unaudited / audited) | Model | Task |
+|---|---|---|
+| [`graph_unaudited/`](graph_unaudited/), [`graph_audited/`](graph_audited/) | Qwen3-1.7B (T 1.3) | graph shortest paths; S's target error is `nonshortest` |
+| [`graph_unaudited_llama3.2-3b/`](graph_unaudited_llama3.2-3b/), [`graph_audited_llama3.2-3b/`](graph_audited_llama3.2-3b/) | Llama-3.2-3B-Instruct (T 0.6, top-p 0.9) | graph |
+| [`arithmetic_unaudited_llama3.2-3b/`](arithmetic_unaudited_llama3.2-3b/), [`arithmetic_audited_llama3.2-3b/`](arithmetic_audited_llama3.2-3b/) | Llama-3.2-3B-Instruct | arithmetic expressions, worked out step by step and ending with `Answer: N`; S's target error is `ignore_parentheses` |
+| [`graph_unaudited_qwen3-4b/`](graph_unaudited_qwen3-4b/) (no audited sibling) | Qwen3-4B (T 1.3) | graph |
+| [`arithmetic_unaudited/`](arithmetic_unaudited/), [`arithmetic_audited/`](arithmetic_audited/) | Qwen3-1.7B | arithmetic |
 
 **One-step comparison.** The paper's primary readout, R/S/null with one update each, runs on an unaudited
 experiment's own round-1 pools and shared adapter: `bash experiments/one_step.sh EXPERIMENT`
@@ -43,7 +42,7 @@ b00 to b04) is an independent replicate.
    adapter: K/4 AdamW steps at lr 2e-4, 4 examples per step, one pass.
 4. **Audited experiments only.** After selection, each arm spends 16 correctness checks on its
    selected examples. Audited wrong answers are removed and the unaudited ones are down-weighted
-   (`matched-dynamics/AUDITING.md`).
+  .
 5. **Evaluation.** Pass@1 with one greedy answer per question, on all 2,000 `eval_id` and all 1,000
    `eval_ood` questions. It covers round 0 (the base) and every block, arm and round.
 6. **Figures.** Pass@1 vs round for R and S (mean over blocks, 95% interval), S - R paired by
@@ -73,7 +72,7 @@ CUDA_VISIBLE_DEVICES=2 nohup bash experiments/run.sh arithmetic_unaudited_llama3
 CUDA_VISIBLE_DEVICES=3 nohup bash experiments/run.sh arithmetic_audited_llama3.2-3b   > arithmetic_audited_llama3.2-3b.log 2>&1 &
 ```
 
-The Llama-3.2-3B graph and the Llama-3.2-1B arithmetic pairs run the same way. Llama-3.2-3B needs a
+The Llama-3.2-3B graph and arithmetic pairs run the same way. Llama-3.2-3B needs a
 GPU of at least 16 GB.
 
 When both experiments of a task are evaluated, draw them on one figure:
@@ -138,7 +137,7 @@ change the answers.
 |---|---|
 | `TASK` | `graph` or `arithmetic` |
 | `STUDY` | the study id recorded in every pool and run; change its `-v01` suffix when you restart with other settings |
-| `PIN_FILE` | the base model's pin; it must name `config.json`'s model and revision (other models: `matched-dynamics/base_pin_*.json`) |
+| `PIN_FILE` | the base model's pin; it must name `config.json`'s model and revision (other models: `configs/pins/base_pin_*.json`) |
 | `SEEDS` | the seed blocks, `"0 1 2 3 4"` |
 | `SHARE_POOLS_WITH` | the sibling experiment whose round-1 pools this one may reuse (below); empty: never |
 | `LABEL` | the name on the figures |
@@ -241,7 +240,6 @@ a whole experiment):
 | Qwen3-1.7B graph | 8 | about 21 min | about 1.5 days | about 1.5 days |
 | Llama-3.2-3B graph | 8 | about 11.5 min | about 18 h | about 16 h |
 | Llama-3.2-3B arithmetic | 4 | about 1 h 55 min | about 3.5 days | about 3.3 days |
-| Llama-3.2-1B arithmetic | 4 | about 1 h 50 min | 3.5 to 4.5 days | 3.5 to 4.5 days |
 
 Most of it is the later rounds' pools. Evaluation adds about 2 min per checkpoint for Llama-3.2-3B
 graph and about 6 min for Qwen3-1.7B graph. For arithmetic it is not measured yet and is estimated

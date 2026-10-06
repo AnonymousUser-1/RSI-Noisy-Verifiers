@@ -36,7 +36,7 @@ from rsi.split_selection import check_selection, dataset_binding
 from pin_isolation import isolate as setUpModule, restore as tearDownModule  # noqa: F401
 
 REPO = Path(__file__).resolve().parents[1]
-PIN = REPO / "matched-dynamics" / "base_pin.json"
+PIN = REPO / "configs" / "pins" / "base_pin.json"
 ANCHOR = json.loads(PIN.read_text(encoding="utf-8"))["revision"]
 SYNTHETIC = "0123456789abcdef0123456789abcdef01234567"
 MOCK_CONFIG = {"backend": "mock", "generation": {"candidates": 2, "batch_size": 4}}

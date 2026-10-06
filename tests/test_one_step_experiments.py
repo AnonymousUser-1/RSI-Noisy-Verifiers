@@ -25,7 +25,7 @@ from rsi.common import digest, file_hash, load_config, require_explicit, verify_
 
 REPO = Path(__file__).resolve().parents[1]
 UNAUDITED = ("graph_unaudited", "graph_unaudited_qwen3-4b", "graph_unaudited_llama3.2-3b",
-             "arithmetic_unaudited_llama3.2-3b", "arithmetic_unaudited_llama3.2-1b")
+             "arithmetic_unaudited_llama3.2-3b")
 POSIX_BASH = shutil.which("bash") and sys.platform != "win32"
 
 

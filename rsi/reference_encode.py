@@ -12,9 +12,8 @@ construction, not two that happen to agree today:
     labels    = [-100]*len(prefix) + suffix
 
 which is exactly what `rsi/backends.py` does for training (`HFBackend.train`) and
-what `one_step.py::_run_hf_arm` does for the one-step arms.  `rsi/backends.py` was
-frozen by T003/T006a (PR #14 changed its chat-template keywords and decode setting, not
-these lines), so instead of a second copy of the
+what `one_step.py::_run_hf_arm` does for the one-step arms.  `rsi/backends.py` is
+not changed here, so instead of a second copy of the
 three lines -- which would be free to drift the moment either side is touched --
 the construction lives here and `tests/test_reference_encode.py` pins it against
 the frozen encode lines read out of `rsi/backends.py` (a stub tokenizer on both

@@ -2,7 +2,7 @@
 
 The gap these close is a silent one.  Every entry reached the hub through
 `pin_config`, which turns whatever the config says into a resolved revision, and
-nothing compared the result with the value `HANDOFF.md:13` freezes.  A config
+nothing compared the result with the frozen pin.  A config
 carrying a legal 40-hex id for a *different* commit resolved without complaint,
 and every record still looked pinned: the revision is a commit id, the adapter
 record agrees with the adapter, and the parameter hash says nothing about the
@@ -55,7 +55,7 @@ REPO = Path(__file__).resolve().parents[1]
 # the anchor.
 SYNTHETIC = "0123456789abcdef0123456789abcdef01234567"
 
-ANCHOR = json.loads((REPO / "matched-dynamics" / "base_pin.json").read_text())["revision"]
+ANCHOR = json.loads((REPO / "configs" / "pins" / "base_pin.json").read_text())["revision"]
 
 # What an hf run of sample_candidates.py must also name (science-aux 5d124fd6):
 # the split, and the study and phase that fix it.  A main run on train_001 is
@@ -156,20 +156,10 @@ class PinFixture(unittest.TestCase):
 class ReadTests(PinFixture):
     """The pin file is the anchor: malformed means stop, never skip."""
 
-    def test_the_committed_pin_is_the_handoff_value_verbatim(self):
-        """The committed file, not a copy: HANDOFF.md:13's model and revision."""
-        handoff = (REPO / "matched-dynamics" / "HANDOFF.md").read_text(encoding="utf-8")
-        pin = json.loads((REPO / "matched-dynamics" / "base_pin.json").read_text(encoding="utf-8"))
-        lines = [text for text in handoff.splitlines() if "model pin:" in text.lower()]
-        self.assertEqual(len(lines), 1, "HANDOFF.md no longer has exactly one model pin line")
-        self.assertIn("`%s`" % pin["model"], lines[0])
-        self.assertIn("`%s`" % pin["revision"], lines[0])
-        self.assertEqual(pin["revision"], ANCHOR)
-
     def test_reading_the_committed_pin_returns_it(self):
         from rsi.base_pin import read_base_pin
 
-        pin = read_base_pin(REPO / "matched-dynamics" / "base_pin.json")
+        pin = read_base_pin(REPO / "configs" / "pins" / "base_pin.json")
         self.assertEqual(pin["model"], "Qwen/Qwen3-1.7B")
         self.assertEqual(pin["revision"], ANCHOR)
 

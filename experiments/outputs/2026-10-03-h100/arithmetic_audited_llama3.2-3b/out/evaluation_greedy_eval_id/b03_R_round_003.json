@@ -1,0 +1,33 @@
+{
+  "adapter": "b03/R/round_003/adapter",
+  "adapter_hash": "7d39d87e1db5473534f311aed9ad2c5c1561988f5fe693403179c3a8ccbf02f5",
+  "arm": "R",
+  "batch_size": 32,
+  "block": "b03",
+  "error_counts": {
+    "format": 20,
+    "ignore_parentheses": 10,
+    "other": 450,
+    "sign": 7
+  },
+  "format_error_rate": 0.01,
+  "mean_completion_tokens": 131.193,
+  "pass1": 0.7565,
+  "pass1_by_difficulty": {
+    "0": 0.9265367316341829,
+    "1": 0.7811094452773614,
+    "2": 0.5615615615615616
+  },
+  "questions": 2000,
+  "questions_by_difficulty": {
+    "0": 667,
+    "1": 667,
+    "2": 666
+  },
+  "round": 3,
+  "seconds": 372.95994944497943,
+  "split": "eval_id",
+  "target_error_rate": 0.005,
+  "target_share_of_errors": 0.02053388090349076,
+  "truncated_answers": 0
+}

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# The audited multi-round run: 06 again with budgeted auditing (matched-dynamics/AUDITING.md).
+# The audited multi-round run: 06 again with budgeted auditing.
 # Same data, round-1 pools, shared adapter and seed blocks as 06; AUDIT_CONFIG adds, for each arm and
 # round from round 1, 16 correctness checks on the selected examples (adaptive policy): an audited
 # wrong answer is removed, the unaudited ones are weighted by their difficulty's estimated error rate.

@@ -10,8 +10,8 @@ TASK=graph
 STUDY=md-graph-unaudited-qwen3-4b-2048x8-v01
 
 # The pin file of the base model; it must name config.json's "model" and "revision" (the entries
-# refuse any other base).  Other models' pins are in matched-dynamics/base_pin_*.json.
-PIN_FILE=matched-dynamics/base_pin_qwen3-4b.json
+# refuse any other base).  Other models' pins are in configs/pins/base_pin_*.json.
+PIN_FILE=configs/pins/base_pin_qwen3-4b.json
 
 # Seed blocks: one round-1 pool and one independent R/S replicate per seed (b00, b01, ...).
 SEEDS="0 1 2 3 4"

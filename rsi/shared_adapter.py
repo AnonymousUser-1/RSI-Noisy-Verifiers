@@ -2,7 +2,7 @@ from __future__ import annotations
 
 """One shared LoRA initialisation that every branch must start from.
 
-`HANDOFF.md` deliverable B.1 asks for "one common LoRA initialisation (rank 8 on
+The study needs "one common LoRA initialisation (rank 8 on
 q/v, recorded in config), with parameter hash, seed, and base revision", so that
 "two branches cannot be shown to start from the same parameters" stops being a
 gap.  This module is that artefact.
