@@ -1,6 +1,5 @@
 """Check real shell dispatch and separation of fresh runs from original-input replay."""
 import json
-import importlib.util
 import os
 from pathlib import Path
 import shutil
@@ -86,32 +85,6 @@ class ImportModeTests(unittest.TestCase):
                 import_pools.plan(NAME, root / 'absent-export', root)
             self.assertEqual(sentinel.read_text(), '{"keep": true}')
             self.assertFalse((root / 'data').exists())
-
-
-class OptionalArchiveTests(unittest.TestCase):
-    def setUp(self):
-        spec = importlib.util.spec_from_file_location('optional_inputs', REPO / 'manuscript/optional_inputs.py')
-        self.inputs = importlib.util.module_from_spec(spec)
-        spec.loader.exec_module(self.inputs)
-
-    def test_external_archive_keeps_original_provenance_keys(self):
-        with tempfile.TemporaryDirectory() as tmp:
-            root = Path(tmp)
-            code, archive = root / 'code', root / 'archive'
-            file = archive / 'pools/b00.jsonl'
-            file.parent.mkdir(parents=True)
-            file.write_bytes(b'original bytes\n')
-            key = Path(self.inputs.BUNDLE) / 'pools/b00.jsonl'
-            self.assertEqual(self.inputs.resolve(code, key, archive), file)
-            self.assertEqual(Path(self.inputs.source_key(code, file, archive)), key)
-            self.assertEqual(file.read_bytes(), b'original bytes\n')
-
-    def test_missing_archive_is_not_reported_as_a_successful_check(self):
-        with tempfile.TemporaryDirectory() as tmp:
-            with self.assertRaisesRegex(SystemExit, '--inputs'):
-                self.inputs.resolve(Path(tmp), Path(self.inputs.BUNDLE) / 'pools/b00.jsonl')
-            with self.assertRaisesRegex(SystemExit, 'Missing source file'):
-                self.inputs.resolve(Path(tmp), 'rsi/tasks.py')
 
 
 if __name__ == '__main__':

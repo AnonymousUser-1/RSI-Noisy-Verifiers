@@ -14,7 +14,7 @@ load_experiment() {
     echo "No experiment at $EXP_DIR (it needs settings.sh, config.json and evaluation.json)." >&2; exit 1
   fi
   EXP="$(basename "$EXP_DIR")"
-  TASK="" STUDY="" PIN_FILE="" SEEDS="" SHARE_POOLS_WITH="" LABEL="" DATA_NAME="" POOLS_IMPORTED="" POOLS_IMPORT_ALLOWED="" INPUTS_RELEASE=""
+  TASK="" STUDY="" PIN_FILE="" SEEDS="" SHARE_POOLS_WITH="" LABEL="" DATA_NAME="" POOLS_IMPORTED="" POOLS_IMPORT_ALLOWED=""
   # shellcheck disable=SC1090
   source "$EXP_DIR/settings.sh"
   case "$TASK" in
@@ -60,10 +60,6 @@ require_import() {
   if [ "$POOLS_IMPORTED" = yes ] && [ ! -f "$WORK/pools/IMPORTED.json" ]; then
     echo "$EXP: its round-1 pools, shared adapter and data are imported, not drawn.  Run first:" >&2
     echo "  $PY experiments/import_pools.py $EXP SOURCE_DIR" >&2
-    if [ -n "$INPUTS_RELEASE" ]; then
-      echo "SOURCE_DIR is the folder $INPUTS_RELEASE at the repository root" >&2
-      echo "(ONE_STEP_EXPERIMENT_INSTRUCTION.md, section 9)." >&2
-    fi
     exit 1
   fi
 }

@@ -41,7 +41,7 @@ in this snapshot.
 - Native repository commit: `f1fd1f8c7bf479a3ca8610240f68d204758d3391`.
 - Model: `Qwen/Qwen3-4B`, revision `1cfa9a7208912126459214e8b04321603b3df60c`.
 - Compute node: two A100-SXM4-80GB GPUs; independent R/S training workers.
-- Inputs: frozen `RSI-Qwen3-4B-Graph-paired-inputs-20261004` package from the original paired run.
+- Inputs: frozen Qwen3-4B paired-inputs package from the original paired run (not included in this release).
   The five first-round pools (2,048 prompts × 8 answers each), shared initialization,
   and original reference tensors were reused; no replacement first-round pools or
   reference vectors were generated.

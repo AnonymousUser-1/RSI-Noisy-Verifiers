@@ -7,7 +7,7 @@ The one-step comparison of [`ONE_STEP_EXPERIMENT_INSTRUCTION.md`](../../../ONE_S
 | Folder | Model | Inputs (round-1 pools, shared adapter, data, round-1 matching) | GPU |
 |---|---|---|---|
 | [`graph_unaudited/`](graph_unaudited/) | Qwen3-1.7B | the H100 runs' (`h100-inputs-v1.zip`, the multi-round run's own) | RTX 4070 Laptop 8 GB (Windows 11) |
-| [`graph_unaudited_qwen3-4b/`](graph_unaudited_qwen3-4b/) | Qwen3-4B | the folder `RSI-Qwen3-4B-Graph-paired-inputs-20261004/`, imported with `experiments/import_pools.py` | Colab A100-SXM4 40 GB |
+| [`graph_unaudited_qwen3-4b/`](graph_unaudited_qwen3-4b/) | Qwen3-4B | the original Qwen3-4B paired-inputs package, imported with `experiments/import_pools.py` (not included in this release) | Colab A100-SXM4 40 GB |
 | [`graph_unaudited_llama3.2-3b/`](graph_unaudited_llama3.2-3b/) | Llama-3.2-3B-Instruct | the H100 runs' (`h100-inputs-v1.zip`) | Colab A100-SXM4 40 GB |
 
 - **Code:** `main` at `a908fb7`, clean checkout, in every run (`out_one_step/experiment.json`). transformers 4.57.1 and

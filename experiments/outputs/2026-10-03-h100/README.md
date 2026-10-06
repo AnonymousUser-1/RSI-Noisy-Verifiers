@@ -1,11 +1,11 @@
 # R/S experiment runs on an H100 cluster, started 2026-10-03
 
-Snapshot of **2026-10-04 23:35 UTC**.  The runs are still going: this folder is regenerated from them
-(`slurm/collect_outputs.sh`), so the numbers below change until every run is complete.
+Snapshot of **2026-10-04 23:35 UTC**.  The runs are still going: this folder is regenerated from them,
+so the numbers below change until every run is complete.
 
 - **What runs:** the eight runnable experiments of [`experiments/`](../..), unchanged.  Rounds 1-4 of every run ran on commit `a742f6f` (#28), the same tree as `main` at `f1fd1f8`.  The graph runs were then extended to 8 rounds by commit `0874c76` (`run_iterative_experiment.py --extend-rounds`, branch `extend-rounds`, not yet merged), which keeps rounds 1-4 and continues from each arm's round-4 adapter; each run's `out/experiment.json` records the commit of every extension under `extensions`.  No other edit to any experiment's `config.json`, `evaluation.json` or `settings.sh`.  Qwen3-1.7B arithmetic is not run (S's target error almost never occurs, so round 1 is infeasible).
-- **Machine:** one NVIDIA H100 80GB HBM3 per run (SLURM partition `h100_all`); torch 2.14.1+cu130, transformers 4.57.1, peft 0.17.1, Python 3.11.
-- **How:** [`slurm/submit.sh`](slurm/submit.sh) runs `experiments/run.sh` in stages per pair: the unaudited experiment draws the 5 round-1 pools, then it and its audited sibling (reusing those pools) train, evaluate and draw their figures side by side; a job that ends abnormally is resumed once.  Job ids: [`slurm/jobs.txt`](slurm/jobs.txt).
+- **Machine:** one NVIDIA H100 80GB HBM3 per run; torch 2.14.1+cu130, transformers 4.57.1, peft 0.17.1, Python 3.11.
+- **How:** one batch per run pair, staged: the unaudited experiment draws the 5 round-1 pools, then it and its audited sibling (reusing those pools) train, evaluate and draw their figures side by side; a job that ends abnormally is resumed once.  The scheduler's job scripts are not part of this release.
 
 ## Progress
 
@@ -192,7 +192,7 @@ C:E 0.25 = 3:1 (48 correct + 16 wrong at K = 64); tol = `matching.token_toleranc
 ## Rounds 0-4 of the graph runs (the 4-round view)
 
 The graph runs ran 8 rounds. Their rounds 1-4 are those of the 4-round runs, unchanged: the extension keeps them.
-- **How these figures are drawn.** The runs' own `plot_multiround.py` draws them from the same evaluation records, restricted to rounds 0-4 (`slurm/plot_rounds0-4.sh`). So they are the 4-round results, comparable with 4-round runs elsewhere.
+- **How these figures are drawn.** The runs' own `plot_multiround.py` draws them from the same evaluation records, restricted to rounds 0-4. So they are the 4-round results, comparable with 4-round runs elsewhere.
 - **Check.** For the Llama-3.2-3B pair, their tables are byte-identical to those of its 4-round figures drawn on 2026-10-03.
 - **Every round.** The tables in Results above give rounds 0-8; their first five columns are these rounds.
 

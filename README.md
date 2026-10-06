@@ -3,13 +3,12 @@
 Anonymous code and data release for the AISTATS 2027 submission *Matched Error Rates Do Not Fix
 Learning: Influence Profile and Budgeted Auditing in Iterative Self-Training*.
 
-The release has three parts:
+The release has two parts:
 
 | Part | Where | What it lets you do |
 |---|---|---|
 | Implementation | `rsi/`, root `*.py`, `experiments/`, `scripts/multiround/`, `configs/`, `tests/` | Generate the tasks, draw candidate pools, build matched R/S selections, train LoRA arms, audit, evaluate |
 | Run records | `experiments/outputs/` | The saved per-round records (selection, training, audit and evaluation summaries) that every reported number is computed from |
-| Paper checks | `manuscript/` | The LaTeX source, the scripts that built the result tables, and scripts that re-check every table against the run records |
 
 Model weights, LoRA adapters, raw sampled answers and most raw evaluated answers are not included
 (section 5).
@@ -22,13 +21,13 @@ Python 3.10-3.12 is recommended.
 python -m venv .venv && source .venv/bin/activate      # Windows: .venv\Scripts\activate
 pip install -r requirements-core.txt                    # CPU checks: numpy, scipy, matplotlib
 pip install -r requirements-gpu.txt                     # GPU pipeline: torch, transformers 4.57.1, peft 0.17.1
-pip install pytest reportlab pypdf                      # tests and the table/figure scripts
+pip install pytest                                      # tests
 ```
 
 Keep files byte-exact: the checks compare SHA-256 digests. `.gitattributes` disables line-ending
 conversion in git; if you copy files by other means, do not let a tool rewrite line endings.
 
-## 2. What a reviewer can check on a CPU (minutes)
+## 2. Recomputing the paper numbers on a CPU
 
 Commands run from the repository root unless stated.
 
@@ -53,65 +52,28 @@ python generate_data.py --task graph --seed 2027 --out data/graph
 python generate_data.py --task arithmetic --seed 2027 --out data/arithmetic
 ```
 
-**Paper tables against the run records.** From `manuscript/`:
-
-```bash
-cd manuscript
-python theory_checks.py --code-dir ..
-python verify_h100_tables.py                      # Llama-3.2-3B four-round tables
-python verify_graph_extensions.py --code ..       # Qwen3-1.7B four-round and all one-step tables
-python verify_qwen_raw_figures.py --code ..
-python verify_added_raw_figures.py --code ..
-python verify_qwen4b_raw_figures.py --code ..
-```
-
-Each reports its verification scope. Checks that also use the original Qwen3-4B task files or
-candidate answers take an optional archive path; see [original-input checks](OPTIONAL_INPUTS.md).
-The ordinary experiment pipeline does not require that archive.
-
-The summaries behind the tables can be regenerated from the records into a new directory:
-
-```bash
-python summarize_h100_results.py --snapshot ../experiments/outputs/2026-10-03-h100 --out /tmp/llama
-python summarize_h100_tpr.py --snapshot ../experiments/outputs/2026-10-03-h100 --out /tmp/tpr --table /tmp/tpr.tex
-python summarize_graph_extensions.py --code .. --out /tmp/graph_extensions
-```
-
-**Audit-threshold figures** (Figure 2):
-`python manuscript/RSI-audit-figures-20261003/reproduce.py --out-dir /tmp/audit` regenerates the scan
-data byte-for-byte and redraws the figures.
-
-**Paper.** `manuscript/main.tex` compiles with Tectonic or XeLaTeX + BibTeX.
-
 ## 3. Map from the paper to the records
 
-| Paper | Records | Table scripts |
-|---|---|---|
-| Llama-3.2-3B four-round graph, audited and unaudited | `experiments/outputs/2026-10-03-h100/graph_{un,}audited_llama3.2-3b/` | `summarize_h100_results.py`, `summarize_h100_tpr.py`, `verify_h100_tables.py` |
-| Qwen3-1.7B four-round graph, audited and unaudited | `experiments/outputs/2026-10-03-h100/graph_{un,}audited/` | `summarize_graph_extensions.py`, `verify_graph_extensions.py` |
-| Qwen3-4B four-round graph, unaudited | `experiments/outputs/2026-10-05-qwen3-4b-multiround-unaudited/` | `summarize_qwen4b_results.py`, `summarize_qwen4b_tables.py`, `verify_qwen4b_results.py` |
-| Qwen3-4B four-round graph, audited (B = 16) | `experiments/outputs/2026-10-05-qwen3-4b-graph-audit-b16/` | same |
-| One-step R/S/null, three models | `experiments/outputs/2026-10-04-one-step/` | `summarize_graph_extensions.py`, `verify_added_raw_figures.py` |
-| Arithmetic (partial; training diagnostics only) | `experiments/outputs/2026-10-03-h100/arithmetic_*` | `summarize_h100_results.py` |
-| Optional Qwen3-4B original inputs | Separate archive, described in [OPTIONAL_INPUTS.md](OPTIONAL_INPUTS.md) | `verify_inputs.py` in the extracted archive |
+The records behind each result and the input metadata they carry:
+
+| Paper | Records |
+|---|---|
+| Llama-3.2-3B four-round graph, audited and unaudited | `experiments/outputs/2026-10-03-h100/graph_{un,}audited_llama3.2-3b/` |
+| Qwen3-1.7B four-round graph, audited and unaudited | `experiments/outputs/2026-10-03-h100/graph_{un,}audited/` |
+| Qwen3-4B four-round graph, unaudited | `experiments/outputs/2026-10-05-qwen3-4b-multiround-unaudited/` |
+| Qwen3-4B four-round graph, audited (B = 16) | `experiments/outputs/2026-10-05-qwen3-4b-graph-audit-b16/` |
+| One-step R/S/null, three models | `experiments/outputs/2026-10-04-one-step/` |
+| Arithmetic (partial; training diagnostics only) | `experiments/outputs/2026-10-03-h100/arithmetic_*` |
 
 Notes:
 
-- Several display tables (`manuscript/h100_*_table.tex`, `qwen4b_multiround_endpoint_table.tex`) were
-  typeset from the generated summaries; the `verify_*` scripts check every displayed cell against the
-  records.
 - The graph runs in `2026-10-03-h100/` were later extended from four to eight rounds; the paper reports
-  rounds 1-4, and the `*_rounds0-4_*` summaries hold exactly those. `manuscript/figures/h100_runs/provenance.json`
-  records the digests of the earlier four-round snapshot, so its entries for the files rewritten by the
-  extension (`experiment.json`, the first `run.json` per arm, the un-suffixed summaries) no longer match.
-- The training-diagnostics table of the initial, partially completed series was built from that
-  earlier snapshot. `summarize_h100_results.py` regenerates it from the complete records, so its
-  `partial_training.csv` has more blocks per row than the table.
+  rounds 1-4, and the `*_rounds0-4_*` summaries hold exactly those.
 - The run records were written on the original machines. Absolute paths and host names inside them
   were replaced by neutral placeholders (`/cluster`, `/cluster2`, `/local`, `C:\Users\user`,
   `workstation`), some folder names were shortened, snapshot times are given in UTC, and internal
   review and job identifiers were replaced by neutral labels; nothing else in them differs from what
-  the runs wrote. Every digest that the records and the verification scripts carry was recomputed after
+  the runs wrote. Every digest that the records carry was recomputed after
   the replacement.
 
 ## 4. Running the GPU pipeline
@@ -146,9 +108,8 @@ bash experiments/run.sh graph_unaudited_qwen3-4b
 bash experiments/one_step.sh graph_unaudited_qwen3-4b
 ```
 
-No original-input archive is required. The one-step run uses the pools, initialization and
-first-round matching produced by this new multi-round run. Original-input replay is a
-separate, optional operation in [OPTIONAL_INPUTS.md](OPTIONAL_INPUTS.md).
+The one-step run uses the pools, initialization and
+first-round matching produced by this new multi-round run.
 
 Notes on reproducing specific runs:
 
@@ -180,23 +141,15 @@ What each diagnostic can therefore be checked against:
 
 | Diagnostic | Check available in this release |
 |---|---|
-| Matching certificates (N+, N-, TPR, FPR, yield, target hits), selection counts | Recomputed from the saved selections and counts (`verify_*.py`) |
-| Round-1 judging of the Qwen3-4B candidates | With the optional archive: 81,920 answers, `summarize_qwen4b_tables.py --check --inputs INPUTS` |
-| Audit labels, retained counts, query totals of the Qwen3-4B audited run | With the optional task files: 123,000 answers, `summarize_qwen4b_results.py --inputs INPUTS`; the verifier checks saved results and hashes |
+| Matching certificates (N+, N-, TPR, FPR, yield, target hits), selection counts | Recomputed from the saved selections and counts, which ship with the records |
+| Round-1 judging of the Qwen3-4B candidates | The saved pool records hold the counts and hashes; the raw sampled answers are omitted |
+| Audit labels, retained counts, query totals of the Qwen3-4B audited run | The saved results and hashes are checked; the raw audited answers are omitted |
 | Greedy Pass@1, target-error rates, paired contrasts and intervals | Recomputed from the saved per-checkpoint counts; the per-question answers are omitted, so they are not rejudged |
-| `h^T Delta theta`, `||Delta theta||` | Checked as recorded summary values only. The adapters are omitted. `scripts/reproject.py` recomputes both from adapters on a CPU; on the authors' copies of the Qwen3-4B adapters it reproduces the records (for example b00/R round 1: -0.019447912664691 recorded and recomputed). The Qwen3-4B reference gradient is in the optional archive (`reference_out_audit_*/h.pt`, the `h_sha256` of both Qwen3-4B four-round runs) |
+| `h^T Delta theta`, `||Delta theta||` | Checked as recorded summary values only. The adapters are omitted. `scripts/reproject.py` recomputes both from adapters on a CPU: given a reference gradient `h` and a chain of round adapters it prints `h^T Delta theta` and `||Delta theta||` per round, and with `--records` compares them against the recorded values |
 | Reference losses and per-sample reference terms | Recorded summary values only |
 
-For the optional projection check, set `INPUTS` to the extracted archive and supply the
-trained adapters separately (they are not included):
-
-```bash
-python scripts/reproject.py --h "$INPUTS/reference_out_audit_new/h.pt" \
-  --start "$INPUTS/shared_adapter" \
-  ADAPTERS/b00/R/round_001/adapter ADAPTERS/b00/R/round_002/adapter \
-  --records experiments/outputs/2026-10-05-qwen3-4b-graph-audit-b16/out/b00/R/round_001 \
-            experiments/outputs/2026-10-05-qwen3-4b-graph-audit-b16/out/b00/R/round_002
-```
+The table and figure scripts that re-check every displayed number against these records are part of the
+manuscript source and are not included in this release.
 
 ## 6. Files and licenses
 
@@ -214,7 +167,5 @@ experiments/outputs/      run records used by the paper
 scripts/multiround/       stage scripts used by experiments/run.sh; scripts/reproject.py recomputes h^T Delta theta
 configs/                  matched-line configurations (configs/README.md lists every field)
 matched-dynamics/         protocol notes and the model pins
-manuscript/               paper source, table scripts and verification scripts
-OPTIONAL_INPUTS.md        optional original-input archive and stronger data-level checks
 tests/                    unit tests
 ```

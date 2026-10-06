@@ -10,10 +10,9 @@ redistribute, the following models, libraries and datasets; each remains under i
 | `Qwen/Qwen3-1.7B`, `Qwen/Qwen3-4B` | Apache License 2.0 |
 | `meta-llama/Llama-3.2-1B-Instruct`, `meta-llama/Llama-3.2-3B-Instruct` | Llama 3.2 Community License Agreement (gated; accept it on the model pages before downloading) |
 
-The LoRA initialisation and the reference gradients in `RSI-Qwen3-4B-Graph-paired-inputs-20261004/`
-are derived from `Qwen/Qwen3-4B` and are provided under its Apache-2.0 license. Sampled answers that
-appear in the run records (candidate pools and audited answers) are model outputs, provided for
-verification.
+The LoRA initialisation and the reference gradients that the run records refer to are derived from
+`Qwen/Qwen3-4B` and are provided under its Apache-2.0 license. Sampled answers that appear in the
+run records (candidate pools and audited answers) are model outputs, provided for verification.
 
 ## Libraries (installed from `requirements-*.txt`)
 
@@ -26,11 +25,6 @@ verification.
 | ReportLab, pypdf (table and figure scripts only) | BSD |
 | PyMuPDF (one optional figure check) | AGPL-3.0 |
 | pytest (tests only) | MIT |
-
-## LaTeX files
-
-`manuscript/aistats2027.sty` is the AISTATS 2027 conference style and `manuscript/fancyhdr.sty` is the
-fancyhdr package (LaTeX Project Public License); both are unmodified.
 
 ## Datasets
 

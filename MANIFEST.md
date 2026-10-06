@@ -5,7 +5,7 @@ Every file of the release, grouped by role, with its size in bytes and SHA-256 d
 | Group | Files | MB |
 |---|---:|---:|
 | Git settings (no line-ending conversion) (`.git`) | 2 | 0.0 |
-| Entry points: data generation, sampling, matching, training, evaluation, reference gradient (`root`) | 31 | 0.3 |
+| Entry points: data generation, sampling, matching, training, evaluation, reference gradient (`root`) | 30 | 0.3 |
 | Matched-line configurations (`configs/`) | 21 | 0.0 |
 | Experiment folders (config.json, evaluation.json, settings.sh) and drivers (`experiments/`) | 44 | 0.1 |
 | Run records: Llama-3.2-3B and Qwen3-1.7B four-round graph; partial arithmetic (`experiments/outputs/2026-10-03-h100/`) | 2115 | 15.7 |
@@ -13,11 +13,6 @@ Every file of the release, grouped by role, with its size in bytes and SHA-256 d
 | Run records: Qwen3-4B four-round graph, audited B=16 (`experiments/outputs/2026-10-05-qwen3-4b-graph-audit-b16/`) | 484 | 51.0 |
 | Run records: Qwen3-4B four-round graph, unaudited (`experiments/outputs/2026-10-05-qwen3-4b-multiround-unaudited/`) | 248 | 1.3 |
 | MIT License of the code (`LICENSE`) | 1 | 0.0 |
-| Paper source (LaTeX) and helper scripts (`manuscript/`) | 75 | 0.3 |
-| Figure files and their validated summaries and provenance digests (`manuscript/figures/`) | 117 | 19.9 |
-| Audit-threshold scan and figures (Figure 2) with reproduction script (`manuscript/RSI-audit-figures-20261003/`) | 35 | 12.2 |
-| Scripts that build the tables and figures from the run records (`manuscript/summarize_`) | 5 | 0.1 |
-| Checks of the displayed tables against the run records (`manuscript/verify_`) | 6 | 0.0 |
 | Protocol notes and the model pins (`matched-dynamics/`) | 13 | 0.1 |
 | Overview, installation, checks and the paper-to-record map (`README.md`) | 1 | 0.0 |
 | Library: tasks and judges, matching, selection, auditing, LoRA backend, theory model (`rsi/`) | 24 | 0.2 |
@@ -53,8 +48,7 @@ Every file of the release, grouped by role, with its size in bytes and SHA-256 d
 | `match_candidates.py` | 8131 | `c35253e281079f9727b1a61ab43ec3b2632ddd63454832f1b19c78ba36c719ee` |
 | `MULTIROUND_EXPERIMENT_INSTRUCTION.md` | 29129 | `fbaee4050015ed4b8e9e322bf4da09b284a75f8241c0cbb69af501240653b484` |
 | `one_step.py` | 15525 | `1da431f04ced7d807259ec360c0e9c6cb3db38cc73360fce82ecb90e707ac62f` |
-| `ONE_STEP_EXPERIMENT_INSTRUCTION.md` | 20934 | `bdd73fc1ac4c3dd2c5a0e10493aa15a94ad9df0c58b1f50559faa947d5738f12` |
-| `OPTIONAL_INPUTS.md` | 2883 | `6ba782e5e92fc70e22347b64f352172277ecfaa218c2f3de315258f4fc277676` |
+| `ONE_STEP_EXPERIMENT_INSTRUCTION.md` | 20820 | `341b72b18871ba198bd869df211d919c173f334010587228e117e326a1be7274` |
 | `plot_multiround.py` | 10003 | `5c5841fa6c21249349eb924593a96338643f19f738f8ef2c2d0d17aabf674a5f` |
 | `plot_simulation.py` | 1830 | `40e30dc8acc50008a83b6169a2f210fd37af68eb0bc319d4bb6fed4c95ef1849` |
 | `prepare_suite.py` | 7075 | `f3045222a676a06dbccbfe3256703961ead649d5f12782a9e69eb2a64ff25ab1` |
@@ -134,14 +128,14 @@ Every file of the release, grouped by role, with its size in bytes and SHA-256 d
 | `experiments/graph_unaudited_qwen3-4b/evaluation.json` | 106 | `fa3b1d59afb14333cf509c49540ee69ab5c7b2aba9f88b30c1be194d8700c86f` |
 | `experiments/graph_unaudited_qwen3-4b/settings.sh` | 1753 | `623c753a2235ce356cd673eef724d1d425f5c57d925918bc1a802ad900f5ac07` |
 | `experiments/import_pools.py` | 6786 | `90ab17306bff4a8139debc48c28e06590a0a199fff5b072de581b662df9ad947` |
-| `experiments/lib.sh` | 9671 | `37e66a6e6fd6a2dba88b067b988683840628a47fedafb31f4d92826c8d830663` |
+| `experiments/lib.sh` | 9461 | `47db58a50d344da83f836b2bc0ee432de964e4b54cca0cb158dc97ec3d8677f1` |
 | `experiments/one_step.sh` | 10718 | `6d5e124738a16bbeac2d634f6d8952b0f6a77e84905a6ff64b23c2bc0975f2fc` |
 | `experiments/one_step_check.py` | 11144 | `7b7ffc98015be87b53223a67bf221f79daa6a7ecb3a9e470ec191057f8b431db` |
 | `experiments/one_step_cost.py` | 5571 | `da71e77383baa5d90a1eeaf6c5c7cf14efeeade1feb63c0632a59b0852c4437a` |
 | `experiments/one_step_figures.py` | 7737 | `07c58bd9e0219508e4a525d1522b2c4438831feeddc150b6271304b17c44712b` |
 | `experiments/pilot.sh` | 1481 | `f48df977f7db0aafc3567ef20e30854a0b232a513479899f56b61e6737667963` |
 | `experiments/pool_check.py` | 3203 | `6f61f2917f69d247f3413aee3c3912ca201bc50067667839f47164128b0d54d6` |
-| `experiments/README.md` | 18245 | `ab50fa30fc9d2bdd1023df4ee38b11601c34bcfae73a0081a21badee3f26ac8b` |
+| `experiments/README.md` | 18153 | `45886257e82e08778bf033f546f7a530a7aaf5b13fd8db10c056685b0920dbcb` |
 | `experiments/run.sh` | 919 | `163cf526461f24ff19d6ff9746f683821a5535f68b63957868f921f0465a8648` |
 
 ## Run records: Llama-3.2-3B and Qwen3-1.7B four-round graph; partial arithmetic
@@ -2248,7 +2242,7 @@ Every file of the release, grouped by role, with its size in bytes and SHA-256 d
 | `experiments/outputs/2026-10-03-h100/graph_unaudited_llama3.2-3b/shared_adapter/adapter_config.json` | 865 | `fd484cea9143b5c88c61091b1bfed7c8f723809adb176439b05c90bce4ac6d55` |
 | `experiments/outputs/2026-10-03-h100/graph_unaudited_llama3.2-3b/shared_adapter/README.md` | 5218 | `68f985f912bcab52dbcaf4c2fce128686b1565f1d1591f8310fd25bcdd50c287` |
 | `experiments/outputs/2026-10-03-h100/graph_unaudited_llama3.2-3b/shared_adapter/shared_adapter.json` | 9348 | `4f61fe277df2bc533527131b651daa10b34e82c5a160850e44f3d1bc2775785e` |
-| `experiments/outputs/2026-10-03-h100/README.md` | 27873 | `0f57438659b86132036410e864d118c7e5d9843c0250f27e6b2c2fb2183cff3a` |
+| `experiments/outputs/2026-10-03-h100/README.md` | 27749 | `6226cca5b8774b7bc296008abd88f13e8d451c53e85d5bab6946bfb2cd5614d3` |
 | `experiments/outputs/2026-10-03-h100/reports/report_graph_unaudited.md` | 10463 | `97c0cf838f379a81dc7ce699e1431f80caa5944c8160e0b8e1305560f6cbec8b` |
 | `experiments/outputs/2026-10-03-h100/reports/report_graph_unaudited_llama3.2-3b.md` | 10720 | `c53a7e206a87c90e80dfcf6bc598fe0a2e9bb567e51a7ef6bb3fa54b6d5ac84f` |
 | `experiments/outputs/2026-10-03-h100/reports/round1_options_arithmetic_unaudited_llama3.2-1b.json` | 4005 | `bb48bf2bc54ed43c06f0f5e3c84ccda9f21765da12822fe739c0ea4229d204bc` |
@@ -2850,7 +2844,7 @@ Every file of the release, grouped by role, with its size in bytes and SHA-256 d
 | `experiments/outputs/2026-10-04-one-step/graph_unaudited_qwen3-4b/out_one_step/matching/ladder.json` | 2753 | `844e98b7e97b065e730654a4f3cfedcd9597af940995b154b31528cf710a3790` |
 | `experiments/outputs/2026-10-04-one-step/graph_unaudited_qwen3-4b/out_one_step/matching/matched_subsets.json` | 66392 | `4d1b6acaffd761e9a7cbc342f9c2d81c2a9da56e32f38181e752f0ace1f60313` |
 | `experiments/outputs/2026-10-04-one-step/graph_unaudited_qwen3-4b/reference_one_step/h.json` | 31889 | `cd65228e03c5db9d5cdb53d3e678294eab905e053d990172b7942237e5196c41` |
-| `experiments/outputs/2026-10-04-one-step/README.md` | 4602 | `66cb037c859d9d2e61270fb8ce58b336a8e65e7c9a89703e7f023d9ce45e1304` |
+| `experiments/outputs/2026-10-04-one-step/README.md` | 4621 | `3d22daa0d4261dfa57b3786bf3e49232750e6782af618173c5e74a0b7933089c` |
 
 ## Run records: Qwen3-4B four-round graph, audited B=16
 
@@ -3338,7 +3332,7 @@ Every file of the release, grouped by role, with its size in bytes and SHA-256 d
 | `experiments/outputs/2026-10-05-qwen3-4b-graph-audit-b16/out/workers/arm_R.lock` | 0 | `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855` |
 | `experiments/outputs/2026-10-05-qwen3-4b-graph-audit-b16/out/workers/arm_S.json` | 7285 | `1094561306f53601cbeb49adf32128239bd9c0ce0bf6a6f863be8d03bd135fd0` |
 | `experiments/outputs/2026-10-05-qwen3-4b-graph-audit-b16/out/workers/arm_S.lock` | 0 | `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855` |
-| `experiments/outputs/2026-10-05-qwen3-4b-graph-audit-b16/README.md` | 4678 | `0cf289261e12ee4f7571c258a897001d657c8daf21f69581c2ca78d215fcc69a` |
+| `experiments/outputs/2026-10-05-qwen3-4b-graph-audit-b16/README.md` | 4688 | `8ff71f56d847623696ee1b47316c443e00c4b2ef8ac06475f273481eebca6b63` |
 | `experiments/outputs/2026-10-05-qwen3-4b-graph-audit-b16/SHA256SUMS` | 830 | `348075a8d426a14665f47031a22c049fac5e01f0656acd4a109227ffd2fbac8a` |
 
 ## Run records: Qwen3-4B four-round graph, unaudited
@@ -3600,269 +3594,6 @@ Every file of the release, grouped by role, with its size in bytes and SHA-256 d
 |---|---:|---|
 | `LICENSE` | 1074 | `1d0dde41ece0f9620937f1a81a67e295ace0eae180c009d862006e8f3b288458` |
 
-## Paper source (LaTeX) and helper scripts
-
-| File | Bytes | SHA-256 |
-|---|---:|---|
-| `manuscript/aistats2027.sty` | 19561 | `33ab38f8aac4b2f1df9fe67e354928598200584e9568385f32deb889e1b81d42` |
-| `manuscript/appendix.tex` | 76564 | `edeaec8a0c9a13aeadd91c7c6d2ba3c4c1800788da91a2880f7048fe5ab44396` |
-| `manuscript/approved_guide_results.json` | 18852 | `d9b4e06562b6543640018f4587c37471a7caa5a2256d831f401a32e57f5ea2f0` |
-| `manuscript/audit_figures.tex` | 969 | `3c6b3552dd0390b5524fde5f4d42be1166080e6225a381036c349996c8c845fd` |
-| `manuscript/audit_readouts.tex` | 1363 | `4d123d4c379c19af07db549db3a9a835cb42e4f298f28c259193dd1f6af587dd` |
-| `manuscript/audit_supplement_figures.tex` | 949 | `5a440e49e8eae4f7b5969227e6f2b71dad5bf76f913be70cf55cd9f67cfa24ca` |
-| `manuscript/availability.tex` | 167 | `c4b071e10e7097463031b5656f26682faed77278777f2db3527eca51f12eb1fb` |
-| `manuscript/check_approved_guide_results.py` | 5406 | `dd29ad70fb53c3713403a949a3914980c03651848ffaf35a78e84bc848ee0318` |
-| `manuscript/checklist.tex` | 4843 | `dff8c16e14ddc3f189b83a366837eb58df7f4d666929db4224fc171a284879c8` |
-| `manuscript/conclusion.tex` | 704 | `a058c1967bae7aecbcffa37a9c37c0b4ee0225604364817aebe3ce69e1cea13e` |
-| `manuscript/disclosure.tex` | 996 | `56dbf71176a736a4897563263fa8a7a122be89f23ddb0212af1ea8a350fd1341` |
-| `manuscript/discussion.tex` | 1184 | `4175da1e1e644c3a28ac47dbe12f6f8469810c5cb25f7fd2399f1fe392eb2041` |
-| `manuscript/eight_round_contrasts_table.tex` | 770 | `477bfb45faa61622587452732a8b770466604a60331463fc6eca84e4d732a8f5` |
-| `manuscript/experiments.tex` | 2415 | `05ac0adbb5adc04186816f55ad3c17c8163cbb147456d27aa9d56956ebcbd356` |
-| `manuscript/fancyhdr.sty` | 20521 | `b56ec4434b9f4607529a4b23dc68ad8d4b94f1f631c8cddaf7da78140d53a5ea` |
-| `manuscript/figure_title_revision_checks.json` | 3547 | `7c3bcbc9fedc259f609b605b6f9fa894ffdca8504a94766fc2a55b103e400b52` |
-| `manuscript/graph_accuracy_figures.tex` | 956 | `0a761a14eac3c9ff9d8d7bf526a65e0aa565d73e9267e76e5e50af48d15e4454` |
-| `manuscript/graph_extensions_appendix.tex` | 9958 | `eb216226ceb281433425333fe2b30826dfaace46b5d5a71cb7b0289f4fa0b453` |
-| `manuscript/h100_blocks_table.tex` | 1250 | `f568a459528a4a90d898aa109c193b93033bf671bef1d18ab64854fcbdd83158` |
-| `manuscript/h100_composition_table.tex` | 1310 | `f1b6b9ce64289cdba7bba1828246ee623d9299e4bb443fd8278605d5eb574d60` |
-| `manuscript/h100_dynamics_table.tex` | 1821 | `779335389ba83862c3e2c526f42b5d67b039f58323022faada4adde5edee34a1` |
-| `manuscript/h100_endpoint_table.tex` | 1830 | `eef4c613c2e6874c8c62442b4b132d118338b4bc447aba810168a159e306b0a1` |
-| `manuscript/h100_feasibility_table.tex` | 2687 | `2e9c6619ade83ebb9ce18935b50cd9af46418ae60688eb1d6977d897e317971b` |
-| `manuscript/h100_matching_table.tex` | 1182 | `3efa0a7aa064863cdb684cc29cee66f2fb2db0ff61f93e55b6b6c92da37f0250` |
-| `manuscript/h100_partial_table.tex` | 3845 | `584f647127832de70d16baeb41dd7e26fed5ea74e0a22e911877f0450fbb9665` |
-| `manuscript/h100_pending_table.tex` | 1321 | `7172d3c0e311c028a9d9394342a0af8c950ed8dae77b0694b4eeadae8c28d782` |
-| `manuscript/h100_progress_table.tex` | 998 | `4f84092ac70e1ca040d6462a6080fa303471cf9da6ad3df4c7808903ca18416f` |
-| `manuscript/h100_results_appendix.tex` | 12271 | `0b3af5aa4aa92397994f6ff8feec849d31259d3380bb230446794ba91bba5575` |
-| `manuscript/h100_rounds_table.tex` | 2920 | `7432bc982bd2f1f359ae92bbc9d55f4147c8c8cb699c33130a79e007610accb2` |
-| `manuscript/h100_tpr_table.tex` | 1864 | `d06a4ce091b6b282d6eceb2543f9a3d20d83723dacf2b257f5178c6fd976bb13` |
-| `manuscript/introduction.tex` | 2753 | `253dd96d2fd01007de7edaee02186a5413c75f5ad374c6c206273b5d31d26aab` |
-| `manuscript/llama_four_round_audit_contrast_table.tex` | 704 | `a4e48ce15ae66b98e98bff1a00fdc96a78f4ae331fb4d1cae903ec8ce3a28829` |
-| `manuscript/llama_four_round_endpoint_table.tex` | 871 | `49511b3f3ea43f045dd4021592c9f156441eff5eb8864d03d956e9bb59d70a3b` |
-| `manuscript/llama_four_round_raw_figures.tex` | 5672 | `2207a0f5a4de197e844918a4e91dd53bb1ad0e45a7298d8fca464b2884fd5de2` |
-| `manuscript/main.tex` | 4878 | `51a58363c357ee888459c8d03cfb90055f00e93331f3b42139d45f5420daeb2c` |
-| `manuscript/methods.tex` | 14250 | `06c3c5675fbcf7464663100f6e1dc9a87ccedbf464eae88215b9ad885de1ad11` |
-| `manuscript/one_step_diagnostics_table.tex` | 1150 | `8e1559a829aba60f18090bdabe50cb26c0edb32a4cda9dc5a5eb9a9a140d1323` |
-| `manuscript/one_step_graph_unaudited_blocks_table.tex` | 919 | `63fd7e9c8735bafa5ec2d99cbbacf4ab8bc58babe1ceff75b74cdbe4adf91893` |
-| `manuscript/one_step_graph_unaudited_llama3.2-3b_blocks_table.tex` | 933 | `8ada2da6feafed10657ed6605b9885aaa484811733024a1d6b486a349bef7898` |
-| `manuscript/one_step_graph_unaudited_qwen3-4b_blocks_table.tex` | 920 | `33efd13e36db034d5fdff8eb1121d814c092053d0d830106dbe1b3019e0427df` |
-| `manuscript/one_step_heldout_table.tex` | 1335 | `6f96f2f60c95a18fef50c55c626cc168c12159d9b2d6def6a38337401aff061e` |
-| `manuscript/one_step_selected_raw_figures.tex` | 3560 | `30f2a95d2a92460e76b0cac97503666f03379dd90a1da769cc61bb82726fd0ac` |
-| `manuscript/optional_inputs.py` | 1508 | `923e22440d52a009900d3d077d09929a555fbbe4a3039829e7a869629f77f3ca` |
-| `manuscript/plot_combined_graph_accuracy.py` | 5428 | `f9d0182e37e72d003cade0ab2291d37b139bd7a477b92fe9ffb316e4f6f1354e` |
-| `manuscript/polish_figure_titles.py` | 6085 | `3416d35725767f3ec3f9c78a879edef6b3d33f2b0b4116d0d760a4c9701b475c` |
-| `manuscript/prepare_qwen4b_raw_figures.py` | 4253 | `98e592fb0f0891314590cb26b6c755954632067b4a0797f94af4e8708b837c33` |
-| `manuscript/problem_formulation.tex` | 3069 | `9ac7355e9b9fb65843eb8be901348f82fe7e46673258957149bacb2945206784` |
-| `manuscript/qwen17_policy_endpoints_table.tex` | 1212 | `f9d71b57a4feef5a2ad7e1b003ef60e6d8a9f4806adcfa423365c1bb8e758a52` |
-| `manuscript/qwen4b_audit_contrast_table.tex` | 655 | `2333c5035d8fc8733459dc418862c9213f2324cf53d4869fe115bb249f90b4a7` |
-| `manuscript/qwen4b_audit_readouts_table.tex` | 1964 | `9463f05df7bb3bd74ea77d387059f95e15417b71f1235e1a48157db43a7bbaf7` |
-| `manuscript/qwen4b_blocks_table.tex` | 1194 | `9d97ff54192c68db788729137ead203e3c050d1a77cfb50298a503d50e740348` |
-| `manuscript/qwen4b_four_round_raw_figures.tex` | 5985 | `6b656e163dc3cfba7c5659f3056712b28b8eef72bc00da19746b2c27e864229f` |
-| `manuscript/qwen4b_matching_table.tex` | 927 | `a2d0072e0dc27543070b74ccb78a0cb1d343b21ec09c817eab4eeb6dd6eb0681` |
-| `manuscript/qwen4b_multiround_appendix.tex` | 4242 | `04e82ad62df1d3d34eaf4ed6e3a3ce43c0198deece4ba39768db9d2aa48f9404` |
-| `manuscript/qwen4b_multiround_endpoint_table.tex` | 939 | `d6c6adc46e6930b9f4077f4b86645767e18ce6e5c2060760a3ac2f82d6b3c6ec` |
-| `manuscript/qwen4b_policy_endpoints_table.tex` | 1163 | `699622aeb769d79553a28bb99c47ad40347d8dc6ed7a30d026c78e1b2fa23fbf` |
-| `manuscript/qwen4b_training_table.tex` | 1327 | `4a8487ef22228e1e3034dd7295d4b5bd97334f7bddd6ad89bb3027aa9e112ff5` |
-| `manuscript/qwen4b_trajectory_table.tex` | 2754 | `2e8307bfb69017123568f14bb82aef52db05fbdf2daf6591fd384ee26175e9ab` |
-| `manuscript/qwen_four_round_accuracy_figure.tex` | 681 | `90c0e39528b5c3504d332762091ab185c99dbd8b9712150f39f4837b6b7fd4a2` |
-| `manuscript/qwen_four_round_audit_contrast_table.tex` | 713 | `27e159372f3077e1f207c1e20b7380bdb8182bf800567f71ed01d3c7d37f39c1` |
-| `manuscript/qwen_four_round_audit_table.tex` | 1985 | `1a863a914b2852b181c04e30e5b1281355550f1d61a9e1d246678bf146bc4cd9` |
-| `manuscript/qwen_four_round_blocks_table.tex` | 1069 | `2ab71a823606671e8dd53b298cecd758e3052d89fd6b6f83771907390b912187` |
-| `manuscript/qwen_four_round_endpoint_table.tex` | 848 | `0dde99bdac22e9896912363d27c99c3c1101186da4989cf3a889281c1d20a91e` |
-| `manuscript/qwen_four_round_matching_table.tex` | 913 | `242c0202444003a953a46e953e6576523494b867dcebe8eb4a6ca996d649a5e3` |
-| `manuscript/qwen_four_round_raw_figures.tex` | 6084 | `69a3b44232c0d7124ff15a0038b84b43e79b1da07ed5db037a64e8fe274fa611` |
-| `manuscript/qwen_four_round_trajectory_table.tex` | 2616 | `955727511a1514e55a7d6ed8e103f74fd4f7af2350b1c7d6c252b22bad831a4d` |
-| `manuscript/README.md` | 311 | `b845aaa70acab0b869553b90477e054afd22b635b70de1e250712d72931729ba` |
-| `manuscript/references.bib` | 12416 | `12c1db17829c7a6d2a54b8d54174da50c76a39e5d7d01fd16b9655fa8dd45108` |
-| `manuscript/related_work.tex` | 1495 | `d5a3cb2297ee3f383628b0c4859d97b9c241961ff829ec5669780c7f3cd1164d` |
-| `manuscript/related_work_appendix.tex` | 3459 | `3af151620b48741607edfc5d7a89ef14bfe17fe15a68e763073a3a786671ac65` |
-| `manuscript/results.tex` | 4085 | `bd1a6fca292f7385300b49572f800f99ed406b96976f66540027833081556898` |
-| `manuscript/scripts/compose_population_overview.py` | 6343 | `9cd540b64ee093b5c83bf2ab36645617c44f367afe38d7d55b18a408fef8426d` |
-| `manuscript/scripts/requirements-figures.txt` | 28 | `b12cdb7d2b0f547aa5b0408551033117ff4a678d908b85d76fe582cdc522a5b6` |
-| `manuscript/table_typography.py` | 2627 | `7fce9bc14ae5145dedbaaad1304b359e6e13a90172b21977aa681c30b5a58941` |
-| `manuscript/theory_checks.py` | 10241 | `3315cc6403040ff197512137bdb3a182173fbff661e60e729e9f3e49d54de28e` |
-
-## Figure files and their validated summaries and provenance digests
-
-| File | Bytes | SHA-256 |
-|---|---:|---|
-| `manuscript/figures/combined_graph_accuracy/graph_accuracy.pdf` | 97388 | `dd1236888091dd2dd3cb83669af368b185e182a82f5c4bf4f24488b5495a1556` |
-| `manuscript/figures/combined_graph_accuracy/provenance.json` | 17422 | `c6c8e961fc90f154167d256f960454d9e88eb9a29d42fdff30e7db0a4da95892` |
-| `manuscript/figures/graph_extensions/one_step_contrasts.pdf` | 47107 | `8dfb14200ee83dd827bee00a287b91ee46c29c6a85e4db0692a3e45d8d730d7d` |
-| `manuscript/figures/graph_extensions/provenance.json` | 145332 | `a23467b1041714f1a4afbdbbb25ac5a7577d6de01e894c73f5212de6f83130d7` |
-| `manuscript/figures/graph_extensions/qwen_accuracy.pdf` | 61578 | `7e205d986d7a970a3555525c8e3eec5d5e683feffc0c15daa114ddf115eefda2` |
-| `manuscript/figures/graph_extensions/qwen_target_errors.pdf` | 61339 | `086a52fa205efd567514c0d0606ca09ac28685f49ced8e1d41255c58d0a71b13` |
-| `manuscript/figures/graph_extensions/README.md` | 2208 | `4665cf36baaee0f62a5e65bf16856996ff2507926cf5ce959a8fdc0f6be7f2cd` |
-| `manuscript/figures/graph_extensions/table_contract.json` | 20989 | `1ef96a472aeaa26ea084313136ac8fef00806e27288ff47d75ac2ed5a1352956` |
-| `manuscript/figures/graph_extensions/validated_results.json` | 3567869 | `d7f3f773e662ea422b18ec46923bdef28398aa72e2c9baf7338489a9b814b632` |
-| `manuscript/figures/h100_runs/graph_accuracy.pdf` | 48428 | `793f57f4fb59a1efacce11b45e33aef709e66c997132daa5e3ef93a468735f4e` |
-| `manuscript/figures/h100_runs/graph_target_errors.pdf` | 48481 | `5a20fddaceee16df84c94e49d6be3b7437eb39cb964d6a7063dfb05a0c7f24eb` |
-| `manuscript/figures/h100_runs/original_eval_id_by_difficulty.png` | 145333 | `84be9fd86b60e2150f70e2d9fa0b4160033157e9d7b9b47ffb1dedce10c86d8c` |
-| `manuscript/figures/h100_runs/original_eval_id_pass1.png` | 179183 | `075d9f26cef23045547f2a60e47588ca13de6b2d423e98066e12b01324a1e11d` |
-| `manuscript/figures/h100_runs/original_eval_ood_by_difficulty.png` | 162931 | `c0fe73ed13cca633c0708b8642aaceb69c3a3d3c873e6d233b72fcb53ecdecb6` |
-| `manuscript/figures/h100_runs/original_eval_ood_pass1.png` | 180680 | `d61c990e2eddb08752eccfeef8349a247cf68d276672dd3903cb6e1078170efd` |
-| `manuscript/figures/h100_runs/partial_training.csv` | 2351 | `2b3db9bfc3b15f6464d78097f9108ca3bf07a8031ef78bba5b3db01e4f62666f` |
-| `manuscript/figures/h100_runs/provenance.json` | 58431 | `70bec3c136dfabd7ddb824942b350efebe2aee7fc0e023ff131c7ae6e95ad06e` |
-| `manuscript/figures/h100_runs/README.md` | 3418 | `4119a71024e8a24b6980773b8a652f6dd066e554494929db52573246fa2b1a59` |
-| `manuscript/figures/h100_runs/round_summary.csv` | 31418 | `3b1580d241c7bac0617dc38a0610712727c550c6a520f2fcfd0ff6821f42b0be` |
-| `manuscript/figures/h100_runs/snapshot_progress.csv` | 441 | `0953f173506b8e5877eaa17678ff81937af757dac3cc8a6d5544f321f0e552db` |
-| `manuscript/figures/h100_runs/tpr_rates/block_rates.csv` | 13643 | `4886760f69fd03313b9e40bf98e9c9105fd12eddac8d67c00f10fbba452fae27` |
-| `manuscript/figures/h100_runs/tpr_rates/provenance.json` | 27901 | `5fa7d3ccf4d807ec5d94a9702692415aa6beedb39a6c5ba0bdc77f0098b64726` |
-| `manuscript/figures/h100_runs/tpr_rates/README.md` | 3721 | `bfd7d9bdf654c29066509510009ce260be6343dff9c374e2116d9e5538e56603` |
-| `manuscript/figures/h100_runs/tpr_rates/round_summary.csv` | 1214 | `91ce86a0a8fdf34d2a64350f6dbf9cf844c2f038573307f6daf80e8a0f8ad8ac` |
-| `manuscript/figures/h100_runs/tpr_rates/validated_tpr.json` | 44950 | `6341772c8175ab126ab745cdbc7f72a9e425a574003c6e0da33f77e1b8a8e30c` |
-| `manuscript/figures/h100_runs/validated_results.json` | 513119 | `4147039c80fbbcb53cbb13507167ba03cd4ecbfe6df3a16e003acfbbef572885` |
-| `manuscript/figures/llama_four_round_raw/audited_eval_id_by_difficulty.png` | 103362 | `45fb763762824779625b3e35a45a4c52d456d45256f65f410726bf95f962309e` |
-| `manuscript/figures/llama_four_round_raw/audited_eval_id_pass1.png` | 136708 | `f028935b068f4ec9011de6f22ae4128ae43d9739bd641deaf7f92835bc62c7f1` |
-| `manuscript/figures/llama_four_round_raw/audited_eval_id_summary.json` | 25449 | `451d5d391aba4ddb610e23a487addbb078c85fb619998a6253dc14839fb09d47` |
-| `manuscript/figures/llama_four_round_raw/audited_eval_ood_by_difficulty.png` | 109702 | `8bb281ca6de7518f9393052ab442e7dd15f2a50c710b8b510df356a00a390265` |
-| `manuscript/figures/llama_four_round_raw/audited_eval_ood_pass1.png` | 133796 | `900d371b64be812cb9ee808004c83396426f2a882c080e5d0741525b75fdd401` |
-| `manuscript/figures/llama_four_round_raw/audited_eval_ood_summary.json` | 25466 | `3cb1585e366a4973a533ac7c1142bfcdc5b7d4fceaafde0296b4ea3f28929455` |
-| `manuscript/figures/llama_four_round_raw/comparison_eval_id_by_difficulty.png` | 145333 | `84be9fd86b60e2150f70e2d9fa0b4160033157e9d7b9b47ffb1dedce10c86d8c` |
-| `manuscript/figures/llama_four_round_raw/comparison_eval_id_pass1.png` | 179183 | `075d9f26cef23045547f2a60e47588ca13de6b2d423e98066e12b01324a1e11d` |
-| `manuscript/figures/llama_four_round_raw/comparison_eval_id_summary.json` | 50754 | `8f91f0b568f3cfefff6aec386210aafbb210217ef936d2eb89d63ead0a0f11b5` |
-| `manuscript/figures/llama_four_round_raw/comparison_eval_ood_by_difficulty.png` | 162931 | `c0fe73ed13cca633c0708b8642aaceb69c3a3d3c873e6d233b72fcb53ecdecb6` |
-| `manuscript/figures/llama_four_round_raw/comparison_eval_ood_pass1.png` | 180680 | `d61c990e2eddb08752eccfeef8349a247cf68d276672dd3903cb6e1078170efd` |
-| `manuscript/figures/llama_four_round_raw/comparison_eval_ood_summary.json` | 50841 | `a3467864ce1cdc9b9f9f997605772dab133fc8dd1291d03f3750a9850a76b439` |
-| `manuscript/figures/llama_four_round_raw/provenance.json` | 8237 | `f0b885de6c29f522008896d24cb679f15d749183119ef1c5ba93115da88b92d4` |
-| `manuscript/figures/llama_four_round_raw/README.md` | 1666 | `7fcd514a8c11ee24700336fcd4b70130d260863c32432eb7c400f372c0498f92` |
-| `manuscript/figures/llama_four_round_raw/unaudited_eval_id_by_difficulty.png` | 101008 | `1fd1ea1f55739086b92b8ec81e2593144c8034c783f19f24ac15faee86e095f2` |
-| `manuscript/figures/llama_four_round_raw/unaudited_eval_id_pass1.png` | 130846 | `3e7fdf269bfbbfacc04fc0b9c3334074a377830d256d8d3e6111364aa6a713f0` |
-| `manuscript/figures/llama_four_round_raw/unaudited_eval_id_summary.json` | 25378 | `ecd2ae9b65cdada6635301beeba212fdaedea7b1e502861827da4b11919d4872` |
-| `manuscript/figures/llama_four_round_raw/unaudited_eval_ood_by_difficulty.png` | 110562 | `1342273ede24b55102ec01c9bb1e1693e08f00af32741b92326cb24c987a6e2d` |
-| `manuscript/figures/llama_four_round_raw/unaudited_eval_ood_pass1.png` | 133910 | `6fc3b108f2390ebc7b12d993d8ded513f7dce3c322b5d0975f8800bedc60e4fa` |
-| `manuscript/figures/llama_four_round_raw/unaudited_eval_ood_summary.json` | 25448 | `731f63fb0ecadbdcb8003a9404908ffc0a183e981ef9e91c1154815d6f5bdfdc` |
-| `manuscript/figures/one_step_selected_raw/llama3.2-3b_error_eval_id.json` | 823 | `7aec145963ffb5521435e25fc1ca897ad3228698e776b95e34a98dd4afa4d3cf` |
-| `manuscript/figures/one_step_selected_raw/llama3.2-3b_error_eval_id.pdf` | 49636 | `67c4715ade2c01264b59b46933fdcf3c8b4a6aa8e7a7ae96189f4c9e30407557` |
-| `manuscript/figures/one_step_selected_raw/llama3.2-3b_projection.json` | 833 | `4950cbcdc9ff315c00a6a12a68b6f7f6bb4d4ca59bc007ef40f77d54a9b2aa16` |
-| `manuscript/figures/one_step_selected_raw/llama3.2-3b_projection.pdf` | 53922 | `35740bf08ac74e964ddab191dd22c2cf3486eb92b6c2267cbbacf4c9987b19d1` |
-| `manuscript/figures/one_step_selected_raw/provenance.json` | 7299 | `7883fb70c1f710b8306203b1ec341a545e70f823ab93a7fa5ce959abaf1a6ec9` |
-| `manuscript/figures/one_step_selected_raw/qwen3-1.7b_error_eval_id.json` | 824 | `c6f93c2596ca1d21227a498ce7a989cef5d7f500deb8dc586f0d2ac5869b58d0` |
-| `manuscript/figures/one_step_selected_raw/qwen3-1.7b_error_eval_id.pdf` | 52242 | `ce898be79df8e87f13da4401f6ac2b9949c81b8e74872cfb79affc735685ceac` |
-| `manuscript/figures/one_step_selected_raw/qwen3-1.7b_projection.json` | 841 | `e1dc466f775fc10211fd8e741cc5998f327ac1b83ac86aab81f6ffc0ae60b70f` |
-| `manuscript/figures/one_step_selected_raw/qwen3-1.7b_projection.pdf` | 54943 | `9a4304a702a6fd77f1a6be059ecd106aaffd7ecfadfcb6640fba3b7e36af0ccb` |
-| `manuscript/figures/one_step_selected_raw/qwen3-4b_error_eval_id.json` | 832 | `7e028115d4a560d33923ac3fa97cd49d37193dbde6825702bf916d1efd5facf3` |
-| `manuscript/figures/one_step_selected_raw/qwen3-4b_error_eval_id.pdf` | 49579 | `4ad22ca9a787bb737299b269292973fc0a0db651d63e61084608d10ce01d0e2a` |
-| `manuscript/figures/one_step_selected_raw/qwen3-4b_projection.json` | 841 | `aef6883d309af34902bb0c4556cec9430893b136fc9f38078c20fb0e82478760` |
-| `manuscript/figures/one_step_selected_raw/qwen3-4b_projection.pdf` | 53486 | `096107c8ef3386cbffb147bbdaf4e3398d9a31de5b0a1d8de8da604645adb718` |
-| `manuscript/figures/one_step_selected_raw/README.md` | 2189 | `c3d3ab72bdb9e81a4a6e5793aa23748d5d3556ceb0651039a43fbc47983b9a81` |
-| `manuscript/figures/population_flow/gradient_field.csv` | 32626 | `bc29b17b83e0cff6c5ae829b774001f02c5affa57cb57149c36671c3143975b0` |
-| `manuscript/figures/population_flow/population_flow.pdf` | 66844 | `2f08692cf908158a45a8a83a6589e70736caa0d418ca82a22c4a862aa9fd6eec` |
-| `manuscript/figures/population_flow/population_flow.png` | 78423 | `7bfbaf9a4559bf9c4ab7f8bc960bfe96e5ef74dffa7f59561a19e354152b5bc2` |
-| `manuscript/figures/population_flow/README.md` | 3322 | `2bfb0ab54522bb573a95cbdad79df074f1d655d3a168dadd43acd64f0932bdc3` |
-| `manuscript/figures/population_flow/trajectories.csv` | 2309074 | `f3f3395d222ef27eb9ac5e829ccb0f25f092d9cbe22d228125691aed03eb1364` |
-| `manuscript/figures/population_flow/validation.json` | 4055 | `a1e0cc939219208ead15bdce3b5a86282e5d152dce835e3146eaf56d2c93de62` |
-| `manuscript/figures/population_overview/composition.json` | 1248 | `538f2395ccfd19744ccd98678fe689b5797a43441e0cdd3b80f03eebead9af4d` |
-| `manuscript/figures/population_overview/population_overview.pdf` | 4708351 | `65c6a75de2aee2a348c1b305d1f78f290b1840f6b18656ceae744b8980dbde6f` |
-| `manuscript/figures/qwen4b_four_round_raw/audited_eval_id_by_difficulty.png` | 108094 | `94cc27ec91de2862ba561722ab86dd163c0837eead248a5ec4885d0781a93d53` |
-| `manuscript/figures/qwen4b_four_round_raw/audited_eval_id_pass1.png` | 138996 | `565cc89206ea815b378892e1935151afad4f8c09d8c6aa0d5a0b2a133d8e59c2` |
-| `manuscript/figures/qwen4b_four_round_raw/audited_eval_id_summary.csv` | 8276 | `f389b01038194c4bb58017d840bee3db33653b6465e7db718d0cdaa43b289332` |
-| `manuscript/figures/qwen4b_four_round_raw/audited_eval_id_summary.json` | 25498 | `80ab40d8105e5b82b979e925742d79615886e31f755ed67c6a1b283f1c07c798` |
-| `manuscript/figures/qwen4b_four_round_raw/audited_eval_ood_by_difficulty.png` | 86138 | `20843ee41e701f3b8dfe2a3027bd557c86dc074b85c0c904760d34f352ef4a45` |
-| `manuscript/figures/qwen4b_four_round_raw/audited_eval_ood_pass1.png` | 144616 | `26b2f9227af3bc8eff032a14dc4b99587bda83f7c82a62af4a7959f9cdf7ed4a` |
-| `manuscript/figures/qwen4b_four_round_raw/audited_eval_ood_summary.csv` | 8224 | `17e93d8935918d3ef1f70b8712ac181c55a0daeafc21e38914fb175a9119196a` |
-| `manuscript/figures/qwen4b_four_round_raw/audited_eval_ood_summary.json` | 25446 | `85629767f79b28db34e917dcd0d92e011625aca4de0e47acfee525183061c088` |
-| `manuscript/figures/qwen4b_four_round_raw/comparison_eval_id_by_difficulty.png` | 142985 | `260daef501e2755053ebbc2e12d5c3ae61dc17ffb88200820f06c12ef4ec905e` |
-| `manuscript/figures/qwen4b_four_round_raw/comparison_eval_id_pass1.png` | 164362 | `51cb80ca7df4a8aa2f8b90089f1f1e5f461c4492e20fed08af5de63b792d416f` |
-| `manuscript/figures/qwen4b_four_round_raw/comparison_eval_id_summary.csv` | 13080 | `a2b8699a5dcf1fb28358bc2b73cd9fa59e6f266cb66474a6ae739448c348944e` |
-| `manuscript/figures/qwen4b_four_round_raw/comparison_eval_id_summary.json` | 50764 | `077dbfcad45cbaa5da31a3b70ef1f5a9521ffc0442055ba784e689d147902b70` |
-| `manuscript/figures/qwen4b_four_round_raw/comparison_eval_ood_by_difficulty.png` | 140551 | `9338d49127e0c843f21caecfd1ff3fd560576806d1a9e9dfe535ea72da311f1f` |
-| `manuscript/figures/qwen4b_four_round_raw/comparison_eval_ood_pass1.png` | 162718 | `cf1b917542430f47c977990c4f5116f371d604c08d23821eaa8eb05fd5ca6819` |
-| `manuscript/figures/qwen4b_four_round_raw/comparison_eval_ood_summary.csv` | 13023 | `28af7c547d24390773a26ec38da7d8c60115b664b216d1a6c51d7df15dc2a398` |
-| `manuscript/figures/qwen4b_four_round_raw/comparison_eval_ood_summary.json` | 50707 | `5f8974a3d4edde2250b5736c62af6fd735d433357b5290070633af9ec12e65de` |
-| `manuscript/figures/qwen4b_four_round_raw/provenance.json` | 10531 | `e0b06960a4fdc5b8837a02617f1ec3aafd7e39a2af43676e0d225d25868dfa37` |
-| `manuscript/figures/qwen4b_four_round_raw/unaudited_eval_id_by_difficulty.png` | 100476 | `4bbe034f233bd2246dcac306c50c0928a31f069f2a45952c808048f5e5122146` |
-| `manuscript/figures/qwen4b_four_round_raw/unaudited_eval_id_pass1.png` | 125469 | `ee48470854d85da5229275bb6b1ff36c265b58ce40d108018aeb369f751eae35` |
-| `manuscript/figures/qwen4b_four_round_raw/unaudited_eval_id_summary.csv` | 6374 | `3c35527ec84a0c230085390a4928a1458ef589f8c060dfe19028f7fc813e7300` |
-| `manuscript/figures/qwen4b_four_round_raw/unaudited_eval_id_summary.json` | 25400 | `a94b6afd8c08f25984c273a93aba195874a8473fd438769b5690ed3e61663464` |
-| `manuscript/figures/qwen4b_four_round_raw/unaudited_eval_ood_by_difficulty.png` | 96624 | `759f5354ed0695b93715b2ebc31bc64a9eee5907ee42da1d2100fa8d1d0ab40d` |
-| `manuscript/figures/qwen4b_four_round_raw/unaudited_eval_ood_pass1.png` | 127724 | `19bbebf316b77bb763186b71cefd2f31e1f6a22167f1b7097088e4656df54177` |
-| `manuscript/figures/qwen4b_four_round_raw/unaudited_eval_ood_summary.csv` | 6373 | `67245745538d16a9e3b48f1620f36bba0a5a3580c1ba8756b95c6f4bd2c0e1f3` |
-| `manuscript/figures/qwen4b_four_round_raw/unaudited_eval_ood_summary.json` | 25399 | `5b7d5bc73429dac0421d9bdc11fd5db53b94354c020fc40e3591f7d861b0462a` |
-| `manuscript/figures/qwen4b_multiround/detailed_results.json` | 521936 | `0ccc8382f9fea4b0242ee42e76c4c91e9e263a0cde2b4211a6afc90018ae4aeb` |
-| `manuscript/figures/qwen4b_multiround/qwen4b_accuracy.pdf` | 48165 | `f839ea57d89aff7bc301ab83f661293b126e3298c701a1fd1258ebc498daf509` |
-| `manuscript/figures/qwen4b_multiround/qwen4b_target_errors.pdf` | 61673 | `ef3bb7e2894cb4e801edffea3e6a2d4f130b457dfe5294e5a3787c6a8d4877fa` |
-| `manuscript/figures/qwen4b_multiround/validated_results.json` | 763802 | `190a1772552b00bdbb945d55d767335831912bed5de30789e7f7917b4b7cd3c8` |
-| `manuscript/figures/qwen_four_round_raw/audited_eval_id_by_difficulty.png` | 113452 | `d5fd602d907154e6369bf911972e8f7f888ff1338721c40c1db90808bc16eb93` |
-| `manuscript/figures/qwen_four_round_raw/audited_eval_id_pass1.png` | 128712 | `a764f08e3e53abbd3cbc023e4f123a9aa6e731a9c301da521428b84430349342` |
-| `manuscript/figures/qwen_four_round_raw/audited_eval_id_summary.json` | 25471 | `f806505aeee9bb6b4fe4df0fb9e0b1d001b1f038164920d71e92750b290929bc` |
-| `manuscript/figures/qwen_four_round_raw/audited_eval_ood_by_difficulty.png` | 99924 | `612af256986b5eeeebb1707f4326b67622297059212e2f288a507e6320144de5` |
-| `manuscript/figures/qwen_four_round_raw/audited_eval_ood_pass1.png` | 127942 | `ee081617977fbd1bb3178f9aa291c62d3f1379ae4ef528530edbc504c4863d60` |
-| `manuscript/figures/qwen_four_round_raw/audited_eval_ood_summary.json` | 25472 | `a44f85b647b4b7842a9757392bf8e587d27e0c3c12276a1dc110e420435c47cb` |
-| `manuscript/figures/qwen_four_round_raw/comparison_eval_id_by_difficulty.png` | 167147 | `d1d5ac1382c5bb4b1952c770de9629a7f84d83642ebea6966b95a8f6b5e976ec` |
-| `manuscript/figures/qwen_four_round_raw/comparison_eval_id_pass1.png` | 174505 | `00e249255364321ff8b34e671a3032506cb08804c07b7b2b4d7278998e8f34b4` |
-| `manuscript/figures/qwen_four_round_raw/comparison_eval_id_summary.json` | 50812 | `58cca32cc63f56ab015445d2fdb9bc6fd50c18769b45bb33142923f803995810` |
-| `manuscript/figures/qwen_four_round_raw/comparison_eval_ood_by_difficulty.png` | 149374 | `c1d877e38c8547ed6d1d669f1865415e5e7101ef39d451cee57e2fab620a237f` |
-| `manuscript/figures/qwen_four_round_raw/comparison_eval_ood_pass1.png` | 168045 | `4e5ab6478f93ff2d46e51a825880629ea1e7251db40dfc938c91f6a12ddbb7db` |
-| `manuscript/figures/qwen_four_round_raw/comparison_eval_ood_summary.json` | 50853 | `120e1670b048437734adbb540a58f3b2a825779bb9ed7b42e3a192d120776fc4` |
-| `manuscript/figures/qwen_four_round_raw/provenance.json` | 8086 | `515a9848bda8164a13ef5e80d244d02e0fb0ef580ebda4e6a86e5269658c2209` |
-| `manuscript/figures/qwen_four_round_raw/README.md` | 2664 | `60d915641804ece5b85c059051af77f66f180360cc9008c6aef6fae32fe9be6a` |
-| `manuscript/figures/qwen_four_round_raw/unaudited_eval_id_by_difficulty.png` | 108955 | `2a4ffa884798d4c5b742e7756c69d3e260f6d6e1df15685a1d353f14423bc068` |
-| `manuscript/figures/qwen_four_round_raw/unaudited_eval_id_pass1.png` | 129309 | `055aca8a18c5de40a213888760f55d5f2f687843506000f603d9939e316a9c37` |
-| `manuscript/figures/qwen_four_round_raw/unaudited_eval_id_summary.json` | 25414 | `92dc86e443e2fece63a6055bc0830faa70045feca7eb6ca72ab48861ecd2a9bb` |
-| `manuscript/figures/qwen_four_round_raw/unaudited_eval_ood_by_difficulty.png` | 101000 | `7347ced8d5556a072f188eabf5b81eebc26a9f90b1c186676d70eb127919d680` |
-| `manuscript/figures/qwen_four_round_raw/unaudited_eval_ood_pass1.png` | 126208 | `9e6a4e0673cab72af632f2d2576640093d94573c39f9d40b6f053aebaacc6aec` |
-| `manuscript/figures/qwen_four_round_raw/unaudited_eval_ood_summary.json` | 25454 | `5950f14662c4c59bff124fbd1aaae8fc2703b674366a054e198ccdc8d123ea51` |
-
-## Audit-threshold scan and figures (Figure 2) with reproduction script
-
-| File | Bytes | SHA-256 |
-|---|---:|---|
-| `manuscript/RSI-audit-figures-20261003/.plotting/briefs/audit_detail.json` | 5095 | `7cff38b31faf7db66bbdb2e73a89642a3fec49b9d252c04d531349dc44282ea4` |
-| `manuscript/RSI-audit-figures-20261003/.plotting/briefs/audit_map.json` | 5461 | `64d63f4ae1022184437f8ead428b1aa7887d857a05b5d705763bba7b70e5e94d` |
-| `manuscript/RSI-audit-figures-20261003/.plotting/briefs/audit_surface.json` | 5418 | `76370837a3747810dc8983ad6d1a6fa9130e632ee121be4cfad4037f7c6e941e` |
-| `manuscript/RSI-audit-figures-20261003/.plotting/figure_registry.yaml` | 342 | `c6fc8f1c7043eda5e8b5ea4fc13567d05eb67b2bf45cd4049965a2fc645d0239` |
-| `manuscript/RSI-audit-figures-20261003/.plotting/figure_rules.md` | 1045 | `f6e6a252a02f5203a2f4829b5d1898ccc2231f4846742e4d27254290003bfe55` |
-| `manuscript/RSI-audit-figures-20261003/.plotting/palettes.yaml` | 316 | `2efffbff535f67dfdfb255cc2050c03017891a5a314f525529c6765746b980e2` |
-| `manuscript/RSI-audit-figures-20261003/.plotting/project.yaml` | 483 | `23aa619976bcf725981ff71c45c679828e2bbae6488cc1fc8df2a9252a88cce0` |
-| `manuscript/RSI-audit-figures-20261003/.plotting/references/audit_reference.json` | 2517 | `da30bf17277a052d53eb8234600aed38e1d64d4cef76ebb45bcc0ec3ff816254` |
-| `manuscript/RSI-audit-figures-20261003/.plotting/revision_ledger.json` | 3252 | `2daf495019193295d3eedc9eba212cd5c39096b72c5cd522b071eae9aa022646` |
-| `manuscript/RSI-audit-figures-20261003/data/scan-v1/critical_boundary.csv` | 69289 | `1b390128c142dccbbec5e5627030ae9542c70fb3734c9b43ec3ead7ebe144297` |
-| `manuscript/RSI-audit-figures-20261003/data/scan-v1/detail_grid.csv` | 884863 | `269cfe25a9ee76b48d2c73729297945ec031255af2e81054755e37553915f107` |
-| `manuscript/RSI-audit-figures-20261003/data/scan-v1/main_grid.csv` | 2255344 | `e778a254b8a4b3bab0c7b5410a8df4a1d5a9315523d62c187a45d101089e9da4` |
-| `manuscript/RSI-audit-figures-20261003/data/scan-v1/parameter_slices.csv` | 242879 | `8caa866a36e5c63154291b4e1039752ef6703c11b597c7f2cb43568605aefed2` |
-| `manuscript/RSI-audit-figures-20261003/data/scan-v1/scan_validation.json` | 2331 | `df32a86dd2a911002cada07ac955c5223f40d55e1d362d7e06ac723f4954d3f3` |
-| `manuscript/RSI-audit-figures-20261003/data/scan-v1/selected_readouts.csv` | 819 | `9f55d1a9e24889880cb32c893678dc2c3290c096629a153aa77327d9225af877` |
-| `manuscript/RSI-audit-figures-20261003/data/scan-v1/uniform_threshold.csv` | 21919 | `ca31037e9a9f943099eabf2b43e7cc16b0b57b50399d6ce11c44a6fd84e8f2d1` |
-| `manuscript/RSI-audit-figures-20261003/figures/final/audit_detail.pdf` | 96543 | `ea2cc15d69e3ad25982dcbf25dd71774e027d7dfb62577081c9c994107807a86` |
-| `manuscript/RSI-audit-figures-20261003/figures/final/audit_detail.png` | 201070 | `76e8b5867b0598863e98c768ae63754b46555aba54d619224a9c8e96d8698f8e` |
-| `manuscript/RSI-audit-figures-20261003/figures/final/audit_detail.svg` | 1232905 | `2ce64496dd885421c37d62c179797f06aec2c7d4815ad455520c5583932cde7f` |
-| `manuscript/RSI-audit-figures-20261003/figures/final/audit_map.pdf` | 239864 | `6ec35b074d51e593aa1eec2b6cfe184f210640b1cbeb820ab356535ac8ea1ef5` |
-| `manuscript/RSI-audit-figures-20261003/figures/final/audit_map.png` | 364715 | `7db8e96efa112779185a547acb444657f9dd8dda0d6d0da66771385095b33430` |
-| `manuscript/RSI-audit-figures-20261003/figures/final/audit_map.svg` | 2978381 | `3b0697a1abc8c2326f6859a3cac1b0b02bb3d24536bb2d48d506cc448d104d8b` |
-| `manuscript/RSI-audit-figures-20261003/figures/final/audit_surface.pdf` | 368995 | `11c6dde074e987fbbc964b3c6c68450d89b2fed3872c203d99d3421d9d2b5c9f` |
-| `manuscript/RSI-audit-figures-20261003/figures/final/audit_surface.png` | 499515 | `f477d5590a9dca3c7ce2538a214f5841c74f06a29aeff524770fd782a860003e` |
-| `manuscript/RSI-audit-figures-20261003/figures/final/audit_surface.svg` | 2646197 | `42071874b2621ce6168c04815e31f4bb6d7b16ed5e02af526e729941bd554c04` |
-| `manuscript/RSI-audit-figures-20261003/manuscript/audit_figures.tex` | 2436 | `e4c6711bef6d9a2c46b7889ed6e2e42eb02272f1eb4e9afe956c32376860ce08` |
-| `manuscript/RSI-audit-figures-20261003/README.md` | 420 | `7d3c9bae3e4aa2a2a6a03d6eac6984366b527cb8d32a05799f30d34ee00a0c72` |
-| `manuscript/RSI-audit-figures-20261003/reproduce.py` | 1304 | `678a7a03b93fa61fd33975824087417d084c046e9ac232a221fde89691b8f605` |
-| `manuscript/RSI-audit-figures-20261003/requirements-lock.txt` | 493 | `287a18c3eabd4e6565db29b8418ea4e0c495aafb9f95cbc577bb7252ca52ad0c` |
-| `manuscript/RSI-audit-figures-20261003/scan_parameters.json` | 512 | `4702a4f73604c75e5fbb8612a41c22197291de62e11329de0df3d88d1a0cd229` |
-| `manuscript/RSI-audit-figures-20261003/scripts/check_exports.py` | 3881 | `bfe581c55c0c3cc760e144bbcdb108ed7446ada71a6e8265e720471e8bd413d3` |
-| `manuscript/RSI-audit-figures-20261003/scripts/generate_audit_scan.py` | 6481 | `9432b70f6632f70241bf3350b29c477625d755fc9138df0234942738104292bf` |
-| `manuscript/RSI-audit-figures-20261003/scripts/plot_audit_figures.py` | 12293 | `9ffe095d74e2b82cc34dd122ac621d5a6d4bd3e91b4ecaecbf2d1fcb7d3b098b` |
-| `manuscript/RSI-audit-figures-20261003/source/rsi/logistic.py` | 14489 | `0d702fb9a8e36c0fa0349d1fa8a7618e14c52f91f931aa974b727b8b67738958` |
-| `manuscript/RSI-audit-figures-20261003/source/theory_checks.py` | 22830 | `26bcf11a42274de28b09bf6482f3d2b165751cd0841a2d8c7d2d0e5499d0c201` |
-
-## Scripts that build the tables and figures from the run records
-
-| File | Bytes | SHA-256 |
-|---|---:|---|
-| `manuscript/summarize_graph_extensions.py` | 38723 | `458d8afbca03fd9eefbd62ca6cffc39e46e9e0740afe3164694d6ede09c315f3` |
-| `manuscript/summarize_h100_results.py` | 20139 | `045c8f3d199569b20a1e8c6666ee0382c279a7f144c8c4f9f4642b623e86d669` |
-| `manuscript/summarize_h100_tpr.py` | 14331 | `9b555733f6cc338a06e98a19f34519730281f508335c4f346b15a3fb59942e7b` |
-| `manuscript/summarize_qwen4b_results.py` | 14823 | `444095770191ee56b7173f317396d755edc31771800e913e1eaf92f0ad4cf775` |
-| `manuscript/summarize_qwen4b_tables.py` | 16335 | `31bec67d5ba18b544633e3cb7420daaba5df9b1f01bf1a1b8cae26112fcbdc2a` |
-
-## Checks of the displayed tables against the run records
-
-| File | Bytes | SHA-256 |
-|---|---:|---|
-| `manuscript/verify_added_raw_figures.py` | 7089 | `354e0d1357120f15b5c264be00a29afee47d0bb0220b0e53fa82efba2808e31d` |
-| `manuscript/verify_graph_extensions.py` | 5023 | `6f7c7ae975a42d77c6de7b1da1e272e695914f6989ef715b43e7fd909306e2e2` |
-| `manuscript/verify_h100_tables.py` | 10121 | `fbbadea82f85cddb5c518c8e7ebee6f1771db1587216ea4b7a0e4f67c4e489fd` |
-| `manuscript/verify_qwen4b_raw_figures.py` | 4751 | `6d2bebd078e2c7c5846c351f715d33b29a061e8605685c6329471ef120343481` |
-| `manuscript/verify_qwen4b_results.py` | 4959 | `f4aab9944443c0ebe840f5d27129160b14e619807102d210cad51a76e8b38988` |
-| `manuscript/verify_qwen_raw_figures.py` | 4534 | `a93a814af892e7039aece246ee28320604d81c1ecaae46d27a39517f56bcc163` |
-
 ## Protocol notes and the model pins
 
 | File | Bytes | SHA-256 |
@@ -3885,7 +3616,7 @@ Every file of the release, grouped by role, with its size in bytes and SHA-256 d
 
 | File | Bytes | SHA-256 |
 |---|---:|---|
-| `README.md` | 12759 | `d9b231836b29ce07b02e0e947cb638a8ea4d319ddaac80ef66bef23eca195e46` |
+| `README.md` | 9181 | `9c77d79a8b3961f887039a941db5c16205299a6e35dbbe093ed469ee4c11321c` |
 
 ## Library: tasks and judges, matching, selection, auditing, LoRA backend, theory model
 
@@ -3971,7 +3702,7 @@ Every file of the release, grouped by role, with its size in bytes and SHA-256 d
 | `tests/test_one_step_experiments.py` | 30231 | `d7197aa2d2d26f2de2d5b1b9a5057112e0c62aed52461b14edc23b1f8ef32300` |
 | `tests/test_paired_evaluation.py` | 6673 | `c07287a6e3abf706e210495246b7e6adcaac7d14bfde02b8958047fd5b70862a` |
 | `tests/test_provenance.py` | 5667 | `dfa7230dd57f2cc656f80bfe64713688eb98f7ee35bae5144384b101fbfc2ec3` |
-| `tests/test_qwen4b_entry.py` | 5801 | `7ad78be0438bb458360ddbf2b4bf23e021b3580ad7b7cdd60b35628a4a3af792` |
+| `tests/test_qwen4b_entry.py` | 4425 | `d6926d54616acb23b1305b0ab3a15b21a31076ccb8088aae623e217ac4075d4b` |
 | `tests/test_reference_encode.py` | 33283 | `e6cf9abf3f7b53fb00fc40bf36a43825d851a9768138b0a1cac0f1df16c3fa39` |
 | `tests/test_repetition_stop.py` | 7285 | `9e1dcb6c9627d05cf6951015abebfc2e305713685b0caa2361128b28a6022893` |
 | `tests/test_run_iterative_experiment.py` | 41395 | `efcf993a8033f0066c2df79a951a007b5fab97dfffe656bb363fec44b758b4eb` |
@@ -3986,4 +3717,4 @@ Every file of the release, grouped by role, with its size in bytes and SHA-256 d
 
 | File | Bytes | SHA-256 |
 |---|---:|---|
-| `THIRD_PARTY_NOTICES.md` | 1825 | `82a844ba9df6a51a17efa835d0c81c45209e94488ed0595b7b23501deed6d934` |
+| `THIRD_PARTY_NOTICES.md` | 1617 | `5e005edb04672210cd08d6529a3d2c7f2a2684e9daa24e2c9382ce97f6dceff3` |
