@@ -1,9 +1,0 @@
-experiment,completed_arm_rounds,finished_arms,evaluated_ID,evaluated_OOD,status
-arithmetic_audited_llama3.2-1b,2,0,0,0,running
-arithmetic_audited_llama3.2-3b,3,0,0,0,running
-arithmetic_unaudited_llama3.2-1b,2,0,0,0,running
-arithmetic_unaudited_llama3.2-3b,3,0,0,0,running
-graph_audited,36,8,0,0,running
-graph_audited_llama3.2-3b,40,10,41,41,complete
-graph_unaudited,37,8,0,0,running
-graph_unaudited_llama3.2-3b,40,10,41,41,complete
