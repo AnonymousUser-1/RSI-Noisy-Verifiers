@@ -1,0 +1,4 @@
+{
+  "training": {"lora_rank": 8, "lora_alpha": 16, "lora_dropout": 0.0, "target_modules": ["q_proj", "v_proj"]},
+  "verifier": {"kind": "llm_self", "calibration": null}
+}

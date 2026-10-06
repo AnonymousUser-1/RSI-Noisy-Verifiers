@@ -1,0 +1,167 @@
+{
+  "after": {
+    "C": 48,
+    "E": 10,
+    "K": 58,
+    "N_minus": 6702,
+    "N_plus": 9627,
+    "effective_sample_size": 28.451612903225808,
+    "final_FPR": 0.0014920919128618322,
+    "final_TPR": 0.004985976939856653,
+    "positive_weight_FPR": 0.000596836765144733,
+    "positive_weight_TPR": 0.0029084865482497143,
+    "positive_weight_correct": 28,
+    "positive_weight_errors": 4,
+    "positive_weight_examples": 32,
+    "precision": 0.8275862068965517,
+    "weight_sum": 21.0,
+    "weights_all_one": false,
+    "yield": 0.0035519627656316983
+  },
+  "available_examples": 64,
+  "before": {
+    "C": 48,
+    "E": 16,
+    "K": 64,
+    "N_minus": 6702,
+    "N_plus": 9627,
+    "effective_sample_size": 64.0,
+    "final_FPR": 0.002387347060578932,
+    "final_TPR": 0.004985976939856653,
+    "positive_weight_FPR": 0.002387347060578932,
+    "positive_weight_TPR": 0.004985976939856653,
+    "positive_weight_correct": 48,
+    "positive_weight_errors": 16,
+    "positive_weight_examples": 64,
+    "precision": 0.75,
+    "weight_sum": 64.0,
+    "weights_all_one": true,
+    "yield": 0.003919407189662563
+  },
+  "enabled": true,
+  "estimated_error": 0.3541666666666667,
+  "groups": {
+    "graph:0": {
+      "correct": 4,
+      "errors": 4,
+      "population": 23
+    },
+    "graph:1": {
+      "correct": 5,
+      "errors": 1,
+      "population": 28
+    },
+    "graph:2": {
+      "correct": 1,
+      "errors": 1,
+      "population": 13
+    }
+  },
+  "labels": [
+    {
+      "candidate_id": "ce7011d03d5d1de34ac34a5765fb17e83dbfe4832555b2e6e2afc2f07efe1886",
+      "correct": false,
+      "inclusion_probability": 0.34782608695652173,
+      "stratum": "graph:0"
+    },
+    {
+      "candidate_id": "130c2c4526fcb68a056772c6c888577521b1e481268b54833d208a263f8fb604",
+      "correct": true,
+      "inclusion_probability": 0.34782608695652173,
+      "stratum": "graph:0"
+    },
+    {
+      "candidate_id": "60bc9d94016d34b75b30c281ac0db97a519c33baee481ceaa4c93960c13a13a1",
+      "correct": false,
+      "inclusion_probability": 0.34782608695652173,
+      "stratum": "graph:0"
+    },
+    {
+      "candidate_id": "1babc6343880be20f882a648a60f3498ec53bddba019c4db86ead18e527c9db6",
+      "correct": false,
+      "inclusion_probability": 0.34782608695652173,
+      "stratum": "graph:0"
+    },
+    {
+      "candidate_id": "d4ced296350a713be4b1dfa867e91f63754bd9298796711596fba452a53f83a0",
+      "correct": true,
+      "inclusion_probability": 0.34782608695652173,
+      "stratum": "graph:0"
+    },
+    {
+      "candidate_id": "6acf59c6a57ceb4814579b28920ad6397d40918af946a4ed585e38479e97abfb",
+      "correct": false,
+      "inclusion_probability": 0.34782608695652173,
+      "stratum": "graph:0"
+    },
+    {
+      "candidate_id": "cf9ce38fe71076b1eadbf9e66e04b61eb019eae7ba52e51d3255dd905090380b",
+      "correct": true,
+      "inclusion_probability": 0.34782608695652173,
+      "stratum": "graph:0"
+    },
+    {
+      "candidate_id": "aff3ef83f2688023301d28c93f3857073e04e37746eb9c5d042c9f7df5f8ec3d",
+      "correct": true,
+      "inclusion_probability": 0.34782608695652173,
+      "stratum": "graph:0"
+    },
+    {
+      "candidate_id": "2ed41f1d9fe91c13495b15770c982954ad12a25f956f148ab45e3dbab00b4000",
+      "correct": true,
+      "inclusion_probability": 0.21428571428571427,
+      "stratum": "graph:1"
+    },
+    {
+      "candidate_id": "063551cf4759a603735af18e8d61006b65ebb0907496bbb3e9d54a3172329a8f",
+      "correct": false,
+      "inclusion_probability": 0.21428571428571427,
+      "stratum": "graph:1"
+    },
+    {
+      "candidate_id": "d86df9d29484787f3d9f71cbf0668262ff89ce57952ec4cff3c9920d1c119a66",
+      "correct": true,
+      "inclusion_probability": 0.21428571428571427,
+      "stratum": "graph:1"
+    },
+    {
+      "candidate_id": "fc47f61486b8d46fb064d02cdf8a725ed8d651040ee12847d5204850c8279890",
+      "correct": true,
+      "inclusion_probability": 0.21428571428571427,
+      "stratum": "graph:1"
+    },
+    {
+      "candidate_id": "1e06df1f5803c966f478043fe907e0449025e9226c74c26147b90be02a12d4ca",
+      "correct": true,
+      "inclusion_probability": 0.21428571428571427,
+      "stratum": "graph:1"
+    },
+    {
+      "candidate_id": "c03c9d4c47844ed6862b6aa8a56e3277da825a4e6dd81f4237ef5d3d23076f50",
+      "correct": true,
+      "inclusion_probability": 0.21428571428571427,
+      "stratum": "graph:1"
+    },
+    {
+      "candidate_id": "8485991213aa556338a18a5da93e7af82714e03b05e446046f0034ea935c0a50",
+      "correct": false,
+      "inclusion_probability": 0.15384615384615385,
+      "stratum": "graph:2"
+    },
+    {
+      "candidate_id": "450172f8e84505d9b28abb6277ec4c2cf903fa40dc726a1283e83def57304577",
+      "correct": true,
+      "inclusion_probability": 0.15384615384615385,
+      "stratum": "graph:2"
+    }
+  ],
+  "matching_constraints_stage": "pre_audit",
+  "oracle_access": "correctness-only trusted audit queries; no reference solutions",
+  "policy": "adaptive",
+  "post_audit_matching_guaranteed": false,
+  "queries": 16,
+  "requested_budget": 16,
+  "reused": false,
+  "round": 8,
+  "seed": 1420054498
+}

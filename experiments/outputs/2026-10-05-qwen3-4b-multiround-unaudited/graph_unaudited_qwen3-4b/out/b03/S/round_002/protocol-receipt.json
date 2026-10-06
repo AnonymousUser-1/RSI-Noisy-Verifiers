@@ -1,0 +1,65 @@
+{
+  "config": {
+    "audit": {
+      "budget": 0,
+      "policy": "none",
+      "weighting": true
+    },
+    "backend": "hf",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "frozen": false,
+    "generation": {
+      "batch_size": 16,
+      "candidates": 8,
+      "max_new_tokens": 2048,
+      "max_sequence_length": 4096,
+      "prompts_per_pool": 2048,
+      "repetition_stop": {
+        "max_period": 32,
+        "span": 128
+      },
+      "temperature": 1.3,
+      "top_k": null,
+      "top_p": 1.0
+    },
+    "matching": {
+      "error_fraction": 0.25,
+      "token_tolerance": 0
+    },
+    "model": "Qwen/Qwen3-4B",
+    "revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+    "rounds": 4,
+    "seed": 0,
+    "training": {
+      "batch_size": 2,
+      "effective_batch_size": 4,
+      "epochs": 1,
+      "examples": 1024,
+      "gradient_checkpointing": true,
+      "learning_rate": 0.0002,
+      "lora_alpha": 16,
+      "lora_dropout": 0.0,
+      "lora_rank": 8,
+      "target_modules": [
+        "q_proj",
+        "v_proj"
+      ]
+    },
+    "verifier": {
+      "calibration": null,
+      "fpr": 0.2,
+      "kind": "iid",
+      "model": "Qwen/Qwen3-1.7B",
+      "revision": "main",
+      "threshold": null,
+      "tpr": 0.9
+    }
+  },
+  "first_pool_protocol": null,
+  "h_path": "reference_out_multiround_new/h.pt",
+  "imported": false,
+  "migration_sha256": "1cd475eb4ca556f65b2ef5650ebab5b86d53a802d87c03792a024adf99380079",
+  "profile": "new",
+  "source_commit": "f1fd1f8c7bf479a3ca8610240f68d204758d3391"
+}

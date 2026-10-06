@@ -1,0 +1,38 @@
+{
+ "pools": {
+  "b00": {
+   "answers": 16384,
+   "truncated": 27,
+   "correct": 0.50311279296875,
+   "target_errors": 2357
+  },
+  "b01": {
+   "answers": 16384,
+   "truncated": 29,
+   "correct": 0.5059814453125,
+   "target_errors": 2351
+  },
+  "b02": {
+   "answers": 16384,
+   "truncated": 33,
+   "correct": 0.5042724609375,
+   "target_errors": 2322
+  },
+  "b03": {
+   "answers": 16384,
+   "truncated": 30,
+   "correct": 0.50830078125,
+   "target_errors": 2354
+  },
+  "b04": {
+   "answers": 16384,
+   "truncated": 29,
+   "correct": 0.5050048828125,
+   "target_errors": 2346
+  }
+ }
+}
+C:E fraction 0.25  tolerance None -> feasible K=64  J_E per block [142, 138, 127, 137, 125]
+C:E fraction 0.25  tolerance 0    -> feasible K=64  J_E per block [27, 38, 32, 31, 28]   <- config.json
+C:E fraction 0.125 tolerance None -> feasible K=64  J_E per block [142, 138, 127, 137, 125]
+C:E fraction 0.125 tolerance 0    -> feasible K=64  J_E per block [27, 38, 32, 31, 28]

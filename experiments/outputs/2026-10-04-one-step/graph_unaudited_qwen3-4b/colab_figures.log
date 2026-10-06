@@ -1,0 +1,141 @@
+ok   b00/R optimizer steps 1 (want 1)
+ok   b00/R gradient composition, relative error 1.58e-07
+ok   b00/S optimizer steps 1 (want 1)
+ok   b00/S gradient composition, relative error 1.54e-07
+ok   b00/null optimizer steps 0 (want 0)
+ok   b00/null |Delta theta| 0.0 (want 0)
+ok   b00/null gradient composition, relative error 1.58e-07
+ok   b01/R optimizer steps 1 (want 1)
+ok   b01/R gradient composition, relative error 1.51e-07
+ok   b01/S optimizer steps 1 (want 1)
+ok   b01/S gradient composition, relative error 1.54e-07
+ok   b01/null optimizer steps 0 (want 0)
+ok   b01/null |Delta theta| 0.0 (want 0)
+ok   b01/null gradient composition, relative error 1.51e-07
+ok   b02/R optimizer steps 1 (want 1)
+ok   b02/R gradient composition, relative error 1.48e-07
+ok   b02/S optimizer steps 1 (want 1)
+ok   b02/S gradient composition, relative error 1.63e-07
+ok   b02/null optimizer steps 0 (want 0)
+ok   b02/null |Delta theta| 0.0 (want 0)
+ok   b02/null gradient composition, relative error 1.48e-07
+ok   b03/R optimizer steps 1 (want 1)
+ok   b03/R gradient composition, relative error 1.34e-07
+ok   b03/S optimizer steps 1 (want 1)
+ok   b03/S gradient composition, relative error 1.33e-07
+ok   b03/null optimizer steps 0 (want 0)
+ok   b03/null |Delta theta| 0.0 (want 0)
+ok   b03/null gradient composition, relative error 1.34e-07
+ok   b04/R optimizer steps 1 (want 1)
+ok   b04/R gradient composition, relative error 1.66e-07
+ok   b04/S optimizer steps 1 (want 1)
+ok   b04/S gradient composition, relative error 1.68e-07
+ok   b04/null optimizer steps 0 (want 0)
+ok   b04/null |Delta theta| 0.0 (want 0)
+ok   b04/null gradient composition, relative error 1.66e-07
+ok   largest prompt overlap between two blocks: 20% (want well below 50%)
+ok   b00 R/S subsets equal the reference round-1 matching
+ok   b01 R/S subsets equal the reference round-1 matching
+ok   b02 R/S subsets equal the reference round-1 matching
+ok   b03 R/S subsets equal the reference round-1 matching
+ok   b04 R/S subsets equal the reference round-1 matching
+ok   b00/R optimizer steps 1 (want 1)
+ok   b00/R gradient composition, relative error 1.58e-07
+ok   b00/S optimizer steps 1 (want 1)
+ok   b00/S gradient composition, relative error 1.54e-07
+ok   b00/null optimizer steps 0 (want 0)
+ok   b00/null |Delta theta| 0.0 (want 0)
+ok   b00/null gradient composition, relative error 1.58e-07
+ok   b01/R optimizer steps 1 (want 1)
+ok   b01/R gradient composition, relative error 1.51e-07
+ok   b01/S optimizer steps 1 (want 1)
+ok   b01/S gradient composition, relative error 1.54e-07
+ok   b01/null optimizer steps 0 (want 0)
+ok   b01/null |Delta theta| 0.0 (want 0)
+ok   b01/null gradient composition, relative error 1.51e-07
+ok   b02/R optimizer steps 1 (want 1)
+ok   b02/R gradient composition, relative error 1.48e-07
+ok   b02/S optimizer steps 1 (want 1)
+ok   b02/S gradient composition, relative error 1.63e-07
+ok   b02/null optimizer steps 0 (want 0)
+ok   b02/null |Delta theta| 0.0 (want 0)
+ok   b02/null gradient composition, relative error 1.48e-07
+ok   b03/R optimizer steps 1 (want 1)
+ok   b03/R gradient composition, relative error 1.34e-07
+ok   b03/S optimizer steps 1 (want 1)
+ok   b03/S gradient composition, relative error 1.33e-07
+ok   b03/null optimizer steps 0 (want 0)
+ok   b03/null |Delta theta| 0.0 (want 0)
+ok   b03/null gradient composition, relative error 1.34e-07
+ok   b04/R optimizer steps 1 (want 1)
+ok   b04/R gradient composition, relative error 1.66e-07
+ok   b04/S optimizer steps 1 (want 1)
+ok   b04/S gradient composition, relative error 1.68e-07
+ok   b04/null optimizer steps 0 (want 0)
+ok   b04/null |Delta theta| 0.0 (want 0)
+ok   b04/null gradient composition, relative error 1.66e-07
+ok   largest prompt overlap between two blocks: 20% (want well below 50%)
+ok   b00 R/S subsets equal the reference round-1 matching
+ok   b01 R/S subsets equal the reference round-1 matching
+ok   b02 R/S subsets equal the reference round-1 matching
+ok   b03 R/S subsets equal the reference round-1 matching
+ok   b04 R/S subsets equal the reference round-1 matching
+ok   eval_id: 11 of 11 checkpoints evaluated
+ok   eval_ood: 11 of 11 checkpoints evaluated
+STAGE graph_unaudited_qwen3-4b: one-step figures  2026-10-04 20:01:28
+wrote /content/drive/MyDrive/rsi-onestep/rsi-work/experiments/graph_unaudited_qwen3-4b/figures/graph_unaudited_qwen3-4b_one_step_eval_id_pass1.png, /content/drive/MyDrive/rsi-onestep/rsi-work/experiments/graph_unaudited_qwen3-4b/figures/graph_unaudited_qwen3-4b_one_step_eval_id_by_difficulty.png, /content/drive/MyDrive/rsi-onestep/rsi-work/experiments/graph_unaudited_qwen3-4b/figures/graph_unaudited_qwen3-4b_one_step_eval_id_summary.json/.csv
+wrote /content/drive/MyDrive/rsi-onestep/rsi-work/experiments/graph_unaudited_qwen3-4b/figures/graph_unaudited_qwen3-4b_one_step_eval_ood_pass1.png, /content/drive/MyDrive/rsi-onestep/rsi-work/experiments/graph_unaudited_qwen3-4b/figures/graph_unaudited_qwen3-4b_one_step_eval_ood_by_difficulty.png, /content/drive/MyDrive/rsi-onestep/rsi-work/experiments/graph_unaudited_qwen3-4b/figures/graph_unaudited_qwen3-4b_one_step_eval_ood_summary.json/.csv
+wrote /content/drive/MyDrive/rsi-onestep/rsi-work/experiments/graph_unaudited_qwen3-4b/figures/graph_unaudited_qwen3-4b_one_step_projection.pdf/.png/.json
+wrote /content/drive/MyDrive/rsi-onestep/rsi-work/experiments/graph_unaudited_qwen3-4b/figures/graph_unaudited_qwen3-4b_one_step_displacement.pdf/.png/.json
+wrote /content/drive/MyDrive/rsi-onestep/rsi-work/experiments/graph_unaudited_qwen3-4b/figures/graph_unaudited_qwen3-4b_one_step_gradients.pdf/.png/.json
+wrote /content/drive/MyDrive/rsi-onestep/rsi-work/experiments/graph_unaudited_qwen3-4b/figures/graph_unaudited_qwen3-4b_one_step_error_eval_id.pdf/.png/.json
+wrote /content/drive/MyDrive/rsi-onestep/rsi-work/experiments/graph_unaudited_qwen3-4b/figures/graph_unaudited_qwen3-4b_one_step_error_eval_ood.pdf/.png/.json
+ok   b00/R optimizer steps 1 (want 1)
+ok   b00/R gradient composition, relative error 1.58e-07
+ok   b00/S optimizer steps 1 (want 1)
+ok   b00/S gradient composition, relative error 1.54e-07
+ok   b00/null optimizer steps 0 (want 0)
+ok   b00/null |Delta theta| 0.0 (want 0)
+ok   b00/null gradient composition, relative error 1.58e-07
+ok   b01/R optimizer steps 1 (want 1)
+ok   b01/R gradient composition, relative error 1.51e-07
+ok   b01/S optimizer steps 1 (want 1)
+ok   b01/S gradient composition, relative error 1.54e-07
+ok   b01/null optimizer steps 0 (want 0)
+ok   b01/null |Delta theta| 0.0 (want 0)
+ok   b01/null gradient composition, relative error 1.51e-07
+ok   b02/R optimizer steps 1 (want 1)
+ok   b02/R gradient composition, relative error 1.48e-07
+ok   b02/S optimizer steps 1 (want 1)
+ok   b02/S gradient composition, relative error 1.63e-07
+ok   b02/null optimizer steps 0 (want 0)
+ok   b02/null |Delta theta| 0.0 (want 0)
+ok   b02/null gradient composition, relative error 1.48e-07
+ok   b03/R optimizer steps 1 (want 1)
+ok   b03/R gradient composition, relative error 1.34e-07
+ok   b03/S optimizer steps 1 (want 1)
+ok   b03/S gradient composition, relative error 1.33e-07
+ok   b03/null optimizer steps 0 (want 0)
+ok   b03/null |Delta theta| 0.0 (want 0)
+ok   b03/null gradient composition, relative error 1.34e-07
+ok   b04/R optimizer steps 1 (want 1)
+ok   b04/R gradient composition, relative error 1.66e-07
+ok   b04/S optimizer steps 1 (want 1)
+ok   b04/S gradient composition, relative error 1.68e-07
+ok   b04/null optimizer steps 0 (want 0)
+ok   b04/null |Delta theta| 0.0 (want 0)
+ok   b04/null gradient composition, relative error 1.66e-07
+ok   largest prompt overlap between two blocks: 20% (want well below 50%)
+ok   b00 R/S subsets equal the reference round-1 matching
+ok   b01 R/S subsets equal the reference round-1 matching
+ok   b02 R/S subsets equal the reference round-1 matching
+ok   b03 R/S subsets equal the reference round-1 matching
+ok   b04 R/S subsets equal the reference round-1 matching
+ok   eval_id: 11 of 11 checkpoints evaluated
+ok   eval_ood: 11 of 11 checkpoints evaluated
+wrote /content/drive/MyDrive/rsi-onestep/rsi-work/experiments/graph_unaudited_qwen3-4b/figures/graph_unaudited_qwen3-4b_one_step_table.csv
+wrote /content/drive/MyDrive/rsi-onestep/rsi-work/experiments/graph_unaudited_qwen3-4b/figures/graph_unaudited_qwen3-4b_one_step_table15.csv
+wrote /content/drive/MyDrive/rsi-onestep/rsi-work/experiments/graph_unaudited_qwen3-4b/figures/graph_unaudited_qwen3-4b_one_step_cost.csv
+wrote /content/drive/MyDrive/rsi-onestep/rsi-work/experiments/graph_unaudited_qwen3-4b/figures/graph_unaudited_qwen3-4b_one_step_cost_memory.csv
+wrote /content/drive/MyDrive/rsi-onestep/rsi-work/experiments/graph_unaudited_qwen3-4b/figures/graph_unaudited_qwen3-4b_one_step_cost_pools.csv
+DONE graph_unaudited_qwen3-4b one-step, every stage succeeded: figures  (outputs in /content/drive/MyDrive/rsi-onestep/rsi-work/experiments/graph_unaudited_qwen3-4b/out_one_step)

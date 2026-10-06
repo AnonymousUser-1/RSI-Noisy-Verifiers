@@ -1,0 +1,10 @@
+{
+  "checked": [
+    "reference_out_multiround_legacy",
+    "reference_out_multiround_new",
+    "reference_out_audit_legacy",
+    "reference_out_audit_new"
+  ],
+  "exact_tensor_equality": true,
+  "legacy_h": "round1/reference_iterative/h.pt"
+}

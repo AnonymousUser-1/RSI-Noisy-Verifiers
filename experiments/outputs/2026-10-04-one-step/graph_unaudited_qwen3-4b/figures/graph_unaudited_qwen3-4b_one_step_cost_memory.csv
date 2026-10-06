@@ -1,0 +1,4 @@
+stage,allocated_peak_bytes,reserved_peak_bytes
+evaluate,21842849792,41741713408
+reference,11401748480,14023655424
+train,11730565632,14076084224

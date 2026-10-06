@@ -1,0 +1,12 @@
+audit_map:
+  status: final
+  revision: audit_map-v6
+  manifest: figures/manifests/audit_map.final.json
+audit_detail:
+  status: final
+  revision: audit_detail-v6
+  manifest: figures/manifests/audit_detail.final.json
+audit_surface:
+  status: final
+  revision: audit_surface-v6
+  manifest: figures/manifests/audit_surface.final.json

@@ -1,0 +1,19 @@
+{
+  "branch": "R",
+  "clip_threshold": 1.0,
+  "determinism": {
+    "cublas_workspace_config": ":4096:8",
+    "deterministic_algorithms": true
+  },
+  "examples": 64,
+  "mean_loss": 0.011511966312089505,
+  "parameter_hash": "5ecb0216b8adef6f6e8aca4c3bc20fdc7b4bdcb7f765fae8e389b1c0a1f98950",
+  "positive_weight_examples": 64,
+  "seed": 0,
+  "skip_reason": null,
+  "steps": 1,
+  "trained": true,
+  "updates": 1,
+  "weight_sum": 64.0,
+  "weight_uniform": true
+}

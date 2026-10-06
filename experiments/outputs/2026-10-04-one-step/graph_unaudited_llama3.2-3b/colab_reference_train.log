@@ -1,0 +1,86 @@
+STAGE graph_unaudited_llama3.2-3b: one-step reference gradient h  2026-10-04 17:45:07
+`torch_dtype` is deprecated! Use `dtype` instead!
+2026-10-04 17:45:15.271099: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2026-10-04 17:45:15.339430: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00, 54.35it/s]
+wrote /content/drive/MyDrive/rsi-onestep/rsi-work/experiments/graph_unaudited_llama3.2-3b/reference_one_step (h: 112 tensors, 64 examples, |h| = 1.613660e+00)
+STAGE graph_unaudited_llama3.2-3b: one-step train  2026-10-04 17:45:56
+`torch_dtype` is deprecated! Use `dtype` instead!
+2026-10-04 17:46:11.443948: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2026-10-04 17:46:11.512131: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00, 60.89it/s]
+block=b00 arm=R examples=64 diagnostics=recorded
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00, 60.47it/s]
+block=b00 arm=S examples=64 diagnostics=recorded
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00, 60.31it/s]
+block=b00 arm=null examples=64 diagnostics=recorded
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00, 59.62it/s]
+block=b01 arm=R examples=64 diagnostics=recorded
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00, 59.52it/s]
+block=b01 arm=S examples=64 diagnostics=recorded
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00, 59.69it/s]
+block=b01 arm=null examples=64 diagnostics=recorded
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00, 60.17it/s]
+block=b02 arm=R examples=64 diagnostics=recorded
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00, 60.77it/s]
+block=b02 arm=S examples=64 diagnostics=recorded
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00, 61.09it/s]
+block=b02 arm=null examples=64 diagnostics=recorded
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00, 61.25it/s]
+block=b03 arm=R examples=64 diagnostics=recorded
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00, 58.66it/s]
+block=b03 arm=S examples=64 diagnostics=recorded
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00, 57.90it/s]
+block=b03 arm=null examples=64 diagnostics=recorded
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00, 59.01it/s]
+block=b04 arm=R examples=64 diagnostics=recorded
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00, 57.85it/s]
+block=b04 arm=S examples=64 diagnostics=recorded
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00, 59.74it/s]
+block=b04 arm=null examples=64 diagnostics=recorded
+wrote /content/drive/MyDrive/rsi-onestep/rsi-work/experiments/graph_unaudited_llama3.2-3b/out_one_step/experiment.json
+graph_unaudited_llama3.2-3b: one-step train exit 0 (0 complete, 2 round-1 matching infeasible, 1 failed)
+ok   b00/R optimizer steps 1 (want 1)
+ok   b00/R gradient composition, relative error 1.26e-07
+ok   b00/S optimizer steps 1 (want 1)
+ok   b00/S gradient composition, relative error 1.34e-07
+ok   b00/null optimizer steps 0 (want 0)
+ok   b00/null |Delta theta| 0.0 (want 0)
+ok   b00/null gradient composition, relative error 1.26e-07
+ok   b01/R optimizer steps 1 (want 1)
+ok   b01/R gradient composition, relative error 1.37e-07
+ok   b01/S optimizer steps 1 (want 1)
+ok   b01/S gradient composition, relative error 1.40e-07
+ok   b01/null optimizer steps 0 (want 0)
+ok   b01/null |Delta theta| 0.0 (want 0)
+ok   b01/null gradient composition, relative error 1.37e-07
+ok   b02/R optimizer steps 1 (want 1)
+ok   b02/R gradient composition, relative error 1.32e-07
+ok   b02/S optimizer steps 1 (want 1)
+ok   b02/S gradient composition, relative error 1.33e-07
+ok   b02/null optimizer steps 0 (want 0)
+ok   b02/null |Delta theta| 0.0 (want 0)
+ok   b02/null gradient composition, relative error 1.32e-07
+ok   b03/R optimizer steps 1 (want 1)
+ok   b03/R gradient composition, relative error 1.23e-07
+ok   b03/S optimizer steps 1 (want 1)
+ok   b03/S gradient composition, relative error 1.24e-07
+ok   b03/null optimizer steps 0 (want 0)
+ok   b03/null |Delta theta| 0.0 (want 0)
+ok   b03/null gradient composition, relative error 1.23e-07
+ok   b04/R optimizer steps 1 (want 1)
+ok   b04/R gradient composition, relative error 1.28e-07
+ok   b04/S optimizer steps 1 (want 1)
+ok   b04/S gradient composition, relative error 1.29e-07
+ok   b04/null optimizer steps 0 (want 0)
+ok   b04/null |Delta theta| 0.0 (want 0)
+ok   b04/null gradient composition, relative error 1.28e-07
+ok   largest prompt overlap between two blocks: 20% (want well below 50%)
+ok   b00 R/S subsets equal the reference round-1 matching
+ok   b01 R/S subsets equal the reference round-1 matching
+ok   b02 R/S subsets equal the reference round-1 matching
+ok   b03 R/S subsets equal the reference round-1 matching
+ok   b04 R/S subsets equal the reference round-1 matching
+DONE graph_unaudited_llama3.2-3b one-step, every stage succeeded: reference train  (outputs in /content/drive/MyDrive/rsi-onestep/rsi-work/experiments/graph_unaudited_llama3.2-3b/out_one_step)

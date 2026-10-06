@@ -1,0 +1,31 @@
+{
+  "answers_per_question": 1,
+  "base": {
+    "backend": "hf",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "model": "meta-llama/Llama-3.2-3B-Instruct",
+    "revision": "0cb88a4f764b7a12671c53f0838cd831a0843b95"
+  },
+  "data_path": "/content/drive/MyDrive/rsi-onestep/rsi-work/data/graph",
+  "dataset_hash": "c9908f934f86821101cc9f347e1d203ebe8a1b00737b9f66b4f08de8839b90c1",
+  "decoding": {
+    "max_new_tokens": 2048,
+    "max_sequence_length": 4096,
+    "repetition_stop": {
+      "max_period": 32,
+      "span": 128
+    },
+    "temperature": 0.0,
+    "top_k": null,
+    "top_p": 1.0
+  },
+  "question_ids": "efc96c4eac9817ff24018d910141f58a9e519a9d6f562388f493fb6ed2c316e3",
+  "questions": 1000,
+  "round_0": "base model, no adapter (shared adapter has LoRA B = 0)",
+  "split": "eval_ood",
+  "target_signatures": [
+    "nonshortest"
+  ],
+  "task": "graph"
+}

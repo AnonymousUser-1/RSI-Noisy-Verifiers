@@ -1,0 +1,600 @@
+{
+  "step": 0,
+  "branch": "null",
+  "seed": 0,
+  "model_params": {
+    "num_lora_params": 112,
+    "param_names": [
+      "base_model.model.model.layers.0.self_attn.q_proj.lora_A.default.weight",
+      "base_model.model.model.layers.0.self_attn.q_proj.lora_B.default.weight",
+      "base_model.model.model.layers.0.self_attn.v_proj.lora_A.default.weight",
+      "base_model.model.model.layers.0.self_attn.v_proj.lora_B.default.weight",
+      "base_model.model.model.layers.1.self_attn.q_proj.lora_A.default.weight",
+      "base_model.model.model.layers.1.self_attn.q_proj.lora_B.default.weight",
+      "base_model.model.model.layers.1.self_attn.v_proj.lora_A.default.weight",
+      "base_model.model.model.layers.1.self_attn.v_proj.lora_B.default.weight",
+      "base_model.model.model.layers.2.self_attn.q_proj.lora_A.default.weight",
+      "base_model.model.model.layers.2.self_attn.q_proj.lora_B.default.weight",
+      "base_model.model.model.layers.2.self_attn.v_proj.lora_A.default.weight",
+      "base_model.model.model.layers.2.self_attn.v_proj.lora_B.default.weight",
+      "base_model.model.model.layers.3.self_attn.q_proj.lora_A.default.weight",
+      "base_model.model.model.layers.3.self_attn.q_proj.lora_B.default.weight",
+      "base_model.model.model.layers.3.self_attn.v_proj.lora_A.default.weight",
+      "base_model.model.model.layers.3.self_attn.v_proj.lora_B.default.weight",
+      "base_model.model.model.layers.4.self_attn.q_proj.lora_A.default.weight",
+      "base_model.model.model.layers.4.self_attn.q_proj.lora_B.default.weight",
+      "base_model.model.model.layers.4.self_attn.v_proj.lora_A.default.weight",
+      "base_model.model.model.layers.4.self_attn.v_proj.lora_B.default.weight",
+      "base_model.model.model.layers.5.self_attn.q_proj.lora_A.default.weight",
+      "base_model.model.model.layers.5.self_attn.q_proj.lora_B.default.weight",
+      "base_model.model.model.layers.5.self_attn.v_proj.lora_A.default.weight",
+      "base_model.model.model.layers.5.self_attn.v_proj.lora_B.default.weight",
+      "base_model.model.model.layers.6.self_attn.q_proj.lora_A.default.weight",
+      "base_model.model.model.layers.6.self_attn.q_proj.lora_B.default.weight",
+      "base_model.model.model.layers.6.self_attn.v_proj.lora_A.default.weight",
+      "base_model.model.model.layers.6.self_attn.v_proj.lora_B.default.weight",
+      "base_model.model.model.layers.7.self_attn.q_proj.lora_A.default.weight",
+      "base_model.model.model.layers.7.self_attn.q_proj.lora_B.default.weight",
+      "base_model.model.model.layers.7.self_attn.v_proj.lora_A.default.weight",
+      "base_model.model.model.layers.7.self_attn.v_proj.lora_B.default.weight",
+      "base_model.model.model.layers.8.self_attn.q_proj.lora_A.default.weight",
+      "base_model.model.model.layers.8.self_attn.q_proj.lora_B.default.weight",
+      "base_model.model.model.layers.8.self_attn.v_proj.lora_A.default.weight",
+      "base_model.model.model.layers.8.self_attn.v_proj.lora_B.default.weight",
+      "base_model.model.model.layers.9.self_attn.q_proj.lora_A.default.weight",
+      "base_model.model.model.layers.9.self_attn.q_proj.lora_B.default.weight",
+      "base_model.model.model.layers.9.self_attn.v_proj.lora_A.default.weight",
+      "base_model.model.model.layers.9.self_attn.v_proj.lora_B.default.weight",
+      "base_model.model.model.layers.10.self_attn.q_proj.lora_A.default.weight",
+      "base_model.model.model.layers.10.self_attn.q_proj.lora_B.default.weight",
+      "base_model.model.model.layers.10.self_attn.v_proj.lora_A.default.weight",
+      "base_model.model.model.layers.10.self_attn.v_proj.lora_B.default.weight",
+      "base_model.model.model.layers.11.self_attn.q_proj.lora_A.default.weight",
+      "base_model.model.model.layers.11.self_attn.q_proj.lora_B.default.weight",
+      "base_model.model.model.layers.11.self_attn.v_proj.lora_A.default.weight",
+      "base_model.model.model.layers.11.self_attn.v_proj.lora_B.default.weight",
+      "base_model.model.model.layers.12.self_attn.q_proj.lora_A.default.weight",
+      "base_model.model.model.layers.12.self_attn.q_proj.lora_B.default.weight",
+      "base_model.model.model.layers.12.self_attn.v_proj.lora_A.default.weight",
+      "base_model.model.model.layers.12.self_attn.v_proj.lora_B.default.weight",
+      "base_model.model.model.layers.13.self_attn.q_proj.lora_A.default.weight",
+      "base_model.model.model.layers.13.self_attn.q_proj.lora_B.default.weight",
+      "base_model.model.model.layers.13.self_attn.v_proj.lora_A.default.weight",
+      "base_model.model.model.layers.13.self_attn.v_proj.lora_B.default.weight",
+      "base_model.model.model.layers.14.self_attn.q_proj.lora_A.default.weight",
+      "base_model.model.model.layers.14.self_attn.q_proj.lora_B.default.weight",
+      "base_model.model.model.layers.14.self_attn.v_proj.lora_A.default.weight",
+      "base_model.model.model.layers.14.self_attn.v_proj.lora_B.default.weight",
+      "base_model.model.model.layers.15.self_attn.q_proj.lora_A.default.weight",
+      "base_model.model.model.layers.15.self_attn.q_proj.lora_B.default.weight",
+      "base_model.model.model.layers.15.self_attn.v_proj.lora_A.default.weight",
+      "base_model.model.model.layers.15.self_attn.v_proj.lora_B.default.weight",
+      "base_model.model.model.layers.16.self_attn.q_proj.lora_A.default.weight",
+      "base_model.model.model.layers.16.self_attn.q_proj.lora_B.default.weight",
+      "base_model.model.model.layers.16.self_attn.v_proj.lora_A.default.weight",
+      "base_model.model.model.layers.16.self_attn.v_proj.lora_B.default.weight",
+      "base_model.model.model.layers.17.self_attn.q_proj.lora_A.default.weight",
+      "base_model.model.model.layers.17.self_attn.q_proj.lora_B.default.weight",
+      "base_model.model.model.layers.17.self_attn.v_proj.lora_A.default.weight",
+      "base_model.model.model.layers.17.self_attn.v_proj.lora_B.default.weight",
+      "base_model.model.model.layers.18.self_attn.q_proj.lora_A.default.weight",
+      "base_model.model.model.layers.18.self_attn.q_proj.lora_B.default.weight",
+      "base_model.model.model.layers.18.self_attn.v_proj.lora_A.default.weight",
+      "base_model.model.model.layers.18.self_attn.v_proj.lora_B.default.weight",
+      "base_model.model.model.layers.19.self_attn.q_proj.lora_A.default.weight",
+      "base_model.model.model.layers.19.self_attn.q_proj.lora_B.default.weight",
+      "base_model.model.model.layers.19.self_attn.v_proj.lora_A.default.weight",
+      "base_model.model.model.layers.19.self_attn.v_proj.lora_B.default.weight",
+      "base_model.model.model.layers.20.self_attn.q_proj.lora_A.default.weight",
+      "base_model.model.model.layers.20.self_attn.q_proj.lora_B.default.weight",
+      "base_model.model.model.layers.20.self_attn.v_proj.lora_A.default.weight",
+      "base_model.model.model.layers.20.self_attn.v_proj.lora_B.default.weight",
+      "base_model.model.model.layers.21.self_attn.q_proj.lora_A.default.weight",
+      "base_model.model.model.layers.21.self_attn.q_proj.lora_B.default.weight",
+      "base_model.model.model.layers.21.self_attn.v_proj.lora_A.default.weight",
+      "base_model.model.model.layers.21.self_attn.v_proj.lora_B.default.weight",
+      "base_model.model.model.layers.22.self_attn.q_proj.lora_A.default.weight",
+      "base_model.model.model.layers.22.self_attn.q_proj.lora_B.default.weight",
+      "base_model.model.model.layers.22.self_attn.v_proj.lora_A.default.weight",
+      "base_model.model.model.layers.22.self_attn.v_proj.lora_B.default.weight",
+      "base_model.model.model.layers.23.self_attn.q_proj.lora_A.default.weight",
+      "base_model.model.model.layers.23.self_attn.q_proj.lora_B.default.weight",
+      "base_model.model.model.layers.23.self_attn.v_proj.lora_A.default.weight",
+      "base_model.model.model.layers.23.self_attn.v_proj.lora_B.default.weight",
+      "base_model.model.model.layers.24.self_attn.q_proj.lora_A.default.weight",
+      "base_model.model.model.layers.24.self_attn.q_proj.lora_B.default.weight",
+      "base_model.model.model.layers.24.self_attn.v_proj.lora_A.default.weight",
+      "base_model.model.model.layers.24.self_attn.v_proj.lora_B.default.weight",
+      "base_model.model.model.layers.25.self_attn.q_proj.lora_A.default.weight",
+      "base_model.model.model.layers.25.self_attn.q_proj.lora_B.default.weight",
+      "base_model.model.model.layers.25.self_attn.v_proj.lora_A.default.weight",
+      "base_model.model.model.layers.25.self_attn.v_proj.lora_B.default.weight",
+      "base_model.model.model.layers.26.self_attn.q_proj.lora_A.default.weight",
+      "base_model.model.model.layers.26.self_attn.q_proj.lora_B.default.weight",
+      "base_model.model.model.layers.26.self_attn.v_proj.lora_A.default.weight",
+      "base_model.model.model.layers.26.self_attn.v_proj.lora_B.default.weight",
+      "base_model.model.model.layers.27.self_attn.q_proj.lora_A.default.weight",
+      "base_model.model.model.layers.27.self_attn.q_proj.lora_B.default.weight",
+      "base_model.model.model.layers.27.self_attn.v_proj.lora_A.default.weight",
+      "base_model.model.model.layers.27.self_attn.v_proj.lora_B.default.weight"
+    ]
+  },
+  "gradient_norms": {
+    "G_C_vector_norm": 0.6357351659056015,
+    "G_E_vector_norm": 0.34684614662583063,
+    "G_preclip_norm": 0.690528571585203,
+    "sum_correct_sample_norms": 1.3780680154834772,
+    "sum_error_sample_norms": 1.2493583984730665
+  },
+  "per_sample_losses": [
+    0.038718461990356445,
+    7.241057755891234e-05,
+    0.006500015966594219,
+    2.697889271985332e-07,
+    2.3749803403916303e-06,
+    9.686968951427843e-06,
+    1.6987181652439176e-06,
+    6.179909632919589e-06,
+    2.3114753275876865e-05,
+    0.06353440880775452,
+    9.35329410367558e-07,
+    4.4357479964673985e-06,
+    0.0002698012685868889,
+    0.00019193861226085573,
+    0.16339987516403198,
+    2.9434982025122736e-06,
+    0.023098165169358253,
+    0.014504687860608101,
+    0.01253244187682867,
+    1.4946883766242536e-06,
+    0.11790840327739716,
+    2.0265199509594822e-06,
+    6.418939619834418e-07,
+    0.002010674448683858,
+    6.755297363270074e-05,
+    0.04237354174256325,
+    1.125854851125041e-06,
+    0.22948461771011353,
+    2.9893462851759978e-06,
+    0.05979363992810249,
+    1.4521757520924439e-06,
+    2.8742101676471066e-06,
+    2.62269804807147e-05,
+    6.068958100513555e-05,
+    1.2924647307954729e-06,
+    0.0007495667668990791,
+    0.001181170460768044,
+    0.012376365251839161,
+    2.9526688649639254e-06,
+    0.29003408551216125,
+    1.5894430589469266e-06,
+    0.01896480843424797,
+    0.002132191089913249,
+    1.583069661137415e-06,
+    7.905404686425754e-07,
+    7.427624950651079e-07,
+    6.78552578392555e-06,
+    5.646745194098912e-05,
+    0.06308329850435257,
+    0.21323975920677185,
+    0.35534778237342834,
+    0.0001512984454166144,
+    0.00043813290540128946,
+    0.02312137372791767,
+    6.052144954082905e-07,
+    1.2540651823655935e-06,
+    0.05471554398536682,
+    0.0010707683395594358,
+    0.0077096568420529366,
+    3.695434315886814e-06,
+    0.0005911421030759811,
+    0.013614908792078495,
+    0.05834883451461792,
+    1.5038622223073617e-06
+  ],
+  "per_sample": [
+    {
+      "id": "e35e6ebdfd1c953d95c027ed8f32e5209fb5c80a213b7973df027c754778fa53",
+      "correct": false,
+      "norm": 0.05783249425012701,
+      "loss": 0.038718461990356445
+    },
+    {
+      "id": "82486e061584d6838859e421cc651ef9aa1ea3ec3af22a545505447c05a10803",
+      "correct": true,
+      "norm": 0.0002389167636767822,
+      "loss": 7.241057755891234e-05
+    },
+    {
+      "id": "7ddc4b49ebea0b1ecd34898bafdd715187c0347ed40c281e9bbeebb0b5e3a037",
+      "correct": true,
+      "norm": 0.02595850304739149,
+      "loss": 0.006500015966594219
+    },
+    {
+      "id": "897c4e6bf19ae6cd1eb13901530701366fbdc32235921f3da5ca06d007a30471",
+      "correct": true,
+      "norm": 2.2871333797959995e-07,
+      "loss": 2.697889271985332e-07
+    },
+    {
+      "id": "e0b0e40136675bcb48844fc774face4577690d6d6644c3be4b0b4cb9b03c7f7a",
+      "correct": true,
+      "norm": 2.434545235357824e-06,
+      "loss": 2.3749803403916303e-06
+    },
+    {
+      "id": "11f5c4eba0aa02a8ec123c1237d739b2a963e72023f3a22849664b51498d417e",
+      "correct": true,
+      "norm": 2.9865929396032827e-05,
+      "loss": 9.686968951427843e-06
+    },
+    {
+      "id": "0184a2ccf9ccf48c1c087fddd5ae6ddaf66da90be8cdefa316358a12dfd9212d",
+      "correct": true,
+      "norm": 1.7136437185364166e-06,
+      "loss": 1.6987181652439176e-06
+    },
+    {
+      "id": "bde4477276dbcd59bc64298f12fe2094362d3d104d6d8e5db1361b7c3dafde96",
+      "correct": true,
+      "norm": 1.8335632977674778e-05,
+      "loss": 6.179909632919589e-06
+    },
+    {
+      "id": "30e6f9c9cfb655dbec4d2ccf99ee46e1a1df7df813294ea1f187fa32f3077ce5",
+      "correct": true,
+      "norm": 8.775426949754972e-05,
+      "loss": 2.3114753275876865e-05
+    },
+    {
+      "id": "3e4b1ac9c2ac82734dbfba421640a6cfce695303bc7adc9c3a29aeaaa844ea32",
+      "correct": true,
+      "norm": 0.22425839232969202,
+      "loss": 0.06353440880775452
+    },
+    {
+      "id": "915f60ac2c659bce29592032143b10166c18463b2b63fe399717c73103bc5b6a",
+      "correct": true,
+      "norm": 9.038796939423451e-07,
+      "loss": 9.35329410367558e-07
+    },
+    {
+      "id": "227dc9def30e7d65cdde1fe89a4507ca47200e81632aa04476b1a17dd7f47da1",
+      "correct": true,
+      "norm": 1.3357483076162045e-05,
+      "loss": 4.4357479964673985e-06
+    },
+    {
+      "id": "3194257f3ffe57f88a2f1c98ba171cb2a24678cb468b50d371bd4afeb212e524",
+      "correct": true,
+      "norm": 0.0008194598128772234,
+      "loss": 0.0002698012685868889
+    },
+    {
+      "id": "1255cd644944b9f1b1465d69278aa1a935361244a2b8136c81c6e5212cd265b3",
+      "correct": true,
+      "norm": 0.0007692569602102121,
+      "loss": 0.00019193861226085573
+    },
+    {
+      "id": "c5c4d647eed5ba68f39503e1c39712976189e48774cd3625386d834f9a8c92e4",
+      "correct": false,
+      "norm": 0.09252849851862324,
+      "loss": 0.16339987516403198
+    },
+    {
+      "id": "dff4a2c6916e9313071ed4e64dec9c1df94a9cfc26e1cafe2185a6fb755b54cc",
+      "correct": true,
+      "norm": 3.3513812773940524e-06,
+      "loss": 2.9434982025122736e-06
+    },
+    {
+      "id": "dfe8f5739ccf442eb3505753fd8721c51477e0bfb2e784af07c105af24a64bac",
+      "correct": false,
+      "norm": 0.056125772779152754,
+      "loss": 0.023098165169358253
+    },
+    {
+      "id": "48707c0fed1dee5530b978408a65425508827f78fb4d813967c6bacc3f0e0648",
+      "correct": false,
+      "norm": 0.04055795208550471,
+      "loss": 0.014504687860608101
+    },
+    {
+      "id": "49ccf599741afe3d078351a31381657e699b3c4f01bf15c8f3f075df23fb5005",
+      "correct": false,
+      "norm": 0.05828580151139097,
+      "loss": 0.01253244187682867
+    },
+    {
+      "id": "fc26b7b9fcc4bbbed929417bb8f5d35876a1f9e3f57095996c7056452c6522f8",
+      "correct": true,
+      "norm": 1.5033692643427144e-06,
+      "loss": 1.4946883766242536e-06
+    },
+    {
+      "id": "439b2b51368241c6480a3fa54c8d2ffac2a1b63e4157fd69f9e922ebabb5286c",
+      "correct": false,
+      "norm": 0.16050466293521176,
+      "loss": 0.11790840327739716
+    },
+    {
+      "id": "bf67aec35bb4f794f4524f5ee4796ffa28cc01317024380aa2c3d78b523a90b6",
+      "correct": true,
+      "norm": 2.1197341456054955e-06,
+      "loss": 2.0265199509594822e-06
+    },
+    {
+      "id": "94139b89b647ff60154c204a900bc598373c4d70f0268346437967edae818ea9",
+      "correct": true,
+      "norm": 5.81146592220723e-07,
+      "loss": 6.418939619834418e-07
+    },
+    {
+      "id": "716859fa74df7a6dae460bd60ad28660bb858171140d4eecb01ccc73886fd72b",
+      "correct": true,
+      "norm": 0.011331838908448265,
+      "loss": 0.002010674448683858
+    },
+    {
+      "id": "cb6a672015e098e7a486e560657839945eaf698efd9aa50b69b25198ccce99a1",
+      "correct": true,
+      "norm": 0.0002381562865257428,
+      "loss": 6.755297363270074e-05
+    },
+    {
+      "id": "f6668bb0b1610978ced91118551d0a5e2d12c7f112599c3c5c81e98cc4f7ea2d",
+      "correct": true,
+      "norm": 0.128804630436353,
+      "loss": 0.04237354174256325
+    },
+    {
+      "id": "ae0617f30d178a0cd76298e2a53865680b64cf3d7a26677499c3285e011d7934",
+      "correct": true,
+      "norm": 1.0951022392229948e-06,
+      "loss": 1.125854851125041e-06
+    },
+    {
+      "id": "4e2537795917958b9a1566be3c93ad57adb76b4f9932ea29f5b73d2094d0de31",
+      "correct": false,
+      "norm": 0.14247465204843623,
+      "loss": 0.22948461771011353
+    },
+    {
+      "id": "dbb67cc091ca71cc0f0ac51ac9963d0c82bcdc3d8fa9aae2b80495cc797a2c47",
+      "correct": true,
+      "norm": 3.1630474314422366e-06,
+      "loss": 2.9893462851759978e-06
+    },
+    {
+      "id": "925f99cd1c4bcb291d3a0327fb98cfc1dbef07377d1899167f388ab9a068f33e",
+      "correct": false,
+      "norm": 0.05150487826912015,
+      "loss": 0.05979363992810249
+    },
+    {
+      "id": "90bacfb17f6d744bed88f04b89677d68e106c9f15dce129538fbd528a198c2cb",
+      "correct": true,
+      "norm": 1.375808344458063e-06,
+      "loss": 1.4521757520924439e-06
+    },
+    {
+      "id": "2e3b773dad48905f3b44c341e33ae192560cb37f99783a881106f3dc47796c39",
+      "correct": true,
+      "norm": 1.0221768168954496e-05,
+      "loss": 2.8742101676471066e-06
+    },
+    {
+      "id": "57ea46d1d7ddf142cf734bcd6268d9190917fc71c0c2bc9a4a6a679078964848",
+      "correct": true,
+      "norm": 0.000146344516387923,
+      "loss": 2.62269804807147e-05
+    },
+    {
+      "id": "8bf49fc0f3c2cf793ba24ff0e2b62cc78cfe09b01a1dc4dd22a9dc3f0b9bf26b",
+      "correct": true,
+      "norm": 0.0001624713502775815,
+      "loss": 6.068958100513555e-05
+    },
+    {
+      "id": "5336ab5ed7effbe09dca6d72dc0ca25e51f2e21301bcab5e26c61e36d618ae1b",
+      "correct": true,
+      "norm": 1.3578352450591688e-06,
+      "loss": 1.2924647307954729e-06
+    },
+    {
+      "id": "f5dcd3e3fdb2354eda238eff04a86cd2fd6f417b7e83eb90a7f8f83516ff5761",
+      "correct": true,
+      "norm": 0.0031314433581847334,
+      "loss": 0.0007495667668990791
+    },
+    {
+      "id": "475f9c54fad92731618100eec20ebf2d660ed3f759713a2acd869cfaa8241231",
+      "correct": true,
+      "norm": 0.005638662836264342,
+      "loss": 0.001181170460768044
+    },
+    {
+      "id": "118eea9c094fb9c0c807afab945b62bcf8416f68f8d779eebc9a0f919839388f",
+      "correct": false,
+      "norm": 0.034942341012946604,
+      "loss": 0.012376365251839161
+    },
+    {
+      "id": "c67e1d034f838ab392e36ab3ce582d68089d510a4416c83bac9d06760e3a76ff",
+      "correct": true,
+      "norm": 3.1686344710191855e-06,
+      "loss": 2.9526688649639254e-06
+    },
+    {
+      "id": "26767842e910bd1e87a03c2f4d603db53d5bb0a722e922efa31c73a0fcc6fbf6",
+      "correct": true,
+      "norm": 0.2680406969559021,
+      "loss": 0.29003408551216125
+    },
+    {
+      "id": "d012ecca0372470cb1988bcd525d9ed5725777873b6d7f8f224deed5a6505ba5",
+      "correct": true,
+      "norm": 1.6274958666892082e-06,
+      "loss": 1.5894430589469266e-06
+    },
+    {
+      "id": "d7f7ff422d29ecd412dc09ebdb2ea999d170e853f61ff75cbabe0ce7b48bf64c",
+      "correct": false,
+      "norm": 0.11205287647268657,
+      "loss": 0.01896480843424797
+    },
+    {
+      "id": "91ab2a7f09e4b48efa61944a5bebb25c54a5d8ba05b3c960385365c23dd60ca3",
+      "correct": false,
+      "norm": 0.0031615305587494058,
+      "loss": 0.002132191089913249
+    },
+    {
+      "id": "3f2e30e8fd4a709d6321b2f5ba25b7446bb07f25cdb89188afffc4368dd1937d",
+      "correct": true,
+      "norm": 1.5927937773388797e-06,
+      "loss": 1.583069661137415e-06
+    },
+    {
+      "id": "e263571ea3ef00d983f67500ad07e24f005456d7c0c878ed5143914bf841fe68",
+      "correct": true,
+      "norm": 8.145016682372634e-07,
+      "loss": 7.905404686425754e-07
+    },
+    {
+      "id": "6bbabe756ffc7b538820196029d179b0bd897ad72652d8c9adb1e63a1e2f1f2d",
+      "correct": true,
+      "norm": 6.76883584026262e-07,
+      "loss": 7.427624950651079e-07
+    },
+    {
+      "id": "ba1f2215850b32f01153ec8675b46b00524af9848e138ee659337bd26df07acf",
+      "correct": true,
+      "norm": 7.137945309490591e-06,
+      "loss": 6.78552578392555e-06
+    },
+    {
+      "id": "c45a0a9ad8e08e6a4c32faa8a51a69ada667cc9e9dd126bcaa17dc59dfa182fd",
+      "correct": true,
+      "norm": 0.00022851734352008864,
+      "loss": 5.646745194098912e-05
+    },
+    {
+      "id": "a6764e61d0420f28fbe137507cb04498786e02a29bbf44cba96fb0fe9b535372",
+      "correct": true,
+      "norm": 0.2556364034678692,
+      "loss": 0.06308329850435257
+    },
+    {
+      "id": "41fd8421d0bb1c998c2097248bf04fef69771a259aa5e5e45b75f869a14df380",
+      "correct": false,
+      "norm": 0.10365268370534861,
+      "loss": 0.21323975920677185
+    },
+    {
+      "id": "ed1c2c83830ce28aeacff075ee4793ad09e4f2850f93189618c1f587e62ff256",
+      "correct": true,
+      "norm": 0.3333318343785195,
+      "loss": 0.35534778237342834
+    },
+    {
+      "id": "6d0624338944971af18e25f77a6345e4e9901f9937f2aba4cbd576c0a5a2ef36",
+      "correct": true,
+      "norm": 0.0004520222573308519,
+      "loss": 0.0001512984454166144
+    },
+    {
+      "id": "0f154a8a3146e388ffa6a53cf2925a080a94ade228ba5ff3eb5e881210713154",
+      "correct": true,
+      "norm": 0.003015933011137338,
+      "loss": 0.00043813290540128946
+    },
+    {
+      "id": "b813bd9e684fb1147f04ab38fb7b163f5adf0c22f22b3edd8774a26cf268e826",
+      "correct": false,
+      "norm": 0.05617598703658999,
+      "loss": 0.02312137372791767
+    },
+    {
+      "id": "16175c8788e013ed1b22cb4d5ae8a82b136482c53fc4d70bf1ba525e5c691b79",
+      "correct": true,
+      "norm": 5.467212114661878e-07,
+      "loss": 6.052144954082905e-07
+    },
+    {
+      "id": "fde91e761695665d72206a893bd7c2899c98fae7cf518683a28dd636a292011e",
+      "correct": true,
+      "norm": 1.2461263251215273e-06,
+      "loss": 1.2540651823655935e-06
+    },
+    {
+      "id": "089613fd78e92e2eed601c5021165c6214012bd5da3cb842d8cdd55dd3eaed2a",
+      "correct": false,
+      "norm": 0.1254825752685054,
+      "loss": 0.05471554398536682
+    },
+    {
+      "id": "c1ad9706018f8feebfc55976e7198ad1eee316a1408b5424ac55bba8502347a0",
+      "correct": false,
+      "norm": 0.004720975079742806,
+      "loss": 0.0010707683395594358
+    },
+    {
+      "id": "c442895e97304f962dae8c6d32eb71213e641651fc7acff6fb7700a16f5fa91c",
+      "correct": true,
+      "norm": 0.04724188364526547,
+      "loss": 0.0077096568420529366
+    },
+    {
+      "id": "ace9c9266845f20d8eef6bdcf88286887e06e4d0ecc07ad50002f0aeffa380c5",
+      "correct": true,
+      "norm": 1.0672326750710633e-05,
+      "loss": 3.695434315886814e-06
+    },
+    {
+      "id": "0ccbbeadfbd1fb417298960948f6492d43b192f39f6ff92edba6bf21ae8589e4",
+      "correct": true,
+      "norm": 0.0030658510313104595,
+      "loss": 0.0005911421030759811
+    },
+    {
+      "id": "51dc91f73ffe1d0af4b700b33ad336684a952b7498ad250fa23818aaa1e29611",
+      "correct": true,
+      "norm": 0.0653483942664278,
+      "loss": 0.013614908792078495
+    },
+    {
+      "id": "d846123e863ba485a9d3f771f815d392dc45d1e750c6801662bb6552f2b496ac",
+      "correct": false,
+      "norm": 0.14935471694093042,
+      "loss": 0.05834883451461792
+    },
+    {
+      "id": "1975b6d0cbe9a6f248b7e66fbc92c4276df4a0161089b6a4a570f8d5396b7ddb",
+      "correct": true,
+      "norm": 1.5558012989980355e-06,
+      "loss": 1.5038622223073617e-06
+    }
+  ],
+  "clipping": {
+    "fired": false,
+    "grad_before_norm": 0.690528571585203,
+    "grad_after_norm": 0.690528571585203
+  },
+  "delta_theta": {
+    "norm": 0.0
+  },
+  "main_diagnostic": {
+    "h_T_delta_theta": 0.0
+  },
+  "validation": {
+    "composition_valid": true,
+    "residual_l2": 9.952805097112562e-08,
+    "relative_error": 1.441331395493822e-07,
+    "undefined_zero_reference": false,
+    "rtol": 0.0001,
+    "atol": 1e-06
+  }
+}

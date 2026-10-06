@@ -1,0 +1,215 @@
+{
+  "block_count": 5,
+  "files": {
+    "audited_eval_id_by_difficulty.png": {
+      "policies": {
+        "audited B=16": "audit"
+      },
+      "sha256": "45fb763762824779625b3e35a45a4c52d456d45256f65f410726bf95f962309e",
+      "size_pixels": [
+        2385,
+        660
+      ],
+      "source_relative_to_code": "experiments/outputs/2026-10-03-h100/graph_audited_llama3.2-3b/figures/graph_audited_llama3.2-3b_rounds0-4_eval_id_by_difficulty.png",
+      "split": "eval_id"
+    },
+    "audited_eval_id_pass1.png": {
+      "policies": {
+        "audited B=16": "audit"
+      },
+      "sha256": "f028935b068f4ec9011de6f22ae4128ae43d9739bd641deaf7f92835bc62c7f1",
+      "size_pixels": [
+        2400,
+        690
+      ],
+      "source_relative_to_code": "experiments/outputs/2026-10-03-h100/graph_audited_llama3.2-3b/figures/graph_audited_llama3.2-3b_rounds0-4_eval_id_pass1.png",
+      "split": "eval_id"
+    },
+    "audited_eval_id_summary.json": {
+      "policies": {
+        "audited B=16": "audit"
+      },
+      "sha256": "451d5d391aba4ddb610e23a487addbb078c85fb619998a6253dc14839fb09d47",
+      "source_relative_to_code": "experiments/outputs/2026-10-03-h100/graph_audited_llama3.2-3b/figures/graph_audited_llama3.2-3b_rounds0-4_eval_id_summary.json",
+      "split": "eval_id"
+    },
+    "audited_eval_ood_by_difficulty.png": {
+      "policies": {
+        "audited B=16": "audit"
+      },
+      "sha256": "8bb281ca6de7518f9393052ab442e7dd15f2a50c710b8b510df356a00a390265",
+      "size_pixels": [
+        2385,
+        660
+      ],
+      "source_relative_to_code": "experiments/outputs/2026-10-03-h100/graph_audited_llama3.2-3b/figures/graph_audited_llama3.2-3b_rounds0-4_eval_ood_by_difficulty.png",
+      "split": "eval_ood"
+    },
+    "audited_eval_ood_pass1.png": {
+      "policies": {
+        "audited B=16": "audit"
+      },
+      "sha256": "900d371b64be812cb9ee808004c83396426f2a882c080e5d0741525b75fdd401",
+      "size_pixels": [
+        2400,
+        690
+      ],
+      "source_relative_to_code": "experiments/outputs/2026-10-03-h100/graph_audited_llama3.2-3b/figures/graph_audited_llama3.2-3b_rounds0-4_eval_ood_pass1.png",
+      "split": "eval_ood"
+    },
+    "audited_eval_ood_summary.json": {
+      "policies": {
+        "audited B=16": "audit"
+      },
+      "sha256": "3cb1585e366a4973a533ac7c1142bfcdc5b7d4fceaafde0296b4ea3f28929455",
+      "source_relative_to_code": "experiments/outputs/2026-10-03-h100/graph_audited_llama3.2-3b/figures/graph_audited_llama3.2-3b_rounds0-4_eval_ood_summary.json",
+      "split": "eval_ood"
+    },
+    "comparison_eval_id_by_difficulty.png": {
+      "policies": {
+        "audited B=16": "audit",
+        "unaudited": "none"
+      },
+      "sha256": "84be9fd86b60e2150f70e2d9fa0b4160033157e9d7b9b47ffb1dedce10c86d8c",
+      "size_pixels": [
+        2385,
+        660
+      ],
+      "source_relative_to_code": "experiments/outputs/2026-10-03-h100/figures/graph_unaudited_llama3.2-3b_vs_graph_audited_llama3.2-3b_rounds0-4_eval_id_by_difficulty.png",
+      "split": "eval_id"
+    },
+    "comparison_eval_id_pass1.png": {
+      "policies": {
+        "audited B=16": "audit",
+        "unaudited": "none"
+      },
+      "sha256": "075d9f26cef23045547f2a60e47588ca13de6b2d423e98066e12b01324a1e11d",
+      "size_pixels": [
+        2400,
+        690
+      ],
+      "source_relative_to_code": "experiments/outputs/2026-10-03-h100/figures/graph_unaudited_llama3.2-3b_vs_graph_audited_llama3.2-3b_rounds0-4_eval_id_pass1.png",
+      "split": "eval_id"
+    },
+    "comparison_eval_id_summary.json": {
+      "policies": {
+        "audited B=16": "audit",
+        "unaudited": "none"
+      },
+      "sha256": "8f91f0b568f3cfefff6aec386210aafbb210217ef936d2eb89d63ead0a0f11b5",
+      "source_relative_to_code": "experiments/outputs/2026-10-03-h100/figures/graph_unaudited_llama3.2-3b_vs_graph_audited_llama3.2-3b_rounds0-4_eval_id_summary.json",
+      "split": "eval_id"
+    },
+    "comparison_eval_ood_by_difficulty.png": {
+      "policies": {
+        "audited B=16": "audit",
+        "unaudited": "none"
+      },
+      "sha256": "c0fe73ed13cca633c0708b8642aaceb69c3a3d3c873e6d233b72fcb53ecdecb6",
+      "size_pixels": [
+        2385,
+        660
+      ],
+      "source_relative_to_code": "experiments/outputs/2026-10-03-h100/figures/graph_unaudited_llama3.2-3b_vs_graph_audited_llama3.2-3b_rounds0-4_eval_ood_by_difficulty.png",
+      "split": "eval_ood"
+    },
+    "comparison_eval_ood_pass1.png": {
+      "policies": {
+        "audited B=16": "audit",
+        "unaudited": "none"
+      },
+      "sha256": "d61c990e2eddb08752eccfeef8349a247cf68d276672dd3903cb6e1078170efd",
+      "size_pixels": [
+        2400,
+        690
+      ],
+      "source_relative_to_code": "experiments/outputs/2026-10-03-h100/figures/graph_unaudited_llama3.2-3b_vs_graph_audited_llama3.2-3b_rounds0-4_eval_ood_pass1.png",
+      "split": "eval_ood"
+    },
+    "comparison_eval_ood_summary.json": {
+      "policies": {
+        "audited B=16": "audit",
+        "unaudited": "none"
+      },
+      "sha256": "a3467864ce1cdc9b9f9f997605772dab133fc8dd1291d03f3750a9850a76b439",
+      "source_relative_to_code": "experiments/outputs/2026-10-03-h100/figures/graph_unaudited_llama3.2-3b_vs_graph_audited_llama3.2-3b_rounds0-4_eval_ood_summary.json",
+      "split": "eval_ood"
+    },
+    "unaudited_eval_id_by_difficulty.png": {
+      "policies": {
+        "unaudited": "none"
+      },
+      "sha256": "1fd1ea1f55739086b92b8ec81e2593144c8034c783f19f24ac15faee86e095f2",
+      "size_pixels": [
+        2385,
+        660
+      ],
+      "source_relative_to_code": "experiments/outputs/2026-10-03-h100/graph_unaudited_llama3.2-3b/figures/graph_unaudited_llama3.2-3b_rounds0-4_eval_id_by_difficulty.png",
+      "split": "eval_id"
+    },
+    "unaudited_eval_id_pass1.png": {
+      "policies": {
+        "unaudited": "none"
+      },
+      "sha256": "3e7fdf269bfbbfacc04fc0b9c3334074a377830d256d8d3e6111364aa6a713f0",
+      "size_pixels": [
+        2400,
+        690
+      ],
+      "source_relative_to_code": "experiments/outputs/2026-10-03-h100/graph_unaudited_llama3.2-3b/figures/graph_unaudited_llama3.2-3b_rounds0-4_eval_id_pass1.png",
+      "split": "eval_id"
+    },
+    "unaudited_eval_id_summary.json": {
+      "policies": {
+        "unaudited": "none"
+      },
+      "sha256": "ecd2ae9b65cdada6635301beeba212fdaedea7b1e502861827da4b11919d4872",
+      "source_relative_to_code": "experiments/outputs/2026-10-03-h100/graph_unaudited_llama3.2-3b/figures/graph_unaudited_llama3.2-3b_rounds0-4_eval_id_summary.json",
+      "split": "eval_id"
+    },
+    "unaudited_eval_ood_by_difficulty.png": {
+      "policies": {
+        "unaudited": "none"
+      },
+      "sha256": "1342273ede24b55102ec01c9bb1e1693e08f00af32741b92326cb24c987a6e2d",
+      "size_pixels": [
+        2385,
+        660
+      ],
+      "source_relative_to_code": "experiments/outputs/2026-10-03-h100/graph_unaudited_llama3.2-3b/figures/graph_unaudited_llama3.2-3b_rounds0-4_eval_ood_by_difficulty.png",
+      "split": "eval_ood"
+    },
+    "unaudited_eval_ood_pass1.png": {
+      "policies": {
+        "unaudited": "none"
+      },
+      "sha256": "6fc3b108f2390ebc7b12d993d8ded513f7dce3c322b5d0975f8800bedc60e4fa",
+      "size_pixels": [
+        2400,
+        690
+      ],
+      "source_relative_to_code": "experiments/outputs/2026-10-03-h100/graph_unaudited_llama3.2-3b/figures/graph_unaudited_llama3.2-3b_rounds0-4_eval_ood_pass1.png",
+      "split": "eval_ood"
+    },
+    "unaudited_eval_ood_summary.json": {
+      "policies": {
+        "unaudited": "none"
+      },
+      "sha256": "731f63fb0ecadbdcb8003a9404908ffc0a183e981ef9e91c1154815d6f5bdfdc",
+      "source_relative_to_code": "experiments/outputs/2026-10-03-h100/graph_unaudited_llama3.2-3b/figures/graph_unaudited_llama3.2-3b_rounds0-4_eval_ood_summary.json",
+      "split": "eval_ood"
+    }
+  },
+  "image_transformations": "None: byte-for-byte copies",
+  "model": "meta-llama/Llama-3.2-3B-Instruct",
+  "plot_script_relative_to_code": "plot_multiround.py",
+  "plot_script_sha256": "5c5841fa6c21249349eb924593a96338643f19f738f8ef2c2d0d17aabf674a5f",
+  "selected_rounds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "validated_results_sha256": "4147039c80fbbcb53cbb13507167ba03cd4ecbfe6df3a16e003acfbbef572885"
+}

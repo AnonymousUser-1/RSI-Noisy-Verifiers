@@ -1,0 +1,6 @@
+cost_owner,wall_seconds,allocated_gpu_hours,new_responses,new_output_tokens,coverage
+Shared preparation/pool,44.70300000003772,0.012417500000010477,0,0,1 complete record(s)
+R only,174.43800000002375,0.0484550000000066,0,0,5 complete record(s)
+S only,174.6249999999418,0.048506944444428275,0,0,5 complete record(s)
+Null and evaluation,18649.860999999917,5.180516944444421,33000,727131,27 complete record(s)
+Deduplicated joint total,19043.62699999992,5.289896388888867,33000.0,727131.0,38 unique cost_id(s) summed

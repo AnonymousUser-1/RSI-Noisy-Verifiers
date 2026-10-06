@@ -1,0 +1,193 @@
+{
+  "DEMO_ONLY": false,
+  "K": 64,
+  "arms": [
+    "R",
+    "S"
+  ],
+  "attempts": 2,
+  "auditing": {
+    "budget_unit": "correctness queries per arm per round",
+    "config": {
+      "budget": 16,
+      "policy": "adaptive",
+      "weighting": true
+    },
+    "enabled": true,
+    "matching_constraints_stage": "pre_audit",
+    "steps_note": "steps_per_round is pre-audit; complete.json records actual expected steps"
+  },
+  "backend": "hf",
+  "blocks": [
+    "b00",
+    "b01",
+    "b02",
+    "b03",
+    "b04"
+  ],
+  "code": {
+    "git_commit": "0874c768154635dd2213656bb6ee273ee1d0154f",
+    "git_dirty": false,
+    "source_hash": "25bdb4d376e0d253e5e37575a580be7f7e809310cecc79b9fcbc08a9f5ab2ead"
+  },
+  "completed": [
+    "b00/R/round_001",
+    "b00/S/round_001",
+    "b00/R/round_002",
+    "b00/S/round_002",
+    "b00/R/round_003",
+    "b00/S/round_003",
+    "b00/R/round_004",
+    "b00/S/round_004",
+    "b00/R/round_005",
+    "b00/S/round_005",
+    "b00/R/round_006",
+    "b00/S/round_006",
+    "b00/R/round_007",
+    "b00/S/round_007",
+    "b00/R/round_008",
+    "b00/S/round_008",
+    "b01/R/round_001",
+    "b01/S/round_001",
+    "b01/R/round_002",
+    "b01/S/round_002",
+    "b01/R/round_003",
+    "b01/S/round_003",
+    "b01/R/round_004",
+    "b01/S/round_004",
+    "b01/R/round_005",
+    "b01/S/round_005",
+    "b01/R/round_006",
+    "b01/S/round_006",
+    "b01/R/round_007",
+    "b01/S/round_007",
+    "b01/R/round_008",
+    "b01/S/round_008",
+    "b02/R/round_001",
+    "b02/S/round_001",
+    "b02/R/round_002",
+    "b02/S/round_002",
+    "b02/R/round_003",
+    "b02/S/round_003",
+    "b02/R/round_004",
+    "b02/S/round_004",
+    "b02/R/round_005",
+    "b02/S/round_005",
+    "b02/R/round_006",
+    "b02/S/round_006",
+    "b02/R/round_007",
+    "b02/S/round_007",
+    "b02/R/round_008",
+    "b02/S/round_008",
+    "b03/R/round_001",
+    "b03/S/round_001",
+    "b03/R/round_002",
+    "b03/S/round_002",
+    "b03/R/round_003",
+    "b03/S/round_003",
+    "b03/R/round_004",
+    "b03/S/round_004",
+    "b03/R/round_005",
+    "b03/S/round_005",
+    "b03/R/round_006",
+    "b03/S/round_006",
+    "b03/R/round_007",
+    "b03/S/round_007",
+    "b03/R/round_008",
+    "b03/S/round_008",
+    "b04/R/round_001",
+    "b04/S/round_001",
+    "b04/R/round_002",
+    "b04/S/round_002",
+    "b04/R/round_003",
+    "b04/S/round_003",
+    "b04/R/round_004",
+    "b04/S/round_004",
+    "b04/R/round_005",
+    "b04/S/round_005",
+    "b04/R/round_006",
+    "b04/S/round_006",
+    "b04/R/round_007",
+    "b04/S/round_007",
+    "b04/R/round_008",
+    "b04/S/round_008"
+  ],
+  "exit_code": 0,
+  "extensions": [
+    {
+      "at": "2026-10-03T14:04:15-0400",
+      "code": {
+        "git_commit": "0874c768154635dd2213656bb6ee273ee1d0154f",
+        "git_dirty": false,
+        "source_hash": "25bdb4d376e0d253e5e37575a580be7f7e809310cecc79b9fcbc08a9f5ab2ead"
+      },
+      "from_rounds": 4,
+      "previous_code": {
+        "git_commit": "a742f6fe76481ea9b12d21ba737f694929663fa8",
+        "git_dirty": false,
+        "source_hash": "7d4d76e82d53b58024c50803a92fe15bb9e8270652343c9e5fc537673556c202"
+      },
+      "previous_identity": {
+        "config_hash": "b9bf374de42a17af3b7e3a37fb74980911cde7f948a6a94d71759256b17f8201",
+        "dataset_hash": "c9908f934f86821101cc9f347e1d203ebe8a1b00737b9f66b4f08de8839b90c1",
+        "h_sha256": "9d3d4df399f4995d7e09a4c010db7a595b1406880f5b9d8926c1b83d6d478d3e",
+        "later_prompts": null,
+        "later_samples": 8,
+        "phase": "main",
+        "pools": {
+          "b00": "6358db5bf8736f331f9c66761c189468a267109da9c2ef7f1efa4e75c270fcc5",
+          "b01": "0a50004ed566d975afbcc5dcc10e706514c7f7ac66c142c96cdc7e6db4373cb5",
+          "b02": "c54f52221fc994a841665913a7dd5413ac6dc569e3ce608853242bb33c24befa",
+          "b03": "06589434e0d0b9ce5257505db8ffc00a859e6a580a1f3fa950aac0733e2eb1f2",
+          "b04": "1e7a263a88ffa5e9edac30da3050e853e0a402ec6063e6cc7cf874de7d7a48c0"
+        },
+        "seed": 0,
+        "shared_adapter": "2d57f6cb4ff8136feeb4bc0a0d5af4262d2479b6909aabe5dd4631fdf908b24f",
+        "source_hash": "7d4d76e82d53b58024c50803a92fe15bb9e8270652343c9e5fc537673556c202",
+        "study_id": "md-graph-audited-llama3.2-3b-2048x8-v01"
+      },
+      "source_changed": true,
+      "to_rounds": 8
+    }
+  ],
+  "identity": {
+    "config_hash": "9d55334f38699950fec84070d3e3f6a6c48fe8a7710e80634bc30a708f426b6c",
+    "dataset_hash": "c9908f934f86821101cc9f347e1d203ebe8a1b00737b9f66b4f08de8839b90c1",
+    "h_sha256": "9d3d4df399f4995d7e09a4c010db7a595b1406880f5b9d8926c1b83d6d478d3e",
+    "later_prompts": null,
+    "later_samples": 8,
+    "phase": "main",
+    "pools": {
+      "b00": "6358db5bf8736f331f9c66761c189468a267109da9c2ef7f1efa4e75c270fcc5",
+      "b01": "0a50004ed566d975afbcc5dcc10e706514c7f7ac66c142c96cdc7e6db4373cb5",
+      "b02": "c54f52221fc994a841665913a7dd5413ac6dc569e3ce608853242bb33c24befa",
+      "b03": "06589434e0d0b9ce5257505db8ffc00a859e6a580a1f3fa950aac0733e2eb1f2",
+      "b04": "1e7a263a88ffa5e9edac30da3050e853e0a402ec6063e6cc7cf874de7d7a48c0"
+    },
+    "seed": 0,
+    "shared_adapter": "2d57f6cb4ff8136feeb4bc0a0d5af4262d2479b6909aabe5dd4631fdf908b24f",
+    "source_hash": "25bdb4d376e0d253e5e37575a580be7f7e809310cecc79b9fcbc08a9f5ab2ead",
+    "study_id": "md-graph-audited-llama3.2-3b-2048x8-v01"
+  },
+  "later_pool": {
+    "prompt_rule": "the first prompts_per_pool prompts of train_00t (null: all), the same for both arms",
+    "prompts": null,
+    "samples": 8,
+    "source": "config generation.prompts_per_pool and generation.candidates"
+  },
+  "matching_settings": {
+    "error_fraction": 0.25,
+    "token_tolerance": 0
+  },
+  "phase": "main",
+  "rounds": 8,
+  "schema_version": "rsi-iterative/1",
+  "status": "complete",
+  "steps_per_round": 16,
+  "stopped": [],
+  "study_id": "md-graph-audited-llama3.2-3b-2048x8-v01",
+  "target_signatures": [
+    "nonshortest"
+  ],
+  "task": "graph"
+}

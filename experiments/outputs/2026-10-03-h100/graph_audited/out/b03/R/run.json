@@ -1,0 +1,582 @@
+{
+  "DEMO_ONLY": false,
+  "auditing": {
+    "budget_unit": "correctness queries per arm per round",
+    "config": {
+      "budget": 16,
+      "policy": "adaptive",
+      "weighting": true
+    },
+    "enabled": true,
+    "matching_constraints_stage": "pre_audit",
+    "steps_note": "steps_per_round is pre-audit; complete.json records actual expected steps"
+  },
+  "bindings": {
+    "base_pin": {
+      "model": "Qwen/Qwen3-1.7B",
+      "pin_path": "/cluster/rsi-runs/code/matched-dynamics/base_pin.json",
+      "pin_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+      "pin_sha256": "e58a531f25f33aed45ba786cf443f520faa1607a60e68c577b40c3b2bfc6f3f3",
+      "resolved_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e"
+    },
+    "config_file": {
+      "path": "/cluster/rsi-runs/code-ext/experiments/graph_audited/config.json",
+      "sha256": "c2b269f2bc9cf11c9b4bf44ae167c1b70c2e3a15ea6f8d293a75239ffa44ed26"
+    },
+    "config_hash": "ff316423841880387904926d9c69c15ddcc66908ac9622d5466e5d87a8d8b540",
+    "data": {
+      "dataset_hash": "c9908f934f86821101cc9f347e1d203ebe8a1b00737b9f66b4f08de8839b90c1",
+      "manifest_sha256": "b6f8a70f3ac6cdd6fd12072ba566df4ae5731cf6f9ba710c7cba23728bb90c5d",
+      "path": "/cluster/rsi-runs/work/data/graph"
+    },
+    "hardware": {
+      "accelerator": "NVIDIA H100 80GB HBM3",
+      "accelerator_memory_bytes": 85019590656,
+      "accelerator_reason": null,
+      "cpu_count": 256,
+      "cuda": "13.0",
+      "machine": "x86_64",
+      "processor": "",
+      "torch": "2.14.1+cu130"
+    },
+    "matching": {
+      "K": 64,
+      "block_hash": "29eec5163bbbf4ba533eb7c689a80a054a711f035163c7f12271c64cd98ad121"
+    },
+    "model": {
+      "name": "Qwen/Qwen3-1.7B",
+      "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e"
+    },
+    "pool": {
+      "fingerprint_reason": "bound as written and not recomputed: pool_fingerprint needs the pool's generation seed, which the meta does not record, and it hashes the source of the code that sampled the pool; the pool's sha256 is verified instead",
+      "fingerprint_recomputed": false,
+      "meta": {
+        "argv": {
+          "args": [
+            "--config",
+            "experiments/graph_unaudited/config.json",
+            "--data",
+            "/cluster/rsi-runs/work/data/graph",
+            "--out",
+            "/cluster/rsi-runs/work/experiments/graph_unaudited/pools/b03.jsonl",
+            "--seed",
+            "3",
+            "--split",
+            "train_001",
+            "--study-id",
+            "md-graph-unaudited-qwen3-1.7b-2048x8-v01",
+            "--phase",
+            "main"
+          ],
+          "cwd": "/cluster/rsi-runs/code",
+          "executable": "/cluster/conda/envs/rsi-eval/bin/python",
+          "parsed": {
+            "backend": null,
+            "config": "experiments/graph_unaudited/config.json",
+            "data": "/cluster/rsi-runs/work/data/graph",
+            "out": "/cluster/rsi-runs/work/experiments/graph_unaudited/pools/b03.jsonl",
+            "phase": "main",
+            "seed": 3,
+            "split": "train_001",
+            "study_id": "md-graph-unaudited-qwen3-1.7b-2048x8-v01"
+          },
+          "script": "/cluster/rsi-runs/code/sample_candidates.py"
+        },
+        "backend": "hf",
+        "base_pin": {
+          "model": "Qwen/Qwen3-1.7B",
+          "pin_path": "/cluster/rsi-runs/code/matched-dynamics/base_pin.json",
+          "pin_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+          "pin_sha256": "e58a531f25f33aed45ba786cf443f520faa1607a60e68c577b40c3b2bfc6f3f3",
+          "resolved_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+          "status": "checked"
+        },
+        "code": {
+          "git_changes": [],
+          "git_commit": "a742f6fe76481ea9b12d21ba737f694929663fa8",
+          "git_dirty": false,
+          "git_reason": null,
+          "source_hash": "7d4d76e82d53b58024c50803a92fe15bb9e8270652343c9e5fc537673556c202"
+        },
+        "config": {
+          "audit": {
+            "budget": 0,
+            "policy": "none",
+            "weighting": true
+          },
+          "backend": "hf",
+          "device": "cuda",
+          "dtype": "bfloat16",
+          "frozen": false,
+          "generation": {
+            "batch_size": 16,
+            "candidates": 8,
+            "max_new_tokens": 2048,
+            "max_sequence_length": 4096,
+            "prompts_per_pool": null,
+            "repetition_stop": {
+              "max_period": 32,
+              "span": 128
+            },
+            "temperature": 1.3,
+            "top_k": null,
+            "top_p": 1.0
+          },
+          "matching": {
+            "error_fraction": 0.25,
+            "token_tolerance": 0
+          },
+          "model": "Qwen/Qwen3-1.7B",
+          "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+          "rounds": 4,
+          "seed": 3,
+          "training": {
+            "batch_size": 2,
+            "effective_batch_size": 4,
+            "epochs": 1,
+            "examples": 1024,
+            "gradient_checkpointing": true,
+            "learning_rate": 0.0002,
+            "lora_alpha": 16,
+            "lora_dropout": 0.0,
+            "lora_rank": 8,
+            "target_modules": [
+              "q_proj",
+              "v_proj"
+            ]
+          },
+          "verifier": {
+            "calibration": null,
+            "fpr": 0.2,
+            "kind": "iid",
+            "model": "Qwen/Qwen3-1.7B",
+            "revision": "main",
+            "threshold": null,
+            "tpr": 0.9
+          }
+        },
+        "config_file": {
+          "path": "/cluster/rsi-runs/code/experiments/graph_unaudited/config.json",
+          "sha256": "809d7dd8730885b49ab10d3e82af1eebfffed3ada7a588c9957347a392da44f6"
+        },
+        "config_hash": "b6930fcf69b660a2b54e8e52c2375c6f80cabcfeff3e82568357ee8a1f2068b7",
+        "data": {
+          "data_seed": 2027,
+          "dataset_hash": "c9908f934f86821101cc9f347e1d203ebe8a1b00737b9f66b4f08de8839b90c1",
+          "manifest_sha256": "b6f8a70f3ac6cdd6fd12072ba566df4ae5731cf6f9ba710c7cba23728bb90c5d",
+          "root": "/cluster/rsi-runs/work/data/graph",
+          "task": "graph",
+          "version": 1
+        },
+        "decoding": {
+          "batch_size": 16,
+          "composition": "defaults + overrides: model_defaults is the model's generation_config as loaded, overrides are the keyword arguments HFBackend.generate passes; transformers merges them inside generate(), and that merged object is not read",
+          "model_defaults": {
+            "_from_model_config": false,
+            "assistant_confidence_threshold": 0.4,
+            "assistant_early_exit": null,
+            "assistant_lookbehind": 10,
+            "bad_words_ids": null,
+            "begin_suppress_tokens": null,
+            "bos_token_id": 151643,
+            "cache_config": null,
+            "cache_implementation": null,
+            "constraints": null,
+            "decoder_start_token_id": null,
+            "disable_compile": false,
+            "diversity_penalty": 0.0,
+            "do_sample": true,
+            "dola_layers": null,
+            "early_stopping": false,
+            "encoder_no_repeat_ngram_size": 0,
+            "encoder_repetition_penalty": 1.0,
+            "eos_token_id": [
+              151645,
+              151643
+            ],
+            "epsilon_cutoff": 0.0,
+            "eta_cutoff": 0.0,
+            "exponential_decay_length_penalty": null,
+            "force_words_ids": null,
+            "forced_bos_token_id": null,
+            "forced_eos_token_id": null,
+            "guidance_scale": null,
+            "is_assistant": false,
+            "length_penalty": 1.0,
+            "low_memory": null,
+            "max_length": 20,
+            "max_matching_ngram_size": null,
+            "max_new_tokens": null,
+            "max_time": null,
+            "min_length": 0,
+            "min_new_tokens": null,
+            "min_p": null,
+            "no_repeat_ngram_size": 0,
+            "num_assistant_tokens": 20,
+            "num_assistant_tokens_schedule": "constant",
+            "num_beam_groups": 1,
+            "num_beams": 1,
+            "num_return_sequences": 1,
+            "output_attentions": false,
+            "output_hidden_states": false,
+            "output_logits": null,
+            "output_scores": false,
+            "pad_token_id": 151643,
+            "penalty_alpha": null,
+            "prefill_chunk_size": null,
+            "prompt_lookup_num_tokens": null,
+            "remove_invalid_values": false,
+            "renormalize_logits": false,
+            "repetition_penalty": 1.0,
+            "return_dict_in_generate": false,
+            "return_legacy_cache": null,
+            "sequence_bias": null,
+            "stop_strings": null,
+            "suppress_tokens": null,
+            "target_lookbehind": 10,
+            "temperature": 0.6,
+            "token_healing": false,
+            "top_k": 20,
+            "top_p": 0.95,
+            "transformers_version": "4.57.1",
+            "typical_p": 1.0,
+            "use_cache": true,
+            "watermarking_config": null
+          },
+          "not_passed": "candidates, batch_size and max_sequence_length are not passed to transformers: candidates is the rows drawn per task, batch_size the rows per generate call, and max_sequence_length refuses a prompt + max_new_tokens beyond it; an answer that reaches max_new_tokens without a stop id is kept and marked `truncated` (ROW_FIELDS)",
+          "overrides": {
+            "do_sample": true,
+            "max_new_tokens": 2048,
+            "pad_token_id": 151643,
+            "temperature": 1.3,
+            "top_k": null,
+            "top_p": 1.0
+          },
+          "prompt": {
+            "chat_template_digest": "41d5929bf73796beb66809ac700b2cf3ff81694f933e5c14d52b7fd6963c947d",
+            "rule": "rsi.backends.chat_prompt_ids: the task prompt as one user turn, add_generation_prompt=True",
+            "template_kwargs": {
+              "date_string": "26 Jul 2024",
+              "enable_thinking": false
+            }
+          },
+          "seeding": "torch.manual_seed and torch.cuda.manual_seed_all once, at the start of generate(); not reset per batch or per candidate, so batch_size is part of what reproduces a pool",
+          "stop_ids": {
+            "generation_config_eos_token_id": [
+              151645,
+              151643
+            ],
+            "tokenizer_eos_token_id": 151645
+          },
+          "stopping": {
+            "repetition_stop": {
+              "max_period": 32,
+              "span": 128
+            },
+            "rule": "rsi.backends.repetition_stop, passed as stopping_criteria when set: a row stops once its last span generated tokens repeat with a period of at most max_period tokens; it is cut there and marked `truncated` (ROW_FIELDS)"
+          },
+          "transformers_version": "4.57.1"
+        },
+        "environment": {
+          "cuda_visible_devices": "0",
+          "packages": {
+            "accelerate": "1.15.0",
+            "matplotlib": "3.11.2",
+            "numpy": "2.4.6",
+            "peft": "0.17.1",
+            "scipy": "1.17.1",
+            "torch": "2.14.1",
+            "transformers": "4.57.1"
+          },
+          "platform": "Linux-6.12.0-124.56.1.el10_1.x86_64-x86_64-with-glibc2.39",
+          "python": "3.11.16 (main, Aug 27 2026, 14:44:21) [GCC 14.3.0]",
+          "source_hash": "7d4d76e82d53b58024c50803a92fe15bb9e8270652343c9e5fc537673556c202"
+        },
+        "fingerprint": "190497b60b656bc6de1857071ee4d7b0dd2a3df852bbb603b02d8cecb175bd1c",
+        "generation": {
+          "batch_size": 16,
+          "candidates": 8,
+          "max_new_tokens": 2048,
+          "max_sequence_length": 4096,
+          "prompts_per_pool": null,
+          "repetition_stop": {
+            "max_period": 32,
+            "span": 128
+          },
+          "temperature": 1.3,
+          "top_k": null,
+          "top_p": 1.0
+        },
+        "generation_hash": "42fe2d1851fa62af7be8b3dd946fcb68f063df39b2ffb14c6c70dc75318f7e2b",
+        "hash": "02bc4a21c48d8fd20519e5e84deaad734eb5b1b55ab066871e11d7ed74a7093e",
+        "identity": {
+          "missing": {},
+          "phase": "main",
+          "study_id": "md-graph-unaudited-qwen3-1.7b-2048x8-v01"
+        },
+        "model": "Qwen/Qwen3-1.7B",
+        "requested_config": {
+          "audit": {
+            "budget": 0,
+            "policy": "none",
+            "weighting": true
+          },
+          "backend": "hf",
+          "device": "cuda",
+          "dtype": "bfloat16",
+          "frozen": false,
+          "generation": {
+            "batch_size": 16,
+            "candidates": 8,
+            "max_new_tokens": 2048,
+            "max_sequence_length": 4096,
+            "prompts_per_pool": null,
+            "repetition_stop": {
+              "max_period": 32,
+              "span": 128
+            },
+            "temperature": 1.3,
+            "top_k": null,
+            "top_p": 1.0
+          },
+          "matching": {
+            "error_fraction": 0.25,
+            "token_tolerance": 0
+          },
+          "model": "Qwen/Qwen3-1.7B",
+          "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+          "rounds": 4,
+          "seed": 3,
+          "training": {
+            "batch_size": 2,
+            "effective_batch_size": 4,
+            "epochs": 1,
+            "examples": 1024,
+            "gradient_checkpointing": true,
+            "learning_rate": 0.0002,
+            "lora_alpha": 16,
+            "lora_dropout": 0.0,
+            "lora_rank": 8,
+            "target_modules": [
+              "q_proj",
+              "v_proj"
+            ]
+          },
+          "verifier": {
+            "calibration": null,
+            "fpr": 0.2,
+            "kind": "iid",
+            "model": "Qwen/Qwen3-1.7B",
+            "revision": "main",
+            "threshold": null,
+            "tpr": 0.9
+          }
+        },
+        "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+        "row_fields": {
+          "completion_tokens": "hf: the generated token ids up to and including the first stop id (generation_config.eos_token_id or tokenizer.eos_token_id, rsi/backends.py), or all of them when no stop id was generated (then `truncated` is true); mock: the number of whitespace-separated words of the response.  Neither is the supervised count len(tokenizer.encode(response, add_special_tokens=False)) + 1, which matching must recount (review note (a)).",
+          "response": "hf: tokenizer.decode(those ids, skip_special_tokens=True).strip(), with the tokenizer's clean_up_tokenization_spaces off; the ids and the unstripped text are not kept.  mock: a synthetic answer.",
+          "truncated": "hf: true when the answer was cut: no stop id within max_new_tokens (completion_tokens == max_new_tokens), or stopped earlier while repeating a block (generation.repetition_stop; completion_tokens < max_new_tokens).  Such a row is judged and kept in the pool, but no matching, selection or training uses it.  mock: always false."
+        },
+        "seed": {
+          "cli": 3,
+          "generation": 2062574004,
+          "rule": "seed_for(cli_seed, 1, 'generation')"
+        },
+        "split": {
+          "file": "train_001.jsonl",
+          "name": "train_001",
+          "prompts_sampled": 2048,
+          "rows": 2048,
+          "sha256": "ce140035041b54493a82fc50d3129064ff739adfe14c43132fdcb07821ec70d0",
+          "source": "cli"
+        }
+      },
+      "meta_path": "/cluster/rsi-runs/work/experiments/graph_audited/pools/b03.jsonl.meta.json",
+      "meta_sha256": "62c868ab2d1c0b1ecd6644c785cb64952ca0c4db3841a577135c7c5ed1646386",
+      "path": "/cluster/rsi-runs/work/experiments/graph_audited/pools/b03.jsonl",
+      "pool_id": "02bc4a21c48d8fd20519e5e84deaad734eb5b1b55ab066871e11d7ed74a7093e",
+      "rows": 16384
+    },
+    "reference_gradient": {
+      "h_json_sha256": "e0170412723724d99bce4ea2d7513fd31ed042b144fc88606cc225851e59fe40",
+      "h_sha256": "f5966da38c247be57cad807061250e9889f2addf03300919c8edb72fca7379fb",
+      "path": "/cluster/rsi-runs/work/experiments/graph_audited/reference",
+      "status": "used"
+    },
+    "shared_adapter": {
+      "parameter_hash": "fbda5ff14c252db563d7a87e53dcc3080bf2652436e4b22680751d14ef384419",
+      "path": "/cluster/rsi-runs/work/experiments/graph_audited/shared_adapter",
+      "record_sha256": "1d4869461e25375a95bbcffa8c713f440f0a7ae77a2a3406d2e2c64692360c4f",
+      "status": "used"
+    },
+    "token_counts": "rsi.reference_encode.supervised_token_count (response tokens + EOS)",
+    "tokenizer": {
+      "name": "Qwen/Qwen3-1.7B",
+      "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e"
+    }
+  },
+  "block_id": "b03",
+  "branch": "R",
+  "calibration": null,
+  "config": {
+    "audit": {
+      "budget": 16,
+      "policy": "adaptive",
+      "weighting": true
+    },
+    "backend": "hf",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "frozen": false,
+    "generation": {
+      "batch_size": 16,
+      "candidates": 8,
+      "max_new_tokens": 2048,
+      "max_sequence_length": 4096,
+      "prompts_per_pool": null,
+      "repetition_stop": {
+        "max_period": 32,
+        "span": 128
+      },
+      "temperature": 1.3,
+      "top_k": null,
+      "top_p": 1.0
+    },
+    "matching": {
+      "error_fraction": 0.25,
+      "token_tolerance": 0
+    },
+    "model": "Qwen/Qwen3-1.7B",
+    "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+    "rounds": 8,
+    "seed": 0,
+    "training": {
+      "batch_size": 2,
+      "effective_batch_size": 4,
+      "epochs": 1,
+      "examples": 1024,
+      "gradient_checkpointing": true,
+      "learning_rate": 0.0002,
+      "lora_alpha": 16,
+      "lora_dropout": 0.0,
+      "lora_rank": 8,
+      "target_modules": [
+        "q_proj",
+        "v_proj"
+      ]
+    },
+    "verifier": {
+      "calibration": null,
+      "fpr": 0.2,
+      "kind": "iid",
+      "model": "Qwen/Qwen3-1.7B",
+      "revision": "main",
+      "threshold": null,
+      "tpr": 0.9
+    }
+  },
+  "data_path": "/cluster/rsi-runs/work/data/graph",
+  "dataset_hash": "c9908f934f86821101cc9f347e1d203ebe8a1b00737b9f66b4f08de8839b90c1",
+  "environment": {
+    "cuda_visible_devices": "0",
+    "packages": {
+      "accelerate": "1.15.0",
+      "matplotlib": "3.11.2",
+      "numpy": "2.4.6",
+      "peft": "0.17.1",
+      "scipy": "1.17.1",
+      "torch": "2.14.1",
+      "transformers": "4.57.1"
+    },
+    "platform": "Linux-6.12.0-124.56.1.el10_1.x86_64-x86_64-with-glibc2.39",
+    "python": "3.11.16 (main, Aug 27 2026, 14:44:21) [GCC 14.3.0]",
+    "source_hash": "7d4d76e82d53b58024c50803a92fe15bb9e8270652343c9e5fc537673556c202"
+  },
+  "evaluation": "pending",
+  "extensions": [
+    {
+      "at": "2026-10-03T17:46:07-0400",
+      "code": {
+        "git_commit": "0874c768154635dd2213656bb6ee273ee1d0154f",
+        "git_dirty": false,
+        "source_hash": "25bdb4d376e0d253e5e37575a580be7f7e809310cecc79b9fcbc08a9f5ab2ead"
+      },
+      "from_rounds": 4,
+      "previous_config_file": {
+        "path": "/cluster/rsi-runs/code/experiments/graph_audited/config.json",
+        "sha256": "09fed0e6e12469a2ca882a8b0258eea1c9d511223ce388fbb058d78ab0070233"
+      },
+      "previous_config_hash": "5195d547eb190e244f0c7fb229d4b50fa32aace0d95dee44150c637fe9738413",
+      "previous_finished": {
+        "calibration_queries": 0,
+        "cumulative_audit_queries": 64,
+        "rounds": 4
+      },
+      "to_rounds": 8
+    }
+  ],
+  "phase": "main",
+  "requested_config": {
+    "audit": {
+      "budget": 16,
+      "policy": "adaptive",
+      "weighting": true
+    },
+    "backend": "hf",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "frozen": false,
+    "generation": {
+      "batch_size": 16,
+      "candidates": 8,
+      "max_new_tokens": 2048,
+      "max_sequence_length": 4096,
+      "prompts_per_pool": null,
+      "repetition_stop": {
+        "max_period": 32,
+        "span": 128
+      },
+      "temperature": 1.3,
+      "top_k": null,
+      "top_p": 1.0
+    },
+    "matching": {
+      "error_fraction": 0.25,
+      "token_tolerance": 0
+    },
+    "model": "Qwen/Qwen3-1.7B",
+    "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+    "rounds": 8,
+    "seed": 0,
+    "training": {
+      "batch_size": 2,
+      "effective_batch_size": 4,
+      "epochs": 1,
+      "examples": 1024,
+      "gradient_checkpointing": true,
+      "learning_rate": 0.0002,
+      "lora_alpha": 16,
+      "lora_dropout": 0.0,
+      "lora_rank": 8,
+      "target_modules": [
+        "q_proj",
+        "v_proj"
+      ]
+    },
+    "verifier": {
+      "calibration": null,
+      "fpr": 0.2,
+      "kind": "iid",
+      "model": "Qwen/Qwen3-1.7B",
+      "revision": "main",
+      "threshold": null,
+      "tpr": 0.9
+    }
+  },
+  "run_id": "md-graph-audited-qwen3-1.7b-2048x8-v01--b03--R",
+  "schema_version": "rsi-iterative/1",
+  "seed": 0,
+  "study_id": "md-graph-audited-qwen3-1.7b-2048x8-v01",
+  "task": "graph"
+}

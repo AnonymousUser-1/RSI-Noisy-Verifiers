@@ -1,0 +1,120 @@
+{
+  "status": "passed",
+  "assertions": 1060,
+  "max_oracle_absolute_difference": 5.828670879282072e-16,
+  "step_refinement": {
+    "R": {
+      "coarse_vs_medium_max_accuracy_difference": 0.0003734181119406932,
+      "medium_vs_fine_max_accuracy_difference": 0.0001863654341072163,
+      "refinement_ratio": 2.003687613690558
+    },
+    "S": {
+      "coarse_vs_medium_max_accuracy_difference": 0.0004217750154597022,
+      "medium_vs_fine_max_accuracy_difference": 0.000208264191472185,
+      "refinement_ratio": 2.0251921968834132
+    }
+  },
+  "existing_flow_check": {
+    "trajectories": {
+      "R": {
+        "accuracy_t20": 0.8774465360355461,
+        "coarse_difference": 0.0003734181119406932,
+        "fine_difference": 0.0001863654341072163
+      },
+      "S": {
+        "accuracy_t20": 0.35958859256212267,
+        "coarse_difference": 0.0004217750154597022,
+        "fine_difference": 0.000208264191472185
+      }
+    },
+    "S_root": -0.11146044018345058,
+    "scope": "Finite numerical trajectories; refinement differences are not rigorous exact-solution error bounds."
+  },
+  "qualification": "Refinement differences are not rigorous exact-solution error bounds.",
+  "parameters": {
+    "a": 0.75,
+    "b": 0.5,
+    "L": 10,
+    "theta0": 0,
+    "t_end": 20.0,
+    "dt": 0.0025,
+    "refinement_steps": [
+      0.01,
+      0.005,
+      0.0025
+    ],
+    "gradient_grid": [
+      -0.25,
+      1.25,
+      601
+    ]
+  },
+  "source": {
+    "logistic": "/local/paper/code/rsi/logistic.py",
+    "logistic_sha256": "0195f9139b9e485b41a51f4b40366db1eec25688e9f88e6a2a339fc166366a75",
+    "checker": "/local/paper/code/theory_checks.py",
+    "checker_sha256": "26bcf11a42274de28b09bf6482f3d2b165751cd0841a2d8c7d2d0e5499d0c201",
+    "plot_script_sha256": "33c6ad9e53ec0851bafaeff6caea9e8fd98a6fda619b127eb079b514ba87e4d2"
+  },
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "reportlab": "4.4.9",
+    "fonts": {
+      "regular": "/local/tools/libreoffice-headless/libreoffice/LibreOfficeDev.app/Contents/Resources/fonts/truetype/DejaVuSans.ttf",
+      "bold": "/local/tools/libreoffice-headless/libreoffice/LibreOfficeDev.app/Contents/Resources/fonts/truetype/DejaVuSans-Bold.ttf",
+      "regular_sha256": "7da195a74c55bef988d0d48f9508bd5d849425c1770dba5d7bfc6ce9ed848954",
+      "bold_sha256": "e6476c1b80502924294eed40894c5b18e06c181444ca953e5334262df9c27724",
+      "embedded": true,
+      "theta_coverage_checked": true
+    }
+  },
+  "endpoints": {
+    "R": {
+      "theta": 1.1249518896383577,
+      "accuracy": 0.8774465360355461
+    },
+    "S": {
+      "theta": -0.11146044018344908,
+      "accuracy": 0.35958859256212267
+    }
+  },
+  "S_equilibrium": {
+    "theta": -0.11146044018345069,
+    "accuracy": 0.35958859256212095
+  },
+  "gradient_field_oracle_points": 1202,
+  "data_rows": {
+    "trajectories": 16002,
+    "gradient_field": 601
+  },
+  "scope": "Numerical population illustration, not a universal proof or empirical LM result.",
+  "chart_contract": {
+    "family": "line",
+    "renderer": "ReportLab vector PDF",
+    "question": "How do matched-rate R/S rules differ in population learning?",
+    "takeaway": "R improves while S approaches a sub-initial equilibrium.",
+    "palette": {
+      "policy": "match Figure 1(b) categorical lines",
+      "R": "#127F83",
+      "S": "#805677"
+    },
+    "noncolor": {
+      "R": "solid",
+      "S": "dashed"
+    },
+    "style": "DejaVu Sans preferred; thin neutral axes; sparse guides; direct labels",
+    "manuscript_width": "0.7\\textwidth (30% linear reduction)",
+    "footprint_points": [
+      486,
+      184
+    ],
+    "uncertainty": "none: deterministic model"
+  },
+  "exports": {
+    "population_flow.pdf": "2f08692cf908158a45a8a83a6589e70736caa0d418ca82a22c4a862aa9fd6eec",
+    "population_flow.png": "7bfbaf9a4559bf9c4ab7f8bc960bfe96e5ef74dffa7f59561a19e354152b5bc2",
+    "trajectories.csv": "f3f3395d222ef27eb9ac5e829ccb0f25f092d9cbe22d228125691aed03eb1364",
+    "gradient_field.csv": "bc29b17b83e0cff6c5ae829b774001f02c5affa57cb57149c36671c3143975b0"
+  }
+}

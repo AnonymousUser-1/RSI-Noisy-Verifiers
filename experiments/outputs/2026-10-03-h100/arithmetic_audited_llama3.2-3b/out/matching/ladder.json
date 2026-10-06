@@ -1,0 +1,111 @@
+{
+  "K": 64,
+  "attempts": [
+    {
+      "K": 64,
+      "certificates": {
+        "b00": {
+          "C": 48,
+          "E": 16,
+          "K": 64,
+          "N_minus": 4181,
+          "N_plus": 12203,
+          "condition_correct_tasks": true,
+          "condition_error_tasks": true,
+          "condition_one_task_each": true,
+          "error_fraction": 0.25,
+          "tasks_eligible_J_E": 30,
+          "tasks_in_pool": 2048,
+          "tasks_with_correct": 1839,
+          "token_tolerance": null,
+          "truncated_excluded": 0
+        },
+        "b01": {
+          "C": 48,
+          "E": 16,
+          "K": 64,
+          "N_minus": 4132,
+          "N_plus": 12252,
+          "condition_correct_tasks": true,
+          "condition_error_tasks": true,
+          "condition_one_task_each": true,
+          "error_fraction": 0.25,
+          "tasks_eligible_J_E": 32,
+          "tasks_in_pool": 2048,
+          "tasks_with_correct": 1835,
+          "token_tolerance": null,
+          "truncated_excluded": 0
+        },
+        "b02": {
+          "C": 48,
+          "E": 16,
+          "K": 64,
+          "N_minus": 4142,
+          "N_plus": 12240,
+          "condition_correct_tasks": true,
+          "condition_error_tasks": true,
+          "condition_one_task_each": true,
+          "error_fraction": 0.25,
+          "tasks_eligible_J_E": 17,
+          "tasks_in_pool": 2048,
+          "tasks_with_correct": 1845,
+          "token_tolerance": null,
+          "truncated_excluded": 2
+        },
+        "b03": {
+          "C": 48,
+          "E": 16,
+          "K": 64,
+          "N_minus": 4151,
+          "N_plus": 12233,
+          "condition_correct_tasks": true,
+          "condition_error_tasks": true,
+          "condition_one_task_each": true,
+          "error_fraction": 0.25,
+          "tasks_eligible_J_E": 28,
+          "tasks_in_pool": 2048,
+          "tasks_with_correct": 1840,
+          "token_tolerance": null,
+          "truncated_excluded": 0
+        },
+        "b04": {
+          "C": 48,
+          "E": 16,
+          "K": 64,
+          "N_minus": 4122,
+          "N_plus": 12260,
+          "condition_correct_tasks": true,
+          "condition_error_tasks": true,
+          "condition_one_task_each": true,
+          "error_fraction": 0.25,
+          "tasks_eligible_J_E": 33,
+          "tasks_in_pool": 2048,
+          "tasks_with_correct": 1839,
+          "token_tolerance": null,
+          "truncated_excluded": 2
+        }
+      },
+      "feasible": true
+    }
+  ],
+  "blocks": [
+    "b00",
+    "b01",
+    "b02",
+    "b03",
+    "b04"
+  ],
+  "error_fraction": 0.25,
+  "feasible": true,
+  "ladder": [
+    64,
+    32,
+    16
+  ],
+  "reason": null,
+  "target_signatures": [
+    "ignore_parentheses"
+  ],
+  "task": "arithmetic",
+  "token_tolerance": null
+}

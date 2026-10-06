@@ -1,0 +1,15 @@
+\begin{table}[H]
+\caption{Qwen3-4B graph endpoints after four rounds. Target rates count nonshortest answers among all evaluated questions. Paired $S-R$ differences are within policy, with descriptive 95\% block-$t$ half-widths over five blocks. Same-arm audit-change intervals appear in Table~\ref{tab:audit-results}.}
+\label{tab:qwen4b-endpoints}
+\centering\small\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}lllllll@{}}
+\toprule
+Split & Policy & Base & Pass@1 $R/S$ & $S-R$ Pass@1 & Target $R/S$ & $S-R$ target\\
+\midrule
+ID & None & 0.6125 & 0.7309/0.7339 & $0.0030\pm0.0968$ & 0.1026/0.1491 & $0.0465\pm0.1489$\\
+ID & B=16 & 0.6100 & 0.7180/0.7273 & $0.0093\pm0.0745$ & 0.1375/0.1614 & $0.0239\pm0.0328$\\
+OOD & None & 0.3970 & 0.4988/0.4982 & $-0.0006\pm0.0991$ & 0.1618/0.2644 & $0.1026\pm0.2015$\\
+OOD & B=16 & 0.3960 & 0.4750/0.4850 & $0.0100\pm0.0741$ & 0.2060/0.2424 & $0.0364\pm0.0528$\\
+\bottomrule
+\end{tabular}
+\end{table}

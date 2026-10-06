@@ -1,0 +1,11 @@
+{
+  "config_hash": "15908c92e68a0d1899f0294aeccbd098c31d9de25fc376bf3cf1ca1374e0e5ce",
+  "profile": "legacy",
+  "protocol_sha256": "f9d1aeb05191e2ac2faac025736c220a8743650b193e46986f7f3c160645b962",
+  "reference_gradient": {
+    "h_json_sha256": "46c3bf82eca838953210b14a862deea1af6c9dd727fc3163d91b5b9df468e729",
+    "h_sha256": "34fadb0578670ef7bdf2ff111d55127282b86e1622da9be6b93c3dbef22a0ca4",
+    "path": "/cluster2/RSI/inputs/RSI-Qwen3-4B-Graph-paired-inputs-20261004/reference_out_audit_legacy",
+    "status": "used"
+  }
+}

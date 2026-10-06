@@ -1,0 +1,227 @@
+{
+  "DEMO_ONLY": false,
+  "K": 64,
+  "all_latest_protocol": false,
+  "arms": [
+    "S"
+  ],
+  "attempts": 1,
+  "auditing": {
+    "budget_unit": "correctness queries per arm per round",
+    "config": {
+      "budget": 16,
+      "policy": "adaptive",
+      "weighting": true
+    },
+    "enabled": true,
+    "matching_constraints_stage": "pre_audit"
+  },
+  "backend": "hf",
+  "blocks": [
+    "b00",
+    "b01",
+    "b02",
+    "b03",
+    "b04"
+  ],
+  "code": {
+    "git_commit": "f1fd1f8c7bf479a3ca8610240f68d204758d3391",
+    "git_dirty": false,
+    "source_hash": "7d4d76e82d53b58024c50803a92fe15bb9e8270652343c9e5fc537673556c202"
+  },
+  "completed": [
+    "b00/S/round_001",
+    "b00/S/round_002",
+    "b00/S/round_003",
+    "b00/S/round_004",
+    "b01/S/round_001",
+    "b01/S/round_002",
+    "b01/S/round_003",
+    "b01/S/round_004",
+    "b02/S/round_001",
+    "b02/S/round_002",
+    "b02/S/round_003",
+    "b02/S/round_004",
+    "b03/S/round_001",
+    "b03/S/round_002",
+    "b03/S/round_003",
+    "b03/S/round_004",
+    "b04/S/round_001",
+    "b04/S/round_002",
+    "b04/S/round_003",
+    "b04/S/round_004"
+  ],
+  "execution": {
+    "arm": "S",
+    "cuda_visible_devices": "1",
+    "gpu_uuid": "2b28524c-5014-5688-41df-12bba8946433",
+    "mode": "arm_worker",
+    "pid": 3711811,
+    "visible_device_count": 1
+  },
+  "exit_code": 0,
+  "first_pools": "original legacy",
+  "identity": {
+    "K": 64,
+    "config_hashes": {
+      "legacy": "15908c92e68a0d1899f0294aeccbd098c31d9de25fc376bf3cf1ca1374e0e5ce",
+      "new": "68b7485057076bcfc990782142f8645e7ba98aa0c2a1103168ab8c5c72d5fec9"
+    },
+    "controller_sha256": "8af2a041e722e71519652a15116d3e27f54043de0579267b4480ef71c218f592",
+    "dataset_hash": "4a3af7c05cb721e19e9dbfb1d50d8c717198d664bc2c465cf386440aa687689b",
+    "execution_mode": "parallel_arms",
+    "package_manifest_sha256": "a2077162f935ac49c55571c02bb8e5000c5831ed40ae5924f101696faa99eefc",
+    "package_path": "/cluster2/RSI/inputs/RSI-Qwen3-4B-Graph-paired-inputs-20261004",
+    "parallel_controller_sha256": "381af93fa280eb75c27599e3562873f23bc651b4dc6712c4f0c3d153837863e4",
+    "phase": "main",
+    "pools": {
+      "b00": "8900e2aad141189d80724ee8ad2e5fa9aff8f082cb7e1b50cd95a47e9fa5e4e6",
+      "b01": "880976085897239e626065713baeb9923861e99e9959c4075feaf161db439999",
+      "b02": "8814f46736cb747752bf46fe39dcf3b7a239d699544745ab300ef26e1c55b64c",
+      "b03": "38c5a587440048043f15ef5967f47be9747a0ef1dc40c45332bf5a4a2f3923b3",
+      "b04": "c2d40b998f746d29e4ade21c6521fc4b6eb054b61213ade6fb6369e9ea66728c"
+    },
+    "profiles": {
+      "b00": {
+        "1": "legacy",
+        "2": "legacy",
+        "3": "legacy",
+        "4": "legacy"
+      },
+      "b01": {
+        "1": "legacy",
+        "2": "legacy",
+        "3": "legacy",
+        "4": "new"
+      },
+      "b02": {
+        "1": "new",
+        "2": "new",
+        "3": "new",
+        "4": "new"
+      },
+      "b03": {
+        "1": "new",
+        "2": "new",
+        "3": "new",
+        "4": "new"
+      },
+      "b04": {
+        "1": "new",
+        "2": "new",
+        "3": "new",
+        "4": "new"
+      }
+    },
+    "protocol_sha256": "f9d1aeb05191e2ac2faac025736c220a8743650b193e46986f7f3c160645b962",
+    "reference_bindings": {
+      "legacy": {
+        "base_pin": {
+          "model": "Qwen/Qwen3-4B",
+          "pin_path": "/cluster2/RSI/inputs/RSI-Qwen3-4B-Graph-paired-inputs-20261004/configs/base_pin_qwen3-4b.json",
+          "pin_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+          "pin_sha256": "96c2e889357b717e770adb827e0b9ff9bcc6669c6a6a9a6a88310f7d7bed320d",
+          "resolved_revision": "1cfa9a7208912126459214e8b04321603b3df60c"
+        },
+        "h_path": "/cluster2/RSI/inputs/RSI-Qwen3-4B-Graph-paired-inputs-20261004/reference_out_audit_legacy/h.pt",
+        "reference_gradient": {
+          "h_json_sha256": "46c3bf82eca838953210b14a862deea1af6c9dd727fc3163d91b5b9df468e729",
+          "h_sha256": "34fadb0578670ef7bdf2ff111d55127282b86e1622da9be6b93c3dbef22a0ca4",
+          "path": "/cluster2/RSI/inputs/RSI-Qwen3-4B-Graph-paired-inputs-20261004/reference_out_audit_legacy",
+          "status": "used"
+        },
+        "shared_adapter": {
+          "parameter_hash": "81edfb8956d6f27b713dc9f5d33e40c750e355084104a8327af77428b35f47fe",
+          "path": "/cluster2/RSI/inputs/RSI-Qwen3-4B-Graph-paired-inputs-20261004/shared_adapter",
+          "record_sha256": "88febb5e405345d47859c51d94c9347b5e7ac8024e542f3a02c1cc4f2d0c6dbc",
+          "status": "used"
+        }
+      },
+      "new": {
+        "base_pin": {
+          "model": "Qwen/Qwen3-4B",
+          "pin_path": "/cluster2/RSI/inputs/RSI-Qwen3-4B-Graph-paired-inputs-20261004/configs/base_pin_qwen3-4b.json",
+          "pin_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+          "pin_sha256": "96c2e889357b717e770adb827e0b9ff9bcc6669c6a6a9a6a88310f7d7bed320d",
+          "resolved_revision": "1cfa9a7208912126459214e8b04321603b3df60c"
+        },
+        "h_path": "/cluster2/RSI/inputs/RSI-Qwen3-4B-Graph-paired-inputs-20261004/reference_out_audit_new/h.pt",
+        "reference_gradient": {
+          "h_json_sha256": "6f5357b683ffaa541d55bdbf8a10dbe0d187fecef105395984fd38341b374c34",
+          "h_sha256": "34fadb0578670ef7bdf2ff111d55127282b86e1622da9be6b93c3dbef22a0ca4",
+          "path": "/cluster2/RSI/inputs/RSI-Qwen3-4B-Graph-paired-inputs-20261004/reference_out_audit_new",
+          "status": "used"
+        },
+        "shared_adapter": {
+          "parameter_hash": "81edfb8956d6f27b713dc9f5d33e40c750e355084104a8327af77428b35f47fe",
+          "path": "/cluster2/RSI/inputs/RSI-Qwen3-4B-Graph-paired-inputs-20261004/shared_adapter",
+          "record_sha256": "88febb5e405345d47859c51d94c9347b5e7ac8024e542f3a02c1cc4f2d0c6dbc",
+          "status": "used"
+        }
+      }
+    },
+    "seed": 0,
+    "shared_adapter": "81edfb8956d6f27b713dc9f5d33e40c750e355084104a8327af77428b35f47fe",
+    "source_commit": "f1fd1f8c7bf479a3ca8610240f68d204758d3391",
+    "source_hash_linux": "7d4d76e82d53b58024c50803a92fe15bb9e8270652343c9e5fc537673556c202",
+    "source_hash_windows_equivalent": "c6f0d76f010ea3a4b0079c7373403c2840b43c05a70467f02cdf9e69f80ea130",
+    "study_id": "md-audit-graph-iter4-b16-qwen3-4b-paired-cluster-v01"
+  },
+  "matching_settings": {
+    "error_fraction": 0.25,
+    "token_tolerance": 0
+  },
+  "phase": "main",
+  "protocol_profiles": {
+    "b00": {
+      "1": "legacy",
+      "2": "legacy",
+      "3": "legacy",
+      "4": "legacy"
+    },
+    "b01": {
+      "1": "legacy",
+      "2": "legacy",
+      "3": "legacy",
+      "4": "new"
+    },
+    "b02": {
+      "1": "new",
+      "2": "new",
+      "3": "new",
+      "4": "new"
+    },
+    "b03": {
+      "1": "new",
+      "2": "new",
+      "3": "new",
+      "4": "new"
+    },
+    "b04": {
+      "1": "new",
+      "2": "new",
+      "3": "new",
+      "4": "new"
+    }
+  },
+  "rounds": 4,
+  "schema_version": "rsi-iterative/1",
+  "status": "complete",
+  "steps_per_round": 16,
+  "stopped": [],
+  "study_id": "md-audit-graph-iter4-b16-qwen3-4b-paired-cluster-v01",
+  "target_signatures": [
+    "nonshortest"
+  ],
+  "task": "graph",
+  "workers": {
+    "R": {
+      "process_exit_code": null,
+      "status": "starting"
+    },
+    "S": {
+      "process_exit_code": null,
+      "status": "starting"
+    }
+  }
+}

@@ -1,0 +1,208 @@
+{
+ "config": "experiments/graph_unaudited/config.json",
+ "model": "Qwen/Qwen3-1.7B",
+ "targets": [
+  "nonshortest"
+ ],
+ "config_matching": {
+  "error_fraction": 0.25,
+  "token_tolerance": 0
+ },
+ "pools": {
+  "b00": {
+   "answers": 16384,
+   "truncated": 27,
+   "correct": 0.50311279296875,
+   "target_errors": 2357,
+   "labels": {
+    "nonshortest": 2357,
+    "correct": 8243,
+    "nonedge": 5656,
+    "format": 32,
+    "endpoint": 96
+   }
+  },
+  "b01": {
+   "answers": 16384,
+   "truncated": 29,
+   "correct": 0.5059814453125,
+   "target_errors": 2351,
+   "labels": {
+    "nonshortest": 2351,
+    "correct": 8290,
+    "nonedge": 5608,
+    "format": 31,
+    "endpoint": 104
+   }
+  },
+  "b02": {
+   "answers": 16384,
+   "truncated": 33,
+   "correct": 0.5042724609375,
+   "target_errors": 2322,
+   "labels": {
+    "nonshortest": 2322,
+    "correct": 8262,
+    "nonedge": 5658,
+    "format": 35,
+    "endpoint": 107
+   }
+  },
+  "b03": {
+   "answers": 16384,
+   "truncated": 30,
+   "correct": 0.50830078125,
+   "target_errors": 2354,
+   "labels": {
+    "nonshortest": 2354,
+    "correct": 8328,
+    "nonedge": 5569,
+    "format": 33,
+    "endpoint": 100
+   }
+  },
+  "b04": {
+   "answers": 16384,
+   "truncated": 29,
+   "correct": 0.5050048828125,
+   "target_errors": 2346,
+   "labels": {
+    "nonshortest": 2346,
+    "correct": 8274,
+    "nonedge": 5638,
+    "format": 33,
+    "endpoint": 93
+   }
+  }
+ },
+ "options": [
+  {
+   "error_fraction": 0.25,
+   "token_tolerance": null,
+   "is_config": false,
+   "feasible": true,
+   "K": 64,
+   "per_block": {
+    "b00": {
+     "prompts_with_correct": 1176,
+     "prompts_eligible_J_E": 142
+    },
+    "b01": {
+     "prompts_with_correct": 1171,
+     "prompts_eligible_J_E": 138
+    },
+    "b02": {
+     "prompts_with_correct": 1169,
+     "prompts_eligible_J_E": 127
+    },
+    "b03": {
+     "prompts_with_correct": 1174,
+     "prompts_eligible_J_E": 137
+    },
+    "b04": {
+     "prompts_with_correct": 1178,
+     "prompts_eligible_J_E": 125
+    }
+   },
+   "feasible_by_K": {
+    "64": true
+   }
+  },
+  {
+   "error_fraction": 0.25,
+   "token_tolerance": 0,
+   "is_config": true,
+   "feasible": true,
+   "K": 64,
+   "per_block": {
+    "b00": {
+     "prompts_with_correct": 1176,
+     "prompts_eligible_J_E": 27
+    },
+    "b01": {
+     "prompts_with_correct": 1171,
+     "prompts_eligible_J_E": 38
+    },
+    "b02": {
+     "prompts_with_correct": 1169,
+     "prompts_eligible_J_E": 32
+    },
+    "b03": {
+     "prompts_with_correct": 1174,
+     "prompts_eligible_J_E": 31
+    },
+    "b04": {
+     "prompts_with_correct": 1178,
+     "prompts_eligible_J_E": 28
+    }
+   },
+   "feasible_by_K": {
+    "64": true
+   }
+  },
+  {
+   "error_fraction": 0.125,
+   "token_tolerance": null,
+   "is_config": false,
+   "feasible": true,
+   "K": 64,
+   "per_block": {
+    "b00": {
+     "prompts_with_correct": 1176,
+     "prompts_eligible_J_E": 142
+    },
+    "b01": {
+     "prompts_with_correct": 1171,
+     "prompts_eligible_J_E": 138
+    },
+    "b02": {
+     "prompts_with_correct": 1169,
+     "prompts_eligible_J_E": 127
+    },
+    "b03": {
+     "prompts_with_correct": 1174,
+     "prompts_eligible_J_E": 137
+    },
+    "b04": {
+     "prompts_with_correct": 1178,
+     "prompts_eligible_J_E": 125
+    }
+   },
+   "feasible_by_K": {
+    "64": true
+   }
+  },
+  {
+   "error_fraction": 0.125,
+   "token_tolerance": 0,
+   "is_config": false,
+   "feasible": true,
+   "K": 64,
+   "per_block": {
+    "b00": {
+     "prompts_with_correct": 1176,
+     "prompts_eligible_J_E": 27
+    },
+    "b01": {
+     "prompts_with_correct": 1171,
+     "prompts_eligible_J_E": 38
+    },
+    "b02": {
+     "prompts_with_correct": 1169,
+     "prompts_eligible_J_E": 32
+    },
+    "b03": {
+     "prompts_with_correct": 1174,
+     "prompts_eligible_J_E": 31
+    },
+    "b04": {
+     "prompts_with_correct": 1178,
+     "prompts_eligible_J_E": 28
+    }
+   },
+   "feasible_by_K": {
+    "64": true
+   }
+  }
+ ]
+}

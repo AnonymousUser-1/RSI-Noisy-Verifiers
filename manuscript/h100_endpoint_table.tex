@@ -1,0 +1,25 @@
+\begin{table*}[!t]
+\caption{Four-round graph endpoints, with five paired blocks per model. Errors are mean fractions. $Q$ counts correctness-audit queries per arm/block, excluding matching and evaluation labels; steps are cumulative updates (mean and range). $\Delta$ is audited-minus-unaudited error with a paired 95\% block-$t$ interval (negative favors auditing). Qwen3-4B contrasts pair corresponding blocks across runs with slightly different base predictions. Models are not pooled. Qwen3-1.7B is in Table~\ref{tab:qwen17-policy-endpoints}; one-step outcomes are separate (Table~\ref{tab:one-step-heldout}).}
+\label{tab:audit-results}
+\centering\small\setlength{\tabcolsep}{2.5pt}
+\begin{tabular}{@{}llcccccc@{}}
+\toprule
+Policy & Arm & $Q$ & Steps & ID error & OOD error & \shortstack{$\Delta$ID\\(95\% CI)} & \shortstack{$\Delta$OOD\\(95\% CI)}\\
+\midrule
+\multicolumn{8}{@{}l}{\textbf{Llama-3.2-3B}}\\
+Base & --- & 0 & 0 & 0.752 & 0.791 & --- & ---\\
+Unaudited & R & 0 & 64 & 0.442 & 0.570 & --- & ---\\
+Unaudited & S & 0 & 64 & 0.440 & 0.553 & --- & ---\\
+Adaptive, B=16 & R & 64 & 54.2 (50--57) & 0.414 & 0.551 & $-0.028\;[-0.155,0.098]$ & $-0.019\;[-0.114,0.076]$\\
+Adaptive, B=16 & S & 64 & 55.0 (44--63) & 0.380 & 0.524 & $-0.060\;[-0.144,0.024]$ & $-0.029\;[-0.107,0.050]$\\
+\addlinespace
+\multicolumn{8}{@{}l}{\textbf{Qwen3-4B}}\\
+Base, unaudited & --- & 0 & 0 & 0.388 & 0.603 & --- & ---\\
+Base, audited & --- & 0 & 0 & 0.390 & 0.604 & --- & ---\\
+Unaudited & R & 0 & 64 & 0.269 & 0.501 & --- & ---\\
+Unaudited & S & 0 & 64 & 0.266 & 0.502 & --- & ---\\
+Adaptive, B=16 & R & 64 & 54.4 (49--61) & 0.282 & 0.525 & $0.013\;[-0.058,0.084]$ & $0.024\;[-0.045,0.092]$\\
+Adaptive, B=16 & S & 64 & 55.0 (52--57) & 0.273 & 0.515 & $0.007\;[-0.108,0.121]$ & $0.013\;[-0.074,0.100]$\\
+\bottomrule
+\end{tabular}
+\end{table*}

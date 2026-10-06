@@ -1,0 +1,21 @@
+\begin{table}[H]
+\caption{Qwen3-4B one-step graph blocks. Each split uses the same fixed questions for its base/null and all ten trained checkpoints.}
+\label{tab:one-step-blocks-graph_unaudited_qwen3-4b}
+\centering\small\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}llllll@{}}
+\toprule
+Block & Arm & ID Pass@1 & OOD Pass@1 & $h^T\Delta\theta$ & $\|\Delta\theta\|_2$\\
+\midrule
+b00 & R & 0.6095 & 0.3950 & 0.00633 & 0.06046\\
+b00 & S & 0.6115 & 0.3970 & 0.00054 & 0.06054\\
+b01 & R & 0.6140 & 0.3970 & $-0.00944$ & 0.06050\\
+b01 & S & 0.6090 & 0.3990 & $-0.00711$ & 0.06052\\
+b02 & R & 0.6110 & 0.3970 & $-0.01158$ & 0.06060\\
+b02 & S & 0.6120 & 0.3990 & $-0.01373$ & 0.06060\\
+b03 & R & 0.6115 & 0.3980 & $-0.00653$ & 0.06055\\
+b03 & S & 0.6095 & 0.4000 & $-0.00671$ & 0.06055\\
+b04 & R & 0.6090 & 0.3930 & $-0.01323$ & 0.06058\\
+b04 & S & 0.6100 & 0.3960 & $-0.01321$ & 0.06058\\
+\bottomrule
+\end{tabular}
+\end{table}

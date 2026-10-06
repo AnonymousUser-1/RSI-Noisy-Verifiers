@@ -1,0 +1,78 @@
+\section{Results}
+\label{sec:results}
+\input{h100_endpoint_table}
+\input{one_step_heldout_table}
+
+Our empirical analysis comprises four-round graph self-training and
+separate isolated one-step comparisons, each with five complete paired
+blocks.
+
+\paragraph{Matched starting selections.}
+Table~\ref{tab:matching} certifies identical round-one prompt IDs, correct
+responses, $48/16$ correct/error counts, and supervised token lengths.
+The Qwen3-1.7B certificate is in Table~\ref{tab:qwen-matching};
+Qwen3-4B controls are discussed in Appendix~\ref{app:qwen4b-four-round}.
+The rate denominators exclude cut answers. Uniform error selection in $R$
+still yields $9$--$13$ (Llama), $6$--$12$ (Qwen3-1.7B), or
+$9$--$10$ (Qwen3-4B) \texttt{nonshortest}
+responses among its 16 errors, versus 16 in $S$.
+Auditing starts from these same selections; later checkpoint-dependent
+pools are not jointly rate-matched.
+
+\paragraph{Llama: both arms improve.}
+Figure~\ref{fig:graph-four-round}(a--b) shows accuracy increasing from $0.248$ ID and
+$0.209$ OOD to unaudited $R/S$ endpoints $0.558/0.560$ and $0.430/0.447$.
+Paired $S-R$ accuracy differences are $0.002\pm0.105$ ID and
+$0.017\pm0.081$ OOD (95\% block-$t$ intervals).
+Both initial-round projections are negative ($-0.233/-0.260$), in contrast
+to the opposite signs in the analytical construction. They describe
+16-step round displacements rather than isolated one-step updates.
+
+\paragraph{Finite-budget auditing in Llama.}
+\label{sec:audit-results}
+Audited $R/S$ reach $0.586/0.620$ ID and $0.449/0.476$ OOD accuracy.
+The same-arm audited-minus-unaudited error contrasts in
+Table~\ref{tab:audit-results} favor auditing in mean.
+Each audited arm spends 64 queries; weighting changes retained volume,
+ESS, and actual steps (Table~\ref{tab:audit-composition}).
+Consequently, this comparison combines changes in data reliability,
+training volume, and optimizer effort; it does not establish label-cost
+savings. 
+
+\paragraph{Composition, feasibility, and scope.}
+Unaudited final target-error fractions are $0.147/0.183$ ID and
+$0.090/0.118$ OOD for $R/S$, despite similar overall accuracy.
+Auditing reduces mean ID target incidence, but OOD $S$ remains $0.120$:
+suppression is not uniform. Appendix~\ref{app:h100-results} gives
+all rounds, block endpoints, update diagnostics, original plots, and
+cross-task feasibility checks. Intervals are descriptive and unadjusted,
+not preregistered confirmatory claims. Arithmetic lacks exact-length
+feasibility; complete costs remain unavailable.
+Population illustrations are separate from these empirical findings.
+
+\paragraph{Qwen3-4B: improvement without endpoint separation.}
+Figure~\ref{fig:graph-four-round}(c--d) shows unaudited $R/S$ accuracy reaching
+$0.7309/0.7339$ ID and $0.4988/0.4982$ OOD. Audited endpoints are
+$0.7180/0.7273$ and $0.4750/0.4850$. Both policies improve in mean.
+Same-arm audit error changes are positive
+in mean (Table~\ref{tab:audit-results}).
+Audited $R/S$ average 54.4/55.0 updates versus 64 unaudited;
+these cross-run contrasts do not establish a corrective audit effect.
+Qwen3-1.7B accuracy, composition, and audit results are retained in
+Appendix~\ref{app:qwen-four-round}. Its audit accuracy changes are negative
+in mean; the budget does not fix
+optimizer effort. Neither model establishes a uniform audit benefit.
+\paragraph{One-step held-out outcomes.}
+Table~\ref{tab:one-step-heldout} reports each run against its own null;
+run-specific baselines preclude a controlled cross-model ranking.
+Qwen3-4B's secondary OOD contrast is $0.0022\pm0.0006$ (2--3 questions
+per block), without multiplicity adjustment
+(Figure~\ref{fig:one-step-contrasts}, Table~\ref{tab:one-step-heldout}).
+
+\paragraph{Gradient--accuracy mismatch.}
+With matched counts and shared correct responses, $S$ has larger mean
+error-gradient contribution norms across models
+(Table~\ref{tab:one-step-diagnostics}). Qwen3-4B has negative mean
+$h^T\Delta\theta$ yet lower mean ID accuracy than null in both arms.
+These diagnostics alone establish neither harmful updates nor reliable
+accuracy separation.

@@ -1,0 +1,68 @@
+{
+  "status": "passed",
+  "parameters": {
+    "a": 0.75,
+    "b": 0.5,
+    "theta0": 0.0,
+    "eta": 0.1,
+    "main": {
+      "L_min": 1.0,
+      "L_max": 20.0,
+      "L_count": 121,
+      "q_min": 0.0,
+      "q_max": 0.5,
+      "q_count": 101
+    },
+    "detail": {
+      "L_min": 6.0,
+      "L_max": 14.0,
+      "L_count": 81,
+      "q_min": 0.1,
+      "q_max": 0.25,
+      "q_count": 61
+    },
+    "slices_L": [
+      3.0,
+      10.0,
+      20.0
+    ],
+    "slice_q_count": 501,
+    "boundary_count": 501,
+    "oracle_absolute_tolerance": 2e-12,
+    "zero_tolerance": 2e-13
+  },
+  "dataset_rows": {
+    "main_grid.csv": 12221,
+    "detail_grid.csv": 4941,
+    "parameter_slices.csv": 1503,
+    "critical_boundary.csv": 501,
+    "uniform_threshold.csv": 121,
+    "selected_readouts.csv": 5
+  },
+  "independently_checked_parameter_points": 20293,
+  "threshold_side_checks": 1001,
+  "max_oracle_error": {
+    "gradient": 8.049116928532385e-16,
+    "delta_P": 2.220446049250313e-16,
+    "query_fraction": 5.551115123125783e-17
+  },
+  "main_delta_P_pp_range": [
+    -18.33859749413697,
+    24.123620662490552
+  ],
+  "uniform_sufficient_q": 0.25,
+  "uniform_initial_global_query_fraction": 0.175,
+  "L10_initial_q_critical": 0.175,
+  "reference_checker_sha256": "26bcf11a42274de28b09bf6482f3d2b165751cd0841a2d8c7d2d0e5499d0c201",
+  "generator_sha256": "9432b70f6632f70241bf3350b29c477625d755fc9138df0234942738104292bf",
+  "parameters_sha256": "4702a4f73604c75e5fbb8612a41c22197291de62e11329de0df3d88d1a0cd229",
+  "data_hashes": {
+    "main_grid.csv": "e778a254b8a4b3bab0c7b5410a8df4a1d5a9315523d62c187a45d101089e9da4",
+    "detail_grid.csv": "269cfe25a9ee76b48d2c73729297945ec031255af2e81054755e37553915f107",
+    "parameter_slices.csv": "8caa866a36e5c63154291b4e1039752ef6703c11b597c7f2cb43568605aefed2",
+    "critical_boundary.csv": "1b390128c142dccbbec5e5627030ae9542c70fb3734c9b43ec3ead7ebe144297",
+    "uniform_threshold.csv": "ca31037e9a9f943099eabf2b43e7cc16b0b57b50399d6ce11c44a6fd84e8f2d1",
+    "selected_readouts.csv": "9f55d1a9e24889880cb32c893678dc2c3290c096629a153aa77327d9225af877"
+  },
+  "scope": "Deterministic initial mathematical step. No Monte Carlo, GPU measurements, confidence intervals, or finite-time claim of convergence to accuracy one."
+}

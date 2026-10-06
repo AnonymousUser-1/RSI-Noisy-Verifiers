@@ -1,0 +1,37 @@
+\begin{table}[H]
+\caption{Round-one feasibility across five model/task pairs; audited siblings reuse the same pools. Each block has 16,384 sampled answers. Correctness and target counts use the full raw pool; matching excludes cut responses. $J_E$ counts prompts eligible for error-role matching at error fraction $0.25$, with exact length ($J_E^{\rm exact}$) or configured tolerance ($J_E^{\rm cfg}$). Qwen3-4B pool labels are independently rejudged; its $J_E$ values come from matching certificates. Graph permits $K=64$ with exact lengths. Arithmetic disables length matching; its exact-length ladder fails at $K=64,32,16$. These are feasibility checks, not held-out learning results.}
+\label{tab:h100-feasibility}
+\centering\small\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}llccccccc@{}}
+\toprule
+Task/model & Block & Correct (\%) & Cut & Target & $J_E^{\rm exact}$ & $J_E^{\rm cfg}$ & Length & $K$\\
+\midrule
+Graph / Qwen3-1.7B & b00 & 50.31 & 27 & 2357 & 27 & 27 & exact & 64\\
+Graph / Qwen3-1.7B & b01 & 50.60 & 29 & 2351 & 38 & 38 & exact & 64\\
+Graph / Qwen3-1.7B & b02 & 50.43 & 33 & 2322 & 32 & 32 & exact & 64\\
+Graph / Qwen3-1.7B & b03 & 50.83 & 30 & 2354 & 31 & 31 & exact & 64\\
+Graph / Qwen3-1.7B & b04 & 50.50 & 29 & 2346 & 28 & 28 & exact & 64\\
+Graph / Llama-3B & b00 & 23.49 & 147 & 2095 & 184 & 184 & exact & 64\\
+Graph / Llama-3B & b01 & 23.66 & 138 & 2112 & 180 & 180 & exact & 64\\
+Graph / Llama-3B & b02 & 23.22 & 121 & 2095 & 178 & 178 & exact & 64\\
+Graph / Llama-3B & b03 & 23.25 & 153 & 2140 & 188 & 188 & exact & 64\\
+Graph / Llama-3B & b04 & 23.43 & 132 & 2124 & 192 & 192 & exact & 64\\
+Arithmetic / Llama-3B & b00 & 74.48 & 0 & 74 & 2 & 30 & off & 64\\
+Arithmetic / Llama-3B & b01 & 74.78 & 0 & 81 & 2 & 32 & off & 64\\
+Arithmetic / Llama-3B & b02 & 74.71 & 2 & 71 & 1 & 17 & off & 64\\
+Arithmetic / Llama-3B & b03 & 74.66 & 0 & 74 & 0 & 28 & off & 64\\
+Arithmetic / Llama-3B & b04 & 74.83 & 2 & 87 & 1 & 33 & off & 64\\
+Arithmetic / Llama-1B & b00 & 42.35 & 100 & 69 & 1 & 54 & off & 64\\
+Arithmetic / Llama-1B & b01 & 42.03 & 111 & 69 & 2 & 45 & off & 64\\
+Arithmetic / Llama-1B & b02 & 42.13 & 84 & 63 & 2 & 43 & off & 64\\
+Arithmetic / Llama-1B & b03 & 42.30 & 90 & 75 & 2 & 55 & off & 64\\
+Arithmetic / Llama-1B & b04 & 41.75 & 87 & 70 & 0 & 48 & off & 64\\
+\addlinespace
+Graph / Qwen3-4B & b00 & 63.02 & 9 & 3545 & 16 & 16 & exact & 64\\
+Graph / Qwen3-4B & b01 & 63.01 & 7 & 3561 & 25 & 25 & exact & 64\\
+Graph / Qwen3-4B & b02 & 63.23 & 10 & 3530 & 21 & 21 & exact & 64\\
+Graph / Qwen3-4B & b03 & 63.29 & 5 & 3523 & 30 & 30 & exact & 64\\
+Graph / Qwen3-4B & b04 & 63.02 & 9 & 3531 & 30 & 30 & exact & 64\\
+\bottomrule
+\end{tabular}
+\end{table}

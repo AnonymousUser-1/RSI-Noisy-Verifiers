@@ -1,0 +1,1232 @@
+ok   b00/R optimizer steps 1 (want 1)
+ok   b00/R gradient composition, relative error 1.58e-07
+ok   b00/S optimizer steps 1 (want 1)
+ok   b00/S gradient composition, relative error 1.54e-07
+ok   b00/null optimizer steps 0 (want 0)
+ok   b00/null |Delta theta| 0.0 (want 0)
+ok   b00/null gradient composition, relative error 1.58e-07
+ok   b01/R optimizer steps 1 (want 1)
+ok   b01/R gradient composition, relative error 1.51e-07
+ok   b01/S optimizer steps 1 (want 1)
+ok   b01/S gradient composition, relative error 1.54e-07
+ok   b01/null optimizer steps 0 (want 0)
+ok   b01/null |Delta theta| 0.0 (want 0)
+ok   b01/null gradient composition, relative error 1.51e-07
+ok   b02/R optimizer steps 1 (want 1)
+ok   b02/R gradient composition, relative error 1.48e-07
+ok   b02/S optimizer steps 1 (want 1)
+ok   b02/S gradient composition, relative error 1.63e-07
+ok   b02/null optimizer steps 0 (want 0)
+ok   b02/null |Delta theta| 0.0 (want 0)
+ok   b02/null gradient composition, relative error 1.48e-07
+ok   b03/R optimizer steps 1 (want 1)
+ok   b03/R gradient composition, relative error 1.34e-07
+ok   b03/S optimizer steps 1 (want 1)
+ok   b03/S gradient composition, relative error 1.33e-07
+ok   b03/null optimizer steps 0 (want 0)
+ok   b03/null |Delta theta| 0.0 (want 0)
+ok   b03/null gradient composition, relative error 1.34e-07
+ok   b04/R optimizer steps 1 (want 1)
+ok   b04/R gradient composition, relative error 1.66e-07
+ok   b04/S optimizer steps 1 (want 1)
+ok   b04/S gradient composition, relative error 1.68e-07
+ok   b04/null optimizer steps 0 (want 0)
+ok   b04/null |Delta theta| 0.0 (want 0)
+ok   b04/null gradient composition, relative error 1.66e-07
+ok   largest prompt overlap between two blocks: 20% (want well below 50%)
+ok   b00 R/S subsets equal the reference round-1 matching
+ok   b01 R/S subsets equal the reference round-1 matching
+ok   b02 R/S subsets equal the reference round-1 matching
+ok   b03 R/S subsets equal the reference round-1 matching
+ok   b04 R/S subsets equal the reference round-1 matching
+STAGE graph_unaudited_qwen3-4b: one-step evaluate  2026-10-04 17:24:24
+`torch_dtype` is deprecated! Use `dtype` instead!
+2026-10-04 17:24:31.924754: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2026-10-04 17:24:31.998004: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:00<00:00, 51.72it/s]
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 16/16
+eval_id round_000 pass1=0.6145 target_error_rate=0.2185 truncated=2 seconds=239
+WARNING: 2 answers of eval_id round_000 reached max_new_tokens=2048 without a stop token; they are judged as they stand
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 8/8
+eval_ood round_000 pass1=0.3920 target_error_rate=0.2620 truncated=3 seconds=726
+WARNING: 3 answers of eval_ood round_000 reached max_new_tokens=2048 without a stop token; they are judged as they stand
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:00<00:00, 51.46it/s]
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 16/16
+eval_id b00_R_round_001 pass1=0.6095 target_error_rate=0.2245 truncated=2 seconds=301
+WARNING: 2 answers of eval_id b00_R_round_001 reached max_new_tokens=2048 without a stop token; they are judged as they stand
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 8/8
+eval_ood b00_R_round_001 pass1=0.3950 target_error_rate=0.2600 truncated=3 seconds=791
+WARNING: 3 answers of eval_ood b00_R_round_001 reached max_new_tokens=2048 without a stop token; they are judged as they stand
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:00<00:00, 58.44it/s]
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 16/16
+eval_id b00_S_round_001 pass1=0.6115 target_error_rate=0.2215 truncated=2 seconds=306
+WARNING: 2 answers of eval_id b00_S_round_001 reached max_new_tokens=2048 without a stop token; they are judged as they stand
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 8/8
+eval_ood b00_S_round_001 pass1=0.3970 target_error_rate=0.2630 truncated=3 seconds=547
+WARNING: 3 answers of eval_ood b00_S_round_001 reached max_new_tokens=2048 without a stop token; they are judged as they stand
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:00<00:00, 57.90it/s]
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 16/16
+eval_id b01_R_round_001 pass1=0.6140 target_error_rate=0.2155 truncated=2 seconds=299
+WARNING: 2 answers of eval_id b01_R_round_001 reached max_new_tokens=2048 without a stop token; they are judged as they stand
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 8/8
+eval_ood b01_R_round_001 pass1=0.3970 target_error_rate=0.2590 truncated=3 seconds=556
+WARNING: 3 answers of eval_ood b01_R_round_001 reached max_new_tokens=2048 without a stop token; they are judged as they stand
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:00<00:00, 59.21it/s]
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 16/16
+eval_id b01_S_round_001 pass1=0.6090 target_error_rate=0.2205 truncated=2 seconds=304
+WARNING: 2 answers of eval_id b01_S_round_001 reached max_new_tokens=2048 without a stop token; they are judged as they stand
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 8/8
+eval_ood b01_S_round_001 pass1=0.3990 target_error_rate=0.2670 truncated=1 seconds=259
+WARNING: 1 answers of eval_ood b01_S_round_001 reached max_new_tokens=2048 without a stop token; they are judged as they stand
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:00<00:00, 50.06it/s]
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 16/16
+eval_id b02_R_round_001 pass1=0.6110 target_error_rate=0.2180 truncated=2 seconds=301
+WARNING: 2 answers of eval_id b02_R_round_001 reached max_new_tokens=2048 without a stop token; they are judged as they stand
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 8/8
+eval_ood b02_R_round_001 pass1=0.3970 target_error_rate=0.2620 truncated=2 seconds=526
+WARNING: 2 answers of eval_ood b02_R_round_001 reached max_new_tokens=2048 without a stop token; they are judged as they stand
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:00<00:00, 59.94it/s]
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 16/16
+eval_id b02_S_round_001 pass1=0.6120 target_error_rate=0.2160 truncated=2 seconds=300
+WARNING: 2 answers of eval_id b02_S_round_001 reached max_new_tokens=2048 without a stop token; they are judged as they stand
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 8/8
+eval_ood b02_S_round_001 pass1=0.3990 target_error_rate=0.2630 truncated=1 seconds=254
+WARNING: 1 answers of eval_ood b02_S_round_001 reached max_new_tokens=2048 without a stop token; they are judged as they stand
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:00<00:00, 59.14it/s]
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 16/16
+eval_id b03_R_round_001 pass1=0.6115 target_error_rate=0.2165 truncated=2 seconds=299
+WARNING: 2 answers of eval_id b03_R_round_001 reached max_new_tokens=2048 without a stop token; they are judged as they stand
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 8/8
+eval_ood b03_R_round_001 pass1=0.3980 target_error_rate=0.2640 truncated=2 seconds=533
+WARNING: 2 answers of eval_ood b03_R_round_001 reached max_new_tokens=2048 without a stop token; they are judged as they stand
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:00<00:00, 57.29it/s]
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 16/16
+eval_id b03_S_round_001 pass1=0.6095 target_error_rate=0.2195 truncated=2 seconds=302
+WARNING: 2 answers of eval_id b03_S_round_001 reached max_new_tokens=2048 without a stop token; they are judged as they stand
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 8/8
+eval_ood b03_S_round_001 pass1=0.4000 target_error_rate=0.2580 truncated=4 seconds=814
+WARNING: 4 answers of eval_ood b03_S_round_001 reached max_new_tokens=2048 without a stop token; they are judged as they stand
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:00<00:00, 60.63it/s]
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 16/16
+eval_id b04_R_round_001 pass1=0.6090 target_error_rate=0.2175 truncated=2 seconds=300
+WARNING: 2 answers of eval_id b04_R_round_001 reached max_new_tokens=2048 without a stop token; they are judged as they stand
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 8/8
+eval_ood b04_R_round_001 pass1=0.3930 target_error_rate=0.2620 truncated=3 seconds=552
+WARNING: 3 answers of eval_ood b04_R_round_001 reached max_new_tokens=2048 without a stop token; they are judged as they stand
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:00<00:00, 55.86it/s]
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 16/16
+eval_id b04_S_round_001 pass1=0.6100 target_error_rate=0.2190 truncated=2 seconds=299
+WARNING: 2 answers of eval_id b04_S_round_001 reached max_new_tokens=2048 without a stop token; they are judged as they stand
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 32/32
+generated 8/8
+eval_ood b04_S_round_001 pass1=0.3960 target_error_rate=0.2610 truncated=3 seconds=549
+WARNING: 3 answers of eval_ood b04_S_round_001 reached max_new_tokens=2048 without a stop token; they are judged as they stand
+evaluated 22 checkpoint-splits of /content/drive/MyDrive/rsi-onestep/rsi-work/experiments/graph_unaudited_qwen3-4b/out_one_step
+ok   b00/R optimizer steps 1 (want 1)
+ok   b00/R gradient composition, relative error 1.58e-07
+ok   b00/S optimizer steps 1 (want 1)
+ok   b00/S gradient composition, relative error 1.54e-07
+ok   b00/null optimizer steps 0 (want 0)
+ok   b00/null |Delta theta| 0.0 (want 0)
+ok   b00/null gradient composition, relative error 1.58e-07
+ok   b01/R optimizer steps 1 (want 1)
+ok   b01/R gradient composition, relative error 1.51e-07
+ok   b01/S optimizer steps 1 (want 1)
+ok   b01/S gradient composition, relative error 1.54e-07
+ok   b01/null optimizer steps 0 (want 0)
+ok   b01/null |Delta theta| 0.0 (want 0)
+ok   b01/null gradient composition, relative error 1.51e-07
+ok   b02/R optimizer steps 1 (want 1)
+ok   b02/R gradient composition, relative error 1.48e-07
+ok   b02/S optimizer steps 1 (want 1)
+ok   b02/S gradient composition, relative error 1.63e-07
+ok   b02/null optimizer steps 0 (want 0)
+ok   b02/null |Delta theta| 0.0 (want 0)
+ok   b02/null gradient composition, relative error 1.48e-07
+ok   b03/R optimizer steps 1 (want 1)
+ok   b03/R gradient composition, relative error 1.34e-07
+ok   b03/S optimizer steps 1 (want 1)
+ok   b03/S gradient composition, relative error 1.33e-07
+ok   b03/null optimizer steps 0 (want 0)
+ok   b03/null |Delta theta| 0.0 (want 0)
+ok   b03/null gradient composition, relative error 1.34e-07
+ok   b04/R optimizer steps 1 (want 1)
+ok   b04/R gradient composition, relative error 1.66e-07
+ok   b04/S optimizer steps 1 (want 1)
+ok   b04/S gradient composition, relative error 1.68e-07
+ok   b04/null optimizer steps 0 (want 0)
+ok   b04/null |Delta theta| 0.0 (want 0)
+ok   b04/null gradient composition, relative error 1.66e-07
+ok   largest prompt overlap between two blocks: 20% (want well below 50%)
+ok   b00 R/S subsets equal the reference round-1 matching
+ok   b01 R/S subsets equal the reference round-1 matching
+ok   b02 R/S subsets equal the reference round-1 matching
+ok   b03 R/S subsets equal the reference round-1 matching
+ok   b04 R/S subsets equal the reference round-1 matching
+ok   b00/R optimizer steps 1 (want 1)
+ok   b00/R gradient composition, relative error 1.58e-07
+ok   b00/S optimizer steps 1 (want 1)
+ok   b00/S gradient composition, relative error 1.54e-07
+ok   b00/null optimizer steps 0 (want 0)
+ok   b00/null |Delta theta| 0.0 (want 0)
+ok   b00/null gradient composition, relative error 1.58e-07
+ok   b01/R optimizer steps 1 (want 1)
+ok   b01/R gradient composition, relative error 1.51e-07
+ok   b01/S optimizer steps 1 (want 1)
+ok   b01/S gradient composition, relative error 1.54e-07
+ok   b01/null optimizer steps 0 (want 0)
+ok   b01/null |Delta theta| 0.0 (want 0)
+ok   b01/null gradient composition, relative error 1.51e-07
+ok   b02/R optimizer steps 1 (want 1)
+ok   b02/R gradient composition, relative error 1.48e-07
+ok   b02/S optimizer steps 1 (want 1)
+ok   b02/S gradient composition, relative error 1.63e-07
+ok   b02/null optimizer steps 0 (want 0)
+ok   b02/null |Delta theta| 0.0 (want 0)
+ok   b02/null gradient composition, relative error 1.48e-07
+ok   b03/R optimizer steps 1 (want 1)
+ok   b03/R gradient composition, relative error 1.34e-07
+ok   b03/S optimizer steps 1 (want 1)
+ok   b03/S gradient composition, relative error 1.33e-07
+ok   b03/null optimizer steps 0 (want 0)
+ok   b03/null |Delta theta| 0.0 (want 0)
+ok   b03/null gradient composition, relative error 1.34e-07
+ok   b04/R optimizer steps 1 (want 1)
+ok   b04/R gradient composition, relative error 1.66e-07
+ok   b04/S optimizer steps 1 (want 1)
+ok   b04/S gradient composition, relative error 1.68e-07
+ok   b04/null optimizer steps 0 (want 0)
+ok   b04/null |Delta theta| 0.0 (want 0)
+ok   b04/null gradient composition, relative error 1.66e-07
+ok   largest prompt overlap between two blocks: 20% (want well below 50%)
+ok   b00 R/S subsets equal the reference round-1 matching
+ok   b01 R/S subsets equal the reference round-1 matching
+ok   b02 R/S subsets equal the reference round-1 matching
+ok   b03 R/S subsets equal the reference round-1 matching
+ok   b04 R/S subsets equal the reference round-1 matching
+ok   eval_id: 11 of 11 checkpoints evaluated
+ok   eval_ood: 11 of 11 checkpoints evaluated
+DONE graph_unaudited_qwen3-4b one-step, every stage succeeded: evaluate  (outputs in /content/drive/MyDrive/rsi-onestep/rsi-work/experiments/graph_unaudited_qwen3-4b/out_one_step)

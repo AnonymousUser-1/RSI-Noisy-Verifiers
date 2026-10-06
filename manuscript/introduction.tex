@@ -1,0 +1,48 @@
+\section{Introduction}
+\label{sec:introduction}
+
+Learning from model-generated answers can reduce the need for human
+demonstrations. STaR and reinforced self-training alternate generation,
+selection, and parameter updates \citep{zelikman2022star,singh2023restem}.
+This feedback is a component of recursive self-improvement: the updated
+learner shapes the candidates available for subsequent training.
+Accepted answers become training targets, so verifier mistakes can affect
+both the next update and the candidate distributions encountered later.
+
+On a common candidate distribution, true- and false-acceptance rates determine
+yield and precision, but not which errors are accepted. Their gradients can
+differ despite equal counts. Here, \emph{influence} denotes an example's
+contribution to the training gradient, including its magnitude and direction.
+
+We ask what matching these statistics leaves undetermined about learning.
+For a scalar logistic learner with group magnitudes $1$ and $L$, two rules
+share all four initial summaries yet induce opposite accuracy changes when
+$L>3$ in our illustrative parameter setting. We also prove long-run
+separation under resampled population gradient flow and a sharp uniform
+threshold for a specified group-targeted audit. These construction-specific
+results imply neither universal separation nor equivalent AdamW dynamics.
+
+For language models, we jointly construct final training subsets to control
+prompt coverage, retention, and training volume. Both branches share the
+candidate pool, initialization, prompts, correct responses, error counts,
+and, for graphs, supervised-token counts per prompt. Only error selection
+changes; coincident random and structured choices are retained. Graph errors
+target edge-valid nonshortest routes; arithmetic errors target ignored
+parentheses. Exact judges identify these signatures, not gradient influence
+(Section~\ref{sec:tasks}).
+
+\paragraph{Our contributions.}
+\begin{itemize}
+\item \textbf{Separation and auditing.} We establish population separation
+at matched acceptance rates and a sharp corrective threshold for a
+specified group-targeted audit.
+\item \textbf{From gradients to updates.} Matched-subset identities isolate
+accepted-error gradients; smooth-loss bounds connect them to parameter
+updates while distinguishing reference loss from task risk
+(Propositions~\ref{prop:finite-gap}--\ref{prop:remainder}; proofs in
+Appendix~\ref{app:proof}).
+\item \textbf{Controlled empirical comparisons.} Five-block graph studies
+across three language models compare four-round audited and unaudited
+self-training with isolated one-step updates. Qwen3-1.7B exhibits differing
+four-round error composition; primary one-step accuracy contrasts are small.
+\end{itemize}

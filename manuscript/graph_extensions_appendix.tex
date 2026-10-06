@@ -1,0 +1,189 @@
+\subsection{Qwen3-1.7B: four-round graph replication}
+\label{app:qwen-four-round}
+
+The Qwen3-1.7B unaudited and adaptive-audit graph comparisons each have
+five complete paired blocks and both held-out splits. The primary analysis
+uses the fixed rounds 0--4 horizon; round-eight contrasts are reported at
+the end of this subsection, without selecting a best checkpoint.
+
+Qwen3-1.7B response generation uses temperature $1.3$ and
+top-$p=1$. LoRA, matching quotas, optimizer settings, prompt/sample counts,
+and audit budget follow the four-round protocol in Section~\ref{sec:experiments}.
+There are 40 trained checkpoints per policy in the selected horizon,
+plus one shared base, each evaluated greedily on 2,000 ID and 1,000 OOD
+questions. Policies bind the same initial adapter, dataset, and round-one
+pools. Table~\ref{tab:qwen-matching} reports the nontruncated-pool
+TPR/FPR and exact initial matching controls; $R$ already contains 6--12
+nonshortest errors among its 16 accepted errors.
+
+\input{qwen_four_round_matching_table}
+\input{qwen_four_round_endpoint_table}
+\input{qwen17_policy_endpoints_table}
+\input{qwen_four_round_accuracy_figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\linewidth]{figures/graph_extensions/qwen_target_errors.pdf}
+\caption{Qwen3-1.7B four-round nonshortest-error incidence among all answers.
+Unaudited $R/S$ reach $0.103/0.171$ ID and $0.057/0.124$ OOD at round four;
+unaudited target-incidence contrasts are $0.068\pm0.039$ ID and $0.066\pm0.038$ OOD.
+Audited target-incidence contrasts are $0.029\pm0.074$ ID and
+$0.029\pm0.043$ OOD. Bars are
+pointwise 95\% block-$t$ intervals over five blocks; the common base has
+no independent block replication. Only rounds 0--4 are shown.}
+\label{fig:qwen-target-errors}
+\end{figure}
+
+Accuracy and error composition need not tell the same story. In the
+unaudited Qwen comparison, the round-four nonshortest fractions are
+$0.103/0.171$ ID and $0.057/0.124$ OOD for $R/S$. Both paired target
+contrasts have descriptive intervals above zero, despite accuracy
+contrasts $-0.003\pm0.044$ ID and $0.026\pm0.038$ OOD. This is a
+task-signature finding, not a measurement of high-influence errors or
+the opposite-direction construction. The audited target contrasts are
+$0.029\pm0.074$ ID and $0.029\pm0.043$ OOD.
+All rounds and endpoint blocks appear in Tables~\ref{tab:qwen-rounds}
+and~\ref{tab:qwen-blocks}. These multiple descriptive comparisons are
+not multiplicity-adjusted confirmatory tests.
+
+\input{qwen_four_round_trajectory_table}
+\input{qwen_four_round_blocks_table}
+
+The same-arm audit changes in Table~\ref{tab:qwen-audit-change} are
+negative in mean but imprecise. Audited arms spend 64 correctness queries
+each and take mean cumulative steps $48.0$ for $R$ and $53.2$ for $S$,
+versus 64 without auditing. This differs from Llama's positive mean
+accuracy changes and does not support a uniform audit benefit.
+Table~\ref{tab:qwen-audit} gives each round's retained volume,
+positive-weight coverage, ESS, projection, and TPRs. Querying removes
+errors, so all 48 correct rows survive deletion in every audited
+arm-round; reliability weighting can still assign zero weight to correct
+rows. Retained-row TPR equals pre-audit TPR, whereas positive-weight TPR
+can be smaller. Each uses its own original nontruncated pool denominator,
+as in Section~\ref{app:roundwise-tpr}. ESS is checked against saved
+audit summaries, not independently reconstructed from omitted weights.
+
+\input{qwen_four_round_audit_contrast_table}
+\input{qwen_four_round_audit_table}
+
+\input{qwen_four_round_raw_figures}
+
+\paragraph{Eight-round extension.}
+The Llama-3.2-3B and Qwen3-1.7B trajectories continue to eight rounds.
+Table~\ref{tab:eight-round-contrasts} reports the later paired accuracy
+contrasts while retaining round four as the primary endpoint.
+The unaudited Qwen3-1.7B OOD contrast favors $S$; these secondary
+comparisons are descriptive and are not adjusted for multiplicity.
+\input{eight_round_contrasts_table}
+
+\input{qwen4b_multiround_appendix}
+
+\subsection{Completed isolated one-step graph comparisons}
+\label{app:one-step-results}
+
+The isolated one-step graph studies are complete for Qwen3-1.7B,
+Qwen3-4B, and Llama-3.2-3B-Instruct. Each uses five blocks, the original
+matched round-one $K=64$ subsets, and one full-batch AdamW update per
+$R/S$ arm at learning rate $5\times10^{-5}$, zero weight decay,
+clipping threshold 1, and the same rank-8, $\alpha=16$, zero-dropout
+\texttt{q\_proj}/\texttt{v\_proj} LoRA configuration. A dedicated
+64-example reference gradient is bound to this configuration and initial
+adapter; no multiround reference gradient is substituted. The null takes
+zero updates and has exactly zero displacement and projection.
+Table~\ref{tab:one-step-heldout} therefore reports measured one-step
+outcomes, not first-round multistep results.
+
+Table~\ref{tab:risk} brings together the one-step outcomes and update
+diagnostics.
+\input{h100_pending_table}
+
+Protocol validation confirms complete evaluation of all eleven checkpoints
+per split. Our analysis independently checks the available
+training IDs, unit weights, 48/16 diagnostic label counts, matching
+certificates, step counts, scalar diagnostic consistency, and held-out
+count identities. It reproduces the supplied plot means, SDs and
+paired intervals. Saved gradient-composition residuals are below the
+recorded tolerance, but this scalar-record check does not reconstruct
+the unavailable gradient or adapter tensors. Original execution checks
+verified adapter identity; independent tensor-level verification requires
+the unavailable adapters.
+
+The Qwen3-1.7B comparison reuses its four-round study's initial inputs.
+Qwen3-4B uses candidate pools generated without the repetition-stop rule;
+matching and evaluation follow the specified one-step protocol. These
+pools are not treated as newly sampled under a different stopping rule.
+The one-step base accuracies are $0.4980/0.3530$ ID/OOD for Qwen3-1.7B,
+$0.6145/0.3920$ for Qwen3-4B, and $0.2455/0.2070$ for Llama.
+They differ slightly from the four-round baselines despite shared evaluation
+question identities for the overlapping models. We use each run's own
+null, not a baseline pooled across studies. Model-to-model differences
+therefore do not constitute a controlled model-size comparison.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\linewidth]{figures/graph_extensions/one_step_contrasts.pdf}
+\caption{Paired one-step graph accuracy contrasts $S-R$ in ID (primary)
+and OOD (secondary), evaluated on each run's own fixed question sets.
+Primary ID differences are $0.0002\pm0.0009$ for Qwen3-1.7B,
+$-0.0006\pm0.0036$ for Qwen3-4B and $0.0009\pm0.0028$ for Llama.
+Qwen3-4B's OOD difference is
+$0.0022\pm0.0006$, with $S$ answering 2--3 more of the 1,000 OOD
+questions correctly in every block. This secondary comparison is not
+multiplicity-adjusted. Points and bars show means and descriptive 95\%
+paired block-$t$ intervals over five blocks, not variation over model
+initializations. Positive values favor $S$.}
+\label{fig:one-step-contrasts}
+\end{figure}
+
+Relative to null, mean ID accuracy increases by
+$0.0048/0.0050$ for Qwen3-1.7B $R/S$ and $0.0043/0.0052$ for Llama,
+but decreases by $0.0035/0.0041$ for Qwen3-4B. Thus the common negative
+mean reference projection is not a certificate of ID accuracy improvement.
+For Qwen3-4B, the OOD advantage for $S$ is present in all five blocks;
+the effect is small on the discrete question-count scale and remains a
+secondary, unadjusted comparison.
+
+Table~\ref{tab:one-step-diagnostics} decomposes the initial gradients
+and reports actual displacement norms. Correct-gradient contributions
+agree across arms, as expected from shared correct rows; the mean
+error-gradient norm is larger in $S$ for all three models. This does not
+alone determine an AdamW direction or prove that the targeted error
+signature has higher reference-risk influence. Paired projection
+contrasts are $-0.00035\pm0.00077$ (Qwen3-1.7B),
+$-0.00115\pm0.00377$ (Qwen3-4B), and $0.00003\pm0.00063$ (Llama).
+Both arms have negative projection in every
+Qwen3-1.7B and Llama block; Qwen3-4B block \texttt{b00} has positive
+projection in both arms. None of these pairs shows opposite projection
+signs within a block.
+
+Writing the LoRA correction as $(\alpha/r)BA$, the standard initialization
+$B=0$ makes the initial gradient with respect to $A$ vanish.
+For a fresh AdamW optimizer with zero weight
+decay, bias correction gives the first update
+$\Delta\theta=-\eta\,\widetilde g/(|\widetilde g|+\epsilon)$
+coordinatewise, where $\widetilde g$ is the clipped gradient.
+This is an ideal-arithmetic identity; it approximates a sign step only
+when $|\widetilde g|\gg\epsilon$. Finite $\epsilon$ retains dependence
+on gradient magnitude and clipping. The nearly equal $R/S$ displacement
+norms therefore need not imply similar raw gradients.
+
+\input{one_step_diagnostics_table}
+\input{one_step_graph_unaudited_blocks_table}
+\input{one_step_graph_unaudited_qwen3-4b_blocks_table}
+\input{one_step_graph_unaudited_llama3.2-3b_blocks_table}
+
+\input{one_step_selected_raw_figures}
+
+\paragraph{Validation and limits.}
+Independent count-based checks reproduce the checkpoint metrics,
+matching constraints, training and audit statistics, and paired contrasts
+in the tables and figures. The figures preserve the underlying
+observations and uncertainty. For these earlier exports, raw held-out answers,
+adapter weights, and reference tensors are unavailable, so validation does
+not include independent held-out rejudging, checkpoint reloading,
+or tensor-level gradient recomputation. Qwen3-4B audited responses are
+rejudged separately in Appendix~\ref{app:qwen4b-four-round}.
+Run-specific baselines and reused
+pools also prevent interpreting model-to-model differences as a controlled
+model-size effect. Neither the finite-budget audit nor these one-step
+diagnostics directly validate the population theorem's auditing policy.

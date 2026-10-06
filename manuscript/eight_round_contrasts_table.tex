@@ -1,0 +1,15 @@
+\begin{table}[H]
+\caption{Round-eight graph accuracy contrasts $S-R$ (mean $\pm$ descriptive 95\% paired block-$t$ half-width over five blocks). Positive values favor $S$. ID and OOD evaluations use 2,000 and 1,000 fixed questions, respectively. These secondary endpoints supplement the primary four-round analysis.}
+\label{tab:eight-round-contrasts}
+\centering\small
+\begin{tabular}{@{}llcc@{}}
+\toprule
+Model & Policy & ID Pass@1 $S-R$ & OOD Pass@1 $S-R$\\
+\midrule
+Llama-3.2-3B & Unaudited & $-0.029\pm0.111$ & $0.024\pm0.064$\\
+Llama-3.2-3B & Adaptive, $B=16$ & $-0.031\pm0.086$ & $0.015\pm0.081$\\
+Qwen3-1.7B & Unaudited & $0.040\pm0.045$ & $0.047\pm0.042$\\
+Qwen3-1.7B & Adaptive, $B=16$ & $0.029\pm0.091$ & $0.037\pm0.063$\\
+\bottomrule
+\end{tabular}
+\end{table}

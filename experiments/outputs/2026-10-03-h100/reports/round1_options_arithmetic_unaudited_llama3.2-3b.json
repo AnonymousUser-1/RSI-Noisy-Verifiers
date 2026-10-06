@@ -1,0 +1,212 @@
+{
+ "config": "experiments/arithmetic_unaudited_llama3.2-3b/config.json",
+ "model": "meta-llama/Llama-3.2-3B-Instruct",
+ "targets": [
+  "ignore_parentheses"
+ ],
+ "config_matching": {
+  "error_fraction": 0.25,
+  "token_tolerance": null
+ },
+ "pools": {
+  "b00": {
+   "answers": 16384,
+   "truncated": 0,
+   "correct": 0.74481201171875,
+   "target_errors": 74,
+   "labels": {
+    "correct": 12203,
+    "ignore_parentheses": 74,
+    "other": 3848,
+    "format": 191,
+    "sign": 68
+   }
+  },
+  "b01": {
+   "answers": 16384,
+   "truncated": 0,
+   "correct": 0.747802734375,
+   "target_errors": 81,
+   "labels": {
+    "other": 3745,
+    "correct": 12252,
+    "format": 217,
+    "sign": 89,
+    "ignore_parentheses": 81
+   }
+  },
+  "b02": {
+   "answers": 16384,
+   "truncated": 2,
+   "correct": 0.7470703125,
+   "target_errors": 71,
+   "labels": {
+    "correct": 12240,
+    "other": 3798,
+    "sign": 73,
+    "format": 202,
+    "ignore_parentheses": 71
+   }
+  },
+  "b03": {
+   "answers": 16384,
+   "truncated": 0,
+   "correct": 0.74664306640625,
+   "target_errors": 74,
+   "labels": {
+    "other": 3777,
+    "correct": 12233,
+    "format": 217,
+    "sign": 83,
+    "ignore_parentheses": 74
+   }
+  },
+  "b04": {
+   "answers": 16384,
+   "truncated": 2,
+   "correct": 0.748291015625,
+   "target_errors": 87,
+   "labels": {
+    "other": 3745,
+    "correct": 12260,
+    "ignore_parentheses": 87,
+    "format": 217,
+    "sign": 75
+   }
+  }
+ },
+ "options": [
+  {
+   "error_fraction": 0.25,
+   "token_tolerance": null,
+   "is_config": true,
+   "feasible": true,
+   "K": 64,
+   "per_block": {
+    "b00": {
+     "prompts_with_correct": 1839,
+     "prompts_eligible_J_E": 30
+    },
+    "b01": {
+     "prompts_with_correct": 1835,
+     "prompts_eligible_J_E": 32
+    },
+    "b02": {
+     "prompts_with_correct": 1845,
+     "prompts_eligible_J_E": 17
+    },
+    "b03": {
+     "prompts_with_correct": 1840,
+     "prompts_eligible_J_E": 28
+    },
+    "b04": {
+     "prompts_with_correct": 1839,
+     "prompts_eligible_J_E": 33
+    }
+   },
+   "feasible_by_K": {
+    "64": true
+   }
+  },
+  {
+   "error_fraction": 0.25,
+   "token_tolerance": 0,
+   "is_config": false,
+   "feasible": false,
+   "K": null,
+   "per_block": {
+    "b00": {
+     "prompts_with_correct": 1839,
+     "prompts_eligible_J_E": 2
+    },
+    "b01": {
+     "prompts_with_correct": 1835,
+     "prompts_eligible_J_E": 2
+    },
+    "b02": {
+     "prompts_with_correct": 1845,
+     "prompts_eligible_J_E": 1
+    },
+    "b03": {
+     "prompts_with_correct": 1840,
+     "prompts_eligible_J_E": 0
+    },
+    "b04": {
+     "prompts_with_correct": 1839,
+     "prompts_eligible_J_E": 1
+    }
+   },
+   "feasible_by_K": {
+    "64": false,
+    "32": false,
+    "16": false
+   }
+  },
+  {
+   "error_fraction": 0.125,
+   "token_tolerance": null,
+   "is_config": false,
+   "feasible": true,
+   "K": 64,
+   "per_block": {
+    "b00": {
+     "prompts_with_correct": 1839,
+     "prompts_eligible_J_E": 30
+    },
+    "b01": {
+     "prompts_with_correct": 1835,
+     "prompts_eligible_J_E": 32
+    },
+    "b02": {
+     "prompts_with_correct": 1845,
+     "prompts_eligible_J_E": 17
+    },
+    "b03": {
+     "prompts_with_correct": 1840,
+     "prompts_eligible_J_E": 28
+    },
+    "b04": {
+     "prompts_with_correct": 1839,
+     "prompts_eligible_J_E": 33
+    }
+   },
+   "feasible_by_K": {
+    "64": true
+   }
+  },
+  {
+   "error_fraction": 0.125,
+   "token_tolerance": 0,
+   "is_config": false,
+   "feasible": false,
+   "K": null,
+   "per_block": {
+    "b00": {
+     "prompts_with_correct": 1839,
+     "prompts_eligible_J_E": 2
+    },
+    "b01": {
+     "prompts_with_correct": 1835,
+     "prompts_eligible_J_E": 2
+    },
+    "b02": {
+     "prompts_with_correct": 1845,
+     "prompts_eligible_J_E": 1
+    },
+    "b03": {
+     "prompts_with_correct": 1840,
+     "prompts_eligible_J_E": 0
+    },
+    "b04": {
+     "prompts_with_correct": 1839,
+     "prompts_eligible_J_E": 1
+    }
+   },
+   "feasible_by_K": {
+    "64": false,
+    "32": false,
+    "16": false
+   }
+  }
+ ]
+}

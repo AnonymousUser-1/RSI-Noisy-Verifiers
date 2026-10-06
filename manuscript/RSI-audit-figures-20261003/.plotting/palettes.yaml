@@ -1,0 +1,17 @@
+effect:
+  colormap: BrBG
+  limits_pp: [-25, 25]
+  center_pp: 0
+  negative: harm
+  positive: improvement
+  scope: Accuracy change, not R/S identity
+slices:
+  "3":
+    color: "#7A8289"
+    linestyle: ":"
+  "10":
+    color: "#127F83"
+    linestyle: "-"
+  "20":
+    color: "#805677"
+    linestyle: "--"

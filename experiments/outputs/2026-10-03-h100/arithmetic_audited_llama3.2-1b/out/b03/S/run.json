@@ -1,0 +1,562 @@
+{
+  "DEMO_ONLY": false,
+  "auditing": {
+    "budget_unit": "correctness queries per arm per round",
+    "config": {
+      "budget": 16,
+      "policy": "adaptive",
+      "weighting": true
+    },
+    "enabled": true,
+    "matching_constraints_stage": "pre_audit",
+    "steps_note": "steps_per_round is pre-audit; complete.json records actual expected steps"
+  },
+  "bindings": {
+    "base_pin": {
+      "model": "meta-llama/Llama-3.2-1B-Instruct",
+      "pin_path": "/cluster/rsi-runs/code/matched-dynamics/base_pin_llama3.2-1b.json",
+      "pin_revision": "9213176726f574b556790deb65791e0c5aa438b6",
+      "pin_sha256": "fcdc60987cca978886a6b119fbc2a632bd46495205ed77d77a5689eba256cb7c",
+      "resolved_revision": "9213176726f574b556790deb65791e0c5aa438b6"
+    },
+    "config_file": {
+      "path": "/cluster/rsi-runs/code/experiments/arithmetic_audited_llama3.2-1b/config.json",
+      "sha256": "56912345efbab0ba0c55c2bfd206055d7a077eea74405f0b752b7e7f0638dc00"
+    },
+    "config_hash": "c5266ecf6e04afd3e425a01d4c98951954c3a994022eb0b18e32adc69e0ec8bf",
+    "data": {
+      "dataset_hash": "5b5be55fb005b31d3fe4d3764a9537e40382eb30783782c41c977d0e7e593d1d",
+      "manifest_sha256": "a9bfa903318560fb57664a51cdd5213d01a89509fb51077e3bf5d2cbc13b4697",
+      "path": "/cluster/rsi-runs/work/data/arithmetic"
+    },
+    "hardware": {
+      "accelerator": "NVIDIA H100 80GB HBM3",
+      "accelerator_memory_bytes": 85019590656,
+      "accelerator_reason": null,
+      "cpu_count": 256,
+      "cuda": "13.0",
+      "machine": "x86_64",
+      "processor": "",
+      "torch": "2.14.1+cu130"
+    },
+    "matching": {
+      "K": 64,
+      "block_hash": "f69e6c1a2926ac241d67a8f7735a72789db5385004776e4150848de5ee2f7e53"
+    },
+    "model": {
+      "name": "meta-llama/Llama-3.2-1B-Instruct",
+      "revision": "9213176726f574b556790deb65791e0c5aa438b6"
+    },
+    "pool": {
+      "fingerprint_reason": "bound as written and not recomputed: pool_fingerprint needs the pool's generation seed, which the meta does not record, and it hashes the source of the code that sampled the pool; the pool's sha256 is verified instead",
+      "fingerprint_recomputed": false,
+      "meta": {
+        "argv": {
+          "args": [
+            "--config",
+            "experiments/arithmetic_unaudited_llama3.2-1b/config.json",
+            "--data",
+            "/cluster/rsi-runs/work/data/arithmetic",
+            "--out",
+            "/cluster/rsi-runs/work/experiments/arithmetic_unaudited_llama3.2-1b/pools/b03.jsonl",
+            "--seed",
+            "3",
+            "--split",
+            "train_001",
+            "--study-id",
+            "md-arithmetic-unaudited-llama3.2-1b-2048x8-v01",
+            "--phase",
+            "main"
+          ],
+          "cwd": "/cluster/rsi-runs/code",
+          "executable": "/cluster/conda/envs/rsi-eval/bin/python",
+          "parsed": {
+            "backend": null,
+            "config": "experiments/arithmetic_unaudited_llama3.2-1b/config.json",
+            "data": "/cluster/rsi-runs/work/data/arithmetic",
+            "out": "/cluster/rsi-runs/work/experiments/arithmetic_unaudited_llama3.2-1b/pools/b03.jsonl",
+            "phase": "main",
+            "seed": 3,
+            "split": "train_001",
+            "study_id": "md-arithmetic-unaudited-llama3.2-1b-2048x8-v01"
+          },
+          "script": "/cluster/rsi-runs/code/sample_candidates.py"
+        },
+        "backend": "hf",
+        "base_pin": {
+          "model": "meta-llama/Llama-3.2-1B-Instruct",
+          "pin_path": "/cluster/rsi-runs/code/matched-dynamics/base_pin_llama3.2-1b.json",
+          "pin_revision": "9213176726f574b556790deb65791e0c5aa438b6",
+          "pin_sha256": "fcdc60987cca978886a6b119fbc2a632bd46495205ed77d77a5689eba256cb7c",
+          "resolved_revision": "9213176726f574b556790deb65791e0c5aa438b6",
+          "status": "checked"
+        },
+        "code": {
+          "git_changes": [],
+          "git_commit": "a742f6fe76481ea9b12d21ba737f694929663fa8",
+          "git_dirty": false,
+          "git_reason": null,
+          "source_hash": "7d4d76e82d53b58024c50803a92fe15bb9e8270652343c9e5fc537673556c202"
+        },
+        "config": {
+          "audit": {
+            "budget": 0,
+            "policy": "none",
+            "weighting": true
+          },
+          "backend": "hf",
+          "device": "cuda",
+          "dtype": "bfloat16",
+          "frozen": false,
+          "generation": {
+            "batch_size": 16,
+            "candidates": 8,
+            "max_new_tokens": 2048,
+            "max_sequence_length": 4096,
+            "prompts_per_pool": null,
+            "repetition_stop": {
+              "max_period": 32,
+              "span": 128
+            },
+            "temperature": 0.6,
+            "top_k": null,
+            "top_p": 0.9
+          },
+          "matching": {
+            "error_fraction": 0.25,
+            "token_tolerance": null
+          },
+          "model": "meta-llama/Llama-3.2-1B-Instruct",
+          "revision": "9213176726f574b556790deb65791e0c5aa438b6",
+          "rounds": 4,
+          "seed": 3,
+          "training": {
+            "batch_size": 2,
+            "effective_batch_size": 4,
+            "epochs": 1,
+            "examples": 1024,
+            "gradient_checkpointing": true,
+            "learning_rate": 0.0002,
+            "lora_alpha": 16,
+            "lora_dropout": 0.0,
+            "lora_rank": 8,
+            "target_modules": [
+              "q_proj",
+              "v_proj"
+            ]
+          },
+          "verifier": {
+            "calibration": null,
+            "fpr": 0.2,
+            "kind": "iid",
+            "model": "Qwen/Qwen3-1.7B",
+            "revision": "main",
+            "threshold": null,
+            "tpr": 0.9
+          }
+        },
+        "config_file": {
+          "path": "/cluster/rsi-runs/code/experiments/arithmetic_unaudited_llama3.2-1b/config.json",
+          "sha256": "be299912102a13b4046503063149814177f03ea5b2e46ae8b7c5477b8bc110ef"
+        },
+        "config_hash": "35b9a46beae4157100c55af63173547bdc8654e5cf1e38efa7beb00c691544f4",
+        "data": {
+          "data_seed": 2027,
+          "dataset_hash": "5b5be55fb005b31d3fe4d3764a9537e40382eb30783782c41c977d0e7e593d1d",
+          "manifest_sha256": "a9bfa903318560fb57664a51cdd5213d01a89509fb51077e3bf5d2cbc13b4697",
+          "root": "/cluster/rsi-runs/work/data/arithmetic",
+          "task": "arithmetic",
+          "version": 1
+        },
+        "decoding": {
+          "batch_size": 16,
+          "composition": "defaults + overrides: model_defaults is the model's generation_config as loaded, overrides are the keyword arguments HFBackend.generate passes; transformers merges them inside generate(), and that merged object is not read",
+          "model_defaults": {
+            "_from_model_config": false,
+            "assistant_confidence_threshold": 0.4,
+            "assistant_early_exit": null,
+            "assistant_lookbehind": 10,
+            "bad_words_ids": null,
+            "begin_suppress_tokens": null,
+            "bos_token_id": 128000,
+            "cache_config": null,
+            "cache_implementation": null,
+            "constraints": null,
+            "decoder_start_token_id": null,
+            "disable_compile": false,
+            "diversity_penalty": 0.0,
+            "do_sample": true,
+            "dola_layers": null,
+            "early_stopping": false,
+            "encoder_no_repeat_ngram_size": 0,
+            "encoder_repetition_penalty": 1.0,
+            "eos_token_id": [
+              128001,
+              128008,
+              128009
+            ],
+            "epsilon_cutoff": 0.0,
+            "eta_cutoff": 0.0,
+            "exponential_decay_length_penalty": null,
+            "force_words_ids": null,
+            "forced_bos_token_id": null,
+            "forced_eos_token_id": null,
+            "guidance_scale": null,
+            "is_assistant": false,
+            "length_penalty": 1.0,
+            "low_memory": null,
+            "max_length": 20,
+            "max_matching_ngram_size": null,
+            "max_new_tokens": null,
+            "max_time": null,
+            "min_length": 0,
+            "min_new_tokens": null,
+            "min_p": null,
+            "no_repeat_ngram_size": 0,
+            "num_assistant_tokens": 20,
+            "num_assistant_tokens_schedule": "constant",
+            "num_beam_groups": 1,
+            "num_beams": 1,
+            "num_return_sequences": 1,
+            "output_attentions": false,
+            "output_hidden_states": false,
+            "output_logits": null,
+            "output_scores": false,
+            "pad_token_id": null,
+            "penalty_alpha": null,
+            "prefill_chunk_size": null,
+            "prompt_lookup_num_tokens": null,
+            "remove_invalid_values": false,
+            "renormalize_logits": false,
+            "repetition_penalty": 1.0,
+            "return_dict_in_generate": false,
+            "return_legacy_cache": null,
+            "sequence_bias": null,
+            "stop_strings": null,
+            "suppress_tokens": null,
+            "target_lookbehind": 10,
+            "temperature": 0.6,
+            "token_healing": false,
+            "top_k": 50,
+            "top_p": 0.9,
+            "transformers_version": "4.57.1",
+            "typical_p": 1.0,
+            "use_cache": true,
+            "watermarking_config": null
+          },
+          "not_passed": "candidates, batch_size and max_sequence_length are not passed to transformers: candidates is the rows drawn per task, batch_size the rows per generate call, and max_sequence_length refuses a prompt + max_new_tokens beyond it; an answer that reaches max_new_tokens without a stop id is kept and marked `truncated` (ROW_FIELDS)",
+          "overrides": {
+            "do_sample": true,
+            "max_new_tokens": 2048,
+            "pad_token_id": 128009,
+            "temperature": 0.6,
+            "top_k": null,
+            "top_p": 0.9
+          },
+          "prompt": {
+            "chat_template_digest": "2732d9da5568668ed22ea202bffb12f0df405439651e1275ba1f521522f92966",
+            "rule": "rsi.backends.chat_prompt_ids: the task prompt as one user turn, add_generation_prompt=True",
+            "template_kwargs": {
+              "date_string": "26 Jul 2024",
+              "enable_thinking": false
+            }
+          },
+          "seeding": "torch.manual_seed and torch.cuda.manual_seed_all once, at the start of generate(); not reset per batch or per candidate, so batch_size is part of what reproduces a pool",
+          "stop_ids": {
+            "generation_config_eos_token_id": [
+              128001,
+              128008,
+              128009
+            ],
+            "tokenizer_eos_token_id": 128009
+          },
+          "stopping": {
+            "repetition_stop": {
+              "max_period": 32,
+              "span": 128
+            },
+            "rule": "rsi.backends.repetition_stop, passed as stopping_criteria when set: a row stops once its last span generated tokens repeat with a period of at most max_period tokens; it is cut there and marked `truncated` (ROW_FIELDS)"
+          },
+          "transformers_version": "4.57.1"
+        },
+        "environment": {
+          "cuda_visible_devices": "0",
+          "packages": {
+            "accelerate": "1.15.0",
+            "matplotlib": "3.11.2",
+            "numpy": "2.4.6",
+            "peft": "0.17.1",
+            "scipy": "1.17.1",
+            "torch": "2.14.1",
+            "transformers": "4.57.1"
+          },
+          "platform": "Linux-6.12.0-124.56.1.el10_1.x86_64-x86_64-with-glibc2.39",
+          "python": "3.11.16 (main, Aug 27 2026, 14:44:21) [GCC 14.3.0]",
+          "source_hash": "7d4d76e82d53b58024c50803a92fe15bb9e8270652343c9e5fc537673556c202"
+        },
+        "fingerprint": "6be45c1e99e8322a185f9f7977d41a566a4b63a6991fac482776ad22883549d2",
+        "generation": {
+          "batch_size": 16,
+          "candidates": 8,
+          "max_new_tokens": 2048,
+          "max_sequence_length": 4096,
+          "prompts_per_pool": null,
+          "repetition_stop": {
+            "max_period": 32,
+            "span": 128
+          },
+          "temperature": 0.6,
+          "top_k": null,
+          "top_p": 0.9
+        },
+        "generation_hash": "21f0ff5972d9129629ff98fcb2edf6123ba1f9bd51252987d76ccd051dfed94c",
+        "hash": "4e17cd32aed6a1a68bc1f737865a2a4cb8a58d79670075da050308425aa75779",
+        "identity": {
+          "missing": {},
+          "phase": "main",
+          "study_id": "md-arithmetic-unaudited-llama3.2-1b-2048x8-v01"
+        },
+        "model": "meta-llama/Llama-3.2-1B-Instruct",
+        "requested_config": {
+          "audit": {
+            "budget": 0,
+            "policy": "none",
+            "weighting": true
+          },
+          "backend": "hf",
+          "device": "cuda",
+          "dtype": "bfloat16",
+          "frozen": false,
+          "generation": {
+            "batch_size": 16,
+            "candidates": 8,
+            "max_new_tokens": 2048,
+            "max_sequence_length": 4096,
+            "prompts_per_pool": null,
+            "repetition_stop": {
+              "max_period": 32,
+              "span": 128
+            },
+            "temperature": 0.6,
+            "top_k": null,
+            "top_p": 0.9
+          },
+          "matching": {
+            "error_fraction": 0.25,
+            "token_tolerance": null
+          },
+          "model": "meta-llama/Llama-3.2-1B-Instruct",
+          "revision": "9213176726f574b556790deb65791e0c5aa438b6",
+          "rounds": 4,
+          "seed": 3,
+          "training": {
+            "batch_size": 2,
+            "effective_batch_size": 4,
+            "epochs": 1,
+            "examples": 1024,
+            "gradient_checkpointing": true,
+            "learning_rate": 0.0002,
+            "lora_alpha": 16,
+            "lora_dropout": 0.0,
+            "lora_rank": 8,
+            "target_modules": [
+              "q_proj",
+              "v_proj"
+            ]
+          },
+          "verifier": {
+            "calibration": null,
+            "fpr": 0.2,
+            "kind": "iid",
+            "model": "Qwen/Qwen3-1.7B",
+            "revision": "main",
+            "threshold": null,
+            "tpr": 0.9
+          }
+        },
+        "revision": "9213176726f574b556790deb65791e0c5aa438b6",
+        "row_fields": {
+          "completion_tokens": "hf: the generated token ids up to and including the first stop id (generation_config.eos_token_id or tokenizer.eos_token_id, rsi/backends.py), or all of them when no stop id was generated (then `truncated` is true); mock: the number of whitespace-separated words of the response.  Neither is the supervised count len(tokenizer.encode(response, add_special_tokens=False)) + 1, which matching must recount (review note (a)).",
+          "response": "hf: tokenizer.decode(those ids, skip_special_tokens=True).strip(), with the tokenizer's clean_up_tokenization_spaces off; the ids and the unstripped text are not kept.  mock: a synthetic answer.",
+          "truncated": "hf: true when the answer was cut: no stop id within max_new_tokens (completion_tokens == max_new_tokens), or stopped earlier while repeating a block (generation.repetition_stop; completion_tokens < max_new_tokens).  Such a row is judged and kept in the pool, but no matching, selection or training uses it.  mock: always false."
+        },
+        "seed": {
+          "cli": 3,
+          "generation": 2062574004,
+          "rule": "seed_for(cli_seed, 1, 'generation')"
+        },
+        "split": {
+          "file": "train_001.jsonl",
+          "name": "train_001",
+          "prompts_sampled": 2048,
+          "rows": 2048,
+          "sha256": "6583b61196fb89e675238809470650c71664b5486c84c227b8d24fff8dd74be3",
+          "source": "cli"
+        }
+      },
+      "meta_path": "/cluster/rsi-runs/work/experiments/arithmetic_audited_llama3.2-1b/pools/b03.jsonl.meta.json",
+      "meta_sha256": "0ed34a29e99aef8dc43090865627af652ab7607cdad2e6b7ce13c7ffbbb30442",
+      "path": "/cluster/rsi-runs/work/experiments/arithmetic_audited_llama3.2-1b/pools/b03.jsonl",
+      "pool_id": "4e17cd32aed6a1a68bc1f737865a2a4cb8a58d79670075da050308425aa75779",
+      "rows": 16384
+    },
+    "reference_gradient": {
+      "h_json_sha256": "28c1d4c7c09c04bd2ca45147ce045691afc4983f49fc43dce8262f94fa5356d3",
+      "h_sha256": "a705b0e8119918ac402da7af83023bfc33240a58cb37585df36beb83521f94e2",
+      "path": "/cluster/rsi-runs/work/experiments/arithmetic_audited_llama3.2-1b/reference",
+      "status": "used"
+    },
+    "shared_adapter": {
+      "parameter_hash": "951ae0a1a57eecbddb76029458c4b5fd3f5c950bfe4d916ac715d2a1bf757489",
+      "path": "/cluster/rsi-runs/work/experiments/arithmetic_audited_llama3.2-1b/shared_adapter",
+      "record_sha256": "9f3899e537b0fb5aefb5b205dd98dbb9ed3c7802a7accd5c1ab3107064fcf90b",
+      "status": "used"
+    },
+    "token_counts": "rsi.reference_encode.supervised_token_count (response tokens + EOS)",
+    "tokenizer": {
+      "name": "meta-llama/Llama-3.2-1B-Instruct",
+      "revision": "9213176726f574b556790deb65791e0c5aa438b6"
+    }
+  },
+  "block_id": "b03",
+  "branch": "S",
+  "calibration": null,
+  "config": {
+    "audit": {
+      "budget": 16,
+      "policy": "adaptive",
+      "weighting": true
+    },
+    "backend": "hf",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "frozen": false,
+    "generation": {
+      "batch_size": 16,
+      "candidates": 8,
+      "max_new_tokens": 2048,
+      "max_sequence_length": 4096,
+      "prompts_per_pool": null,
+      "repetition_stop": {
+        "max_period": 32,
+        "span": 128
+      },
+      "temperature": 0.6,
+      "top_k": null,
+      "top_p": 0.9
+    },
+    "matching": {
+      "error_fraction": 0.25,
+      "token_tolerance": null
+    },
+    "model": "meta-llama/Llama-3.2-1B-Instruct",
+    "revision": "9213176726f574b556790deb65791e0c5aa438b6",
+    "rounds": 4,
+    "seed": 0,
+    "training": {
+      "batch_size": 2,
+      "effective_batch_size": 4,
+      "epochs": 1,
+      "examples": 1024,
+      "gradient_checkpointing": true,
+      "learning_rate": 0.0002,
+      "lora_alpha": 16,
+      "lora_dropout": 0.0,
+      "lora_rank": 8,
+      "target_modules": [
+        "q_proj",
+        "v_proj"
+      ]
+    },
+    "verifier": {
+      "calibration": null,
+      "fpr": 0.2,
+      "kind": "iid",
+      "model": "Qwen/Qwen3-1.7B",
+      "revision": "main",
+      "threshold": null,
+      "tpr": 0.9
+    }
+  },
+  "data_path": "/cluster/rsi-runs/work/data/arithmetic",
+  "dataset_hash": "5b5be55fb005b31d3fe4d3764a9537e40382eb30783782c41c977d0e7e593d1d",
+  "environment": {
+    "cuda_visible_devices": "0",
+    "packages": {
+      "accelerate": "1.15.0",
+      "matplotlib": "3.11.2",
+      "numpy": "2.4.6",
+      "peft": "0.17.1",
+      "scipy": "1.17.1",
+      "torch": "2.14.1",
+      "transformers": "4.57.1"
+    },
+    "platform": "Linux-6.12.0-124.56.1.el10_1.x86_64-x86_64-with-glibc2.39",
+    "python": "3.11.16 (main, Aug 27 2026, 14:44:21) [GCC 14.3.0]",
+    "source_hash": "7d4d76e82d53b58024c50803a92fe15bb9e8270652343c9e5fc537673556c202"
+  },
+  "evaluation": "pending",
+  "phase": "main",
+  "requested_config": {
+    "audit": {
+      "budget": 16,
+      "policy": "adaptive",
+      "weighting": true
+    },
+    "backend": "hf",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "frozen": false,
+    "generation": {
+      "batch_size": 16,
+      "candidates": 8,
+      "max_new_tokens": 2048,
+      "max_sequence_length": 4096,
+      "prompts_per_pool": null,
+      "repetition_stop": {
+        "max_period": 32,
+        "span": 128
+      },
+      "temperature": 0.6,
+      "top_k": null,
+      "top_p": 0.9
+    },
+    "matching": {
+      "error_fraction": 0.25,
+      "token_tolerance": null
+    },
+    "model": "meta-llama/Llama-3.2-1B-Instruct",
+    "revision": "9213176726f574b556790deb65791e0c5aa438b6",
+    "rounds": 4,
+    "seed": 0,
+    "training": {
+      "batch_size": 2,
+      "effective_batch_size": 4,
+      "epochs": 1,
+      "examples": 1024,
+      "gradient_checkpointing": true,
+      "learning_rate": 0.0002,
+      "lora_alpha": 16,
+      "lora_dropout": 0.0,
+      "lora_rank": 8,
+      "target_modules": [
+        "q_proj",
+        "v_proj"
+      ]
+    },
+    "verifier": {
+      "calibration": null,
+      "fpr": 0.2,
+      "kind": "iid",
+      "model": "Qwen/Qwen3-1.7B",
+      "revision": "main",
+      "threshold": null,
+      "tpr": 0.9
+    }
+  },
+  "run_id": "md-arithmetic-audited-llama3.2-1b-2048x8-v01--b03--S",
+  "schema_version": "rsi-iterative/1",
+  "seed": 0,
+  "study_id": "md-arithmetic-audited-llama3.2-1b-2048x8-v01",
+  "task": "arithmetic"
+}

@@ -1,0 +1,31 @@
+{
+  "answers_per_question": 1,
+  "base": {
+    "backend": "hf",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "model": "Qwen/Qwen3-1.7B",
+    "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e"
+  },
+  "data_path": "C:\\Users\\user\\rsi-work\\onestep-h100\\data\\graph",
+  "dataset_hash": "c9908f934f86821101cc9f347e1d203ebe8a1b00737b9f66b4f08de8839b90c1",
+  "decoding": {
+    "max_new_tokens": 2048,
+    "max_sequence_length": 4096,
+    "repetition_stop": {
+      "max_period": 32,
+      "span": 128
+    },
+    "temperature": 0.0,
+    "top_k": null,
+    "top_p": 1.0
+  },
+  "question_ids": "9e0804c25293e0e1fd5d06d51f4ec155053fb317bbdca3f31a6b69fc3b2b6fae",
+  "questions": 2000,
+  "round_0": "base model, no adapter (shared adapter has LoRA B = 0)",
+  "split": "eval_id",
+  "target_signatures": [
+    "nonshortest"
+  ],
+  "task": "graph"
+}

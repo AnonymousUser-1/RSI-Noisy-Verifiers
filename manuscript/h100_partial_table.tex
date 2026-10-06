@@ -1,0 +1,54 @@
+\begin{table}[H]
+\caption{Training diagnostics: initial partially completed series (upper block) and completed Qwen3-4B graph studies (lower block). $n$ counts available blocks per arm/round; missing checkpoints are not imputed. Entries are means, without intervals or an accuracy claim. Arithmetic has only block b00 here. Projections use the fixed initial reference gradient and are not held-out outcomes; incomplete coverage can bias comparisons. Arithmetic references are bare canonical integers (2--4 supervised tokens), whereas prompts request worked solutions ending in \texttt{Answer: N}; their projections can reflect format changes. Losses are run-specific objectives, not cross-model measures of correctness or influence.}
+\label{tab:h100-partial}
+\centering\small\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}lllcccccc@{}}
+\toprule
+Task & Model & Audit & $t$ & Arm & $n$ & $h^T\Delta\theta_t$ & $\|\Delta\theta_t\|_2$ & Loss\\
+\midrule
+Arithmetic & Llama-1B & B=16 & 1 & R & 1 & 1.4341 & 0.8944 & 0.1443\\
+Arithmetic & Llama-1B & B=16 & 1 & S & 1 & 1.4117 & 0.9188 & 0.1424\\
+Arithmetic & Llama-3B & B=16 & 1 & R & 1 & 0.6956 & 1.0368 & 0.0843\\
+Arithmetic & Llama-3B & B=16 & 1 & S & 1 & 0.7438 & 1.0492 & 0.0852\\
+Arithmetic & Llama-3B & B=16 & 2 & R & 1 & 0.2264 & 1.0877 & 0.0551\\
+Arithmetic & Llama-1B & None & 1 & R & 1 & 1.4468 & 0.9060 & 0.1470\\
+Arithmetic & Llama-1B & None & 1 & S & 1 & 1.4730 & 0.9317 & 0.1449\\
+Arithmetic & Llama-3B & None & 1 & R & 1 & 0.9897 & 1.2721 & 0.0809\\
+Arithmetic & Llama-3B & None & 1 & S & 1 & 0.9162 & 1.2552 & 0.0861\\
+Arithmetic & Llama-3B & None & 2 & R & 1 & 0.1848 & 1.1714 & 0.0474\\
+Graph & Qwen3-1.7B & B=16 & 1 & R & 5 & -0.0625 & 0.9688 & 0.0569\\
+Graph & Qwen3-1.7B & B=16 & 1 & S & 5 & -0.0535 & 0.9804 & 0.0543\\
+Graph & Qwen3-1.7B & B=16 & 2 & R & 5 & -0.0179 & 0.8276 & 0.0409\\
+Graph & Qwen3-1.7B & B=16 & 2 & S & 5 & -0.0024 & 1.0296 & 0.0517\\
+Graph & Qwen3-1.7B & B=16 & 3 & R & 4 & -0.0066 & 0.8950 & 0.0390\\
+Graph & Qwen3-1.7B & B=16 & 3 & S & 4 & -0.0350 & 0.9824 & 0.0663\\
+Graph & Qwen3-1.7B & B=16 & 4 & R & 4 & -0.0110 & 0.9488 & 0.0280\\
+Graph & Qwen3-1.7B & B=16 & 4 & S & 4 & -0.0184 & 1.0327 & 0.0381\\
+Graph & Qwen3-1.7B & None & 1 & R & 5 & -0.0668 & 1.1172 & 0.0540\\
+Graph & Qwen3-1.7B & None & 1 & S & 5 & -0.0654 & 1.0907 & 0.0531\\
+Graph & Qwen3-1.7B & None & 2 & R & 5 & -0.0298 & 1.0837 & 0.0455\\
+Graph & Qwen3-1.7B & None & 2 & S & 5 & -0.0286 & 1.0971 & 0.0484\\
+Graph & Qwen3-1.7B & None & 3 & R & 5 & -0.0428 & 1.1360 & 0.0511\\
+Graph & Qwen3-1.7B & None & 3 & S & 4 & -0.0310 & 1.1361 & 0.0449\\
+Graph & Qwen3-1.7B & None & 4 & R & 4 & -0.0256 & 1.0793 & 0.0505\\
+Graph & Qwen3-1.7B & None & 4 & S & 4 & -0.0167 & 1.0876 & 0.0428\\
+\addlinespace
+Graph & Qwen3-4B & None & 1 & R & 5 & -0.1487 & 1.5161 & 0.0309\\
+Graph & Qwen3-4B & None & 1 & S & 5 & -0.1479 & 1.5474 & 0.0364\\
+Graph & Qwen3-4B & B=16 & 1 & R & 5 & -0.0707 & 1.2888 & 0.0309\\
+Graph & Qwen3-4B & B=16 & 1 & S & 5 & -0.0918 & 1.3315 & 0.0332\\
+Graph & Qwen3-4B & None & 2 & R & 5 & -0.0985 & 1.6279 & 0.0415\\
+Graph & Qwen3-4B & None & 2 & S & 5 & -0.0902 & 1.6084 & 0.0411\\
+Graph & Qwen3-4B & B=16 & 2 & R & 5 & -0.1181 & 1.5290 & 0.0308\\
+Graph & Qwen3-4B & B=16 & 2 & S & 5 & -0.1208 & 1.4442 & 0.0311\\
+Graph & Qwen3-4B & None & 3 & R & 5 & -0.0697 & 1.5263 & 0.0714\\
+Graph & Qwen3-4B & None & 3 & S & 5 & -0.0651 & 1.5377 & 0.0643\\
+Graph & Qwen3-4B & B=16 & 3 & R & 5 & -0.0819 & 1.3484 & 0.0353\\
+Graph & Qwen3-4B & B=16 & 3 & S & 5 & -0.0836 & 1.3693 & 0.0304\\
+Graph & Qwen3-4B & None & 4 & R & 5 & -0.0524 & 1.5233 & 0.3888\\
+Graph & Qwen3-4B & None & 4 & S & 5 & -0.0323 & 1.5071 & 0.0719\\
+Graph & Qwen3-4B & B=16 & 4 & R & 5 & -0.0444 & 1.3811 & 0.0704\\
+Graph & Qwen3-4B & B=16 & 4 & S & 5 & -0.0488 & 1.5224 & 0.0426\\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,17 @@
+{
+  "backend": "hf",
+  "model": "Qwen/Qwen3-1.7B",
+  "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+  "dtype": "bfloat16",
+  "device": "cuda",
+  "rounds": 4,
+  "generation": {"candidates": 8, "prompts_per_pool": null, "batch_size": 16,
+                 "max_new_tokens": 2048, "max_sequence_length": 4096,
+                 "temperature": 1.3, "top_p": 1.0, "top_k": null,
+                 "repetition_stop": {"span": 128, "max_period": 32}},
+  "training": {"lora_rank": 8, "lora_alpha": 16, "lora_dropout": 0.0, "target_modules": ["q_proj", "v_proj"],
+               "learning_rate": 2e-4, "epochs": 1, "batch_size": 2, "effective_batch_size": 4,
+               "gradient_checkpointing": true},
+  "audit": {"policy": "none", "budget": 0, "weighting": true},
+  "matching": {"error_fraction": 0.25, "token_tolerance": null}
+}

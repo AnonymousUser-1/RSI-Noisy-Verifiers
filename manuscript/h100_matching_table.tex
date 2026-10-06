@@ -1,0 +1,16 @@
+\begin{table}[H]
+\caption{Round-one pre-audit matching for Llama-3.2-3B graph. Both arms have $K=64$, $C/E=48/16$, precision $0.75$, and unit weights. $N^+/N^-$ count eligible original-pool responses after removing cut answers. Matching certificates confirm shared prompts and correct responses with identical per-prompt supervised-token counts. Target hits count target-type responses among 16 selected errors; uniform selection in $R$ can include these errors. Actual training uses 16 unaudited optimizer steps per round, rather than the certificate's nominal single-update designation.}
+\label{tab:matching}
+\centering\small\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}lcccccc@{}}
+\toprule
+Block & $N^+/N^-$ & Cut & TPR/FPR & Yield & Target hits $R/S$ & Constraints\\
+\midrule
+b00 & 3848/12389 & 147 & $0.012474/0.001291$ & 0.003942 & 9/16 & pass\\
+b01 & 3877/12369 & 138 & $0.012381/0.001294$ & 0.003939 & 9/16 & pass\\
+b02 & 3805/12458 & 121 & $0.012615/0.001284$ & 0.003935 & 12/16 & pass\\
+b03 & 3810/12421 & 153 & $0.012598/0.001288$ & 0.003943 & 9/16 & pass\\
+b04 & 3838/12414 & 132 & $0.012507/0.001289$ & 0.003938 & 13/16 & pass\\
+\bottomrule
+\end{tabular}
+\end{table}

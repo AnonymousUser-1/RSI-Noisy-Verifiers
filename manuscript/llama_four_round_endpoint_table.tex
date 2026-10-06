@@ -1,0 +1,15 @@
+\begin{table}[H]
+\caption{Llama-3.2-3B graph endpoints after four rounds. Target rates count nonshortest answers among all evaluated questions. Paired $S-R$ differences are within policy, with descriptive 95\% block-$t$ half-widths over five blocks. The base is one shared checkpoint.}
+\label{tab:llama-endpoints}
+\centering\small\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}lllllll@{}}
+\toprule
+Split & Policy & Base & Pass@1 $R/S$ & $S-R$ Pass@1 & Target $R/S$ & $S-R$ target\\
+\midrule
+ID & None & 0.2480 & 0.558/0.560 & $0.002\pm0.105$ & 0.146/0.183 & $0.036\pm0.103$\\
+ID & B=16 & 0.2480 & 0.586/0.620 & $0.034\pm0.067$ & 0.129/0.137 & $0.007\pm0.063$\\
+OOD & None & 0.2090 & 0.430/0.447 & $0.017\pm0.081$ & 0.090/0.118 & $0.029\pm0.084$\\
+OOD & B=16 & 0.2090 & 0.449/0.476 & $0.027\pm0.044$ & 0.074/0.120 & $0.046\pm0.091$\\
+\bottomrule
+\end{tabular}
+\end{table}

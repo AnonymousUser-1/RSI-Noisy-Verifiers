@@ -1,0 +1,35 @@
+{
+  "schema": "rsi-cost-record/1",
+  "cost_id": "evaluate-20261004T185602Z-42a50c31db90",
+  "stage": "evaluate",
+  "owner": "evaluation",
+  "block": "b02",
+  "detail": {
+    "checkpoint": "b02/S/round_001",
+    "split": "eval_ood",
+    "includes_load": false
+  },
+  "status": "complete",
+  "failure": null,
+  "host": "0dd58a038300",
+  "pid": 7873,
+  "started_utc": "2026-10-04T18:56:02+00:00",
+  "ended_utc": "2026-10-04T19:00:16+00:00",
+  "wall_seconds": 253.85635074500078,
+  "gpus": 1,
+  "allocated_gpu_hours": 0.07051565298472244,
+  "new_responses": 1000,
+  "new_output_tokens": 27030,
+  "memory": {
+    "allocated_peak_bytes": 13690295808,
+    "reserved_peak_bytes": 15523119104
+  },
+  "measured": [
+    "allocated_gpu_hours",
+    "memory",
+    "new_output_tokens",
+    "new_responses",
+    "wall_seconds"
+  ],
+  "missing": []
+}

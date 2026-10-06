@@ -1,0 +1,29 @@
+{
+  "adapter": "round_007/adapter",
+  "adapter_in": "b03/R/round_006/adapter",
+  "audit_groups": {},
+  "audit_queries": 0,
+  "block_id": "b03",
+  "branch": "R",
+  "cumulative_audit_queries": 0,
+  "examples": 64,
+  "expected_optimizer_steps": 16,
+  "round": 7,
+  "seconds": 1500.0432934761047,
+  "selected_examples": 64,
+  "training": {
+    "delta_theta_norm": 1.0460179738763944,
+    "determinism": {
+      "cublas_workspace_config": ":4096:8",
+      "deterministic_algorithms": true
+    },
+    "examples": 64,
+    "h_T_delta_theta": -0.017734165312584524,
+    "h_T_delta_theta_note": "projection of this round's Delta theta on h, the reference gradient at the shared initialisation",
+    "mean_loss": 0.09071056596394556,
+    "response_tokens_per_epoch": 1214,
+    "steps": 16,
+    "trained": true,
+    "training_tokens_per_epoch": 22690
+  }
+}

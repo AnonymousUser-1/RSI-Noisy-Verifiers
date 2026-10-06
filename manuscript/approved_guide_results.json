@@ -1,0 +1,241 @@
+{
+  "population": {
+    "R_refinement_max_difference": 2.353672812205332e-14,
+    "R_t20": {
+      "P": 0.8774359619498024,
+      "Z": 0.7193589904874506,
+      "gradient": -0.03217516297638161,
+      "precision": 0.9148102410125256,
+      "theta": 1.1248376730419518
+    },
+    "S_limit": {
+      "P": 0.35958859256212095,
+      "Z": 0.5898971481405302,
+      "gradient": -1.4115465231415267e-16,
+      "precision": 0.457183841745481,
+      "theta": -0.11146044018345069
+    },
+    "initial": {
+      "P": 0.5,
+      "Z": 0.625,
+      "gradient": -0.55,
+      "precision": 0.6,
+      "theta": 0.0
+    },
+    "parameters": {
+      "L": 10,
+      "a": 0.75,
+      "b": 0.5,
+      "theta0": 0
+    }
+  },
+  "round_eight": [
+    {
+      "eval_id": {
+        "block_differences": [
+          -0.144,
+          0.0905,
+          0.0075,
+          -0.084,
+          -0.0135
+        ],
+        "half_width": 0.11123518151667366,
+        "high": 0.08253518151667366,
+        "low": -0.13993518151667367,
+        "mean": -0.0287
+      },
+      "eval_ood": {
+        "block_differences": [
+          -0.031,
+          0.059,
+          0.066,
+          -0.033,
+          0.06
+        ],
+        "half_width": 0.06379422638502664,
+        "high": 0.08799422638502664,
+        "low": -0.039594226385026646,
+        "mean": 0.0242
+      },
+      "model": "Llama-3.2-3B",
+      "policy": "unaudited"
+    },
+    {
+      "eval_id": {
+        "block_differences": [
+          0.046,
+          -0.047,
+          0.011,
+          -0.137,
+          -0.0265
+        ],
+        "half_width": 0.08603575768638913,
+        "high": 0.055335757686389125,
+        "low": -0.11673575768638914,
+        "mean": -0.0307
+      },
+      "eval_ood": {
+        "block_differences": [
+          0.045,
+          -0.003,
+          0.104,
+          -0.074,
+          0.003
+        ],
+        "half_width": 0.08144501891941058,
+        "high": 0.09644501891941058,
+        "low": -0.06644501891941058,
+        "mean": 0.015
+      },
+      "model": "Llama-3.2-3B",
+      "policy": "audited"
+    },
+    {
+      "eval_id": {
+        "block_differences": [
+          0.0985,
+          0.022,
+          0.001,
+          0.0345,
+          0.043
+        ],
+        "half_width": 0.045224106302002715,
+        "high": 0.08502410630200272,
+        "low": -0.0054241063020027125,
+        "mean": 0.0398
+      },
+      "eval_ood": {
+        "block_differences": [
+          0.086,
+          -0.005,
+          0.051,
+          0.066,
+          0.039
+        ],
+        "half_width": 0.04240423443120939,
+        "high": 0.08980423443120938,
+        "low": 0.004995765568790611,
+        "mean": 0.0474
+      },
+      "model": "Qwen3-1.7B",
+      "policy": "unaudited"
+    },
+    {
+      "eval_id": {
+        "block_differences": [
+          -0.091,
+          0.095,
+          0.055,
+          0.0725,
+          0.014
+        ],
+        "half_width": 0.09113593830920177,
+        "high": 0.12023593830920178,
+        "low": -0.062035938309201774,
+        "mean": 0.0291
+      },
+      "eval_ood": {
+        "block_differences": [
+          -0.05,
+          0.062,
+          0.065,
+          0.075,
+          0.032
+        ],
+        "half_width": 0.06345498321250931,
+        "high": 0.10025498321250931,
+        "low": -0.02665498321250931,
+        "mean": 0.0368
+      },
+      "model": "Qwen3-1.7B",
+      "policy": "audited"
+    }
+  ],
+  "source_sha256": {
+    "experiments/outputs/2026-10-03-h100/figures/graph_unaudited_llama3.2-3b_vs_graph_audited_llama3.2-3b_eval_id_summary.csv": "13462b518a08501c409db33a26acc7b54b6dc420f375b3fcaa18ee517798b9fb",
+    "experiments/outputs/2026-10-03-h100/figures/graph_unaudited_llama3.2-3b_vs_graph_audited_llama3.2-3b_eval_ood_summary.csv": "65729dff2a67bc91514513e0a2895509f1faf935fb99cf16127bcee2407059f9",
+    "experiments/outputs/2026-10-03-h100/figures/graph_unaudited_vs_graph_audited_eval_id_summary.csv": "24ea623ca60f2d990f2078e03f120d5c44251eac2221bb88fb79bc83e123e82b",
+    "experiments/outputs/2026-10-03-h100/figures/graph_unaudited_vs_graph_audited_eval_ood_summary.csv": "436a87aca5c1a18d80fb15e53049e160e0c30ec6b49d1476dcb57c4db29c8c08",
+    "experiments/outputs/2026-10-03-h100/graph_audited/out/evaluation_greedy_eval_id/b00_R_round_008.json": "01e16e6af22e4dbaade50fd5273cd46ff3368fc9ef44388c1bdc8498351d0915",
+    "experiments/outputs/2026-10-03-h100/graph_audited/out/evaluation_greedy_eval_id/b00_S_round_008.json": "a049b7f6177bfc78040cf4b34267aa6acb26caeb5f6e19defdabcbdc25f7a63a",
+    "experiments/outputs/2026-10-03-h100/graph_audited/out/evaluation_greedy_eval_id/b01_R_round_008.json": "98b99bcd874244446db045f4082a03203d74148e69c3f2dddcab2db5cf873f45",
+    "experiments/outputs/2026-10-03-h100/graph_audited/out/evaluation_greedy_eval_id/b01_S_round_008.json": "5cda76f9ad629a615b37939bc5714f59852bd443c589370a1f94d3d968aaa92a",
+    "experiments/outputs/2026-10-03-h100/graph_audited/out/evaluation_greedy_eval_id/b02_R_round_008.json": "2d6502adfabc13c7af0fcac59670dea923ff74dc42b9fb497a893fbf63cd6a0a",
+    "experiments/outputs/2026-10-03-h100/graph_audited/out/evaluation_greedy_eval_id/b02_S_round_008.json": "57fa37b05f4a990fcfa0fe55a322b67cc73800b6c13f5ef4ab694097c796d3fc",
+    "experiments/outputs/2026-10-03-h100/graph_audited/out/evaluation_greedy_eval_id/b03_R_round_008.json": "70724f3ebd821ab38f427fb4097526851df918681e584b5f2edb743568bdbe70",
+    "experiments/outputs/2026-10-03-h100/graph_audited/out/evaluation_greedy_eval_id/b03_S_round_008.json": "45aef3aebe30925a19f12991e524d20ffe56569e9b3fa019306c39fdbb140c4f",
+    "experiments/outputs/2026-10-03-h100/graph_audited/out/evaluation_greedy_eval_id/b04_R_round_008.json": "2b493db2a9f46b96aaf0d461a079d1bd80dd3273bf07222f90cffb58d116a896",
+    "experiments/outputs/2026-10-03-h100/graph_audited/out/evaluation_greedy_eval_id/b04_S_round_008.json": "25799a4a65655ce5a05c834980745aa81b5a521fac13f82d4d529b0ee8ab70be",
+    "experiments/outputs/2026-10-03-h100/graph_audited/out/evaluation_greedy_eval_ood/b00_R_round_008.json": "7e2856c66d7a9c67f5a08af9ae473206e7332ab47c44f6468d861c0d6df938a4",
+    "experiments/outputs/2026-10-03-h100/graph_audited/out/evaluation_greedy_eval_ood/b00_S_round_008.json": "5867663a9852b627917ff7a253dc1fc731d727882e888d50e204abc46402042a",
+    "experiments/outputs/2026-10-03-h100/graph_audited/out/evaluation_greedy_eval_ood/b01_R_round_008.json": "dd6ad38369eaa35594296e46135f95b3ce57bc8973a1414d0cca58cfd7a651df",
+    "experiments/outputs/2026-10-03-h100/graph_audited/out/evaluation_greedy_eval_ood/b01_S_round_008.json": "ad0433ee592812be1c23934f6b3f2db360197c5c0649bc06354df105028b0b29",
+    "experiments/outputs/2026-10-03-h100/graph_audited/out/evaluation_greedy_eval_ood/b02_R_round_008.json": "f0c25705060bf32bb03ea2c06523e8e6699c151f20c5b9723f927e9fcd40872c",
+    "experiments/outputs/2026-10-03-h100/graph_audited/out/evaluation_greedy_eval_ood/b02_S_round_008.json": "416b9de532254646601808788ff5bffb46fc7cc3ff8e523fe90cf7a2d89170a6",
+    "experiments/outputs/2026-10-03-h100/graph_audited/out/evaluation_greedy_eval_ood/b03_R_round_008.json": "2c19a2b728fbec6785a612c2ef22fd2a24b2c904b66d2bb9c9800c65717053b0",
+    "experiments/outputs/2026-10-03-h100/graph_audited/out/evaluation_greedy_eval_ood/b03_S_round_008.json": "76344df71ae2fa0055364bc21f24260426b0c3fbb3ae3d10090bd0c4619ec92a",
+    "experiments/outputs/2026-10-03-h100/graph_audited/out/evaluation_greedy_eval_ood/b04_R_round_008.json": "6058069eb223074a7ba012bc1e5b50d4ffa65916b1a0adbff5f4a0ac151fbf3f",
+    "experiments/outputs/2026-10-03-h100/graph_audited/out/evaluation_greedy_eval_ood/b04_S_round_008.json": "fc3560b8e9334812d3c89abd019e25b83154740a5c36c6f0fe64c10f1b81b05e",
+    "experiments/outputs/2026-10-03-h100/graph_audited_llama3.2-3b/out/evaluation_greedy_eval_id/b00_R_round_008.json": "d6a843f84499d8c10c77474648cbd83967a4e151fa4275e6aed40557121fc277",
+    "experiments/outputs/2026-10-03-h100/graph_audited_llama3.2-3b/out/evaluation_greedy_eval_id/b00_S_round_008.json": "bb44718265850e0a96a2a088272ca2e45d74a8bb8e73677634f8ada057c575a7",
+    "experiments/outputs/2026-10-03-h100/graph_audited_llama3.2-3b/out/evaluation_greedy_eval_id/b01_R_round_008.json": "2543044c2754b858f73ac63f4c37d63fa61a128c8ca4ae2fece07b1d128102ea",
+    "experiments/outputs/2026-10-03-h100/graph_audited_llama3.2-3b/out/evaluation_greedy_eval_id/b01_S_round_008.json": "7642ff4363cfad2c933b2816dd5705d84cb2a167661bd97038c162c7e24bdc67",
+    "experiments/outputs/2026-10-03-h100/graph_audited_llama3.2-3b/out/evaluation_greedy_eval_id/b02_R_round_008.json": "33cfc973bfa64810d29b8435491a37266bbc5526a9950b472dedc1bbc3eb9bc5",
+    "experiments/outputs/2026-10-03-h100/graph_audited_llama3.2-3b/out/evaluation_greedy_eval_id/b02_S_round_008.json": "37c036a5d3a7df4d4c17e389c965270237f2cbb410f606c06cfc67f804f06d23",
+    "experiments/outputs/2026-10-03-h100/graph_audited_llama3.2-3b/out/evaluation_greedy_eval_id/b03_R_round_008.json": "2f3db61ed77d483f78e6614f8b071b30a3ae0178ac7c4f3eb5ca8941221fe626",
+    "experiments/outputs/2026-10-03-h100/graph_audited_llama3.2-3b/out/evaluation_greedy_eval_id/b03_S_round_008.json": "f8e0f0ef59509b37cd32b00718328cf69edcf5ca5f5f2efb9081edfad9a145d7",
+    "experiments/outputs/2026-10-03-h100/graph_audited_llama3.2-3b/out/evaluation_greedy_eval_id/b04_R_round_008.json": "3817af65d966d959c4da3c1715ca125cfcb6e14d5a97f5c349fc4c101d19b07c",
+    "experiments/outputs/2026-10-03-h100/graph_audited_llama3.2-3b/out/evaluation_greedy_eval_id/b04_S_round_008.json": "bdfc15efaf95d0ce787df7f2ff07f447681eef93e01485116002c206756e9ab2",
+    "experiments/outputs/2026-10-03-h100/graph_audited_llama3.2-3b/out/evaluation_greedy_eval_ood/b00_R_round_008.json": "703018b0aa638eb0d7f3e2ae0de1d29fd97a902dbf92b497e173354afccb4977",
+    "experiments/outputs/2026-10-03-h100/graph_audited_llama3.2-3b/out/evaluation_greedy_eval_ood/b00_S_round_008.json": "f86cd34b6c51c723449561a5e7f9f75b6251bdefcdcb6ab5937f1b159e916fd0",
+    "experiments/outputs/2026-10-03-h100/graph_audited_llama3.2-3b/out/evaluation_greedy_eval_ood/b01_R_round_008.json": "c87018b19df9144c1701b91cd693f50d995efbfdd759089ed168988b5fd485d9",
+    "experiments/outputs/2026-10-03-h100/graph_audited_llama3.2-3b/out/evaluation_greedy_eval_ood/b01_S_round_008.json": "630addc6b99678c0708b5406b7c2e04360b77e61025e8b3854e2aa2586d08fde",
+    "experiments/outputs/2026-10-03-h100/graph_audited_llama3.2-3b/out/evaluation_greedy_eval_ood/b02_R_round_008.json": "ecc78963cc27e45d9bf6cfcf76c48a08a24fda51d882b016dd595406bfbf69b0",
+    "experiments/outputs/2026-10-03-h100/graph_audited_llama3.2-3b/out/evaluation_greedy_eval_ood/b02_S_round_008.json": "0d360f152636d45c1fae5219369eb5863427327696c442de8ca43fd1b40a613f",
+    "experiments/outputs/2026-10-03-h100/graph_audited_llama3.2-3b/out/evaluation_greedy_eval_ood/b03_R_round_008.json": "7f30e437563d4030b471ea2c2240379f6972cf8da166b06a328c562c4eb29bfa",
+    "experiments/outputs/2026-10-03-h100/graph_audited_llama3.2-3b/out/evaluation_greedy_eval_ood/b03_S_round_008.json": "79c0244103ddc134cb011c85d68de84216db57cab0a7c56b5639b5277eb2be89",
+    "experiments/outputs/2026-10-03-h100/graph_audited_llama3.2-3b/out/evaluation_greedy_eval_ood/b04_R_round_008.json": "c144217f822b5e0a36dd8abdf9b3e1eeb16caeacb5f3ea7edc5fe527055f39a2",
+    "experiments/outputs/2026-10-03-h100/graph_audited_llama3.2-3b/out/evaluation_greedy_eval_ood/b04_S_round_008.json": "eff0ad534a08d0cb6ad4c37d95dc77d76d97844209680117df20c5ae398374f5",
+    "experiments/outputs/2026-10-03-h100/graph_unaudited/out/evaluation_greedy_eval_id/b00_R_round_008.json": "3ecb90c6a9adef39f8c810730c4c293b1399e5ffb29bbfbb2bb71fd9497c077e",
+    "experiments/outputs/2026-10-03-h100/graph_unaudited/out/evaluation_greedy_eval_id/b00_S_round_008.json": "1c79d06dc1c5b04e1d99671f5b9dc28b289399f49cdf5089401d330cd2977812",
+    "experiments/outputs/2026-10-03-h100/graph_unaudited/out/evaluation_greedy_eval_id/b01_R_round_008.json": "1a3164cdfb6182a351476aded4f67b57c54f5f32f6cab907309776b17ef52727",
+    "experiments/outputs/2026-10-03-h100/graph_unaudited/out/evaluation_greedy_eval_id/b01_S_round_008.json": "89733ab32c6146ce6656310d65a0e13288d984f1d868fb07be5462be7dced654",
+    "experiments/outputs/2026-10-03-h100/graph_unaudited/out/evaluation_greedy_eval_id/b02_R_round_008.json": "cc2ed1f41b67e63d65dbbb04645be322c997c2677b5159edab64be150c2a01cf",
+    "experiments/outputs/2026-10-03-h100/graph_unaudited/out/evaluation_greedy_eval_id/b02_S_round_008.json": "875f55009d0af47e300242f3bc8c309edd1342a61406f2db5c42640071657fb9",
+    "experiments/outputs/2026-10-03-h100/graph_unaudited/out/evaluation_greedy_eval_id/b03_R_round_008.json": "51319d9919fc9e7616d0ea4e5570ae7f6db93320fd1ea9b78723675e0df66db7",
+    "experiments/outputs/2026-10-03-h100/graph_unaudited/out/evaluation_greedy_eval_id/b03_S_round_008.json": "17429198cbe480e7c09a8f96f1e57960802e9dafde6060214e789a061da6a2ce",
+    "experiments/outputs/2026-10-03-h100/graph_unaudited/out/evaluation_greedy_eval_id/b04_R_round_008.json": "3648fc683b8d9b9cef187eb8ecfcae98ccfeac2870fc0c31ab69929c1ed92228",
+    "experiments/outputs/2026-10-03-h100/graph_unaudited/out/evaluation_greedy_eval_id/b04_S_round_008.json": "c1b405a47c4ce52d176589534e167bbfac9bf39b097de857d70ba06da153c090",
+    "experiments/outputs/2026-10-03-h100/graph_unaudited/out/evaluation_greedy_eval_ood/b00_R_round_008.json": "ada708e136006b98d9ae666bbcc1c1b5fc00e300a4f645aa81c699efdc7b71ad",
+    "experiments/outputs/2026-10-03-h100/graph_unaudited/out/evaluation_greedy_eval_ood/b00_S_round_008.json": "bd0c57df3e927628172479aea1fd7b9bc275bf37b6700a75cab988498a2ae677",
+    "experiments/outputs/2026-10-03-h100/graph_unaudited/out/evaluation_greedy_eval_ood/b01_R_round_008.json": "f82ff6abf3daa3f4d2e43bd389819af2a22c852454eac46b6d906be60a711c1e",
+    "experiments/outputs/2026-10-03-h100/graph_unaudited/out/evaluation_greedy_eval_ood/b01_S_round_008.json": "98308d5e3fbac17d6f6b6842d9a8ce246062de9de3a0be181c9f55455a7f42a6",
+    "experiments/outputs/2026-10-03-h100/graph_unaudited/out/evaluation_greedy_eval_ood/b02_R_round_008.json": "a54d442323ed50f7c6358a2331ad676b14fadd4c6800f47a1d6ee4538e3e4373",
+    "experiments/outputs/2026-10-03-h100/graph_unaudited/out/evaluation_greedy_eval_ood/b02_S_round_008.json": "5f075f7a12424ea8c3ab4f925d577adfc1d202ff951bb109ecbd4396bd3b03fa",
+    "experiments/outputs/2026-10-03-h100/graph_unaudited/out/evaluation_greedy_eval_ood/b03_R_round_008.json": "66d1a072d2bb1aaebeacae69875bdb6e862accd7ae66d85e71cfaa4278d0ae3c",
+    "experiments/outputs/2026-10-03-h100/graph_unaudited/out/evaluation_greedy_eval_ood/b03_S_round_008.json": "de061e4c399cc055ed24d89c3fa0ced32adb2daa235902899695ce223c34f5be",
+    "experiments/outputs/2026-10-03-h100/graph_unaudited/out/evaluation_greedy_eval_ood/b04_R_round_008.json": "880a2681e4a5ee5ad365d54dcfd8bbbd5f2311d5bd7759faf9c4a5515a03fae9",
+    "experiments/outputs/2026-10-03-h100/graph_unaudited/out/evaluation_greedy_eval_ood/b04_S_round_008.json": "56613d9c733fb87ae18f342757be99f4ba6443500eacfb6aad0b1b1ff7316a01",
+    "experiments/outputs/2026-10-03-h100/graph_unaudited_llama3.2-3b/out/evaluation_greedy_eval_id/b00_R_round_008.json": "82b43b64b2e2d60754458166cab4556ace3fa955bfb7a22af442c8e6de4ec1e0",
+    "experiments/outputs/2026-10-03-h100/graph_unaudited_llama3.2-3b/out/evaluation_greedy_eval_id/b00_S_round_008.json": "6ae0b3c5b2b57a5dd3aea7448a1141a3dcb8a45b507185f682ead734c7435679",
+    "experiments/outputs/2026-10-03-h100/graph_unaudited_llama3.2-3b/out/evaluation_greedy_eval_id/b01_R_round_008.json": "3b9b224bcc3875677ca4d379eedd3ac813ae5746095cd82f1ef7bfd96b159fad",
+    "experiments/outputs/2026-10-03-h100/graph_unaudited_llama3.2-3b/out/evaluation_greedy_eval_id/b01_S_round_008.json": "de11ce688e983f393eafe9f6c8b44512df804c182008ce2ae9206213565a4f17",
+    "experiments/outputs/2026-10-03-h100/graph_unaudited_llama3.2-3b/out/evaluation_greedy_eval_id/b02_R_round_008.json": "4933698caf68044e533ebc3d28be7cd7a5c29294805e0cfa6856cfa285f9b436",
+    "experiments/outputs/2026-10-03-h100/graph_unaudited_llama3.2-3b/out/evaluation_greedy_eval_id/b02_S_round_008.json": "8949ecc65f1678c363f02f7cdd73aed24843a6f5155dd492ff4a339bad18cc01",
+    "experiments/outputs/2026-10-03-h100/graph_unaudited_llama3.2-3b/out/evaluation_greedy_eval_id/b03_R_round_008.json": "8af3cfdfe5516ab12aae85b80d60a50105d05644a42b55c5d1360c371f916f97",
+    "experiments/outputs/2026-10-03-h100/graph_unaudited_llama3.2-3b/out/evaluation_greedy_eval_id/b03_S_round_008.json": "26962d8aaf7d670f24fa9204b199e8ce76bdd5c5ae9fcf9934bb7fc2326c0068",
+    "experiments/outputs/2026-10-03-h100/graph_unaudited_llama3.2-3b/out/evaluation_greedy_eval_id/b04_R_round_008.json": "3fa7b7a9404f42fb52c1804979f771321c2a1060399acc35fe3d1e7943c6c879",
+    "experiments/outputs/2026-10-03-h100/graph_unaudited_llama3.2-3b/out/evaluation_greedy_eval_id/b04_S_round_008.json": "396956bf289ec7fd1cf23d522d103b784b560a9236432251195afabb03d27132",
+    "experiments/outputs/2026-10-03-h100/graph_unaudited_llama3.2-3b/out/evaluation_greedy_eval_ood/b00_R_round_008.json": "50a593fe063ca0ce5aa5c187cc40c524dbda9c2320233cfd9a3539066bc36321",
+    "experiments/outputs/2026-10-03-h100/graph_unaudited_llama3.2-3b/out/evaluation_greedy_eval_ood/b00_S_round_008.json": "a4d53b4e117e7a9bed0326c7c11afc095415723670121c2772b2747e8d38f676",
+    "experiments/outputs/2026-10-03-h100/graph_unaudited_llama3.2-3b/out/evaluation_greedy_eval_ood/b01_R_round_008.json": "341da4cd139acf578a6b90c74a7d5b89a28062550557528fd209a92830692071",
+    "experiments/outputs/2026-10-03-h100/graph_unaudited_llama3.2-3b/out/evaluation_greedy_eval_ood/b01_S_round_008.json": "53b199d29ee30c072a4c3ec2b914df8631e3c35984bcac3e3cc9a48270175638",
+    "experiments/outputs/2026-10-03-h100/graph_unaudited_llama3.2-3b/out/evaluation_greedy_eval_ood/b02_R_round_008.json": "68247a6623c4e4734614473fb9e65282653821fc7371bba993c63bd9b8c9428c",
+    "experiments/outputs/2026-10-03-h100/graph_unaudited_llama3.2-3b/out/evaluation_greedy_eval_ood/b02_S_round_008.json": "02eb89836b55b19229fad54b0db54a6b8ced9f3301ccaef6a410a3996fdb15b0",
+    "experiments/outputs/2026-10-03-h100/graph_unaudited_llama3.2-3b/out/evaluation_greedy_eval_ood/b03_R_round_008.json": "563d8891dbe57d99e064d5aafc46bce439708524110f467716a12fe9a170b985",
+    "experiments/outputs/2026-10-03-h100/graph_unaudited_llama3.2-3b/out/evaluation_greedy_eval_ood/b03_S_round_008.json": "275a6d149e1848e527e3c95a2b91690ac7fc7b34af21315024f8af9280720734",
+    "experiments/outputs/2026-10-03-h100/graph_unaudited_llama3.2-3b/out/evaluation_greedy_eval_ood/b04_R_round_008.json": "eaa61ae180ad98a64457b3ee92dc7391d36aeb987e7b31d3a64ab059b2a3f7ec",
+    "experiments/outputs/2026-10-03-h100/graph_unaudited_llama3.2-3b/out/evaluation_greedy_eval_ood/b04_S_round_008.json": "c45295f1db4ff47a3dd4607bc125cecac98f43c5be552a11986c18681df494ac"
+  },
+  "status": "passed"
+}

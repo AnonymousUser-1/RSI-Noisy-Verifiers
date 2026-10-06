@@ -1,0 +1,6 @@
+{
+  "model": "meta-llama/Llama-3.2-3B-Instruct",
+  "revision": "0cb88a4f764b7a12671c53f0838cd831a0843b95",
+  "source": "Hugging Face Hub model_info(\"meta-llama/Llama-3.2-3B-Instruct\").sha, resolved 2026-10-02 for the multi-round replication on Llama-3.2-3B; the Instruct model, because the pipeline encodes prompts with the chat template; selected with RSI_BASE_PIN",
+  "prepared": "committed before any run reads it; no run writes, updates or backfills this file"
+}

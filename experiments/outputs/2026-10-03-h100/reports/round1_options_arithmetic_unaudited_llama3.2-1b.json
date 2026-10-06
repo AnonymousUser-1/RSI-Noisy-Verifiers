@@ -1,0 +1,212 @@
+{
+ "config": "experiments/arithmetic_unaudited_llama3.2-1b/config.json",
+ "model": "meta-llama/Llama-3.2-1B-Instruct",
+ "targets": [
+  "ignore_parentheses"
+ ],
+ "config_matching": {
+  "error_fraction": 0.25,
+  "token_tolerance": null
+ },
+ "pools": {
+  "b00": {
+   "answers": 16384,
+   "truncated": 100,
+   "correct": 0.42352294921875,
+   "target_errors": 69,
+   "labels": {
+    "other": 7395,
+    "format": 1486,
+    "correct": 6939,
+    "sign": 495,
+    "ignore_parentheses": 69
+   }
+  },
+  "b01": {
+   "answers": 16384,
+   "truncated": 111,
+   "correct": 0.4202880859375,
+   "target_errors": 69,
+   "labels": {
+    "correct": 6886,
+    "other": 7452,
+    "format": 1473,
+    "sign": 504,
+    "ignore_parentheses": 69
+   }
+  },
+  "b02": {
+   "answers": 16384,
+   "truncated": 84,
+   "correct": 0.4212646484375,
+   "target_errors": 63,
+   "labels": {
+    "other": 7473,
+    "sign": 501,
+    "correct": 6902,
+    "format": 1445,
+    "ignore_parentheses": 63
+   }
+  },
+  "b03": {
+   "answers": 16384,
+   "truncated": 90,
+   "correct": 0.4229736328125,
+   "target_errors": 75,
+   "labels": {
+    "other": 7458,
+    "correct": 6930,
+    "sign": 475,
+    "format": 1446,
+    "ignore_parentheses": 75
+   }
+  },
+  "b04": {
+   "answers": 16384,
+   "truncated": 87,
+   "correct": 0.41754150390625,
+   "target_errors": 70,
+   "labels": {
+    "ignore_parentheses": 70,
+    "other": 7508,
+    "format": 1471,
+    "correct": 6841,
+    "sign": 494
+   }
+  }
+ },
+ "options": [
+  {
+   "error_fraction": 0.25,
+   "token_tolerance": null,
+   "is_config": true,
+   "feasible": true,
+   "K": 64,
+   "per_block": {
+    "b00": {
+     "prompts_with_correct": 1618,
+     "prompts_eligible_J_E": 54
+    },
+    "b01": {
+     "prompts_with_correct": 1627,
+     "prompts_eligible_J_E": 45
+    },
+    "b02": {
+     "prompts_with_correct": 1620,
+     "prompts_eligible_J_E": 43
+    },
+    "b03": {
+     "prompts_with_correct": 1631,
+     "prompts_eligible_J_E": 55
+    },
+    "b04": {
+     "prompts_with_correct": 1603,
+     "prompts_eligible_J_E": 48
+    }
+   },
+   "feasible_by_K": {
+    "64": true
+   }
+  },
+  {
+   "error_fraction": 0.25,
+   "token_tolerance": 0,
+   "is_config": false,
+   "feasible": false,
+   "K": null,
+   "per_block": {
+    "b00": {
+     "prompts_with_correct": 1618,
+     "prompts_eligible_J_E": 1
+    },
+    "b01": {
+     "prompts_with_correct": 1627,
+     "prompts_eligible_J_E": 2
+    },
+    "b02": {
+     "prompts_with_correct": 1620,
+     "prompts_eligible_J_E": 2
+    },
+    "b03": {
+     "prompts_with_correct": 1631,
+     "prompts_eligible_J_E": 2
+    },
+    "b04": {
+     "prompts_with_correct": 1603,
+     "prompts_eligible_J_E": 0
+    }
+   },
+   "feasible_by_K": {
+    "64": false,
+    "32": false,
+    "16": false
+   }
+  },
+  {
+   "error_fraction": 0.125,
+   "token_tolerance": null,
+   "is_config": false,
+   "feasible": true,
+   "K": 64,
+   "per_block": {
+    "b00": {
+     "prompts_with_correct": 1618,
+     "prompts_eligible_J_E": 54
+    },
+    "b01": {
+     "prompts_with_correct": 1627,
+     "prompts_eligible_J_E": 45
+    },
+    "b02": {
+     "prompts_with_correct": 1620,
+     "prompts_eligible_J_E": 43
+    },
+    "b03": {
+     "prompts_with_correct": 1631,
+     "prompts_eligible_J_E": 55
+    },
+    "b04": {
+     "prompts_with_correct": 1603,
+     "prompts_eligible_J_E": 48
+    }
+   },
+   "feasible_by_K": {
+    "64": true
+   }
+  },
+  {
+   "error_fraction": 0.125,
+   "token_tolerance": 0,
+   "is_config": false,
+   "feasible": false,
+   "K": null,
+   "per_block": {
+    "b00": {
+     "prompts_with_correct": 1618,
+     "prompts_eligible_J_E": 1
+    },
+    "b01": {
+     "prompts_with_correct": 1627,
+     "prompts_eligible_J_E": 2
+    },
+    "b02": {
+     "prompts_with_correct": 1620,
+     "prompts_eligible_J_E": 2
+    },
+    "b03": {
+     "prompts_with_correct": 1631,
+     "prompts_eligible_J_E": 2
+    },
+    "b04": {
+     "prompts_with_correct": 1603,
+     "prompts_eligible_J_E": 0
+    }
+   },
+   "feasible_by_K": {
+    "64": false,
+    "32": false,
+    "16": false
+   }
+  }
+ ]
+}

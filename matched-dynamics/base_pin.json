@@ -1,0 +1,6 @@
+{
+  "model": "Qwen/Qwen3-1.7B",
+  "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+  "source": "matched-dynamics/HANDOFF.md:13, copied verbatim (the frozen model pin); not resolved from any config",
+  "prepared": "committed with the a-3 code, before any preflight reads it; no run writes, updates or backfills this file, and it records no hash of itself"
+}

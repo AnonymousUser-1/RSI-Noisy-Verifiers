@@ -1,0 +1,23 @@
+\begin{table}[H]
+\caption{Round-four composition and cumulative effort for Llama-3.2-3B graph. Individually listed rows use adaptive auditing, $B_{\rm qry}=16$; the first row is the unaudited reference for either arm in every block. The $K'/n^+$ column gives the retained and positive-weight response counts, respectively; $C/E$ gives retained correct/error counts. Composition describes the final round, whereas Steps/$Q$ are cumulative over four rounds. ESS is reported in the audit summaries and cannot be independently reconstructed because raw weight vectors are unavailable.}
+\label{tab:audit-composition}
+\centering\small\setlength{\tabcolsep}{6pt}
+\begin{tabular}{@{}llccccc@{}}
+\toprule
+Block/policy & Arm & $K'/n^+$ & $C/E$ & ESS & Steps & $Q$\\
+\midrule
+All blocks, none & R/S & 64/64 & 48/16 & 64.00 & 64 & 0\\
+\midrule
+b00 & R & 63/63 & 48/15 & 58.69 & 53 & 64\\
+b00 & S & 60/45 & 48/12 & 36.37 & 53 & 64\\
+b01 & R & 60/60 & 48/12 & 45.32 & 57 & 64\\
+b01 & S & 60/60 & 48/12 & 43.80 & 59 & 64\\
+b02 & R & 63/63 & 48/15 & 59.76 & 50 & 64\\
+b02 & S & 59/47 & 48/11 & 36.70 & 56 & 64\\
+b03 & R & 61/39 & 48/13 & 37.86 & 57 & 64\\
+b03 & S & 61/61 & 48/13 & 46.15 & 63 & 64\\
+b04 & R & 61/61 & 48/13 & 45.15 & 54 & 64\\
+b04 & S & 61/61 & 48/13 & 50.25 & 44 & 64\\
+\bottomrule
+\end{tabular}
+\end{table}

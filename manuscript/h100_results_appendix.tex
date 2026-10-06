@@ -1,0 +1,220 @@
+\raggedbottom
+\section{Full Empirical Results and Validation}
+\label{app:h100-results}
+
+\subsection{Experiment coverage}
+Table~\ref{tab:h100-progress} summarizes the completed graph experiments:
+six four-round model--policy comparisons and three unaudited one-step
+comparisons, each with five paired blocks and both held-out splits.
+The model-specific results follow below. Arithmetic feasibility is assessed
+for Llama-3.2-1B/3B.
+
+\input{h100_progress_table}
+
+\subsection{Evaluation definitions and uncertainty}
+Evaluation uses one greedy answer per held-out question at each checkpoint,
+with temperature zero,
+top-$p=1$, and the same length and repetition-stop rules across the pair.
+The two conditions use identical questions, task datasets, base models,
+and decoding settings within each split. ID has 2,000 questions
+(667/667/666 by difficulty); OOD has 1,000 (334/333/333).
+Pass@1 is the fraction judged correct; task error is its complement.
+All generated answers enter these denominators, including truncated answers,
+which are judged as generated. The target-error fraction counts \texttt{nonshortest} among \emph{all}
+answers, rather than conditioning on incorrect answers.
+
+For a completed arm/round, let $x_j$ be its metric on block $j$.
+The descriptive interval is
+\[
+ \bar x\ \pm\ t_{0.975,4}\frac{s_x}{\sqrt5},\qquad
+ s_x^2=\frac14\sum_{j=1}^5(x_j-\bar x)^2,
+ \quad t_{0.975,4}=2.776445\ldots.
+\]
+For $S-R$, the interval uses the five within-block differences.
+In Table~\ref{tab:audit-results}, it instead uses
+$d_j=\widehat e^{\rm audit}_j-\widehat e^{\rm none}_j$ in the same arm
+and split; this differs from the plots' $S-R$ contrast. Both types of
+interval are independently recalculated from the checkpoint summaries.
+One common base checkpoint is not five independent initial models: no
+block-uncertainty interval is estimated for round zero.
+
+These are pointwise, descriptive block-$t$ intervals, conditional on the
+fixed question sets. Five blocks give imprecise sampling distributions;
+normality of block differences and generalization to a broader model/task
+population are not established. No correction is made for the many
+round/metric/split/policy comparisons, and no selected nominal $p$-value
+is interpreted as confirmatory evidence. An immutable pre-outcome analysis
+registration is not documented. Raw evaluated responses are unavailable
+for the Llama study and the earlier incomplete series, so question-level
+bootstrap intervals and independent rejudging are not claimed for those
+conditions. The available Qwen3-4B audited responses are independently
+rejudged in Section~\ref{app:qwen4b-four-round}; its reported intervals
+nevertheless use the same block-level definition.
+
+Across the three models, the descriptive 95\% intervals include zero for
+all four-round endpoint accuracy contrasts (both $S-R$ and same-arm audit
+changes), primary one-step ID accuracy contrasts, and paired one-step
+reference projections. This does not establish equivalence of the arms
+or policies. Target-incidence and secondary OOD contrasts are reported
+individually in the following subsections.
+
+\subsection{Llama-3.2-3B: four-round graph replication}
+\label{app:llama-four-round}
+Both policies comprise five paired blocks and four training rounds.
+The Llama-3.2-3B-Instruct conditions share round-one candidate pools,
+task datasets, and initial adapter parameters. Each arm resumes its own
+previous LoRA checkpoint in later rounds, with fresh AdamW state.
+Training uses bfloat16, rank 8, $\alpha=16$, zero dropout,
+\texttt{q\_proj}/\texttt{v\_proj}, one epoch, learning rate
+$2\times10^{-4}$, zero weight decay, microbatch 2, and effective batch 4.
+Each round's 2,048 prompts yield eight responses per prompt at temperature
+$0.6$ and top-$p=0.9$, with a 2,048-new-token cap, 4,096-token sequence
+limit, and repetition stopping (span 128, maximum period 32).
+Pool seeds are 0--4, with separate training and subsequent generation
+seeds for each block and round. Later responses come from each arm's
+preceding checkpoint and are not jointly rate-matched.
+The initial LoRA adapter has zero $B$ matrices, so its predictions coincide
+with the untrained base. The separate reference-split gradient $h$ stays
+fixed throughout training, rather than being refreshed each round.
+
+\input{h100_matching_table}
+\input{llama_four_round_endpoint_table}
+
+Table~\ref{tab:h100-rounds} includes every completed round; the base
+is displayed once per split. Table~\ref{tab:h100-blocks} retains all
+five endpoint blocks. The original unaudited, audited, and joint comparison
+plots are included unchanged in
+Figures~\ref{fig:llama-raw-unaudited}--\ref{fig:llama-raw-comparison-difficulty},
+including both ID/OOD difficulty breakdowns. Their round-zero zero-width
+bars are a plotting convention for
+the common base, not a precision claim from five independent fits.
+Figure~\ref{fig:graph-four-round}(a--b) is a compact vector replot of the same validated
+accuracy summaries; no curves were smoothed or observations removed.
+
+The completed study does not exhibit opposite overall learning directions:
+both selection arms improve on both splits.
+Auditing's mean endpoint accuracy improves, especially ID $S$. However, the
+audited OOD $S$ target-error rate is $0.120$, compared with $0.118$
+without auditing; target-error suppression is not uniform across splits.
+These findings constrain the empirical interpretation of the population
+example rather than verifying a universal ordering of verifiers.
+
+Format-error incidence also declines from base $0.014$ ID and $0.023$
+OOD. Round-four ID fractions are $0.0007/0.0012$ for unaudited $R/S$
+and $0.0015/0.0008$ with auditing; OOD fractions are $0.0022/0.0020$
+and $0.0048/0.0034$, respectively. These descriptive means remain in
+the supplementary measurements and do not imply an additional significance claim.
+
+\input{h100_rounds_table}
+\input{h100_blocks_table}
+
+\paragraph{Auditing composition and measured parameter changes.}
+Table~\ref{tab:audit-composition} records the endpoint training composition
+and cumulative effort; Table~\ref{tab:h100-dynamics} gives every round's
+training diagnostics. The allocator uses difficulty strata, previous
+correctness queries, and reliability weights, not reference-gradient
+influence estimates. Correctness-only queries remove queried errors but
+leave unqueried errors in the selected rows; weights can also set retained
+rows to zero. Thus $K'$ and $n^+$ differ. ESS is reported in the audit
+summaries, but raw weight vectors are unavailable, so
+its value is not independently recomputed from those vectors here.
+The actual cumulative steps average 54.2 for audited $R$ and 55.0 for
+audited $S$, versus 64 in each unaudited arm. An accuracy change under
+this combined intervention is not attributable solely to auditing labels
+at fixed optimizer effort or fixed effective sample size.
+
+The reported $h^T\Delta\theta_t$ is this round's projection against the
+common initial reference gradient. It is neither the refreshed local
+gradient nor a certified first-order expansion of task risk. The norms
+in Table~\ref{tab:h100-dynamics} cannot be summed to obtain
+$\|\theta_4-\theta_0\|_2$. Both initial-round graph projections are
+negative, so the empirical direction pattern differs from the theoretical
+construction's opposite initial signs. Training losses are also not
+held-out task error or directly comparable equal-weight objectives.
+
+\input{h100_dynamics_table}
+\input{llama_four_round_audit_contrast_table}
+
+Table~\ref{tab:h100-tpr} reports the round-specific pool denominators,
+pre-audit TPRs, and retained and positive-weight TPRs, following
+Section~\ref{app:roundwise-tpr}. All 48 correct rows survive audit deletion;
+reliability weights can nevertheless reduce positive-weight coverage.
+The trajectory, block, and audit tables precede the original aggregate and
+difficulty-stratified figures, as in Section~\ref{app:qwen-four-round}.
+\input{h100_tpr_table}
+\input{llama_four_round_raw_figures}
+
+\subsection{Shared audit and diagnostic conventions}
+The finite-budget comparisons report correctness queries separately from
+matching and evaluation labels. Retained rows, positive-weight rows, and
+ESS measure different aspects of the training distribution; none alone
+fixes optimizer effort. Within-policy $S-R$ contrasts and same-arm
+audited-minus-unaudited changes answer different questions and are reported
+separately for each model. All projections use a fixed initial reference
+gradient and are surrogate diagnostics, not certificates of held-out
+improvement. The population theorem analyzes a different auditing policy
+and provides no direct guarantee for these adaptive finite-budget runs.
+
+\subsection{Cross-task feasibility}
+Table~\ref{tab:h100-feasibility} reports every block's round-one
+pool statistics and eligible error-role prompts. Graph has exact-length
+feasibility at $K=64$. The two arithmetic configurations deliberately
+disable response-length matching; their counterfactual checks
+fail exact-length matching at every $K$ in the ladder. This is a reported
+protocol difference, not a post-hoc claim of exact-length arithmetic matching.
+Raw-pool correctness/target counts in this table are distinct from
+Table~\ref{tab:matching}'s eligible-pool rate denominators.
+The added Qwen3-4B rows use independently rejudged original pools, with
+exact-length error-role eligibility taken from matching certificates.
+The arithmetic reference responses are bare canonical
+integers (2--4 supervised tokens), whereas prompts request worked solutions
+ending in \texttt{Answer: N}; projections can therefore reflect format changes.
+The completed one-step graph outcomes and diagnostics are reported in
+Tables~\ref{tab:one-step-heldout} and~\ref{tab:one-step-diagnostics}.
+
+\input{h100_feasibility_table}
+
+\subsection{Validation scope}
+We independently reconstruct numerical summaries and figures from the
+saved count and scalar records. The checks cover experiment completion,
+shared initial pools and adapters, round-one matching constraints and
+acceptance rates, checkpoint error counts and difficulty aggregation,
+evaluation-protocol consistency, query and optimizer-step accounting,
+and agreement with the plotting summaries. Overlapping Llama held-out
+records agree across the initial and extended graph studies.
+For the initial series, these checks do not independently rejudge responses,
+reload checkpoints, or reconstruct unavailable gradient tensors and weights.
+Qwen3-4B validation additionally rejudges original pools and audited held-out
+answers, as detailed in Section~\ref{app:qwen4b-four-round}.
+
+\subsection{Roundwise pre- and post-audit true-positive rates}
+\label{app:roundwise-tpr}
+Table~\ref{tab:h100-tpr} reports all four rounds of the completed graph
+comparison. For each block, condition, arm, and round, $N^+$ counts correct
+responses in that round's original pool after excluding truncated responses.
+The pre-audit, retained, and positive-weight rates are
+\[
+ \mathrm{TPR}_{\rm pre}=\frac{48}{N^+},\qquad
+ \mathrm{TPR}_{\rm ret}=\frac{C'}{N^+},\qquad
+ \mathrm{TPR}_{w>0}=\frac{C'_{w>0}}{N^+},
+\]
+where $C'$ counts retained correct responses and $C'_{w>0}$ counts those
+with positive training weight, irrespective of its magnitude. Auditing
+keeps the same denominator.
+All 40 audited arm-rounds retain the 48 selected correct responses, so
+$\mathrm{TPR}_{\rm ret}=\mathrm{TPR}_{\rm pre}$; reliability weighting can
+nevertheless reduce $\mathrm{TPR}_{w>0}$. In unaudited runs, unit weights
+make selection TPR equal to positive-weight TPR.
+
+Later pools come from each arm's preceding checkpoint, so their $N^+$
+and TPRs need not agree across arms or conditions. With the correct quota
+fixed at 48, a larger correct pool lowers selection TPR without implying
+lower model accuracy. These rates are distinct from subset precision and
+held-out Pass@1. We check block-level numerators and denominators for
+80 completed arm-rounds and 40 audit reports. This establishes consistency
+of the saved counts, not independent rejudging of unavailable raw responses.
+
+The Llama rates are collected with its other four-round results in
+Table~\ref{tab:h100-tpr}; Qwen rates appear in
+Tables~\ref{tab:qwen-audit} and~\ref{tab:qwen4b-audit}.
+\input{graph_extensions_appendix}

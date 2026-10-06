@@ -1,0 +1,83 @@
+{
+  "schema": 1,
+  "created_utc": "2026-10-03T16:25:50.652769+00:00",
+  "purpose": "Paired audited input export for the existing 5090 experiment",
+  "model": "Qwen/Qwen3-4B",
+  "revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+  "first_pool_source_commit": "a6d1a4ef6f4873a9a6553633842b047330b0a271",
+  "execution_source_commit": "f1fd1f8c7bf479a3ca8610240f68d204758d3391",
+  "execution_source_hash": "c6f0d76f010ea3a4b0079c7373403c2840b43c05a70467f02cdf9e69f80ea130",
+  "first_pools_use_new_repetition_rule": false,
+  "all_latest_protocol": false,
+  "first_pool_generation": {
+    "batch_size": 16,
+    "candidates": 8,
+    "max_new_tokens": 2048,
+    "max_sequence_length": 4096,
+    "prompts_per_pool": null,
+    "temperature": 1.3,
+    "top_k": null,
+    "top_p": 1.0
+  },
+  "boundary": {
+    "block": "b01",
+    "round": 3
+  },
+  "conditions": [
+    "unaudited",
+    "audited B16"
+  ],
+  "blocks": [
+    "b00",
+    "b01",
+    "b02",
+    "b03",
+    "b04"
+  ],
+  "arms": [
+    "R",
+    "S"
+  ],
+  "rounds": 4,
+  "profiles": {
+    "b00": {
+      "1": "legacy",
+      "2": "legacy",
+      "3": "legacy",
+      "4": "legacy"
+    },
+    "b01": {
+      "1": "legacy",
+      "2": "legacy",
+      "3": "legacy",
+      "4": "new"
+    },
+    "b02": {
+      "1": "new",
+      "2": "new",
+      "3": "new",
+      "4": "new"
+    },
+    "b03": {
+      "1": "new",
+      "2": "new",
+      "3": "new",
+      "4": "new"
+    },
+    "b04": {
+      "1": "new",
+      "2": "new",
+      "3": "new",
+      "4": "new"
+    }
+  },
+  "first_pool_rule": "All blocks retain their original legacy first pool even when their training profile is new",
+  "adapter_parameter_hash": "81edfb8956d6f27b713dc9f5d33e40c750e355084104a8327af77428b35f47fe",
+  "data_manifest_sha256": "344e63413361cca2bfcf5d4f570ff02fc8496a44ed52d9248360af37769afc2b",
+  "payload_exclusions": [
+    "8GB base model weights",
+    "trained unaudited checkpoints",
+    "later-round pools"
+  ],
+  "ownership_note": "Export does not change or transfer ownership of the existing 5090 audited queue"
+}

@@ -1,0 +1,37 @@
+{
+  "counts": {
+    "calibration": 500,
+    "dev": 512,
+    "eval_id": 2000,
+    "eval_ood": 1000,
+    "gradient_reference": 64,
+    "train_001": 2048,
+    "train_002": 2048,
+    "train_003": 2048,
+    "train_004": 2048,
+    "train_005": 2048,
+    "train_006": 2048,
+    "train_007": 2048,
+    "train_008": 2048
+  },
+  "files": {
+    "calibration.jsonl": "9e256da2ab88ef53740ac061d98a0541e0fb30b551af58d1fdbb881fc5be687d",
+    "dev.jsonl": "70e090ede6920a4d05e7a644c9c2e3245b0165a70ddddfe7743b8d50a15c0301",
+    "eval_id.jsonl": "519b5c441119d09545796bacf3787ac5100ce09e7b18ba08defcdb007bee8ba5",
+    "eval_ood.jsonl": "65df08eaeb91e7d7a96d2a7b1cd41588049ef696eabfb5d3292502f46f8bb15e",
+    "gradient_reference.jsonl": "f105858d06287d5a995e06ea95cb7eec34d994f2ef1803c995840c2d1c957fe4",
+    "train_001.jsonl": "6ccd794c5cd42db604b2b027370eebff658838599162de9f99e094a6b4bc5780",
+    "train_002.jsonl": "2af3b02c023008877832decf0467dc2b545874c89ce3c3d23299445d8104e65f",
+    "train_003.jsonl": "14445ae18effdc5dfdc19a9738d85640f49540798a1937fc224dc15781839a79",
+    "train_004.jsonl": "aeecae7678b986174ae821b7f430c9ad9fb2f3d45fec251d8984bf370d74dcef",
+    "train_005.jsonl": "50b1a1ae9cfcd8c19d887cd8caa3a881c2c01c65a4b3fcbb4a5cf280b992938e",
+    "train_006.jsonl": "d8a975fa7c8c8a3e8ffe5b85d398075a82619e0fdaccbe838162754e3b25ccdd",
+    "train_007.jsonl": "d9458ca62429a6f72455eba48a7757fd44e869ff4b6863707f7dc54aad4a7e0e",
+    "train_008.jsonl": "46c4b90e8529f52f1033b656717c020bd4be620436580a29f82cd1ecb19cef8c"
+  },
+  "rounds": 8,
+  "seed": 2027,
+  "task": "graph",
+  "unique_instances": 20460,
+  "version": 1
+}

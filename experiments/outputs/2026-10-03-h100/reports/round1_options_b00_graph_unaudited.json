@@ -1,0 +1,92 @@
+{
+ "config": "experiments/graph_unaudited/config.json",
+ "model": "Qwen/Qwen3-1.7B",
+ "targets": [
+  "nonshortest"
+ ],
+ "config_matching": {
+  "error_fraction": 0.25,
+  "token_tolerance": 0
+ },
+ "pools": {
+  "b00": {
+   "answers": 16384,
+   "truncated": 27,
+   "correct": 0.50311279296875,
+   "target_errors": 2357,
+   "labels": {
+    "nonshortest": 2357,
+    "correct": 8243,
+    "nonedge": 5656,
+    "format": 32,
+    "endpoint": 96
+   }
+  }
+ },
+ "options": [
+  {
+   "error_fraction": 0.25,
+   "token_tolerance": null,
+   "is_config": false,
+   "feasible": true,
+   "K": 64,
+   "per_block": {
+    "b00": {
+     "prompts_with_correct": 1176,
+     "prompts_eligible_J_E": 142
+    }
+   },
+   "feasible_by_K": {
+    "64": true
+   }
+  },
+  {
+   "error_fraction": 0.25,
+   "token_tolerance": 0,
+   "is_config": true,
+   "feasible": true,
+   "K": 64,
+   "per_block": {
+    "b00": {
+     "prompts_with_correct": 1176,
+     "prompts_eligible_J_E": 27
+    }
+   },
+   "feasible_by_K": {
+    "64": true
+   }
+  },
+  {
+   "error_fraction": 0.125,
+   "token_tolerance": null,
+   "is_config": false,
+   "feasible": true,
+   "K": 64,
+   "per_block": {
+    "b00": {
+     "prompts_with_correct": 1176,
+     "prompts_eligible_J_E": 142
+    }
+   },
+   "feasible_by_K": {
+    "64": true
+   }
+  },
+  {
+   "error_fraction": 0.125,
+   "token_tolerance": 0,
+   "is_config": false,
+   "feasible": true,
+   "K": 64,
+   "per_block": {
+    "b00": {
+     "prompts_with_correct": 1176,
+     "prompts_eligible_J_E": 27
+    }
+   },
+   "feasible_by_K": {
+    "64": true
+   }
+  }
+ ]
+}

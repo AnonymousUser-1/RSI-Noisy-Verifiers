@@ -1,0 +1,14 @@
+{
+ "pools": {
+  "b00": {
+   "answers": 16384,
+   "truncated": 100,
+   "correct": 0.42352294921875,
+   "target_errors": 69
+  }
+ }
+}
+C:E fraction 0.25  tolerance None -> feasible K=64  J_E per block [54]   <- config.json
+C:E fraction 0.25  tolerance 0    -> INFEASIBLE K=None  J_E per block [1]
+C:E fraction 0.125 tolerance None -> feasible K=64  J_E per block [54]
+C:E fraction 0.125 tolerance 0    -> INFEASIBLE K=None  J_E per block [1]

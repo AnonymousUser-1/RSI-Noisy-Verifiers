@@ -1,0 +1,45 @@
+{
+  "adapter": "round_001/adapter",
+  "adapter_in": "shared_adapter",
+  "audit_groups": {
+    "arithmetic:0": {
+      "correct": 1,
+      "errors": 0,
+      "population": 7
+    },
+    "arithmetic:1": {
+      "correct": 3,
+      "errors": 1,
+      "population": 17
+    },
+    "arithmetic:2": {
+      "correct": 9,
+      "errors": 2,
+      "population": 40
+    }
+  },
+  "audit_queries": 16,
+  "block_id": "b00",
+  "branch": "S",
+  "cumulative_audit_queries": 16,
+  "examples": 61,
+  "expected_optimizer_steps": 16,
+  "round": 1,
+  "seconds": 10.319742679595947,
+  "selected_examples": 64,
+  "training": {
+    "delta_theta_norm": 0.9187570846033117,
+    "determinism": {
+      "cublas_workspace_config": ":4096:8",
+      "deterministic_algorithms": true
+    },
+    "examples": 61,
+    "h_T_delta_theta": 1.4117367598490946,
+    "h_T_delta_theta_note": "projection of this round's Delta theta on h, the reference gradient at the shared initialisation",
+    "mean_loss": 0.14242768078111112,
+    "response_tokens_per_epoch": 10739,
+    "steps": 16,
+    "trained": true,
+    "training_tokens_per_epoch": 19580
+  }
+}

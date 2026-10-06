@@ -1,0 +1,31 @@
+{
+  "answers_per_question": 1,
+  "base": {
+    "backend": "hf",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "model": "Qwen/Qwen3-4B",
+    "revision": "1cfa9a7208912126459214e8b04321603b3df60c"
+  },
+  "data_path": "/cluster2/RSI/inputs/RSI-Qwen3-4B-Graph-paired-inputs-20261004/graph",
+  "dataset_hash": "4a3af7c05cb721e19e9dbfb1d50d8c717198d664bc2c465cf386440aa687689b",
+  "decoding": {
+    "max_new_tokens": 2048,
+    "max_sequence_length": 4096,
+    "repetition_stop": {
+      "max_period": 32,
+      "span": 128
+    },
+    "temperature": 0.0,
+    "top_k": null,
+    "top_p": 1.0
+  },
+  "question_ids": "9e0804c25293e0e1fd5d06d51f4ec155053fb317bbdca3f31a6b69fc3b2b6fae",
+  "questions": 2000,
+  "round_0": "base model, no adapter (shared adapter has LoRA B = 0)",
+  "split": "eval_id",
+  "target_signatures": [
+    "nonshortest"
+  ],
+  "task": "graph"
+}

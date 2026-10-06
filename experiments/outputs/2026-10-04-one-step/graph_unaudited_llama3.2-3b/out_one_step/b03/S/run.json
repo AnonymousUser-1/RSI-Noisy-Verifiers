@@ -1,0 +1,677 @@
+{
+  "DEMO_ONLY": false,
+  "auditing": {
+    "config": {
+      "budget": 0,
+      "policy": "none",
+      "weighting": true
+    },
+    "enabled": false,
+    "matching_constraints_stage": "training",
+    "null_note": null,
+    "report": null,
+    "report_sha256": null
+  },
+  "bindings": {
+    "base_pin": {
+      "model": "meta-llama/Llama-3.2-3B-Instruct",
+      "pin_path": "/content/repo/matched-dynamics/base_pin_llama3.2-3b.json",
+      "pin_revision": "0cb88a4f764b7a12671c53f0838cd831a0843b95",
+      "pin_sha256": "af66be4ae5430e418d205a9051f062643e9735882cb5f2c4e67869f38c18dd56",
+      "resolved_revision": "0cb88a4f764b7a12671c53f0838cd831a0843b95"
+    },
+    "config_file": {
+      "path": "/content/drive/MyDrive/rsi-onestep/rsi-work/experiments/graph_unaudited_llama3.2-3b/one_step_config.json",
+      "sha256": "cbecf71f0769c8f06860dfba86ccd2e2ee63c760da8bd64d3fc8fc58792ddac6"
+    },
+    "config_hash": "40b253bd7f3b257132c7396a13f01fd3b5354f79604d3684084bb1180a7fe3b1",
+    "data": {
+      "dataset_hash": "c9908f934f86821101cc9f347e1d203ebe8a1b00737b9f66b4f08de8839b90c1",
+      "manifest_sha256": "b6f8a70f3ac6cdd6fd12072ba566df4ae5731cf6f9ba710c7cba23728bb90c5d",
+      "path": "/content/drive/MyDrive/rsi-onestep/rsi-work/data/graph"
+    },
+    "generation": {
+      "config": {
+        "batch_size": 16,
+        "candidates": 8,
+        "max_new_tokens": 2048,
+        "max_sequence_length": 4096,
+        "prompts_per_pool": null,
+        "repetition_stop": {
+          "max_period": 32,
+          "span": 128
+        },
+        "temperature": 0.6,
+        "top_k": null,
+        "top_p": 0.9
+      },
+      "reason": "this entry samples nothing; the pools are bound by sha256",
+      "used": false
+    },
+    "git_changes": [],
+    "git_commit": "a908fb7ba8a5384504c4c6108e04570b3730f628",
+    "git_dirty": false,
+    "git_reason": null,
+    "hardware": {
+      "accelerator": "NVIDIA A100-SXM4-40GB",
+      "accelerator_memory_bytes": 42405855232,
+      "accelerator_reason": null,
+      "cpu_count": 12,
+      "cuda": "13.0",
+      "machine": "x86_64",
+      "processor": "x86_64",
+      "torch": "2.11.0+cu130"
+    },
+    "matching": {
+      "K": 64,
+      "block_hash": "5d37e094862b5f44c97e9b5b3b8f5a43e5727966800141a7eb4619e4b5545a11",
+      "feasible": true,
+      "ladder": [
+        64,
+        32,
+        16
+      ],
+      "ladder_path": "matching/ladder.json",
+      "ladder_sha256": "aad16ab6c9c765d0286f2e3557bf78d3f5da43a1c0285981bd7ae9f2e13a8796",
+      "seed": 0,
+      "subsets_path": "matching/matched_subsets.json",
+      "subsets_sha256": "613fdd5ee683700e45b41a0faf21309b035ce6f1dcc5664940d7277c3bb1d22f"
+    },
+    "model": {
+      "name": "meta-llama/Llama-3.2-3B-Instruct",
+      "revision": "0cb88a4f764b7a12671c53f0838cd831a0843b95",
+      "revision_resolved": true
+    },
+    "pool": {
+      "fingerprint_reason": "bound as written and not recomputed: pool_fingerprint needs the pool's generation seed, which the meta does not record, and it hashes the source of the code that sampled the pool; the pool's sha256 is verified instead",
+      "fingerprint_recomputed": false,
+      "meta": {
+        "argv": {
+          "args": [
+            "--config",
+            "experiments/graph_unaudited_llama3.2-3b/config.json",
+            "--data",
+            "/cluster/rsi-runs/work/data/graph",
+            "--out",
+            "/cluster/rsi-runs/work/experiments/graph_unaudited_llama3.2-3b/pools/b03.jsonl",
+            "--seed",
+            "3",
+            "--split",
+            "train_001",
+            "--study-id",
+            "md-graph-unaudited-llama3.2-3b-2048x8-v01",
+            "--phase",
+            "main"
+          ],
+          "cwd": "/cluster/rsi-runs/code",
+          "executable": "/cluster/conda/envs/rsi-eval/bin/python",
+          "parsed": {
+            "backend": null,
+            "config": "experiments/graph_unaudited_llama3.2-3b/config.json",
+            "data": "/cluster/rsi-runs/work/data/graph",
+            "out": "/cluster/rsi-runs/work/experiments/graph_unaudited_llama3.2-3b/pools/b03.jsonl",
+            "phase": "main",
+            "seed": 3,
+            "split": "train_001",
+            "study_id": "md-graph-unaudited-llama3.2-3b-2048x8-v01"
+          },
+          "script": "/cluster/rsi-runs/code/sample_candidates.py"
+        },
+        "backend": "hf",
+        "base_pin": {
+          "model": "meta-llama/Llama-3.2-3B-Instruct",
+          "pin_path": "/cluster/rsi-runs/code/matched-dynamics/base_pin_llama3.2-3b.json",
+          "pin_revision": "0cb88a4f764b7a12671c53f0838cd831a0843b95",
+          "pin_sha256": "af66be4ae5430e418d205a9051f062643e9735882cb5f2c4e67869f38c18dd56",
+          "resolved_revision": "0cb88a4f764b7a12671c53f0838cd831a0843b95",
+          "status": "checked"
+        },
+        "code": {
+          "git_changes": [],
+          "git_commit": "a742f6fe76481ea9b12d21ba737f694929663fa8",
+          "git_dirty": false,
+          "git_reason": null,
+          "source_hash": "7d4d76e82d53b58024c50803a92fe15bb9e8270652343c9e5fc537673556c202"
+        },
+        "config": {
+          "audit": {
+            "budget": 0,
+            "policy": "none",
+            "weighting": true
+          },
+          "backend": "hf",
+          "device": "cuda",
+          "dtype": "bfloat16",
+          "frozen": false,
+          "generation": {
+            "batch_size": 16,
+            "candidates": 8,
+            "max_new_tokens": 2048,
+            "max_sequence_length": 4096,
+            "prompts_per_pool": null,
+            "repetition_stop": {
+              "max_period": 32,
+              "span": 128
+            },
+            "temperature": 0.6,
+            "top_k": null,
+            "top_p": 0.9
+          },
+          "matching": {
+            "error_fraction": 0.25,
+            "token_tolerance": 0
+          },
+          "model": "meta-llama/Llama-3.2-3B-Instruct",
+          "revision": "0cb88a4f764b7a12671c53f0838cd831a0843b95",
+          "rounds": 4,
+          "seed": 3,
+          "training": {
+            "batch_size": 2,
+            "effective_batch_size": 4,
+            "epochs": 1,
+            "examples": 1024,
+            "gradient_checkpointing": true,
+            "learning_rate": 0.0002,
+            "lora_alpha": 16,
+            "lora_dropout": 0.0,
+            "lora_rank": 8,
+            "target_modules": [
+              "q_proj",
+              "v_proj"
+            ]
+          },
+          "verifier": {
+            "calibration": null,
+            "fpr": 0.2,
+            "kind": "iid",
+            "model": "Qwen/Qwen3-1.7B",
+            "revision": "main",
+            "threshold": null,
+            "tpr": 0.9
+          }
+        },
+        "config_file": {
+          "path": "/cluster/rsi-runs/code/experiments/graph_unaudited_llama3.2-3b/config.json",
+          "sha256": "5bc35b20d101070da4619eb22799b7cdf12047fe00f99176ec248522628fc52b"
+        },
+        "config_hash": "b6797ff07acb8e340b29993ad99c8399c8da65a301f8363b413c25c53961c34b",
+        "data": {
+          "data_seed": 2027,
+          "dataset_hash": "c9908f934f86821101cc9f347e1d203ebe8a1b00737b9f66b4f08de8839b90c1",
+          "manifest_sha256": "b6f8a70f3ac6cdd6fd12072ba566df4ae5731cf6f9ba710c7cba23728bb90c5d",
+          "root": "/cluster/rsi-runs/work/data/graph",
+          "task": "graph",
+          "version": 1
+        },
+        "decoding": {
+          "batch_size": 16,
+          "composition": "defaults + overrides: model_defaults is the model's generation_config as loaded, overrides are the keyword arguments HFBackend.generate passes; transformers merges them inside generate(), and that merged object is not read",
+          "model_defaults": {
+            "_from_model_config": false,
+            "assistant_confidence_threshold": 0.4,
+            "assistant_early_exit": null,
+            "assistant_lookbehind": 10,
+            "bad_words_ids": null,
+            "begin_suppress_tokens": null,
+            "bos_token_id": 128000,
+            "cache_config": null,
+            "cache_implementation": null,
+            "constraints": null,
+            "decoder_start_token_id": null,
+            "disable_compile": false,
+            "diversity_penalty": 0.0,
+            "do_sample": true,
+            "dola_layers": null,
+            "early_stopping": false,
+            "encoder_no_repeat_ngram_size": 0,
+            "encoder_repetition_penalty": 1.0,
+            "eos_token_id": [
+              128001,
+              128008,
+              128009
+            ],
+            "epsilon_cutoff": 0.0,
+            "eta_cutoff": 0.0,
+            "exponential_decay_length_penalty": null,
+            "force_words_ids": null,
+            "forced_bos_token_id": null,
+            "forced_eos_token_id": null,
+            "guidance_scale": null,
+            "is_assistant": false,
+            "length_penalty": 1.0,
+            "low_memory": null,
+            "max_length": 20,
+            "max_matching_ngram_size": null,
+            "max_new_tokens": null,
+            "max_time": null,
+            "min_length": 0,
+            "min_new_tokens": null,
+            "min_p": null,
+            "no_repeat_ngram_size": 0,
+            "num_assistant_tokens": 20,
+            "num_assistant_tokens_schedule": "constant",
+            "num_beam_groups": 1,
+            "num_beams": 1,
+            "num_return_sequences": 1,
+            "output_attentions": false,
+            "output_hidden_states": false,
+            "output_logits": null,
+            "output_scores": false,
+            "pad_token_id": null,
+            "penalty_alpha": null,
+            "prefill_chunk_size": null,
+            "prompt_lookup_num_tokens": null,
+            "remove_invalid_values": false,
+            "renormalize_logits": false,
+            "repetition_penalty": 1.0,
+            "return_dict_in_generate": false,
+            "return_legacy_cache": null,
+            "sequence_bias": null,
+            "stop_strings": null,
+            "suppress_tokens": null,
+            "target_lookbehind": 10,
+            "temperature": 0.6,
+            "token_healing": false,
+            "top_k": 50,
+            "top_p": 0.9,
+            "transformers_version": "4.57.1",
+            "typical_p": 1.0,
+            "use_cache": true,
+            "watermarking_config": null
+          },
+          "not_passed": "candidates, batch_size and max_sequence_length are not passed to transformers: candidates is the rows drawn per task, batch_size the rows per generate call, and max_sequence_length refuses a prompt + max_new_tokens beyond it; an answer that reaches max_new_tokens without a stop id is kept and marked `truncated` (ROW_FIELDS)",
+          "overrides": {
+            "do_sample": true,
+            "max_new_tokens": 2048,
+            "pad_token_id": 128009,
+            "temperature": 0.6,
+            "top_k": null,
+            "top_p": 0.9
+          },
+          "prompt": {
+            "chat_template_digest": "2732d9da5568668ed22ea202bffb12f0df405439651e1275ba1f521522f92966",
+            "rule": "rsi.backends.chat_prompt_ids: the task prompt as one user turn, add_generation_prompt=True",
+            "template_kwargs": {
+              "date_string": "26 Jul 2024",
+              "enable_thinking": false
+            }
+          },
+          "seeding": "torch.manual_seed and torch.cuda.manual_seed_all once, at the start of generate(); not reset per batch or per candidate, so batch_size is part of what reproduces a pool",
+          "stop_ids": {
+            "generation_config_eos_token_id": [
+              128001,
+              128008,
+              128009
+            ],
+            "tokenizer_eos_token_id": 128009
+          },
+          "stopping": {
+            "repetition_stop": {
+              "max_period": 32,
+              "span": 128
+            },
+            "rule": "rsi.backends.repetition_stop, passed as stopping_criteria when set: a row stops once its last span generated tokens repeat with a period of at most max_period tokens; it is cut there and marked `truncated` (ROW_FIELDS)"
+          },
+          "transformers_version": "4.57.1"
+        },
+        "environment": {
+          "cuda_visible_devices": "0",
+          "packages": {
+            "accelerate": "1.15.0",
+            "matplotlib": "3.11.2",
+            "numpy": "2.4.6",
+            "peft": "0.17.1",
+            "scipy": "1.17.1",
+            "torch": "2.14.1",
+            "transformers": "4.57.1"
+          },
+          "platform": "Linux-6.12.0-124.56.1.el10_1.x86_64-x86_64-with-glibc2.39",
+          "python": "3.11.16 (main, Aug 27 2026, 14:44:21) [GCC 14.3.0]",
+          "source_hash": "7d4d76e82d53b58024c50803a92fe15bb9e8270652343c9e5fc537673556c202"
+        },
+        "fingerprint": "c985a7799488558e636edead876a3ef94d673b525661aa50d113e4e1693aa886",
+        "generation": {
+          "batch_size": 16,
+          "candidates": 8,
+          "max_new_tokens": 2048,
+          "max_sequence_length": 4096,
+          "prompts_per_pool": null,
+          "repetition_stop": {
+            "max_period": 32,
+            "span": 128
+          },
+          "temperature": 0.6,
+          "top_k": null,
+          "top_p": 0.9
+        },
+        "generation_hash": "21f0ff5972d9129629ff98fcb2edf6123ba1f9bd51252987d76ccd051dfed94c",
+        "hash": "06589434e0d0b9ce5257505db8ffc00a859e6a580a1f3fa950aac0733e2eb1f2",
+        "identity": {
+          "missing": {},
+          "phase": "main",
+          "study_id": "md-graph-unaudited-llama3.2-3b-2048x8-v01"
+        },
+        "model": "meta-llama/Llama-3.2-3B-Instruct",
+        "requested_config": {
+          "audit": {
+            "budget": 0,
+            "policy": "none",
+            "weighting": true
+          },
+          "backend": "hf",
+          "device": "cuda",
+          "dtype": "bfloat16",
+          "frozen": false,
+          "generation": {
+            "batch_size": 16,
+            "candidates": 8,
+            "max_new_tokens": 2048,
+            "max_sequence_length": 4096,
+            "prompts_per_pool": null,
+            "repetition_stop": {
+              "max_period": 32,
+              "span": 128
+            },
+            "temperature": 0.6,
+            "top_k": null,
+            "top_p": 0.9
+          },
+          "matching": {
+            "error_fraction": 0.25,
+            "token_tolerance": 0
+          },
+          "model": "meta-llama/Llama-3.2-3B-Instruct",
+          "revision": "0cb88a4f764b7a12671c53f0838cd831a0843b95",
+          "rounds": 4,
+          "seed": 3,
+          "training": {
+            "batch_size": 2,
+            "effective_batch_size": 4,
+            "epochs": 1,
+            "examples": 1024,
+            "gradient_checkpointing": true,
+            "learning_rate": 0.0002,
+            "lora_alpha": 16,
+            "lora_dropout": 0.0,
+            "lora_rank": 8,
+            "target_modules": [
+              "q_proj",
+              "v_proj"
+            ]
+          },
+          "verifier": {
+            "calibration": null,
+            "fpr": 0.2,
+            "kind": "iid",
+            "model": "Qwen/Qwen3-1.7B",
+            "revision": "main",
+            "threshold": null,
+            "tpr": 0.9
+          }
+        },
+        "revision": "0cb88a4f764b7a12671c53f0838cd831a0843b95",
+        "row_fields": {
+          "completion_tokens": "hf: the generated token ids up to and including the first stop id (generation_config.eos_token_id or tokenizer.eos_token_id, rsi/backends.py), or all of them when no stop id was generated (then `truncated` is true); mock: the number of whitespace-separated words of the response.  Neither is the supervised count len(tokenizer.encode(response, add_special_tokens=False)) + 1, which matching must recount (review note (a)).",
+          "response": "hf: tokenizer.decode(those ids, skip_special_tokens=True).strip(), with the tokenizer's clean_up_tokenization_spaces off; the ids and the unstripped text are not kept.  mock: a synthetic answer.",
+          "truncated": "hf: true when the answer was cut: no stop id within max_new_tokens (completion_tokens == max_new_tokens), or stopped earlier while repeating a block (generation.repetition_stop; completion_tokens < max_new_tokens).  Such a row is judged and kept in the pool, but no matching, selection or training uses it.  mock: always false."
+        },
+        "seed": {
+          "cli": 3,
+          "generation": 2062574004,
+          "rule": "seed_for(cli_seed, 1, 'generation')"
+        },
+        "split": {
+          "file": "train_001.jsonl",
+          "name": "train_001",
+          "prompts_sampled": 2048,
+          "rows": 2048,
+          "sha256": "ce140035041b54493a82fc50d3129064ff739adfe14c43132fdcb07821ec70d0",
+          "source": "cli"
+        }
+      },
+      "meta_path": "/content/drive/MyDrive/rsi-onestep/rsi-work/experiments/graph_unaudited_llama3.2-3b/pools_one_step/b03.jsonl.meta.json",
+      "meta_sha256": "da635a3ac66e165ba2a0b4ddc94f1a6e928e252b536c5f6bd077a28bd3b78105",
+      "path": "/content/drive/MyDrive/rsi-onestep/rsi-work/experiments/graph_unaudited_llama3.2-3b/pools_one_step/b03.jsonl",
+      "pool_id": "06589434e0d0b9ce5257505db8ffc00a859e6a580a1f3fa950aac0733e2eb1f2",
+      "rows": 16384
+    },
+    "reference_gradient": {
+      "h_json_sha256": "ed3f1e7c44723795e40267999ce9220fbd384279c18b5b3b5bec89700d8136b2",
+      "h_sha256": "852d762042dfa31155b1c78c3ad5103e1555ff3d6e9603cc6103cd74f40fbadb",
+      "path": "/content/drive/MyDrive/rsi-onestep/rsi-work/experiments/graph_unaudited_llama3.2-3b/reference_one_step",
+      "status": "used"
+    },
+    "shared_adapter": {
+      "parameter_hash": "2d57f6cb4ff8136feeb4bc0a0d5af4262d2479b6909aabe5dd4631fdf908b24f",
+      "path": "/content/drive/MyDrive/rsi-onestep/rsi-work/experiments/graph_unaudited_llama3.2-3b/shared_adapter",
+      "record_sha256": "4f61fe277df2bc533527131b651daa10b34e82c5a160850e44f3d1bc2775785e",
+      "status": "used"
+    },
+    "source_hash": "91e4f058b55c76fb4d6a85ac11f7acc633fc58cc3f1541ca0b15efa79efb4fd7",
+    "source_snapshot": null,
+    "token_counts": {
+      "detail": "hf: rsi.reference_encode.supervised_token_count with the base's tokenizer, i.e. encode(response) + EOS, the tokens each arm supervises; not the pool's generation-time completion_tokens, which differ when decoding does not round-trip",
+      "source": "supervised_token_count"
+    },
+    "tokenizer": {
+      "name": "meta-llama/Llama-3.2-3B-Instruct",
+      "revision": "0cb88a4f764b7a12671c53f0838cd831a0843b95"
+    }
+  },
+  "block_id": "b03",
+  "block_id_source": {
+    "conforming": true,
+    "from": "pool file names in --shared-pool",
+    "rule": "the pool's file name without .jsonl; hf requires exactly b00, b01, b02 or b00, b01, b02, b03, b04, mock records the names it is given (letters, digits, '_' and single '-'; not matching or source_snapshot)"
+  },
+  "branch": "S",
+  "calibration": null,
+  "config": {
+    "audit": {
+      "budget": 0,
+      "policy": "none",
+      "weighting": true
+    },
+    "backend": "hf",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "frozen": false,
+    "generation": {
+      "batch_size": 16,
+      "candidates": 8,
+      "max_new_tokens": 2048,
+      "max_sequence_length": 4096,
+      "prompts_per_pool": null,
+      "repetition_stop": {
+        "max_period": 32,
+        "span": 128
+      },
+      "temperature": 0.6,
+      "top_k": null,
+      "top_p": 0.9
+    },
+    "matching": {
+      "error_fraction": 0.25,
+      "token_tolerance": 0
+    },
+    "model": "meta-llama/Llama-3.2-3B-Instruct",
+    "revision": "0cb88a4f764b7a12671c53f0838cd831a0843b95",
+    "rounds": 1,
+    "seed": 0,
+    "training": {
+      "batch_size": 2,
+      "effective_batch_size": 64,
+      "epochs": 2,
+      "examples": 1024,
+      "gradient_checkpointing": true,
+      "learning_rate": 5e-05,
+      "lora_alpha": 16,
+      "lora_dropout": 0.0,
+      "lora_rank": 8,
+      "target_modules": [
+        "q_proj",
+        "v_proj"
+      ]
+    },
+    "verifier": {
+      "calibration": null,
+      "fpr": 0.2,
+      "kind": "iid",
+      "model": "Qwen/Qwen3-1.7B",
+      "revision": "main",
+      "threshold": null,
+      "tpr": 0.9
+    }
+  },
+  "cost_records": {
+    "path": "cost_records",
+    "scope": "one record per arm attempt (rsi/cost.py): monotonic wall seconds with GPU work settled at both ends, allocated GPU hours, memory peaks; this entry generates no responses. The round-1 pools are inputs bound by sha256: their sampling cost belongs to the run that drew them and is not counted here",
+    "status": "recorded"
+  },
+  "data_path": "/content/drive/MyDrive/rsi-onestep/rsi-work/data/graph",
+  "dataset_hash": "c9908f934f86821101cc9f347e1d203ebe8a1b00737b9f66b4f08de8839b90c1",
+  "environment": {
+    "cuda_visible_devices": "0",
+    "packages": {
+      "accelerate": "1.15.0",
+      "matplotlib": "3.10.0",
+      "numpy": "2.1.3",
+      "peft": "0.17.1",
+      "scipy": "1.16.3",
+      "torch": "2.11.0+cu130",
+      "transformers": "4.57.1"
+    },
+    "platform": "Linux-6.6.122+-x86_64-with-glibc2.39",
+    "python": "3.13.15 (main, Aug  6 2026, 11:06:22) [GCC 13.3.0]",
+    "source_hash": "91e4f058b55c76fb4d6a85ac11f7acc633fc58cc3f1541ca0b15efa79efb4fd7"
+  },
+  "evaluation": "pending",
+  "identity_missing": {},
+  "paths": "paths under --out are POSIX and relative to --out, except complete.json's adapter, which is relative to its arm directory as in rsi.experiment.run; input paths are absolute",
+  "phase": "main",
+  "requested_config": {
+    "audit": {
+      "budget": 0,
+      "policy": "none",
+      "weighting": true
+    },
+    "backend": "hf",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "frozen": false,
+    "generation": {
+      "batch_size": 16,
+      "candidates": 8,
+      "max_new_tokens": 2048,
+      "max_sequence_length": 4096,
+      "prompts_per_pool": null,
+      "repetition_stop": {
+        "max_period": 32,
+        "span": 128
+      },
+      "temperature": 0.6,
+      "top_k": null,
+      "top_p": 0.9
+    },
+    "matching": {
+      "error_fraction": 0.25,
+      "token_tolerance": 0
+    },
+    "model": "meta-llama/Llama-3.2-3B-Instruct",
+    "revision": "0cb88a4f764b7a12671c53f0838cd831a0843b95",
+    "rounds": 1,
+    "seed": 0,
+    "training": {
+      "batch_size": 2,
+      "effective_batch_size": 64,
+      "epochs": 2,
+      "examples": 1024,
+      "gradient_checkpointing": true,
+      "learning_rate": 5e-05,
+      "lora_alpha": 16,
+      "lora_dropout": 0.0,
+      "lora_rank": 8,
+      "target_modules": [
+        "q_proj",
+        "v_proj"
+      ]
+    },
+    "verifier": {
+      "calibration": null,
+      "fpr": 0.2,
+      "kind": "iid",
+      "model": "Qwen/Qwen3-1.7B",
+      "revision": "main",
+      "threshold": null,
+      "tpr": 0.9
+    }
+  },
+  "run_id": "md-graph-unaudited-llama3.2-3b-2048x8-v01-one-step--b03--S",
+  "schema_version": "rsi-run-cost/1",
+  "seed": 0,
+  "seed_derivation": {
+    "cli_seed": 0,
+    "match_preflight": {
+      "per_block": {
+        "b00": {
+          "assignment": 562277539,
+          "pool_key": "5ff387a82b5be4a32338f4fa3fa6d49d3e211242626a06c113c214a898918f38",
+          "selection": 316954003,
+          "task_order": 18536149
+        },
+        "b01": {
+          "assignment": 353285373,
+          "pool_key": "20f2d137cb08ca0c6c6cf7cb9eca98b0fdba3acc5359b0fd0e3adb8cd955851d",
+          "selection": 307244150,
+          "task_order": 3764792653
+        },
+        "b02": {
+          "assignment": 3166646365,
+          "pool_key": "f5c0a34148be4f51f6ac526722db8b6c3cc034f8e155a8d2dcec1b323579a9e4",
+          "selection": 2775494576,
+          "task_order": 1819936179
+        },
+        "b03": {
+          "assignment": 1334940263,
+          "pool_key": "02d0a6dda6daa7c89239ba3f70f80e3d4797653ef7f3be2593614ec9cd9ef630",
+          "selection": 3986821223,
+          "task_order": 1453399950
+        },
+        "b04": {
+          "assignment": 3829746009,
+          "pool_key": "f918b9f7440f632f0d030298fe1eeadde7b4116040a2ef72766cecf1893ac4b9",
+          "selection": 3927637776,
+          "task_order": 657667791
+        }
+      },
+      "rule": "rsi.matching draws from rng_for(seed, pool_key, label), i.e. random.Random(seed_for(seed, pool_key, label)), with the same --seed for every block and every K and the block's own pool_key (its candidate ids and responses), so blocks draw independently; the block id is not an input",
+      "seed": 0
+    },
+    "pool_generate": {
+      "reason": "the pools are inputs to this entry; their meta does not record the generation seed",
+      "value": null
+    },
+    "update_with_diagnostics": {
+      "rule": "--seed for every block and arm; one_step passes it to torch.manual_seed on hf; mock makes no random draws",
+      "value": 0
+    }
+  },
+  "seeds": {
+    "match_preflight": {
+      "assignment": 1334940263,
+      "pool_key": "02d0a6dda6daa7c89239ba3f70f80e3d4797653ef7f3be2593614ec9cd9ef630",
+      "seed": 0,
+      "selection": 3986821223,
+      "task_order": 1453399950
+    },
+    "update_with_diagnostics": 0
+  },
+  "study_id": "md-graph-unaudited-llama3.2-3b-2048x8-v01-one-step",
+  "task": "graph",
+  "training_rows": {
+    "examples": 64,
+    "path": "b03/S/round_001/training.jsonl",
+    "sha256": "895fda1b9af6d664fed3e9af68e6e01501f47ece9f62400aec398c31e4b7dcb8",
+    "subset": "S"
+  }
+}

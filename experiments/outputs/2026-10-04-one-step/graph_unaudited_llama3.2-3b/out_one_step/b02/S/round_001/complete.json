@@ -1,0 +1,34 @@
+{
+  "adapter": "round_001/adapter",
+  "audit_groups": {},
+  "audit_queries": 0,
+  "block_id": "b02",
+  "branch": "S",
+  "cumulative_audit_queries": 0,
+  "examples": 64,
+  "round": 1,
+  "selected_examples": 64,
+  "subset": "S",
+  "training": {
+    "branch": "S",
+    "clip_threshold": 1.0,
+    "determinism": {
+      "cublas_workspace_config": ":4096:8",
+      "deterministic_algorithms": true
+    },
+    "diagnostics": "recorded",
+    "diagnostics_path": "b02/S/round_001/diagnostics.json",
+    "examples": 64,
+    "mean_loss": 0.11620080244028941,
+    "parameter_hash": "a4050c30552ab70298deb21bba1351515b1e2d089103ba471ab3a19f6fcfe894",
+    "positive_weight_examples": 64,
+    "reason": null,
+    "seed": 0,
+    "skip_reason": null,
+    "steps": 1,
+    "trained": true,
+    "updates": 1,
+    "weight_sum": 64.0,
+    "weight_uniform": true
+  }
+}

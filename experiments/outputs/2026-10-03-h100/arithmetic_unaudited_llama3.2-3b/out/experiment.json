@@ -1,0 +1,102 @@
+{
+  "DEMO_ONLY": false,
+  "K": 64,
+  "arms": [
+    "R",
+    "S"
+  ],
+  "attempts": 1,
+  "auditing": {
+    "budget_unit": "correctness queries per arm per round",
+    "config": {
+      "budget": 0,
+      "policy": "none",
+      "weighting": true
+    },
+    "enabled": false,
+    "matching_constraints_stage": "pre_audit",
+    "steps_note": "steps_per_round is pre-audit; complete.json records actual expected steps"
+  },
+  "backend": "hf",
+  "blocks": [
+    "b00",
+    "b01",
+    "b02",
+    "b03",
+    "b04"
+  ],
+  "code": {
+    "git_commit": "a742f6fe76481ea9b12d21ba737f694929663fa8",
+    "git_dirty": false,
+    "source_hash": "7d4d76e82d53b58024c50803a92fe15bb9e8270652343c9e5fc537673556c202"
+  },
+  "completed": [
+    "b00/R/round_001",
+    "b00/S/round_001",
+    "b00/R/round_002",
+    "b00/S/round_002",
+    "b00/R/round_003",
+    "b00/S/round_003",
+    "b00/R/round_004",
+    "b00/S/round_004",
+    "b01/R/round_001",
+    "b01/S/round_001",
+    "b01/R/round_002",
+    "b01/S/round_002",
+    "b01/R/round_003",
+    "b01/S/round_003",
+    "b01/R/round_004",
+    "b01/S/round_004",
+    "b02/R/round_001",
+    "b02/S/round_001",
+    "b02/R/round_002",
+    "b02/S/round_002",
+    "b02/R/round_003",
+    "b02/S/round_003",
+    "b02/R/round_004",
+    "b02/S/round_004",
+    "b03/R/round_001",
+    "b03/S/round_001"
+  ],
+  "exit_code": null,
+  "identity": {
+    "config_hash": "aae2c9e5956f2de617db9525bf966f5641e10d822e0127711bcf6ae577f794a4",
+    "dataset_hash": "5b5be55fb005b31d3fe4d3764a9537e40382eb30783782c41c977d0e7e593d1d",
+    "h_sha256": "f395d52364380edfb555b4c3f45fcdd13f125d20701171825d8e659b6ab058cd",
+    "later_prompts": null,
+    "later_samples": 8,
+    "phase": "main",
+    "pools": {
+      "b00": "10b70a09c62fa0ca4b6c6158d8fd83ef5e2e2bc827bf9af2807373540f04453d",
+      "b01": "ab83f22add9b59fc564a2f4b978bb35e2fd99f9b443d4d3d8b0becbba9a74ac4",
+      "b02": "4d477a7b86fa579652f6b4615ca182b7e38f7ebae2b1e864b8509a00057ed6e6",
+      "b03": "5dd6e619c9bec75ee8bdad3e571ebf3e2cdd2e842ab1c2d2cc22e1200310e34f",
+      "b04": "10184ab2c4df753ac61e9dfd44d117c00d5252c12bc8f7f1696325e1464f9208"
+    },
+    "seed": 0,
+    "shared_adapter": "2d57f6cb4ff8136feeb4bc0a0d5af4262d2479b6909aabe5dd4631fdf908b24f",
+    "source_hash": "7d4d76e82d53b58024c50803a92fe15bb9e8270652343c9e5fc537673556c202",
+    "study_id": "md-arithmetic-unaudited-llama3.2-3b-2048x8-v01"
+  },
+  "later_pool": {
+    "prompt_rule": "the first prompts_per_pool prompts of train_00t (null: all), the same for both arms",
+    "prompts": null,
+    "samples": 8,
+    "source": "config generation.prompts_per_pool and generation.candidates"
+  },
+  "matching_settings": {
+    "error_fraction": 0.25,
+    "token_tolerance": null
+  },
+  "phase": "main",
+  "rounds": 4,
+  "schema_version": "rsi-iterative/1",
+  "status": "running",
+  "steps_per_round": 16,
+  "stopped": [],
+  "study_id": "md-arithmetic-unaudited-llama3.2-3b-2048x8-v01",
+  "target_signatures": [
+    "ignore_parentheses"
+  ],
+  "task": "arithmetic"
+}

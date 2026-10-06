@@ -1,0 +1,61 @@
+\section*{Checklist}
+
+\begin{enumerate}
+
+  \item For all models and algorithms presented, check if you include:
+  \begin{enumerate}
+    \item A clear description of the mathematical setting, assumptions, algorithm, and/or model. [Yes]
+    Sections~\ref{sec:formulation}--\ref{sec:methods} define the setting and assumptions; Appendices~\ref{app:matching} and~\ref{app:budgeted-auditing} give algorithm details.
+    \item An analysis of the properties and complexity (time, space, sample size) of any algorithm. [No]
+    Population properties are proved, but formal time/space and finite-sample complexity bounds for the empirical algorithms are absent.
+    \item (Optional) Anonymized source code, with specification of all dependencies, including external libraries. [No]
+    The anonymous repository linked in the availability section does not yet contain the source code or dependency specifications; Appendix~\ref{app:code} describes the implementation and validation.
+  \end{enumerate}
+
+  \item For any theoretical claim, check if you include:
+  \begin{enumerate}
+    \item Statements of the full set of assumptions of all theoretical results. [Yes]
+    Full assumptions appear with the results in Sections~\ref{sec:formulation}--\ref{sec:methods}.
+    \item Complete proofs of all theoretical results. [Yes]
+    Appendix~\ref{app:proof} proves all formal results, including the auxiliary flow lemmas.
+    \item Clear explanations of any assumptions. [Yes]
+    Sections~\ref{sec:formulation}, \ref{sec:methods}, and~\ref{sec:discussion} explain stopped-gradient, population, and oracle assumptions and their empirical limitations.
+  \end{enumerate}
+
+  \item For all figures and tables that present empirical results, check if you include:
+  \begin{enumerate}
+    \item The code, data, and instructions needed to reproduce the main experimental results (either in the supplemental material or as a URL). [No]
+    The anonymous repository is linked in the availability section; the code, data, and reproduction instructions have not yet been uploaded.
+    \item All the training details (e.g., data splits, hyperparameters, how they were chosen). [Yes]
+    Section~\ref{sec:experiments} and Appendices~\ref{app:matching}--\ref{app:evaluation} describe data splits, generation settings, matching constraints, and optimizer choices.
+    \item A clear definition of the specific measure or statistics and error bars (e.g., with respect to the random seed after running experiments multiple times). [Yes]
+    Appendix~\ref{app:h100-results} defines greedy Pass@1/error and pointwise five-block $t$ intervals; question-level bootstrap validation remains unavailable.
+    \item A description of the computing infrastructure used. [Yes]
+    Appendix~\ref{app:cost} describes the hardware, software frameworks, and measured runtime subtotal.
+  \end{enumerate}
+
+  \item If you are using existing assets (e.g., code, data, models) or curating/releasing new assets, check if you include:
+  \begin{enumerate}
+    \item Citations of the creator If your work uses existing assets. [Yes]
+    We cite the Qwen3 and Llama models, LoRA, AdamW, and the training libraries PyTorch, Transformers, and PEFT in Sections~\ref{sec:lora}--\ref{sec:experiments} and Appendix~\ref{app:cost}.
+    \item The license information of the assets, if applicable. [Yes]
+    Appendix~\ref{app:cost} identifies the model and software licenses; the task datasets are generated procedurally.
+    \item New assets either in the supplemental material or as a URL, if applicable. [No]
+    The availability section provides the anonymous repository URL; the study assets have not yet been uploaded.
+    \item Information about consent from data providers/curators. [Not Applicable]
+    Study datasets are procedural graphs and arithmetic expressions (Appendix~\ref{app:tasks}), with no participant-provided data.
+    \item Discussion of sensible content if applicable, e.g., personally identifiable information or offensive content. [Not Applicable]
+    Study datasets contain synthetic graphs and integer expressions, not personal records or a sensitive-content dataset.
+  \end{enumerate}
+
+  \item If you used crowdsourcing or conducted research with human subjects, check if you include:
+  \begin{enumerate}
+    \item The full text of instructions given to participants and screenshots. [Not Applicable]
+    The study does not use crowdsourcing or human participants.
+    \item Descriptions of potential participant risks, with links to Institutional Review Board (IRB) approvals if applicable. [Not Applicable]
+    The study does not involve human-subject research.
+    \item The estimated hourly wage paid to participants and the total amount spent on participant compensation. [Not Applicable]
+    No participants are recruited or compensated.
+  \end{enumerate}
+
+\end{enumerate}

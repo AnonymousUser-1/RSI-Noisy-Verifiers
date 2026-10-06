@@ -1,0 +1,789 @@
+{
+  "binding": {
+    "config": {
+      "budget": 16,
+      "policy": "adaptive",
+      "weighting": true
+    },
+    "pool_counts": {
+      "N_minus": 6207,
+      "N_plus": 10173
+    },
+    "previous_hash": "c6c8baaea9654940757bd86a7824020ad92ab8d1ded7f44fc26b40cef6883cb8",
+    "round": 4,
+    "seed": 741988271,
+    "selection_hash": "5dfae9d4cbb1cc8b2df839182ce2916335fcf05c50669eff9e017830d0f88bc0",
+    "tasks_hash": "18d5a77b55fc6659a87c427fed8d5610390d1160445cbd855afc315c9e3dc1de"
+  },
+  "payload_hash": "10d13d4bdd40acc617add1241a4c3d52da726bb001b46a10bb9a190df30aced5",
+  "report": {
+    "after": {
+      "C": 48,
+      "E": 12,
+      "K": 60,
+      "N_minus": 6207,
+      "N_plus": 10173,
+      "effective_sample_size": 45.862716231137284,
+      "final_FPR": 0.0019333011116481392,
+      "final_TPR": 0.004718372161604247,
+      "positive_weight_FPR": 0.0019333011116481392,
+      "positive_weight_TPR": 0.004718372161604247,
+      "positive_weight_correct": 48,
+      "positive_weight_errors": 12,
+      "positive_weight_examples": 60,
+      "precision": 0.8,
+      "weight_sum": 29.416666666666668,
+      "weights_all_one": false,
+      "yield": 0.003663003663003663
+    },
+    "available_examples": 64,
+    "before": {
+      "C": 48,
+      "E": 16,
+      "K": 64,
+      "N_minus": 6207,
+      "N_plus": 10173,
+      "effective_sample_size": 64.0,
+      "final_FPR": 0.0025777348155308524,
+      "final_TPR": 0.004718372161604247,
+      "positive_weight_FPR": 0.0025777348155308524,
+      "positive_weight_TPR": 0.004718372161604247,
+      "positive_weight_correct": 48,
+      "positive_weight_errors": 16,
+      "positive_weight_examples": 64,
+      "precision": 0.75,
+      "weight_sum": 64.0,
+      "weights_all_one": true,
+      "yield": 0.003907203907203907
+    },
+    "enabled": true,
+    "estimated_error": 0.25,
+    "groups": {
+      "graph:0": {
+        "correct": 4,
+        "errors": 2,
+        "population": 23
+      },
+      "graph:1": {
+        "correct": 3,
+        "errors": 1,
+        "population": 18
+      },
+      "graph:2": {
+        "correct": 5,
+        "errors": 1,
+        "population": 23
+      }
+    },
+    "labels": [
+      {
+        "candidate_id": "2bbbc6e0510b8b31e4145d1ae808a26830b373a8196204d4ab310270d2c478e8",
+        "correct": true,
+        "inclusion_probability": 0.2608695652173913,
+        "stratum": "graph:0"
+      },
+      {
+        "candidate_id": "c6ab5b40fdbaba4cdcd913a35f7b1a06c9f19829cb51d959fe82c9875751674d",
+        "correct": true,
+        "inclusion_probability": 0.2608695652173913,
+        "stratum": "graph:0"
+      },
+      {
+        "candidate_id": "8b23cdaa08ea3716c7b0fff07dbd72662bf2072e5a9192a9964b317b8f972d39",
+        "correct": false,
+        "inclusion_probability": 0.2608695652173913,
+        "stratum": "graph:0"
+      },
+      {
+        "candidate_id": "7a48846ee0ca1cfc502ca92eb52883864eb24f3f0edaf04f2776181c1d8a0b92",
+        "correct": true,
+        "inclusion_probability": 0.2608695652173913,
+        "stratum": "graph:0"
+      },
+      {
+        "candidate_id": "c3de85a8d1401d18d6a6833bb8c811941f59e6030c29c0c510cfd64ae78e14d2",
+        "correct": false,
+        "inclusion_probability": 0.2608695652173913,
+        "stratum": "graph:0"
+      },
+      {
+        "candidate_id": "b5b39b92a48c1e6f5a07145142363d3d9d6ddff295b9155474f81c3c001987ad",
+        "correct": true,
+        "inclusion_probability": 0.2608695652173913,
+        "stratum": "graph:0"
+      },
+      {
+        "candidate_id": "ef1043cc180bcd2b2ec944d5dc5ab4635792b59707d304b9ff384d085353710a",
+        "correct": true,
+        "inclusion_probability": 0.2222222222222222,
+        "stratum": "graph:1"
+      },
+      {
+        "candidate_id": "3b15cf5f3eef90a58cc4483f99d9b4e7fb38196dad6dd0e5be03997eedc2534a",
+        "correct": true,
+        "inclusion_probability": 0.2222222222222222,
+        "stratum": "graph:1"
+      },
+      {
+        "candidate_id": "666deeda22d672695b941502c3b1ea618424ff2ceabe6b6d4af8118e09cc21c8",
+        "correct": false,
+        "inclusion_probability": 0.2222222222222222,
+        "stratum": "graph:1"
+      },
+      {
+        "candidate_id": "795133e6dd1424fa54bfddf2a040b31d35bb1cb9d53d27c60fe8105ee8c537fa",
+        "correct": true,
+        "inclusion_probability": 0.2222222222222222,
+        "stratum": "graph:1"
+      },
+      {
+        "candidate_id": "0964d239ae0150928af87be84f84630cd766b6bfd8dec969b851ecdc5611f41a",
+        "correct": true,
+        "inclusion_probability": 0.2608695652173913,
+        "stratum": "graph:2"
+      },
+      {
+        "candidate_id": "4e4dabb3857491df6693dfc2bd644ea9ef404a9d94664c2c18821a92ac9ee79f",
+        "correct": false,
+        "inclusion_probability": 0.2608695652173913,
+        "stratum": "graph:2"
+      },
+      {
+        "candidate_id": "7012b92d5f2243b3575fa45c9945400aab623919c23ea40b2b2e0c80886cbd37",
+        "correct": true,
+        "inclusion_probability": 0.2608695652173913,
+        "stratum": "graph:2"
+      },
+      {
+        "candidate_id": "713af341ce7ce3ff62f08bb0fe766f97aad9c2cca079db4b8a6b0e5804d50228",
+        "correct": true,
+        "inclusion_probability": 0.2608695652173913,
+        "stratum": "graph:2"
+      },
+      {
+        "candidate_id": "e415c7758934285cce7cb512a4c71d7caa78e6e7e560ba83b13ef08737a3d362",
+        "correct": true,
+        "inclusion_probability": 0.2608695652173913,
+        "stratum": "graph:2"
+      },
+      {
+        "candidate_id": "bc017e21dbd170107c1037ddb9ab150b980b19cab81e5350a5cd982241f35cc6",
+        "correct": true,
+        "inclusion_probability": 0.2608695652173913,
+        "stratum": "graph:2"
+      }
+    ],
+    "matching_constraints_stage": "pre_audit",
+    "oracle_access": "correctness-only trusted audit queries; no reference solutions",
+    "policy": "adaptive",
+    "post_audit_matching_guaranteed": false,
+    "queries": 16,
+    "requested_budget": 16,
+    "reused": false,
+    "round": 4,
+    "seed": 741988271
+  },
+  "rows": [
+    {
+      "correct": true,
+      "error": "correct",
+      "id": "b059d18d24b618dc57c7fdd7697f79cb5363c06135776ee1049eae59f933b36f",
+      "prompt": "Find a shortest path in this undirected, unweighted graph. Return ONLY a JSON list of node names, including both endpoints. Do not explain, do not show your work, and do not use code fences: your entire reply must be the JSON list, for example [\"v1\", \"v7\", \"v3\"].\nExample\nNeighbours of each node:\nv1: v2, v3\nv2: v1, v3\nv3: v1, v2, v4\nv4: v3\nFrom v1 to v4.\nReply: [\"v1\", \"v3\", \"v4\"]\n\nNow solve\nNeighbours of each node:\nv126: v151, v805\nv151: v126, v287, v384\nv287: v151, v384\nv384: v151, v287, v983\nv805: v126\nv983: v384\nFrom v384 to v287.",
+      "response": "[\"v384\", \"v287\"]",
+      "task_id": "012996212da94c7c25f154c2b1447022dadf637eee939cbc19ca0a9cd420d6f8",
+      "tokens": 13,
+      "weight": 0.25
+    },
+    {
+      "correct": true,
+      "error": "correct",
+      "id": "b44d831e3ea3025b1586df25fd51868c830617f6995e435f51973908b71939d6",
+      "prompt": "Find a shortest path in this undirected, unweighted graph. Return ONLY a JSON list of node names, including both endpoints. Do not explain, do not show your work, and do not use code fences: your entire reply must be the JSON list, for example [\"v1\", \"v7\", \"v3\"].\nExample\nNeighbours of each node:\nv1: v2, v3\nv2: v1, v3\nv3: v1, v2, v4\nv4: v3\nFrom v1 to v4.\nReply: [\"v1\", \"v3\", \"v4\"]\n\nNow solve\nNeighbours of each node:\nv132: v510, v658\nv172: v845, v990\nv184: v510, v990\nv265: v510, v597, v658, v845, v990\nv510: v132, v184, v265, v597, v658, v845\nv597: v265, v510, v990\nv658: v132, v265, v510\nv845: v172, v265, v510\nv990: v172, v184, v265, v597\nFrom v172 to v990.",
+      "response": "[\"v172\", \"v990\"]",
+      "task_id": "0a0a6c0c6ae329e3ad97f247d14c306c6d99a3652db247492f9df1f45794dce2",
+      "tokens": 13,
+      "weight": 0.25
+    },
+    {
+      "correct": true,
+      "error": "correct",
+      "id": "25104adfd644e16fa24e73310c1df15d4bc8603ff75ac326a5a24996a3fc4ed4",
+      "prompt": "Find a shortest path in this undirected, unweighted graph. Return ONLY a JSON list of node names, including both endpoints. Do not explain, do not show your work, and do not use code fences: your entire reply must be the JSON list, for example [\"v1\", \"v7\", \"v3\"].\nExample\nNeighbours of each node:\nv1: v2, v3\nv2: v1, v3\nv3: v1, v2, v4\nv4: v3\nFrom v1 to v4.\nReply: [\"v1\", \"v3\", \"v4\"]\n\nNow solve\nNeighbours of each node:\nv102: v253, v391, v848, v923\nv15: v190, v549, v848\nv190: v15, v391, v848, v923\nv253: v102\nv391: v102, v190, v549, v848\nv549: v15, v391, v923\nv798: v923\nv848: v102, v15, v190, v391\nv923: v102, v190, v549, v798\nFrom v15 to v848.",
+      "response": "[\"v15\", \"v848\"]",
+      "task_id": "1c8dfd670b44a9a63182009912f919ee914aed323e49d0710f844a66c99a2a2d",
+      "tokens": 12,
+      "weight": 0.33333333333333337
+    },
+    {
+      "correct": true,
+      "error": "correct",
+      "id": "76c17068f2dcd4a810909175395d461e23a0ef77936f06913489ae3888d6b0cd",
+      "prompt": "Find a shortest path in this undirected, unweighted graph. Return ONLY a JSON list of node names, including both endpoints. Do not explain, do not show your work, and do not use code fences: your entire reply must be the JSON list, for example [\"v1\", \"v7\", \"v3\"].\nExample\nNeighbours of each node:\nv1: v2, v3\nv2: v1, v3\nv3: v1, v2, v4\nv4: v3\nFrom v1 to v4.\nReply: [\"v1\", \"v3\", \"v4\"]\n\nNow solve\nNeighbours of each node:\nv127: v424, v723, v97\nv304: v424, v532, v723\nv308: v424, v723, v97\nv413: v97\nv424: v127, v304, v308, v723, v97\nv532: v304, v723\nv723: v127, v304, v308, v424, v532, v97\nv97: v127, v308, v413, v424, v723\nFrom v308 to v424.",
+      "response": "[\"v308\", \"v424\"]",
+      "task_id": "1f3ef410e56ad7eda9331b9779601e3b053f13961f31de842f3be8842e7ce6ab",
+      "tokens": 13,
+      "weight": 0.25
+    },
+    {
+      "correct": true,
+      "error": "correct",
+      "id": "cc615eb333e300fb45936c35977eea449d6dd7d2ffed5d10248e0fb095c3db6e",
+      "prompt": "Find a shortest path in this undirected, unweighted graph. Return ONLY a JSON list of node names, including both endpoints. Do not explain, do not show your work, and do not use code fences: your entire reply must be the JSON list, for example [\"v1\", \"v7\", \"v3\"].\nExample\nNeighbours of each node:\nv1: v2, v3\nv2: v1, v3\nv3: v1, v2, v4\nv4: v3\nFrom v1 to v4.\nReply: [\"v1\", \"v3\", \"v4\"]\n\nNow solve\nNeighbours of each node:\nv219: v867\nv224: v866\nv477: v614, v866, v867, v938\nv600: v845\nv614: v477, v867, v938\nv782: v866\nv845: v600, v867\nv866: v224, v477, v782, v9\nv867: v219, v477, v614, v845, v938\nv9: v866, v938\nv938: v477, v614, v867, v9\nFrom v867 to v866.",
+      "response": "[\"v867\", \"v477\", \"v866\"]",
+      "task_id": "21e991580bb912ffe278e1e514dee5c8185f411a09b74f76878f1230e0655bd1",
+      "tokens": 19,
+      "weight": 0.5
+    },
+    {
+      "correct": true,
+      "error": "correct",
+      "id": "862d3b0b3a53c4dffb8ec51b2618ce00776df3a17a18feafda957cf0ba5d8c55",
+      "prompt": "Find a shortest path in this undirected, unweighted graph. Return ONLY a JSON list of node names, including both endpoints. Do not explain, do not show your work, and do not use code fences: your entire reply must be the JSON list, for example [\"v1\", \"v7\", \"v3\"].\nExample\nNeighbours of each node:\nv1: v2, v3\nv2: v1, v3\nv3: v1, v2, v4\nv4: v3\nFrom v1 to v4.\nReply: [\"v1\", \"v3\", \"v4\"]\n\nNow solve\nNeighbours of each node:\nv124: v891, v986\nv126: v227, v51, v891, v90, v986\nv227: v126, v51, v597\nv256: v51, v597, v891\nv45: v51, v597, v90, v986\nv51: v126, v227, v256, v45, v597, v891, v986\nv597: v227, v256, v45, v51, v90, v986\nv891: v124, v126, v256, v51\nv90: v126, v45, v597\nv986: v124, v126, v45, v51, v597\nFrom v986 to v51.",
+      "response": "[\"v986\", \"v51\"]",
+      "task_id": "2714965046c68c8ece10704d173c1dd897717780927bf591d0a2d38216ddf142",
+      "tokens": 12,
+      "weight": 0.25
+    },
+    {
+      "correct": false,
+      "error": "nonshortest",
+      "id": "0cc6788edb4ed894d4dbca31a2998503777a0f9ffbc0321eb86b02eeba7f418e",
+      "prompt": "Find a shortest path in this undirected, unweighted graph. Return ONLY a JSON list of node names, including both endpoints. Do not explain, do not show your work, and do not use code fences: your entire reply must be the JSON list, for example [\"v1\", \"v7\", \"v3\"].\nExample\nNeighbours of each node:\nv1: v2, v3\nv2: v1, v3\nv3: v1, v2, v4\nv4: v3\nFrom v1 to v4.\nReply: [\"v1\", \"v3\", \"v4\"]\n\nNow solve\nNeighbours of each node:\nv311: v336, v546, v621, v676, v702\nv336: v311, v546, v665, v747\nv546: v311, v336, v676\nv621: v311\nv665: v336, v676, v747\nv676: v311, v546, v665, v747\nv702: v311, v747\nv747: v336, v665, v676, v702\nFrom v747 to v676.",
+      "response": "[\"v747\", \"v336\", \"v311\", \"v676\"]",
+      "task_id": "29afdf7b606f9a93f582b81e89567b6d1836c6c358afd29af7f64db7ab2b3521",
+      "tokens": 25,
+      "weight": 0.33333333333333337
+    },
+    {
+      "correct": true,
+      "error": "correct",
+      "id": "0160f560488cc27edd685ffa97a8c7d44895e900c170cc3f0877c15536c2fafb",
+      "prompt": "Find a shortest path in this undirected, unweighted graph. Return ONLY a JSON list of node names, including both endpoints. Do not explain, do not show your work, and do not use code fences: your entire reply must be the JSON list, for example [\"v1\", \"v7\", \"v3\"].\nExample\nNeighbours of each node:\nv1: v2, v3\nv2: v1, v3\nv3: v1, v2, v4\nv4: v3\nFrom v1 to v4.\nReply: [\"v1\", \"v3\", \"v4\"]\n\nNow solve\nNeighbours of each node:\nv207: v208\nv208: v207, v266, v353, v911\nv266: v208, v366, v911\nv353: v208\nv366: v266\nv911: v208, v266\nFrom v366 to v266.",
+      "response": "[\"v366\", \"v266\"]",
+      "task_id": "2b3bead46df557e228dce828b428d3783d8b2893ddeffe4c3f76670045cc1b26",
+      "tokens": 13,
+      "weight": 0.25
+    },
+    {
+      "correct": true,
+      "error": "correct",
+      "id": "76e791e56f0bbedf1d759083a6695ac86e0c672662f7eee2d444423344ee5128",
+      "prompt": "Find a shortest path in this undirected, unweighted graph. Return ONLY a JSON list of node names, including both endpoints. Do not explain, do not show your work, and do not use code fences: your entire reply must be the JSON list, for example [\"v1\", \"v7\", \"v3\"].\nExample\nNeighbours of each node:\nv1: v2, v3\nv2: v1, v3\nv3: v1, v2, v4\nv4: v3\nFrom v1 to v4.\nReply: [\"v1\", \"v3\", \"v4\"]\n\nNow solve\nNeighbours of each node:\nv470: v579, v89\nv564: v579, v648, v990\nv579: v470, v564, v648, v89, v990\nv648: v564, v579, v89, v990\nv89: v470, v579, v648\nv990: v564, v579, v648\nFrom v564 to v579.",
+      "response": "[\"v564\", \"v579\"]",
+      "task_id": "2cfaf909b990277aa732a7bcaf9a05a41b08297a564e00018a8c0ada214cf0da",
+      "tokens": 13,
+      "weight": 0.25
+    },
+    {
+      "correct": false,
+      "error": "endpoint",
+      "id": "ad6730315508399493227736f078108bb8ace91a6d675d579432439d9428377b",
+      "prompt": "Find a shortest path in this undirected, unweighted graph. Return ONLY a JSON list of node names, including both endpoints. Do not explain, do not show your work, and do not use code fences: your entire reply must be the JSON list, for example [\"v1\", \"v7\", \"v3\"].\nExample\nNeighbours of each node:\nv1: v2, v3\nv2: v1, v3\nv3: v1, v2, v4\nv4: v3\nFrom v1 to v4.\nReply: [\"v1\", \"v3\", \"v4\"]\n\nNow solve\nNeighbours of each node:\nv143: v280, v364, v606, v670\nv280: v143, v364, v867, v936\nv364: v143, v280, v670\nv404: v670, v936\nv606: v143, v670\nv670: v143, v364, v404, v606, v867, v936\nv867: v280, v670\nv936: v280, v404, v670\nFrom v364 to v606.",
+      "response": "[\"v364\", \"143\", \"606\"]",
+      "task_id": "345739151925450455ebc10661a1af7959f388134445eda9f826efea7a2dee0b",
+      "tokens": 17,
+      "weight": 0.33333333333333337
+    },
+    {
+      "correct": true,
+      "error": "correct",
+      "id": "c6ab5b40fdbaba4cdcd913a35f7b1a06c9f19829cb51d959fe82c9875751674d",
+      "prompt": "Find a shortest path in this undirected, unweighted graph. Return ONLY a JSON list of node names, including both endpoints. Do not explain, do not show your work, and do not use code fences: your entire reply must be the JSON list, for example [\"v1\", \"v7\", \"v3\"].\nExample\nNeighbours of each node:\nv1: v2, v3\nv2: v1, v3\nv3: v1, v2, v4\nv4: v3\nFrom v1 to v4.\nReply: [\"v1\", \"v3\", \"v4\"]\n\nNow solve\nNeighbours of each node:\nv117: v329, v365, v367, v381, v958\nv329: v117, v381, v572, v96\nv365: v117, v572, v958\nv367: v117, v572, v958, v96\nv381: v117, v329, v572, v958\nv572: v329, v365, v367, v381\nv958: v117, v365, v367, v381, v96\nv96: v329, v367, v958\nFrom v572 to v958.",
+      "response": "[\"v572\", \"v367\", \"v958\"]",
+      "task_id": "3fddd291f44d73cc0761afaa25c390782aad51e156d8b0092680a616f9d2ff1b",
+      "tokens": 19,
+      "weight": 1.0
+    },
+    {
+      "correct": true,
+      "error": "correct",
+      "id": "713af341ce7ce3ff62f08bb0fe766f97aad9c2cca079db4b8a6b0e5804d50228",
+      "prompt": "Find a shortest path in this undirected, unweighted graph. Return ONLY a JSON list of node names, including both endpoints. Do not explain, do not show your work, and do not use code fences: your entire reply must be the JSON list, for example [\"v1\", \"v7\", \"v3\"].\nExample\nNeighbours of each node:\nv1: v2, v3\nv2: v1, v3\nv3: v1, v2, v4\nv4: v3\nFrom v1 to v4.\nReply: [\"v1\", \"v3\", \"v4\"]\n\nNow solve\nNeighbours of each node:\nv266: v29, v560, v687, v794\nv27: v79, v794\nv29: v266, v596\nv352: v416, v794\nv416: v352, v626\nv560: v266\nv596: v29, v687\nv626: v416, v687, v794\nv687: v266, v596, v626, v79\nv79: v27, v687\nv794: v266, v27, v352, v626\nFrom v352 to v596.",
+      "response": "[\"v352\", \"v794\", \"v626\", \"v687\", \"v596\"]",
+      "task_id": "40735630ff84785bc9f496dbf6cbffcf2e8ffacad0aaeb143691038e278c276f",
+      "tokens": 31,
+      "weight": 1.0
+    },
+    {
+      "correct": true,
+      "error": "correct",
+      "id": "91c7bc9157033fd9c3d2beea811f0c71e4200ab57cad5453f352a7fc3de3717d",
+      "prompt": "Find a shortest path in this undirected, unweighted graph. Return ONLY a JSON list of node names, including both endpoints. Do not explain, do not show your work, and do not use code fences: your entire reply must be the JSON list, for example [\"v1\", \"v7\", \"v3\"].\nExample\nNeighbours of each node:\nv1: v2, v3\nv2: v1, v3\nv3: v1, v2, v4\nv4: v3\nFrom v1 to v4.\nReply: [\"v1\", \"v3\", \"v4\"]\n\nNow solve\nNeighbours of each node:\nv103: v248, v567, v583, v949\nv140: v445, v567, v583, v884, v949\nv248: v103, v583, v884, v949\nv445: v140, v884, v949\nv567: v103, v140, v884, v949\nv583: v103, v140, v248, v949\nv884: v140, v248, v445, v567, v949\nv949: v103, v140, v248, v445, v567, v583, v884\nFrom v103 to v884.",
+      "response": "[\"v103\", \"v949\", \"v884\"]",
+      "task_id": "48921f5f332df3d3cc4db957f059250d571d9011d8c9d8df62531a6f5df3b420",
+      "tokens": 19,
+      "weight": 0.25
+    },
+    {
+      "correct": true,
+      "error": "correct",
+      "id": "ce24339364a2d16bfb512681fe64c9f633fecffe7c4519d4e6a11d66f08ac46c",
+      "prompt": "Find a shortest path in this undirected, unweighted graph. Return ONLY a JSON list of node names, including both endpoints. Do not explain, do not show your work, and do not use code fences: your entire reply must be the JSON list, for example [\"v1\", \"v7\", \"v3\"].\nExample\nNeighbours of each node:\nv1: v2, v3\nv2: v1, v3\nv3: v1, v2, v4\nv4: v3\nFrom v1 to v4.\nReply: [\"v1\", \"v3\", \"v4\"]\n\nNow solve\nNeighbours of each node:\nv315: v415, v699, v871\nv415: v315, v699\nv699: v315, v415, v867, v871, v977\nv867: v699, v977\nv871: v315, v699\nv977: v699, v867\nFrom v699 to v415.",
+      "response": "[\"v699\", \"v415\"]",
+      "task_id": "54fc774e44ca304ba88f99eed24588574cd682ad46e747ac55dd440e03013461",
+      "tokens": 13,
+      "weight": 0.25
+    },
+    {
+      "correct": true,
+      "error": "correct",
+      "id": "d765150fc061f37530e0f0353c78c867a08286cad468042e280e18d364503773",
+      "prompt": "Find a shortest path in this undirected, unweighted graph. Return ONLY a JSON list of node names, including both endpoints. Do not explain, do not show your work, and do not use code fences: your entire reply must be the JSON list, for example [\"v1\", \"v7\", \"v3\"].\nExample\nNeighbours of each node:\nv1: v2, v3\nv2: v1, v3\nv3: v1, v2, v4\nv4: v3\nFrom v1 to v4.\nReply: [\"v1\", \"v3\", \"v4\"]\n\nNow solve\nNeighbours of each node:\nv116: v266, v371, v864, v914\nv17: v754, v837, v977\nv266: v116, v274, v389, v754, v837, v864, v977\nv274: v266, v754, v864\nv371: v116, v977\nv389: v266, v864\nv754: v17, v266, v274, v864\nv837: v17, v266, v864\nv864: v116, v266, v274, v389, v754, v837\nv914: v116\nv977: v17, v266, v371\nFrom v389 to v274.",
+      "response": "[\"v389\", \"v266\", \"v274\"]",
+      "task_id": "615944d847fe1a1a0dec1dac4c89241e9b2e77f23a019e16cf82902bc4258b60",
+      "tokens": 19,
+      "weight": 0.33333333333333337
+    },
+    {
+      "correct": true,
+      "error": "correct",
+      "id": "25e184d21a975bf25dd11067f9bbebd3328c1c38d3fda20f3603d1270fa2055e",
+      "prompt": "Find a shortest path in this undirected, unweighted graph. Return ONLY a JSON list of node names, including both endpoints. Do not explain, do not show your work, and do not use code fences: your entire reply must be the JSON list, for example [\"v1\", \"v7\", \"v3\"].\nExample\nNeighbours of each node:\nv1: v2, v3\nv2: v1, v3\nv3: v1, v2, v4\nv4: v3\nFrom v1 to v4.\nReply: [\"v1\", \"v3\", \"v4\"]\n\nNow solve\nNeighbours of each node:\nv10: v505, v512, v528, v546\nv44: v45, v647\nv449: v45, v512\nv45: v44, v449, v751\nv505: v10, v751\nv512: v10, v449, v546\nv528: v10\nv546: v10, v512, v647\nv647: v44, v546, v673, v832\nv673: v647, v751\nv751: v45, v505, v673\nv832: v647\nFrom v45 to v505.",
+      "response": "[\"v45\", \"v751\", \"v505\"]",
+      "task_id": "62d5ea8e1938c57110bab5d265ead44068aa53e625991764195c41063302b313",
+      "tokens": 18,
+      "weight": 0.5
+    },
+    {
+      "correct": true,
+      "error": "correct",
+      "id": "3b15cf5f3eef90a58cc4483f99d9b4e7fb38196dad6dd0e5be03997eedc2534a",
+      "prompt": "Find a shortest path in this undirected, unweighted graph. Return ONLY a JSON list of node names, including both endpoints. Do not explain, do not show your work, and do not use code fences: your entire reply must be the JSON list, for example [\"v1\", \"v7\", \"v3\"].\nExample\nNeighbours of each node:\nv1: v2, v3\nv2: v1, v3\nv3: v1, v2, v4\nv4: v3\nFrom v1 to v4.\nReply: [\"v1\", \"v3\", \"v4\"]\n\nNow solve\nNeighbours of each node:\nv206: v325, v707\nv325: v206, v898\nv422: v441, v608, v885\nv441: v422, v707\nv608: v422\nv707: v206, v441, v885\nv885: v422, v707\nv898: v325\nFrom v206 to v898.",
+      "response": "[\"v206\", \"v325\", \"v898\"]",
+      "task_id": "62fa2dbd34ba59267ec01d1c91cc13a7fc3481eec0e68b2b30b513fc7f0c2fd8",
+      "tokens": 19,
+      "weight": 1.0
+    },
+    {
+      "correct": false,
+      "error": "nonedge",
+      "id": "273acbf772cad1b55f3e22a52c4c310352320d5d9aa695f7e178bb4d9f8d5272",
+      "prompt": "Find a shortest path in this undirected, unweighted graph. Return ONLY a JSON list of node names, including both endpoints. Do not explain, do not show your work, and do not use code fences: your entire reply must be the JSON list, for example [\"v1\", \"v7\", \"v3\"].\nExample\nNeighbours of each node:\nv1: v2, v3\nv2: v1, v3\nv3: v1, v2, v4\nv4: v3\nFrom v1 to v4.\nReply: [\"v1\", \"v3\", \"v4\"]\n\nNow solve\nNeighbours of each node:\nv203: v302, v307, v717, v744\nv302: v203, v307, v503, v70, v834\nv307: v203, v302\nv393: v744, v834\nv503: v302\nv70: v302\nv717: v203\nv744: v203, v393\nv834: v302, v393\nFrom v307 to v744.",
+      "response": "[\"v307\", \"v203\", \"v203\", \"v744\"]",
+      "task_id": "648eb2feea9fb476c9fa1f36c32c6c5008288c392d8ce9f78079f851d603914d",
+      "tokens": 25,
+      "weight": 0.5
+    },
+    {
+      "correct": true,
+      "error": "correct",
+      "id": "c80207107c995fe3b311fd994b23848a83e45821636d999a8ecd982da09887b0",
+      "prompt": "Find a shortest path in this undirected, unweighted graph. Return ONLY a JSON list of node names, including both endpoints. Do not explain, do not show your work, and do not use code fences: your entire reply must be the JSON list, for example [\"v1\", \"v7\", \"v3\"].\nExample\nNeighbours of each node:\nv1: v2, v3\nv2: v1, v3\nv3: v1, v2, v4\nv4: v3\nFrom v1 to v4.\nReply: [\"v1\", \"v3\", \"v4\"]\n\nNow solve\nNeighbours of each node:\nv140: v173, v418, v502\nv173: v140\nv418: v140, v502, v755, v788\nv502: v140, v418, v670\nv670: v502\nv755: v418, v788, v895\nv788: v418, v755, v891, v895\nv891: v788\nv895: v755, v788\nFrom v670 to v140.",
+      "response": "[\"v670\", \"v502\", \"v140\"]",
+      "task_id": "662fcdd2b06aca031d2f5a7463a53b96c5643636d54a665a16c8f660c9012bf5",
+      "tokens": 19,
+      "weight": 0.33333333333333337
+    },
+    {
+      "correct": true,
+      "error": "correct",
+      "id": "f92fb70ea242b1c1568cb6225fbe505c137a9919f7cce0192614372b8d3c701c",
+      "prompt": "Find a shortest path in this undirected, unweighted graph. Return ONLY a JSON list of node names, including both endpoints. Do not explain, do not show your work, and do not use code fences: your entire reply must be the JSON list, for example [\"v1\", \"v7\", \"v3\"].\nExample\nNeighbours of each node:\nv1: v2, v3\nv2: v1, v3\nv3: v1, v2, v4\nv4: v3\nFrom v1 to v4.\nReply: [\"v1\", \"v3\", \"v4\"]\n\nNow solve\nNeighbours of each node:\nv120: v170, v188, v614\nv170: v120, v843\nv188: v120, v532, v558, v775, v843\nv195: v532, v720, v843\nv532: v188, v195, v720, v775\nv558: v188, v614, v720, v775\nv614: v120, v558, v720, v775, v843\nv720: v195, v532, v558, v614\nv775: v188, v532, v558, v614, v843\nv843: v170, v188, v195, v614, v775\nFrom v720 to v188.",
+      "response": "[\"v720\", \"v532\", \"v188\"]",
+      "task_id": "684455f8f6934c8c8ff840fb33c67a4913fce8a02a17736ab4f70bc8f7ed1cec",
+      "tokens": 19,
+      "weight": 0.33333333333333337
+    },
+    {
+      "correct": true,
+      "error": "correct",
+      "id": "0860b121127a48bfc3ee260b57c5b4df39f496a85300165f2193c988d7a6f859",
+      "prompt": "Find a shortest path in this undirected, unweighted graph. Return ONLY a JSON list of node names, including both endpoints. Do not explain, do not show your work, and do not use code fences: your entire reply must be the JSON list, for example [\"v1\", \"v7\", \"v3\"].\nExample\nNeighbours of each node:\nv1: v2, v3\nv2: v1, v3\nv3: v1, v2, v4\nv4: v3\nFrom v1 to v4.\nReply: [\"v1\", \"v3\", \"v4\"]\n\nNow solve\nNeighbours of each node:\nv190: v301, v723\nv225: v301, v332, v723, v978\nv301: v190, v225, v332\nv328: v332\nv332: v225, v301, v328, v810\nv723: v190, v225, v978\nv810: v332\nv978: v225, v723\nFrom v328 to v225.",
+      "response": "[\"v328\", \"v332\", \"v225\"]",
+      "task_id": "6a06fbffc07157ce2fd57437d330d91c241e2851681f9365626c7de7fb18896e",
+      "tokens": 19,
+      "weight": 0.33333333333333337
+    },
+    {
+      "correct": true,
+      "error": "correct",
+      "id": "660f449bbf50501dc97261e8d90cc39d01c078edb020272950a4ac87696bb2c7",
+      "prompt": "Find a shortest path in this undirected, unweighted graph. Return ONLY a JSON list of node names, including both endpoints. Do not explain, do not show your work, and do not use code fences: your entire reply must be the JSON list, for example [\"v1\", \"v7\", \"v3\"].\nExample\nNeighbours of each node:\nv1: v2, v3\nv2: v1, v3\nv3: v1, v2, v4\nv4: v3\nFrom v1 to v4.\nReply: [\"v1\", \"v3\", \"v4\"]\n\nNow solve\nNeighbours of each node:\nv106: v338, v988\nv325: v338, v868, v988\nv338: v106, v325, v567, v988\nv512: v567, v868\nv567: v338, v512, v988\nv868: v325, v512, v988\nv988: v106, v325, v338, v567, v868\nFrom v338 to v868.",
+      "response": "[\"v338\", \"v988\", \"v868\"]",
+      "task_id": "6bb8c9540f2bae22a66765fdddd70af0a26d92046c0f992bb68a9bb3064ca488",
+      "tokens": 19,
+      "weight": 0.25
+    },
+    {
+      "correct": true,
+      "error": "correct",
+      "id": "9f3acbf9e8e89ee3fe5fe545bbe7f3529a5763781ec9f7978789efd4125560c0",
+      "prompt": "Find a shortest path in this undirected, unweighted graph. Return ONLY a JSON list of node names, including both endpoints. Do not explain, do not show your work, and do not use code fences: your entire reply must be the JSON list, for example [\"v1\", \"v7\", \"v3\"].\nExample\nNeighbours of each node:\nv1: v2, v3\nv2: v1, v3\nv3: v1, v2, v4\nv4: v3\nFrom v1 to v4.\nReply: [\"v1\", \"v3\", \"v4\"]\n\nNow solve\nNeighbours of each node:\nv353: v432, v564, v61, v648, v711, v958\nv432: v353, v648, v958\nv564: v353\nv59: v711, v956\nv61: v353, v956\nv648: v353, v432, v958\nv711: v353, v59\nv956: v59, v61\nv958: v353, v432, v648\nFrom v353 to v956.",
+      "response": "[\"v353\", \"v61\", \"v956\"]",
+      "task_id": "6fd3fc6adef01afb8649c8a6a7fad3e0de79bc7e7770d3e93e5d766872acc0ba",
+      "tokens": 18,
+      "weight": 0.5
+    },
+    {
+      "correct": true,
+      "error": "correct",
+      "id": "4ed1150e036f1f7b9fc6863845b668dae1e99c344ff95727c1f8d7585356bdda",
+      "prompt": "Find a shortest path in this undirected, unweighted graph. Return ONLY a JSON list of node names, including both endpoints. Do not explain, do not show your work, and do not use code fences: your entire reply must be the JSON list, for example [\"v1\", \"v7\", \"v3\"].\nExample\nNeighbours of each node:\nv1: v2, v3\nv2: v1, v3\nv3: v1, v2, v4\nv4: v3\nFrom v1 to v4.\nReply: [\"v1\", \"v3\", \"v4\"]\n\nNow solve\nNeighbours of each node:\nv116: v199, v239, v388, v501\nv199: v116, v388, v486\nv239: v116, v486, v660\nv327: v388\nv388: v116, v199, v327, v660\nv486: v199, v239, v501\nv501: v116, v486, v660\nv660: v239, v388, v501\nFrom v388 to v116.",
+      "response": "[\"v388\", \"v116\"]",
+      "task_id": "702be564beb4cee10ef9cdd060920094df43c0d538dfa0c82e1c3d8cd3486ed7",
+      "tokens": 13,
+      "weight": 0.25
+    },
+    {
+      "correct": true,
+      "error": "correct",
+      "id": "652e9fcf238c6edac680b79f1b2b95eff4acfdb4033092752f7cd40e446960ee",
+      "prompt": "Find a shortest path in this undirected, unweighted graph. Return ONLY a JSON list of node names, including both endpoints. Do not explain, do not show your work, and do not use code fences: your entire reply must be the JSON list, for example [\"v1\", \"v7\", \"v3\"].\nExample\nNeighbours of each node:\nv1: v2, v3\nv2: v1, v3\nv3: v1, v2, v4\nv4: v3\nFrom v1 to v4.\nReply: [\"v1\", \"v3\", \"v4\"]\n\nNow solve\nNeighbours of each node:\nv109: v343, v476, v524\nv267: v476\nv343: v109\nv350: v476\nv476: v109, v267, v350, v702\nv524: v109, v702\nv702: v476, v524\nFrom v350 to v702.",
+      "response": "[\"v350\", \"v476\", \"v702\"]",
+      "task_id": "7b6779f52e3bcb755d566b51bb788cd231189803dbd22966e7712e63d3042a54",
+      "tokens": 19,
+      "weight": 0.33333333333333337
+    },
+    {
+      "correct": true,
+      "error": "correct",
+      "id": "bc017e21dbd170107c1037ddb9ab150b980b19cab81e5350a5cd982241f35cc6",
+      "prompt": "Find a shortest path in this undirected, unweighted graph. Return ONLY a JSON list of node names, including both endpoints. Do not explain, do not show your work, and do not use code fences: your entire reply must be the JSON list, for example [\"v1\", \"v7\", \"v3\"].\nExample\nNeighbours of each node:\nv1: v2, v3\nv2: v1, v3\nv3: v1, v2, v4\nv4: v3\nFrom v1 to v4.\nReply: [\"v1\", \"v3\", \"v4\"]\n\nNow solve\nNeighbours of each node:\nv106: v258, v989\nv147: v238\nv238: v147, v258, v442\nv258: v106, v238\nv442: v238, v989\nv610: v989\nv914: v989\nv989: v106, v442, v610, v914\nFrom v914 to v258.",
+      "response": "[\"v914\", \"v989\", \"v106\", \"v258\"]",
+      "task_id": "7e5fadb9f0f11e779b99fb4a134c5eba0224f8c2e7a323250c2f5a95c1610e40",
+      "tokens": 25,
+      "weight": 1.0
+    },
+    {
+      "correct": true,
+      "error": "correct",
+      "id": "549eafc389155a5b8300d3462b12d7e9786969022f2e2e44e36918579dce4c93",
+      "prompt": "Find a shortest path in this undirected, unweighted graph. Return ONLY a JSON list of node names, including both endpoints. Do not explain, do not show your work, and do not use code fences: your entire reply must be the JSON list, for example [\"v1\", \"v7\", \"v3\"].\nExample\nNeighbours of each node:\nv1: v2, v3\nv2: v1, v3\nv3: v1, v2, v4\nv4: v3\nFrom v1 to v4.\nReply: [\"v1\", \"v3\", \"v4\"]\n\nNow solve\nNeighbours of each node:\nv103: v441, v943\nv213: v325, v493, v943\nv258: v345, v628\nv325: v213, v345, v628, v791, v806\nv345: v258, v325, v441\nv360: v628\nv441: v103, v345, v493, v806\nv493: v213, v441\nv628: v258, v325, v360\nv791: v325\nv806: v325, v441\nv943: v103, v213\nFrom v345 to v791.",
+      "response": "[\"v345\", \"v325\", \"v791\"]",
+      "task_id": "7fa5668aec56c53287a4af4430d5ab9b30fe4df33006d198a4b0f9a1fc0a7ad3",
+      "tokens": 19,
+      "weight": 0.5
+    },
+    {
+      "correct": true,
+      "error": "correct",
+      "id": "01d2cadb2ceb1e9084c721608881c81dbb24e656bfd04c4332b8c2e054514323",
+      "prompt": "Find a shortest path in this undirected, unweighted graph. Return ONLY a JSON list of node names, including both endpoints. Do not explain, do not show your work, and do not use code fences: your entire reply must be the JSON list, for example [\"v1\", \"v7\", \"v3\"].\nExample\nNeighbours of each node:\nv1: v2, v3\nv2: v1, v3\nv3: v1, v2, v4\nv4: v3\nFrom v1 to v4.\nReply: [\"v1\", \"v3\", \"v4\"]\n\nNow solve\nNeighbours of each node:\nv10: v4, v600, v963\nv265: v399\nv358: v399, v600, v963\nv399: v265, v358, v963\nv4: v10, v866\nv588: v866\nv600: v10, v358, v866, v932\nv613: v932, v963\nv866: v4, v588, v600\nv932: v600, v613\nv963: v10, v358, v399, v613\nFrom v358 to v10.",
+      "response": "[\"v358\", \"v600\", \"v10\"]",
+      "task_id": "83ff6fde10a29d45cf0a6e9965f1601910bd8508aa5e0d32098b774085ae8ed8",
+      "tokens": 18,
+      "weight": 0.5
+    },
+    {
+      "correct": true,
+      "error": "correct",
+      "id": "b53c8645118d2ce2c6ae46c69aa237aa4bde3bd453d9ee88b0e784e334e5edca",
+      "prompt": "Find a shortest path in this undirected, unweighted graph. Return ONLY a JSON list of node names, including both endpoints. Do not explain, do not show your work, and do not use code fences: your entire reply must be the JSON list, for example [\"v1\", \"v7\", \"v3\"].\nExample\nNeighbours of each node:\nv1: v2, v3\nv2: v1, v3\nv3: v1, v2, v4\nv4: v3\nFrom v1 to v4.\nReply: [\"v1\", \"v3\", \"v4\"]\n\nNow solve\nNeighbours of each node:\nv112: v437, v475, v658\nv337: v877\nv38: v475, v55\nv437: v112, v55\nv44: v475, v55, v877\nv475: v112, v38, v44, v55, v658\nv55: v38, v437, v44, v475, v877\nv658: v112, v475\nv877: v337, v44, v55, v974\nv974: v877\nFrom v475 to v974.",
+      "response": "[\"v475\", \"v55\", \"v877\", \"v974\"]",
+      "task_id": "84286f6db160bc305cc33123602963af947ba097aa3c8a30b6acb36d0aacc39d",
+      "tokens": 24,
+      "weight": 0.33333333333333337
+    },
+    {
+      "correct": false,
+      "error": "nonedge",
+      "id": "4770d3ad48660311e53c219ada8d2eabef16123d64a090f9689197eefca2f818",
+      "prompt": "Find a shortest path in this undirected, unweighted graph. Return ONLY a JSON list of node names, including both endpoints. Do not explain, do not show your work, and do not use code fences: your entire reply must be the JSON list, for example [\"v1\", \"v7\", \"v3\"].\nExample\nNeighbours of each node:\nv1: v2, v3\nv2: v1, v3\nv3: v1, v2, v4\nv4: v3\nFrom v1 to v4.\nReply: [\"v1\", \"v3\", \"v4\"]\n\nNow solve\nNeighbours of each node:\nv105: v31, v693\nv31: v105, v310\nv310: v31, v500\nv337: v964\nv42: v619\nv500: v310\nv619: v42, v693\nv693: v105, v619, v964\nv964: v337, v693\nFrom v964 to v310.",
+      "response": "[\"v964\", \"v693\", \"v105\", \"v310\"]",
+      "task_id": "87ec43caf1ddc2b8c22aa4f2fb9d2f80451a805b66a3612a9498318b2de35c1c",
+      "tokens": 25,
+      "weight": 0.5
+    },
+    {
+      "correct": false,
+      "error": "nonedge",
+      "id": "3cf2d5c259f0ef28ccf16c6da39cc690fc7b1258969cc0eff3bcafe175632830",
+      "prompt": "Find a shortest path in this undirected, unweighted graph. Return ONLY a JSON list of node names, including both endpoints. Do not explain, do not show your work, and do not use code fences: your entire reply must be the JSON list, for example [\"v1\", \"v7\", \"v3\"].\nExample\nNeighbours of each node:\nv1: v2, v3\nv2: v1, v3\nv3: v1, v2, v4\nv4: v3\nFrom v1 to v4.\nReply: [\"v1\", \"v3\", \"v4\"]\n\nNow solve\nNeighbours of each node:\nv127: v141, v483, v66, v739\nv141: v127, v332\nv250: v326, v332\nv326: v250, v739\nv332: v141, v250, v378, v739\nv378: v332, v483\nv483: v127, v378\nv66: v127\nv739: v127, v326, v332\nFrom v332 to v66.",
+      "response": "[\"v332\", \"v127\", \"v66\"]",
+      "task_id": "8b7eea46b872ac4e933a0fe9f12717420c870f6be79a4ea4f2a63ba7f7d40480",
+      "tokens": 18,
+      "weight": 0.5
+    },
+    {
+      "correct": true,
+      "error": "correct",
+      "id": "2bbbc6e0510b8b31e4145d1ae808a26830b373a8196204d4ab310270d2c478e8",
+      "prompt": "Find a shortest path in this undirected, unweighted graph. Return ONLY a JSON list of node names, including both endpoints. Do not explain, do not show your work, and do not use code fences: your entire reply must be the JSON list, for example [\"v1\", \"v7\", \"v3\"].\nExample\nNeighbours of each node:\nv1: v2, v3\nv2: v1, v3\nv3: v1, v2, v4\nv4: v3\nFrom v1 to v4.\nReply: [\"v1\", \"v3\", \"v4\"]\n\nNow solve\nNeighbours of each node:\nv17: v266, v271, v31, v496, v73, v78\nv219: v266, v271, v31, v73, v78\nv232: v31, v327, v78\nv266: v17, v219, v271, v31, v327\nv271: v17, v219, v266, v327, v496\nv31: v17, v219, v232, v266\nv327: v232, v266, v271, v73\nv496: v17, v271, v73\nv73: v17, v219, v327, v496\nv78: v17, v219, v232\nFrom v496 to v17.",
+      "response": "[\"v496\", \"v17\"]",
+      "task_id": "99935c56b295fbc95fc3192fb7f0d050a4f366ae5f78a7e2c13efe56af74f348",
+      "tokens": 12,
+      "weight": 1.0
+    },
+    {
+      "correct": false,
+      "error": "nonshortest",
+      "id": "9b76ea6e8a0f6576e13d45847d02f7804e3ef54c0f9ac02bbf685390382bec42",
+      "prompt": "Find a shortest path in this undirected, unweighted graph. Return ONLY a JSON list of node names, including both endpoints. Do not explain, do not show your work, and do not use code fences: your entire reply must be the JSON list, for example [\"v1\", \"v7\", \"v3\"].\nExample\nNeighbours of each node:\nv1: v2, v3\nv2: v1, v3\nv3: v1, v2, v4\nv4: v3\nFrom v1 to v4.\nReply: [\"v1\", \"v3\", \"v4\"]\n\nNow solve\nNeighbours of each node:\nv14: v175, v453\nv175: v14, v453, v458, v675\nv453: v14, v175, v500, v675\nv458: v175, v500, v675\nv500: v453, v458\nv675: v175, v453, v458\nFrom v675 to v458.",
+      "response": "[\"v675\", \"v175\", \"v458\"]",
+      "task_id": "9a2507d8db91121defc7c06b2920a96faf7402d61a5a39bf3cebde2380bf4974",
+      "tokens": 19,
+      "weight": 0.25
+    },
+    {
+      "correct": true,
+      "error": "correct",
+      "id": "7a48846ee0ca1cfc502ca92eb52883864eb24f3f0edaf04f2776181c1d8a0b92",
+      "prompt": "Find a shortest path in this undirected, unweighted graph. Return ONLY a JSON list of node names, including both endpoints. Do not explain, do not show your work, and do not use code fences: your entire reply must be the JSON list, for example [\"v1\", \"v7\", \"v3\"].\nExample\nNeighbours of each node:\nv1: v2, v3\nv2: v1, v3\nv3: v1, v2, v4\nv4: v3\nFrom v1 to v4.\nReply: [\"v1\", \"v3\", \"v4\"]\n\nNow solve\nNeighbours of each node:\nv110: v722, v758, v889\nv436: v572, v758, v781, v889\nv572: v436, v670, v758, v781, v939\nv670: v572, v722, v781, v939\nv722: v110, v670, v781\nv758: v110, v436, v572, v781, v889\nv781: v436, v572, v670, v722, v758, v939\nv889: v110, v436, v758\nv939: v572, v670, v781\nFrom v722 to v939.",
+      "response": "[\"v722\", \"v670\", \"v939\"]",
+      "task_id": "9a53f81dcc366eb2d683dfb619fbd042071631044718a7a31a7cc027ee27a6eb",
+      "tokens": 19,
+      "weight": 1.0
+    },
+    {
+      "correct": false,
+      "error": "nonshortest",
+      "id": "2e420a9c4ff82982bf02c75072e13c348f51c79b462b59699e4752949b3ec7df",
+      "prompt": "Find a shortest path in this undirected, unweighted graph. Return ONLY a JSON list of node names, including both endpoints. Do not explain, do not show your work, and do not use code fences: your entire reply must be the JSON list, for example [\"v1\", \"v7\", \"v3\"].\nExample\nNeighbours of each node:\nv1: v2, v3\nv2: v1, v3\nv3: v1, v2, v4\nv4: v3\nFrom v1 to v4.\nReply: [\"v1\", \"v3\", \"v4\"]\n\nNow solve\nNeighbours of each node:\nv216: v297, v451, v46, v880\nv297: v216, v46, v855, v938\nv451: v216, v880, v938\nv46: v216, v297, v880, v938\nv855: v297\nv880: v216, v451, v46, v938\nv938: v297, v451, v46, v880\nFrom v297 to v938.",
+      "response": "[\"v297\", \"v46\", \"v880\", \"v938\"]",
+      "task_id": "9b5f88c653218f29164c28b573403f92e81c2d600fa02f5da5e94b0e21923e64",
+      "tokens": 24,
+      "weight": 0.25
+    },
+    {
+      "correct": true,
+      "error": "correct",
+      "id": "2c5435642685a852828e6f98522a0899d8eadd140f05ce9f7b8fcc5a619cba5e",
+      "prompt": "Find a shortest path in this undirected, unweighted graph. Return ONLY a JSON list of node names, including both endpoints. Do not explain, do not show your work, and do not use code fences: your entire reply must be the JSON list, for example [\"v1\", \"v7\", \"v3\"].\nExample\nNeighbours of each node:\nv1: v2, v3\nv2: v1, v3\nv3: v1, v2, v4\nv4: v3\nFrom v1 to v4.\nReply: [\"v1\", \"v3\", \"v4\"]\n\nNow solve\nNeighbours of each node:\nv174: v562, v582, v735, v764\nv218: v735\nv267: v562, v582, v735, v764, v777\nv337: v735\nv562: v174, v267, v582, v764\nv582: v174, v267, v562, v735, v777\nv735: v174, v218, v267, v337, v582, v764\nv764: v174, v267, v562, v735, v777\nv777: v267, v582, v764\nFrom v267 to v174.",
+      "response": "[\"v267\", \"v735\", \"v174\"]",
+      "task_id": "9c5df70a812379764c4470c6a656fc2005b1e8a737bcfad78dad1acde4b7c3df",
+      "tokens": 19,
+      "weight": 0.25
+    },
+    {
+      "correct": true,
+      "error": "correct",
+      "id": "082899eed8e8191210fb16a5242718ee203b5b00f8f779a90ccdf3083c525635",
+      "prompt": "Find a shortest path in this undirected, unweighted graph. Return ONLY a JSON list of node names, including both endpoints. Do not explain, do not show your work, and do not use code fences: your entire reply must be the JSON list, for example [\"v1\", \"v7\", \"v3\"].\nExample\nNeighbours of each node:\nv1: v2, v3\nv2: v1, v3\nv3: v1, v2, v4\nv4: v3\nFrom v1 to v4.\nReply: [\"v1\", \"v3\", \"v4\"]\n\nNow solve\nNeighbours of each node:\nv186: v441\nv187: v195, v587, v927\nv195: v187, v441, v693\nv441: v186, v195, v587, v902\nv587: v187, v441, v693\nv693: v195, v587\nv902: v441\nv927: v187\nFrom v195 to v587.",
+      "response": "[\"v195\", \"v187\", \"v587\"]",
+      "task_id": "9cd828cffc158f04c5372a1d32812fd5afb8751e518f8e688ca8df757d68319c",
+      "tokens": 19,
+      "weight": 0.5
+    },
+    {
+      "correct": true,
+      "error": "correct",
+      "id": "fc34add7c157cdd7aee7bbd9ef8f6a9e7c040e8f4152fd04e8899006a72c2bfa",
+      "prompt": "Find a shortest path in this undirected, unweighted graph. Return ONLY a JSON list of node names, including both endpoints. Do not explain, do not show your work, and do not use code fences: your entire reply must be the JSON list, for example [\"v1\", \"v7\", \"v3\"].\nExample\nNeighbours of each node:\nv1: v2, v3\nv2: v1, v3\nv3: v1, v2, v4\nv4: v3\nFrom v1 to v4.\nReply: [\"v1\", \"v3\", \"v4\"]\n\nNow solve\nNeighbours of each node:\nv357: v664, v698, v929\nv401: v468, v698, v80, v950\nv468: v401, v664, v698, v80\nv664: v357, v468, v698, v80, v929, v950\nv698: v357, v401, v468, v664, v950\nv80: v401, v468, v664, v950\nv929: v357, v664\nv950: v401, v664, v698, v80\nFrom v401 to v468.",
+      "response": "[\"v401\", \"v468\"]",
+      "task_id": "a11ef0f8338a7528ca13deb84e3739859b6569613b541c15df3863d061926bd9",
+      "tokens": 13,
+      "weight": 0.25
+    },
+    {
+      "correct": true,
+      "error": "correct",
+      "id": "113f5931a31d1398d79520a2551c4042ab1e07e0ae5a775cfd986fe60285a4be",
+      "prompt": "Find a shortest path in this undirected, unweighted graph. Return ONLY a JSON list of node names, including both endpoints. Do not explain, do not show your work, and do not use code fences: your entire reply must be the JSON list, for example [\"v1\", \"v7\", \"v3\"].\nExample\nNeighbours of each node:\nv1: v2, v3\nv2: v1, v3\nv3: v1, v2, v4\nv4: v3\nFrom v1 to v4.\nReply: [\"v1\", \"v3\", \"v4\"]\n\nNow solve\nNeighbours of each node:\nv107: v917, v958\nv242: v288, v782\nv288: v242, v631, v655\nv321: v958\nv366: v631\nv631: v288, v366, v830\nv655: v288, v782, v830\nv709: v782\nv782: v242, v655, v709, v830\nv830: v631, v655, v782, v917\nv917: v107, v830\nv958: v107, v321\nFrom v242 to v709.",
+      "response": "[\"v242\", \"v782\", \"v709\"]",
+      "task_id": "a2979341accd74a3115c7f58cd45edf3abf52b0cd267177f2d2b8f89fb39149a",
+      "tokens": 19,
+      "weight": 0.5
+    },
+    {
+      "correct": true,
+      "error": "correct",
+      "id": "b5b39b92a48c1e6f5a07145142363d3d9d6ddff295b9155474f81c3c001987ad",
+      "prompt": "Find a shortest path in this undirected, unweighted graph. Return ONLY a JSON list of node names, including both endpoints. Do not explain, do not show your work, and do not use code fences: your entire reply must be the JSON list, for example [\"v1\", \"v7\", \"v3\"].\nExample\nNeighbours of each node:\nv1: v2, v3\nv2: v1, v3\nv3: v1, v2, v4\nv4: v3\nFrom v1 to v4.\nReply: [\"v1\", \"v3\", \"v4\"]\n\nNow solve\nNeighbours of each node:\nv113: v67, v781, v873, v954\nv559: v67, v721, v781, v847, v885, v954\nv67: v113, v559, v781, v954\nv699: v847\nv721: v559, v847, v885, v954\nv781: v113, v559, v67, v873\nv847: v559, v699, v721, v873, v954\nv873: v113, v781, v847, v885, v954\nv885: v559, v721, v873, v954\nv954: v113, v559, v67, v721, v847, v873, v885\nFrom v954 to v67.",
+      "response": "[\"v954\", \"v67\"]",
+      "task_id": "bf0e5557c7238cce344ec2f986eb13fe1bed0dd32b3c4d765b8eb366dc857a05",
+      "tokens": 12,
+      "weight": 1.0
+    },
+    {
+      "correct": true,
+      "error": "correct",
+      "id": "80a928d2e9cf67f6138438f9d762695ca72333aca14f8271c0a0d98255e96ce6",
+      "prompt": "Find a shortest path in this undirected, unweighted graph. Return ONLY a JSON list of node names, including both endpoints. Do not explain, do not show your work, and do not use code fences: your entire reply must be the JSON list, for example [\"v1\", \"v7\", \"v3\"].\nExample\nNeighbours of each node:\nv1: v2, v3\nv2: v1, v3\nv3: v1, v2, v4\nv4: v3\nFrom v1 to v4.\nReply: [\"v1\", \"v3\", \"v4\"]\n\nNow solve\nNeighbours of each node:\nv153: v363, v89\nv363: v153, v810, v824, v863, v89, v969\nv611: v810\nv63: v810, v863\nv810: v363, v611, v63, v824\nv824: v363, v810\nv863: v363, v63, v969\nv89: v153, v363, v969\nv969: v363, v863, v89\nFrom v89 to v824.",
+      "response": "[\"v89\", \"v363\", \"v824\"]",
+      "task_id": "c183b438fd8a60222b7888561874e5d7d38e212e459002e0fd60cdf2f2bfd7ee",
+      "tokens": 18,
+      "weight": 0.5
+    },
+    {
+      "correct": true,
+      "error": "correct",
+      "id": "ef1043cc180bcd2b2ec944d5dc5ab4635792b59707d304b9ff384d085353710a",
+      "prompt": "Find a shortest path in this undirected, unweighted graph. Return ONLY a JSON list of node names, including both endpoints. Do not explain, do not show your work, and do not use code fences: your entire reply must be the JSON list, for example [\"v1\", \"v7\", \"v3\"].\nExample\nNeighbours of each node:\nv1: v2, v3\nv2: v1, v3\nv3: v1, v2, v4\nv4: v3\nFrom v1 to v4.\nReply: [\"v1\", \"v3\", \"v4\"]\n\nNow solve\nNeighbours of each node:\nv511: v623, v815\nv623: v511, v663, v701, v706, v892\nv652: v663, v701\nv663: v623, v652, v883\nv701: v623, v652, v706\nv706: v623, v701, v815\nv815: v511, v706, v883, v892\nv883: v663, v815, v892\nv892: v623, v815, v883\nFrom v701 to v883.",
+      "response": "[\"v701\", \"v623\", \"v892\", \"v883\"]",
+      "task_id": "c4a243266eb0a378dea46106dabd859b15adca5b40ee535a0972ff22aff9baf0",
+      "tokens": 25,
+      "weight": 1.0
+    },
+    {
+      "correct": true,
+      "error": "correct",
+      "id": "7012b92d5f2243b3575fa45c9945400aab623919c23ea40b2b2e0c80886cbd37",
+      "prompt": "Find a shortest path in this undirected, unweighted graph. Return ONLY a JSON list of node names, including both endpoints. Do not explain, do not show your work, and do not use code fences: your entire reply must be the JSON list, for example [\"v1\", \"v7\", \"v3\"].\nExample\nNeighbours of each node:\nv1: v2, v3\nv2: v1, v3\nv3: v1, v2, v4\nv4: v3\nFrom v1 to v4.\nReply: [\"v1\", \"v3\", \"v4\"]\n\nNow solve\nNeighbours of each node:\nv123: v338, v555\nv285: v338, v555, v97\nv338: v123, v285, v555, v697\nv555: v123, v285, v338, v642, v970\nv642: v555, v697, v793\nv697: v338, v642\nv793: v642, v97\nv97: v285, v793, v970\nv970: v555, v97\nFrom v555 to v970.",
+      "response": "[\"v555\", \"v970\"]",
+      "task_id": "c517b3989da7f94be15738c9e9e9fd5bd8bfffe996812004bf2a09d9efd783b5",
+      "tokens": 13,
+      "weight": 1.0
+    },
+    {
+      "correct": true,
+      "error": "correct",
+      "id": "317de86f7fca9cf63fb20afa6338639a936d2101f5f2fb88042d256646fa6c5a",
+      "prompt": "Find a shortest path in this undirected, unweighted graph. Return ONLY a JSON list of node names, including both endpoints. Do not explain, do not show your work, and do not use code fences: your entire reply must be the JSON list, for example [\"v1\", \"v7\", \"v3\"].\nExample\nNeighbours of each node:\nv1: v2, v3\nv2: v1, v3\nv3: v1, v2, v4\nv4: v3\nFrom v1 to v4.\nReply: [\"v1\", \"v3\", \"v4\"]\n\nNow solve\nNeighbours of each node:\nv14: v220, v300, v557, v560, v78\nv220: v14, v492, v78, v822\nv236: v492, v78, v822, v923\nv300: v14, v492, v557\nv492: v220, v236, v300, v557, v822, v923\nv557: v14, v300, v492, v78, v822\nv560: v14, v78\nv78: v14, v220, v236, v557, v560, v822, v923\nv822: v220, v236, v492, v557, v78\nv923: v236, v492, v78\nFrom v220 to v492.",
+      "response": "[\"v220\", \"v492\"]",
+      "task_id": "c737a6a6c00ca67282a04001b07057912b79f29d86165a19759fc91053b104ac",
+      "tokens": 13,
+      "weight": 0.25
+    },
+    {
+      "correct": true,
+      "error": "correct",
+      "id": "d11033b5823982d4c7310ac97f50d0a36a35002b98df3a0306b887a52fe79c3b",
+      "prompt": "Find a shortest path in this undirected, unweighted graph. Return ONLY a JSON list of node names, including both endpoints. Do not explain, do not show your work, and do not use code fences: your entire reply must be the JSON list, for example [\"v1\", \"v7\", \"v3\"].\nExample\nNeighbours of each node:\nv1: v2, v3\nv2: v1, v3\nv3: v1, v2, v4\nv4: v3\nFrom v1 to v4.\nReply: [\"v1\", \"v3\", \"v4\"]\n\nNow solve\nNeighbours of each node:\nv191: v586, v628\nv200: v778\nv258: v312, v549\nv312: v258, v549, v628, v778\nv451: v549, v924\nv549: v258, v312, v451, v586, v778, v924\nv586: v191, v549, v628, v681\nv628: v191, v312, v586, v681\nv681: v586, v628, v924\nv778: v200, v312, v549\nv924: v451, v549, v681\nFrom v200 to v312.",
+      "response": "[\"v200\", \"v778\", \"v312\"]",
+      "task_id": "c7b5e8b2addee56dbee789497e2c1b86dc2cef0bd49e76f78a3d02c181c57879",
+      "tokens": 19,
+      "weight": 0.33333333333333337
+    },
+    {
+      "correct": true,
+      "error": "correct",
+      "id": "0faff2bbd0513ff7769f4fae10e60e7e20661b372074816188a37224f4119437",
+      "prompt": "Find a shortest path in this undirected, unweighted graph. Return ONLY a JSON list of node names, including both endpoints. Do not explain, do not show your work, and do not use code fences: your entire reply must be the JSON list, for example [\"v1\", \"v7\", \"v3\"].\nExample\nNeighbours of each node:\nv1: v2, v3\nv2: v1, v3\nv3: v1, v2, v4\nv4: v3\nFrom v1 to v4.\nReply: [\"v1\", \"v3\", \"v4\"]\n\nNow solve\nNeighbours of each node:\nv129: v747\nv132: v177, v532, v747, v756\nv177: v132, v747, v756\nv532: v132, v794\nv594: v82\nv747: v129, v132, v177, v794, v82\nv756: v132, v177\nv794: v532, v747\nv82: v594, v747\nFrom v177 to v756.",
+      "response": "[\"v177\", \"v756\"]",
+      "task_id": "cb956b43cf5cf3194e9e7a9b2641624d46f63c2d49091e99eb6e11bd26831d56",
+      "tokens": 13,
+      "weight": 0.5
+    },
+    {
+      "correct": false,
+      "error": "nonedge",
+      "id": "e7d6e908db5463cff699d5716dbd00fc5164f0e34f3de7f8ac7bdd87d413625c",
+      "prompt": "Find a shortest path in this undirected, unweighted graph. Return ONLY a JSON list of node names, including both endpoints. Do not explain, do not show your work, and do not use code fences: your entire reply must be the JSON list, for example [\"v1\", \"v7\", \"v3\"].\nExample\nNeighbours of each node:\nv1: v2, v3\nv2: v1, v3\nv3: v1, v2, v4\nv4: v3\nFrom v1 to v4.\nReply: [\"v1\", \"v3\", \"v4\"]\n\nNow solve\nNeighbours of each node:\nv109: v220, v332, v398, v499\nv220: v109, v398, v40, v44, v499\nv28: v44\nv332: v109, v40, v753\nv398: v109, v220\nv40: v220, v332, v946\nv44: v220, v28, v753\nv499: v109, v220, v946\nv753: v332, v44, v946\nv946: v40, v499, v753\nFrom v946 to v499.",
+      "response": "[\"v946\", \"v753\", \"v499\"]",
+      "task_id": "cc72a5f174d7e99af59b2b664672011f452d00657dfa253d4715cd1b805924c3",
+      "tokens": 19,
+      "weight": 0.5
+    },
+    {
+      "correct": true,
+      "error": "correct",
+      "id": "5c460a266ed27a8be79c3927e086c41482509d50276c13b21adbcaa315767c60",
+      "prompt": "Find a shortest path in this undirected, unweighted graph. Return ONLY a JSON list of node names, including both endpoints. Do not explain, do not show your work, and do not use code fences: your entire reply must be the JSON list, for example [\"v1\", \"v7\", \"v3\"].\nExample\nNeighbours of each node:\nv1: v2, v3\nv2: v1, v3\nv3: v1, v2, v4\nv4: v3\nFrom v1 to v4.\nReply: [\"v1\", \"v3\", \"v4\"]\n\nNow solve\nNeighbours of each node:\nv127: v184, v364, v534\nv184: v127, v40, v478\nv364: v127, v40, v478, v564, v741\nv40: v184, v364, v741\nv478: v184, v364, v564, v741\nv534: v127, v564\nv564: v364, v478, v534, v741\nv741: v364, v40, v478, v564\nFrom v127 to v364.",
+      "response": "[\"v127\", \"v364\"]",
+      "task_id": "cf13e271839fea716271c5b8ee714ea8208f90923d92a1de5b1cab0d9824afde",
+      "tokens": 13,
+      "weight": 0.33333333333333337
+    },
+    {
+      "correct": true,
+      "error": "correct",
+      "id": "795133e6dd1424fa54bfddf2a040b31d35bb1cb9d53d27c60fe8105ee8c537fa",
+      "prompt": "Find a shortest path in this undirected, unweighted graph. Return ONLY a JSON list of node names, including both endpoints. Do not explain, do not show your work, and do not use code fences: your entire reply must be the JSON list, for example [\"v1\", \"v7\", \"v3\"].\nExample\nNeighbours of each node:\nv1: v2, v3\nv2: v1, v3\nv3: v1, v2, v4\nv4: v3\nFrom v1 to v4.\nReply: [\"v1\", \"v3\", \"v4\"]\n\nNow solve\nNeighbours of each node:\nv320: v371, v502, v513, v617\nv371: v320\nv502: v320, v626\nv513: v320, v626, v895\nv617: v320\nv626: v502, v513, v895\nv895: v513, v626\nFrom v513 to v502.",
+      "response": "[\"v513\", \"v626\", \"v502\"]",
+      "task_id": "d26d90754c9afd712e95d9daec6e0c240aa1aa3d5bacb816258432f340b56e3b",
+      "tokens": 19,
+      "weight": 1.0
+    },
+    {
+      "correct": false,
+      "error": "nonedge",
+      "id": "fcfb7593da4cabaea63627905edba721fe5ae694c4692f573c2edec950b11539",
+      "prompt": "Find a shortest path in this undirected, unweighted graph. Return ONLY a JSON list of node names, including both endpoints. Do not explain, do not show your work, and do not use code fences: your entire reply must be the JSON list, for example [\"v1\", \"v7\", \"v3\"].\nExample\nNeighbours of each node:\nv1: v2, v3\nv2: v1, v3\nv3: v1, v2, v4\nv4: v3\nFrom v1 to v4.\nReply: [\"v1\", \"v3\", \"v4\"]\n\nNow solve\nNeighbours of each node:\nv223: v391, v446, v621, v680\nv391: v223, v446, v56\nv432: v446, v56, v621, v680, v990\nv446: v223, v391, v432, v737, v930\nv56: v391, v432, v737\nv621: v223, v432, v990\nv680: v223, v432\nv737: v446, v56, v990\nv930: v446\nv990: v432, v621, v737\nFrom v391 to v990.",
+      "response": "[\"v391\", \"v446\", \"v930\", \"v432\", \"v990\"]",
+      "task_id": "d9b7ae9b37f8181b8573913499b9a767639496c75a1852fc7ee6db9ab188f794",
+      "tokens": 31,
+      "weight": 0.33333333333333337
+    },
+    {
+      "correct": true,
+      "error": "correct",
+      "id": "0964d239ae0150928af87be84f84630cd766b6bfd8dec969b851ecdc5611f41a",
+      "prompt": "Find a shortest path in this undirected, unweighted graph. Return ONLY a JSON list of node names, including both endpoints. Do not explain, do not show your work, and do not use code fences: your entire reply must be the JSON list, for example [\"v1\", \"v7\", \"v3\"].\nExample\nNeighbours of each node:\nv1: v2, v3\nv2: v1, v3\nv3: v1, v2, v4\nv4: v3\nFrom v1 to v4.\nReply: [\"v1\", \"v3\", \"v4\"]\n\nNow solve\nNeighbours of each node:\nv219: v254, v494, v551, v6, v677, v733, v909\nv254: v219, v551, v6, v733\nv462: v494, v551\nv494: v219, v462, v909\nv551: v219, v254, v462\nv6: v219, v254\nv677: v219\nv733: v219, v254\nv909: v219, v494\nFrom v733 to v494.",
+      "response": "[\"v733\", \"v219\", \"v494\"]",
+      "task_id": "e9f0448ff21def1d462cb1a1cdfa51e2961b182419993049431358f18cfd06c2",
+      "tokens": 19,
+      "weight": 1.0
+    },
+    {
+      "correct": true,
+      "error": "correct",
+      "id": "86e7b61481d56b542ba2ff4f0ad21efb17d6bb4cdf9998afa449f4f53c8ff176",
+      "prompt": "Find a shortest path in this undirected, unweighted graph. Return ONLY a JSON list of node names, including both endpoints. Do not explain, do not show your work, and do not use code fences: your entire reply must be the JSON list, for example [\"v1\", \"v7\", \"v3\"].\nExample\nNeighbours of each node:\nv1: v2, v3\nv2: v1, v3\nv3: v1, v2, v4\nv4: v3\nFrom v1 to v4.\nReply: [\"v1\", \"v3\", \"v4\"]\n\nNow solve\nNeighbours of each node:\nv190: v446, v990\nv262: v432, v511, v677, v965\nv403: v432\nv432: v262, v403, v846, v965, v990\nv446: v190\nv511: v262, v846\nv677: v262\nv846: v432, v511\nv965: v262, v432\nv990: v190, v432\nFrom v511 to v677.",
+      "response": "[\"v511\", \"v262\", \"v677\"]",
+      "task_id": "ea4c7a8c8a483a98887267005c015c2f9ef326692e8dde13effa3e33b892b7aa",
+      "tokens": 19,
+      "weight": 0.5
+    },
+    {
+      "correct": false,
+      "error": "nonedge",
+      "id": "db54a049868008a84f8659deed29b7b9879a80f379c4ab5adb4161a0f53d1921",
+      "prompt": "Find a shortest path in this undirected, unweighted graph. Return ONLY a JSON list of node names, including both endpoints. Do not explain, do not show your work, and do not use code fences: your entire reply must be the JSON list, for example [\"v1\", \"v7\", \"v3\"].\nExample\nNeighbours of each node:\nv1: v2, v3\nv2: v1, v3\nv3: v1, v2, v4\nv4: v3\nFrom v1 to v4.\nReply: [\"v1\", \"v3\", \"v4\"]\n\nNow solve\nNeighbours of each node:\nv183: v242, v569, v948, v951\nv226: v24, v242, v951\nv24: v226, v47\nv242: v183, v226\nv323: v43, v569\nv43: v323\nv47: v24\nv569: v183, v323\nv594: v948, v951\nv948: v183, v594\nv951: v183, v226, v594\nFrom v24 to v242.",
+      "response": "[\"v24\", \"v242\"]",
+      "task_id": "ed0849bd46a8b728b8a81da70726e32397796373450c6aae65e3fdb969db779f",
+      "tokens": 12,
+      "weight": 0.5
+    },
+    {
+      "correct": true,
+      "error": "correct",
+      "id": "e415c7758934285cce7cb512a4c71d7caa78e6e7e560ba83b13ef08737a3d362",
+      "prompt": "Find a shortest path in this undirected, unweighted graph. Return ONLY a JSON list of node names, including both endpoints. Do not explain, do not show your work, and do not use code fences: your entire reply must be the JSON list, for example [\"v1\", \"v7\", \"v3\"].\nExample\nNeighbours of each node:\nv1: v2, v3\nv2: v1, v3\nv3: v1, v2, v4\nv4: v3\nFrom v1 to v4.\nReply: [\"v1\", \"v3\", \"v4\"]\n\nNow solve\nNeighbours of each node:\nv23: v423, v977\nv244: v265\nv265: v244, v287, v371, v373, v700\nv287: v265, v608, v977\nv371: v265, v423\nv373: v265, v423, v700\nv423: v23, v371, v373, v672, v700\nv608: v287\nv672: v423\nv700: v265, v373, v423\nv977: v23, v287\nFrom v287 to v700.",
+      "response": "[\"v287\", \"v265\", \"v700\"]",
+      "task_id": "ee10a34c324266479158a8fb2ad5543f94faae5bd1fcc6b03c00be5569e8c168",
+      "tokens": 19,
+      "weight": 1.0
+    },
+    {
+      "correct": true,
+      "error": "correct",
+      "id": "fbd13e2b96b79cfa7907e8406e25a3f2119aadaa5c7e98aa824ea037ed5623ae",
+      "prompt": "Find a shortest path in this undirected, unweighted graph. Return ONLY a JSON list of node names, including both endpoints. Do not explain, do not show your work, and do not use code fences: your entire reply must be the JSON list, for example [\"v1\", \"v7\", \"v3\"].\nExample\nNeighbours of each node:\nv1: v2, v3\nv2: v1, v3\nv3: v1, v2, v4\nv4: v3\nFrom v1 to v4.\nReply: [\"v1\", \"v3\", \"v4\"]\n\nNow solve\nNeighbours of each node:\nv244: v353, v451, v548, v566\nv314: v353\nv353: v244, v314, v451, v548, v566\nv451: v244, v353\nv548: v244, v353, v566\nv566: v244, v353, v548\nFrom v566 to v451.",
+      "response": "[\"v566\", \"v244\", \"v451\"]",
+      "task_id": "f2e6e88e9aadbada60d686da71c9a22c719862347366364303e380d9b42b3923",
+      "tokens": 19,
+      "weight": 0.25
+    },
+    {
+      "correct": true,
+      "error": "correct",
+      "id": "0f0e5957612b6dffbec066dc4219af73e28a85cf31ae3a7a199b916837f490ff",
+      "prompt": "Find a shortest path in this undirected, unweighted graph. Return ONLY a JSON list of node names, including both endpoints. Do not explain, do not show your work, and do not use code fences: your entire reply must be the JSON list, for example [\"v1\", \"v7\", \"v3\"].\nExample\nNeighbours of each node:\nv1: v2, v3\nv2: v1, v3\nv3: v1, v2, v4\nv4: v3\nFrom v1 to v4.\nReply: [\"v1\", \"v3\", \"v4\"]\n\nNow solve\nNeighbours of each node:\nv313: v393, v552, v679, v971\nv393: v313, v971\nv552: v313, v679, v958, v971\nv679: v313, v552, v958\nv955: v958, v971\nv958: v552, v679, v955, v971\nv971: v313, v393, v552, v955, v958\nFrom v313 to v393.",
+      "response": "[\"v313\", \"v393\"]",
+      "task_id": "f34b7174ef486b53a677598b72ddd5e672dee7ce30336c98b506ec04d784e408",
+      "tokens": 13,
+      "weight": 0.25
+    },
+    {
+      "correct": false,
+      "error": "nonedge",
+      "id": "1cea3b8999b767037325fde7e806111922045ebdac937c40ed4bf665b35b0294",
+      "prompt": "Find a shortest path in this undirected, unweighted graph. Return ONLY a JSON list of node names, including both endpoints. Do not explain, do not show your work, and do not use code fences: your entire reply must be the JSON list, for example [\"v1\", \"v7\", \"v3\"].\nExample\nNeighbours of each node:\nv1: v2, v3\nv2: v1, v3\nv3: v1, v2, v4\nv4: v3\nFrom v1 to v4.\nReply: [\"v1\", \"v3\", \"v4\"]\n\nNow solve\nNeighbours of each node:\nv117: v427\nv197: v605, v645\nv389: v557, v605\nv427: v117, v557, v645\nv521: v605\nv557: v389, v427\nv605: v197, v389, v521\nv645: v197, v427\nFrom v427 to v557.",
+      "response": "[\"v427\", \"v427\", \"v557\"]",
+      "task_id": "f67c93b58fc877a9d2914f5d43cf71b21eb0f343439874bee3732f2d83af2bbf",
+      "tokens": 19,
+      "weight": 0.5
+    },
+    {
+      "correct": true,
+      "error": "correct",
+      "id": "e3ebcbb63d2c27063d97a821a165c5daed5b557fb2295ccbf2ca2f0116b0d3de",
+      "prompt": "Find a shortest path in this undirected, unweighted graph. Return ONLY a JSON list of node names, including both endpoints. Do not explain, do not show your work, and do not use code fences: your entire reply must be the JSON list, for example [\"v1\", \"v7\", \"v3\"].\nExample\nNeighbours of each node:\nv1: v2, v3\nv2: v1, v3\nv3: v1, v2, v4\nv4: v3\nFrom v1 to v4.\nReply: [\"v1\", \"v3\", \"v4\"]\n\nNow solve\nNeighbours of each node:\nv188: v503, v700, v725, v850\nv223: v850\nv263: v587, v700, v850\nv503: v188, v850, v878\nv587: v263\nv700: v188, v263, v850\nv725: v188, v850\nv850: v188, v223, v263, v503, v700, v725\nv878: v503\nFrom v188 to v850.",
+      "response": "[\"v188\", \"v850\"]",
+      "task_id": "fbbe432c09ca83296a0b3ebdd0e1d4b9558b5b59eda4245ae8cad9a2bbbaf7ac",
+      "tokens": 13,
+      "weight": 0.5
+    },
+    {
+      "correct": false,
+      "error": "nonedge",
+      "id": "1eb6429242c71c7f7af32467fcde375a6a9c3abd7828fbbc15db690e79ee6df6",
+      "prompt": "Find a shortest path in this undirected, unweighted graph. Return ONLY a JSON list of node names, including both endpoints. Do not explain, do not show your work, and do not use code fences: your entire reply must be the JSON list, for example [\"v1\", \"v7\", \"v3\"].\nExample\nNeighbours of each node:\nv1: v2, v3\nv2: v1, v3\nv3: v1, v2, v4\nv4: v3\nFrom v1 to v4.\nReply: [\"v1\", \"v3\", \"v4\"]\n\nNow solve\nNeighbours of each node:\nv284: v415\nv415: v284, v570, v839\nv551: v583, v852\nv570: v415, v718, v852\nv583: v551, v614, v674, v718, v852\nv599: v614\nv614: v583, v599, v674, v839, v852\nv674: v583, v614, v839\nv718: v570, v583\nv839: v415, v614, v674, v852\nv852: v551, v570, v583, v614, v839\nFrom v718 to v599.",
+      "response": "[\"v718\", \"v583\", \"v599\"]",
+      "task_id": "fdb6c0ae70918630d94f1b2ff6311899b93bc6e69b0e4c03a4ff1ea8b98131b4",
+      "tokens": 19,
+      "weight": 0.33333333333333337
+    },
+    {
+      "correct": true,
+      "error": "correct",
+      "id": "a4e1538d6c535a204a2dff12845219b55cafa2c49fe3ea09983d21e2b5abb164",
+      "prompt": "Find a shortest path in this undirected, unweighted graph. Return ONLY a JSON list of node names, including both endpoints. Do not explain, do not show your work, and do not use code fences: your entire reply must be the JSON list, for example [\"v1\", \"v7\", \"v3\"].\nExample\nNeighbours of each node:\nv1: v2, v3\nv2: v1, v3\nv3: v1, v2, v4\nv4: v3\nFrom v1 to v4.\nReply: [\"v1\", \"v3\", \"v4\"]\n\nNow solve\nNeighbours of each node:\nv150: v510\nv158: v322, v849, v851, v862\nv322: v158, v510, v849, v862\nv408: v722, v862\nv510: v150, v322, v722, v849, v851\nv663: v667, v849, v851\nv667: v663, v722, v851\nv722: v408, v510, v667\nv849: v158, v322, v510, v663, v851\nv851: v158, v510, v663, v667, v849\nv862: v158, v322, v408\nFrom v849 to v150.",
+      "response": "[\"v849\", \"v510\", \"v150\"]",
+      "task_id": "ff9a4e5fbff911c98e47b3856f057b5e49ef06620ae0e68b7a831ddcf0628fc6",
+      "tokens": 19,
+      "weight": 0.33333333333333337
+    }
+  ],
+  "schema": 1
+}

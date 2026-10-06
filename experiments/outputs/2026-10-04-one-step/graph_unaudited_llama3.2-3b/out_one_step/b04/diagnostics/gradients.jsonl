@@ -1,0 +1,3 @@
+{"arm_record": "b04/R/round_001/arm.json", "block_id": "b04", "branch": "R", "diagnostics": "b04/R/round_001/diagnostics.json", "reason": null, "run_id": "md-graph-unaudited-llama3.2-3b-2048x8-v01-one-step--b04--R", "status": "recorded", "step": 0}
+{"arm_record": "b04/S/round_001/arm.json", "block_id": "b04", "branch": "S", "diagnostics": "b04/S/round_001/diagnostics.json", "reason": null, "run_id": "md-graph-unaudited-llama3.2-3b-2048x8-v01-one-step--b04--S", "status": "recorded", "step": 0}
+{"arm_record": "b04/null/round_001/arm.json", "block_id": "b04", "branch": "null", "diagnostics": "b04/null/round_001/diagnostics.json", "reason": null, "run_id": "md-graph-unaudited-llama3.2-3b-2048x8-v01-one-step--b04--null", "status": "recorded", "step": 0}
